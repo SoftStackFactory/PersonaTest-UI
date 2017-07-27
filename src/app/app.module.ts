@@ -6,21 +6,24 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {  RegisterPage } from '../pages/register/register';
+import {  LobbyPage } from '../pages/lobby/lobby';
+
+const components = [ 
+    MyApp,
+    HomePage,
+    LobbyPage,
+    RegisterPage
+    ]
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage
-  ],
+  declarations: components,
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage
-  ],
+  entryComponents: components,
   providers: [
     StatusBar,
     SplashScreen,
