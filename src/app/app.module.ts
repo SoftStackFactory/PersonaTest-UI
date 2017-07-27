@@ -14,7 +14,7 @@ import { ResultsPage } from '../pages/results/results';
 
 const components = [ 
     MyApp,
-    LandingPage
+    LandingPage,
     HomePage,
     RegisterPage,
     LobbyPage,
