@@ -18,7 +18,7 @@ Before starting any work, ALWAYS pull from origin develop
 $ git pull origin develop
 ```
 Explanation of Command:
-    The above command will pull down the most recent changes from our remote 
+The above command will pull down the most recent changes from our remote 
 develop branch. If there is a merge conflict during this process, the pulled 
 changes should be accepted over your local changes. Once you handle the merge
 conflict in the file you will need commit those changes. This will commit those 
@@ -47,8 +47,7 @@ $ git flow feature start test-results-chart
 <h2>STEP 3</h2>
 </div>
 
----
-    Once you have a branch you are free to create your page or component. 
+Once you have a branch you are free to create your page or component. 
 During this process try to be clear in your naming process. We should be able 
 to easily understand what the component is or does. The <> are not included in
 the below commands.
@@ -64,7 +63,7 @@ $ ionic g component <name-of-component">
 </div>
 
 ---
-    Commit often, do not wait hours to make commit. Even just simple one or 2 lines
+Commit often, do not wait hours to make commit. Even just simple one or 2 lines
 of code make commits. Commits should tell a story and make it easier for you to 
 to revert changes. Relying on undo or ctrl-z - command-z to revert changes is a 
 bad habit. There are times when it is fine but you can run into a lot of 
@@ -81,7 +80,7 @@ $ git commit -m "Added Login Button"
 </div>
 
 ---
-    Once you you are happy with your work or maybe you just want to share it 
+Once you you are happy with your work or maybe you just want to share it 
 with someone on the team. You run the below command without <> around your 
 feature name. You can continue to work on your feature and just run this 
 command again to update thebranch.
@@ -91,7 +90,7 @@ $ git flow feature publish <name-of-feature>
 ```
 
 ##### Explanation of command:
-    The publish command above pushes the branch up to the remote repository and
+The publish command above pushes the branch up to the remote repository and
 and also tracks it. Tracking means your local branch and the remote branch are
 linked so that if changes are pushed to the remote branch your local branch 
 will know it is not up to date. Just because your local branch and remote branch
@@ -103,7 +102,7 @@ branch.
 </div>
 
 ---
-    Then, go to the GitHub Page 
+Then, go to the GitHub Page 
 (https://github.com/softstackfactory/PersonaTest-UI). 
 Make a pull request against the develop branch with your feature branch. 
 During this time you can go back to [Step 1](https://github.com/SoftStackFactory/PersonaTest-UI/tree/feature/readme-layout#step-1) while you wait for the approval.
@@ -113,7 +112,7 @@ $ git pull origin develop
 ```
 
 ##### Explanation For Pull Request:
-    This will notify whoever is in charge of the repository that they need to
+This will notify whoever is in charge of the repository that they need to
 review the work and merge the feature/branch work if the work is approved.  
 
              
@@ -132,7 +131,7 @@ enter the folllowing:
 $ git flow feature finish <name-of-feature>
 ```
 ##### Explanation for feature finish:
-    This command will merge your local feature/<feature-name> branch into 
+This command will merge your local feature/<feature-name> branch into 
 your local develop branch and delete the remote feature/<feature-name> branch
 .     
 Once you've done that, check for any changes:
