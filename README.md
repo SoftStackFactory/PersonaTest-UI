@@ -8,7 +8,9 @@ Cohort. (https://www.softstackfactory.com)
 We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 
 ### Basic Work Flow:
+<div align="center">
 #                   STEP 1
+</div>
 ---
 Before starting any work, ALWAYS pull from origin develop
 ```bash
@@ -96,7 +98,7 @@ review the work and merge the feature/branch work if the work is approved.
              
 #                   FINAL STEP 7
 ---
-   *_DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!*_
+   **_DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!_**
 
 The following command is critical to only do once your work has been integrated
 into the remote develop branch. At this time you should have a feature/branch that has
