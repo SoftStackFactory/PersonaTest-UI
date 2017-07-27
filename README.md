@@ -143,24 +143,24 @@ Command git commands:
 ```bash
 $ git branch
 ```
-   Lists local branches
+Lists local branches
 
 ```bash 
 $ git checkout <branch-name>
 ```
-   Used to switch between branches.
+Used to switch between branches.
   
 ```bash
 $ git branch -u <remote-name>/<branch-name>
 ```
-    This above command will track the the remote branch. Run this command while 
+This above command will track the the remote branch. Run this command while 
 on the local branch that you wish to track the remote branch.
-   For example if your local develop branch is not tracking the remote develop
-   branch the command would look like this. Origin is the name of our remote.
+For example if your local develop branch is not tracking the remote develop
+branch the command would look like this. Origin is the name of our remote.
 ```bash
 phortonssf:~/workspace/PersonaTest-UI (develop) $ git branch -u origin/develop
 ```
-    In the above command notice that (develop) is the name of the local branch
+In the above command notice that (develop) is the name of the local branch
 you are currently on. So after this command our local develop branch and 
 origin/develop branch are linked. Any changes pushed to the origin branch can
 be checked now by using git status.
@@ -168,7 +168,7 @@ be checked now by using git status.
 ```bash
 $ git status
 ```
-    Checks to see if your local branch is up to date with the tracked remote
+Checks to see if your local branch is up to date with the tracked remote
 branch.
 
 ---
