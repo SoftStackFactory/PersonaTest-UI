@@ -8,7 +8,7 @@ Cohort. [SoftStackFactory](https://www.softstackfactory.com)
 We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 
 ### Basic Work Flow:
-#STEP 1
+# STEP 1
 =====
 Before starting any work, ALWAYS pull from origin develop
 ```bash
