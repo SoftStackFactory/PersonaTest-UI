@@ -25,7 +25,9 @@ changes to your local repository.
 
 Once your develop branch is up to date and ONLY then you proceed to step 2.
 
-#                   STEP 2
+<div align="center">
+<h2>STEP 2</h2>
+</div>
 ---                     
 Create a new branch with the below command. All work should be done in your
 freature branch.  The name of the feature should be relative to the work you are 
@@ -37,7 +39,9 @@ E.g.: If I am making a component for the test results chart.
 $ git flow feature start test-results-chart
 ```
    
-#                   STEP 3
+<div align="center">
+<h2>STEP 3</h2>
+</div>
 ---
     Once you have a branch you are free to create your page or component. 
 During this process try to be clear in your naming process. We should be able 
@@ -49,7 +53,9 @@ $ ionic g page <name-of-page>
 $ ionic g component <name-of-component">
 ```
 
-#                   STEP 4
+<div align="center">
+<h2>STEP 4</h2>
+</div>
 ---
     Commit often, do not wait hours to make commit. Even just simple one or 2 lines
 of code make commits. Commits should tell a story and make it easier for you to 
@@ -61,7 +67,9 @@ problems.   Commit messages should be clear and descriptive as well.
 $ git add .
 $ git commit -m "Added Login Button"
 ```
-#                   STEP 5
+<div align="center">
+<h2>STEP 5</h2>
+</div>
 ---
    
     Once you you are happy with your work or maybe you just want to share it 
@@ -80,7 +88,9 @@ will know it is not up to date. Just because your local branch and remote branch
 have the same name doesn't not mean your local branch is tracking the remote 
 branch. 
 
-#                   STEP 6
+<div align="center">
+<h2>STEP 6</h2>
+</div>
 ---
     Then, go to the GitHub Page 
 (https://github.com/softstackfactory/PersonaTest-UI). 
@@ -96,7 +106,9 @@ Explanation For Pull Request:
 review the work and merge the feature/branch work if the work is approved.  
 
              
-#                   FINAL STEP 7
+<div align="center">
+<h2>FINAL STEP 7</h2>
+</div>
 ---
    **_DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!_**
 
