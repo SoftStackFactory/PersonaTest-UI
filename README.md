@@ -8,7 +8,8 @@ Cohort. (https://www.softstackfactory.com)
 We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 
 ### Basic Work Flow:
-                          ---- STEP 1
+#                   STEP 1
+---
 Before starting any work, ALWAYS pull from origin develop
 ```bash
 $ git pull origin develop
@@ -22,8 +23,8 @@ changes to your local repository.
 
 Once your develop branch is up to date and ONLY then you proceed to step 2.
 
-                        ------ STEP 2
-                        
+#                   STEP 2
+---                     
 Create a new branch with the below command. All work should be done in your
 freature branch.  The name of the feature should be relative to the work you are 
 doing. We should be able to look at the branch name and have a relative idea as
@@ -34,7 +35,8 @@ E.g.: If I am making a component for the test results chart.
 $ git flow feature start test-results-chart
 ```
    
-                        ----- STEP 3
+#                   STEP 3
+---
     Once you have a branch you are free to create your page or component. 
 During this process try to be clear in your naming process. We should be able 
 to easily understand what the component is or does. The <> are not included in
@@ -45,7 +47,8 @@ $ ionic g page <name-of-page>
 $ ionic g component <name-of-component">
 ```
 
-                        ----- STEP 4
+#                   STEP 4
+---
     Commit often, do not wait hours to make commit. Even just simple one or 2 lines
 of code make commits. Commits should tell a story and make it easier for you to 
 to revert changes. Relying on undo or ctrl-z - command-z to revert changes is a 
@@ -56,7 +59,8 @@ problems.   Commit messages should be clear and descriptive as well.
 $ git add .
 $ git commit -m "Added Login Button"
 ```
-                       ----- STEP 5
+#                   STEP 5
+---
    
     Once you you are happy with your work or maybe you just want to share it 
 with someone on the team. You run the below command without <> around your 
@@ -74,7 +78,8 @@ will know it is not up to date. Just because your local branch and remote branch
 have the same name doesn't not mean your local branch is tracking the remote 
 branch. 
 
-                     ---- Step 6
+#                   STEP 6
+---
     Then, go to the GitHub Page 
 (https://github.com/softstackfactory/PersonaTest-UI). 
 Make a pull request against the develop branch with your feature branch. 
@@ -89,7 +94,8 @@ Explanation For Pull Request:
 review the work and merge the feature/branch work if the work is approved.  
 
              
-           ---- FINAL STEP 7
+#                   FINAL STEP 7
+---
    DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!
 The following command is critical to only do once your work has been integrated
 into the remote develop branch. At this time you should have a feature/branch that has
