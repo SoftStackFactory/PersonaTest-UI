@@ -11,6 +11,9 @@ import { RegisterPage } from '../pages/register/register';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
+import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+
+
 
 const components = [ 
     MyApp,
@@ -19,7 +22,8 @@ const components = [
     RegisterPage,
     LobbyPage,
     TestListsPage,
-    ResultsPage
+    ResultsPage,
+    FlexDemoPage
   ]
 
 @NgModule({
