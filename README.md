@@ -11,6 +11,7 @@ We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 <div align="center">
 <h2>STEP 1</h2>
 </div>
+
 ---
 Before starting any work, ALWAYS pull from origin develop
 ```bash
