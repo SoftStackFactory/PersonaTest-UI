@@ -1,0 +1,13 @@
+//Full String Manifest for Language Portability
+
+{
+    HOME: {
+      TITLE: "PersonaTest"
+      
+    },
+    LOBBY: {
+        TITLE: "PersonaTest",
+        PERSONAL: "Personal",
+        ORGANIZATION: "Organization"
+    }
+}
