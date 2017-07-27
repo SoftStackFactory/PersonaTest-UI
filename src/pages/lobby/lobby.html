@@ -7,12 +7,48 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Lobby</ion-title>
+    <!-- 
+    <ion-title>{{ HOME.TITLE | translate }}<ion-title>
+    -->
+    <ion-title>PersonaTest</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<div padding>
+  <ion-segment [(ngModel)]="testType">
+    <ion-segment-button value="personal">
+      Personal
+    </ion-segment-button>
+    <ion-segment-button value="organization">
+      Organization
+    </ion-segment-button>
+  </ion-segment>
+</div>
 
+<div [ngSwitch]="testType">
+  <ion-list *ngSwitchCase="'personal'">
+    <ion-item>
+      <h2>Take a Test...</h2>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="forWork()">For Work</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="forPlay()">For Play</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'organization'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+    ...
+  </ion-list>
+</div>
 <ion-content padding>
 
 </ion-content>
