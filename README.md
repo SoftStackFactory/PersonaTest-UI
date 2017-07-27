@@ -31,3 +31,34 @@ $ git pull origin develop
 ```
 
 Rinse, and repeat!
+
+### To Finalize a Feature Branch:
+
+Once you're finished with a given feature, you will want to follow the next steps very carefully.
+
+*If you don't follow the steps ahead _exactly_ you will lose your work.* __And you will cry.__
+
+- So, you've:
+```bash
+$git flow feature publish MyPersonaTestPage
+```
+- You've navigated to [SoftStackFactory GitHub](https://github.com/softstackfactory/PersonaTest-UI) and started a new pull request.
+
+# WAIT FOR THE PULL REQUEST TO BE MERGED
+
+- Wait for the Pull Request to be merged.
+
+## *_Wait for the Pull Request to be Merged._*
+
+Once the Pull Request has been merged. _AND ONLY THEN!_
+
+```bash
+$git flow feature finish MyPersonaTestPage
+```
+
+This will delete your feature branch from your workspace AND from the GitHub Repo. But Luckily, you've waited for your *pull request to be merged* so all your hard work is saved!
+
+
+
+
+
