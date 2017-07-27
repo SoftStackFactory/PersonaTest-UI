@@ -52,7 +52,7 @@ $ ionic g component <name-of-component">
     Commit often, do not wait hours to make commit. Even just simple one or 2 lines
 of code make commits. Commits should tell a story and make it easier for you to 
 to revert changes. Relying on undo or ctrl-z - command-z to revert changes is a 
-bad habbit. There are times when it is fine but you can run into a lot of 
+bad habit. There are times when it is fine but you can run into a lot of 
 problems.   Commit messages should be clear and descriptive as well.
 
 ```bash
@@ -83,7 +83,7 @@ branch.
     Then, go to the GitHub Page 
 (https://github.com/softstackfactory/PersonaTest-UI). 
 Make a pull request against the develop branch with your feature branch. 
-During this time you can go back to step 1 while you wait for the approval.
+During this time you can go back to [Step 1](https://github.com/SoftStackFactory/PersonaTest-UI/tree/feature/readme-layout#step-1) while you wait for the approval.
 Remember to pull before starting.
 ```bash
 $ git pull origin develop
@@ -96,7 +96,8 @@ review the work and merge the feature/branch work if the work is approved.
              
 #                   FINAL STEP 7
 ---
-   DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!
+   *_DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!*_
+
 The following command is critical to only do once your work has been integrated
 into the remote develop branch. At this time you should have a feature/branch that has
 been approved and pulled into the remote develop branch. Once that is complete
