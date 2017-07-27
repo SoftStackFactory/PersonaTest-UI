@@ -24,7 +24,8 @@ changes should be accepted over your local changes. Once you handle the merge
 conflict in the file you will need commit those changes. This will commit those 
 changes to your local repository. 
 
-Once your develop branch is up to date and ONLY then you proceed to step 2.
+##### Once your develop branch is up to date and ONLY then you proceed to step 2.
+
 ---
 <div align="center">
 <h2>STEP 2</h2>
@@ -88,6 +89,7 @@ command again to update thebranch.
 ```
 $ git flow feature publish <name-of-feature>
 ```
+
 ##### Explanation of command:
     The publish command above pushes the branch up to the remote repository and
 and also tracks it. Tracking means your local branch and the remote branch are
