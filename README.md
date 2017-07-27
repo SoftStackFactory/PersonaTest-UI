@@ -12,6 +12,7 @@ We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 <h2>STEP 1</h2>
 </div>
 
+---
 Before starting any work, ALWAYS pull from origin develop
 ```bash
 $ git pull origin develop
@@ -24,10 +25,11 @@ conflict in the file you will need commit those changes. This will commit those
 changes to your local repository. 
 
 Once your develop branch is up to date and ONLY then you proceed to step 2.
-
+---
 <div align="center">
 <h2>STEP 2</h2>
 </div>
+
 ---                     
 Create a new branch with the below command. All work should be done in your
 freature branch.  The name of the feature should be relative to the work you are 
@@ -38,10 +40,12 @@ E.g.: If I am making a component for the test results chart.
 ```bash
 $ git flow feature start test-results-chart
 ```
-   
+---
+
 <div align="center">
 <h2>STEP 3</h2>
 </div>
+
 ---
     Once you have a branch you are free to create your page or component. 
 During this process try to be clear in your naming process. We should be able 
@@ -52,10 +56,12 @@ the below commands.
 $ ionic g page <name-of-page>
 $ ionic g component <name-of-component">
 ```
+---
 
 <div align="center">
 <h2>STEP 4</h2>
 </div>
+
 ---
     Commit often, do not wait hours to make commit. Even just simple one or 2 lines
 of code make commits. Commits should tell a story and make it easier for you to 
@@ -67,11 +73,13 @@ problems.   Commit messages should be clear and descriptive as well.
 $ git add .
 $ git commit -m "Added Login Button"
 ```
+---
+
 <div align="center">
 <h2>STEP 5</h2>
 </div>
+
 ---
-   
     Once you you are happy with your work or maybe you just want to share it 
 with someone on the team. You run the below command without <> around your 
 feature name. You can continue to work on your feature and just run this 
@@ -80,7 +88,7 @@ command again to update thebranch.
 ```
 $ git flow feature publish <name-of-feature>
 ```
-Explanation of command:
+##### Explanation of command:
     The publish command above pushes the branch up to the remote repository and
 and also tracks it. Tracking means your local branch and the remote branch are
 linked so that if changes are pushed to the remote branch your local branch 
@@ -91,6 +99,7 @@ branch.
 <div align="center">
 <h2>STEP 6</h2>
 </div>
+
 ---
     Then, go to the GitHub Page 
 (https://github.com/softstackfactory/PersonaTest-UI). 
@@ -101,7 +110,7 @@ Remember to pull before starting.
 $ git pull origin develop
 ```
 
-Explanation For Pull Request:
+##### Explanation For Pull Request:
     This will notify whoever is in charge of the repository that they need to
 review the work and merge the feature/branch work if the work is approved.  
 
@@ -109,6 +118,7 @@ review the work and merge the feature/branch work if the work is approved.
 <div align="center">
 <h2>FINAL STEP 7</h2>
 </div>
+
 ---
    **_DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!_**
 
@@ -119,7 +129,7 @@ enter the folllowing:
 ```bash
 $ git flow feature finish <name-of-feature>
 ```
-Explanation for feature finish:
+##### Explanation for feature finish:
     This command will merge your local feature/<feature-name> branch into 
 your local develop branch and delete the remote feature/<feature-name> branch
 .     
@@ -160,5 +170,5 @@ $ git status
     Checks to see if your local branch is up to date with the tracked remote
 branch.
 
-
+---
 
