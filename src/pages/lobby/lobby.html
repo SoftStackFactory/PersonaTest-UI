@@ -29,21 +29,24 @@
 <div [ngSwitch]="testType">
   <ion-list *ngSwitchCase="'personal'">
     <ion-item>
-      <h2>Take a Test...</h2>
+      <h2>Take a Test ...</h2>
     </ion-item>
     <ion-item>
-      <ion-button (click)="forWork()">For Work</ion-button>
+      <button ion-button (click)="forWork()">For Work</button>
     </ion-item>
     <ion-item>
-      <ion-button (click)="forPlay()">For Play</ion-button>
+      <button ion-button (click)="forPlay()">For Play</button>
+    </ion-item>
+    <ion-item>
+      <h2>Show My ...</h2>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="showResults()">Results</button>
     </ion-item>
   </ion-list>
 
   <ion-list *ngSwitchCase="'organization'">
     <ion-item>
-      <ion-thumbnail item-start>
-        <img src="img/thumbnail-kitten-1.jpg">
-      </ion-thumbnail>
       <h2>Luna</h2>
     </ion-item>
     ...
