@@ -6,15 +6,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Pages
 import { HomePage } from '../pages/home/home';
 import { LobbyPage } from '../pages/lobby/lobby';
+import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = FlexDemoPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
