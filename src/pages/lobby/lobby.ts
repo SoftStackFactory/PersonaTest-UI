@@ -37,4 +37,10 @@ export class LobbyPage {
     this.navCtrl.push(ResultsPage);
     console.log("go to results page for personal tests taken");
   }
+  viewResults() {
+    console.log("go to results page for organization tests available to view");
+  }
+  manageAcc() {
+    console.log("go to account management page");
+  }
 }
