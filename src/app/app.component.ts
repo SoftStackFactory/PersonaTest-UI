@@ -17,6 +17,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
   rootPage:any = FlexDemoPage;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
