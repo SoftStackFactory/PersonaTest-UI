@@ -48,10 +48,16 @@
   
     <ion-list *ngSwitchCase="'organization'">
       <ion-item>
-        <h2>Luna</h2>
+        <h2>{{ organizationName }}</h2>
       </ion-item>
-      ...
+      <ion-item>
+        <button ion-button block outline (click)="viewResults()">View Results</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="manageAcc()">Manage Account</button>
+      </ion-item>
     </ion-list>
+    
 </div>
 
 
