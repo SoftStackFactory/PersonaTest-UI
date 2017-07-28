@@ -14,7 +14,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = FlexDemoPage;
+  rootPage:any = RegisterPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
