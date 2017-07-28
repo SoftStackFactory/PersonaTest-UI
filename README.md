@@ -8,16 +8,11 @@ Cohort. [SoftStackFactory](https://www.softstackfactory.com)
 We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 
 ### Basic Work Flow:
-<<<<<<< HEAD
 <div align="center">
 <h2>STEP 1</h2>
 </div>
 
 ---
-=======
-#                   STEP 1
-=====
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 Before starting any work, ALWAYS pull from origin develop
 ```bash
 $ git pull origin develop
@@ -36,12 +31,7 @@ changes to your local repository.
 <h2>STEP 2</h2>
 </div>
 
-<<<<<<< HEAD
 ---                     
-=======
-#                   STEP 2
-=====
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 Create a new branch with the below command. All work should be done in your
 freature branch.  The name of the feature should be relative to the work you are 
 doing. We should be able to look at the branch name and have a relative idea as
@@ -51,7 +41,6 @@ E.g.: If I am making a component for the test results chart.
 ```bash
 $ git flow feature start test-results-chart
 ```
-<<<<<<< HEAD
 ---
 
 <div align="center">
@@ -59,12 +48,6 @@ $ git flow feature start test-results-chart
 </div>
 
 Once you have a branch you are free to create your page or component. 
-=======
-   
-#                   STEP 3
-=====
-    Once you have a branch you are free to create your page or component. 
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 During this process try to be clear in your naming process. We should be able 
 to easily understand what the component is or does. The <> are not included in
 the below commands.
@@ -79,14 +62,8 @@ $ ionic g component <name-of-component>
 <h2>STEP 4</h2>
 </div>
 
-<<<<<<< HEAD
 ---
 Commit often, do not wait hours to make commit. Even just simple one or 2 lines
-=======
-#                   STEP 4
-=====
-    Commit often, do not wait hours to make commit. Even just simple one or 2 lines
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 of code make commits. Commits should tell a story and make it easier for you to 
 to revert changes. Relying on undo or ctrl-z - command-z to revert changes is a 
 bad habit. There are times when it is fine but you can run into a lot of 
@@ -96,7 +73,6 @@ problems.   Commit messages should be clear and descriptive as well.
 $ git add .
 $ git commit -m "Added Login Button"
 ```
-<<<<<<< HEAD
 ---
 
 <div align="center">
@@ -105,11 +81,6 @@ $ git commit -m "Added Login Button"
 
 ---
 Once you you are happy with your work or maybe you just want to share it 
-=======
-#                   STEP 5
-=====
-    Once you you are happy with your work or maybe you just want to share it 
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 with someone on the team. You run the below command without <> around your 
 feature name. You can continue to work on your feature and just run this 
 command again to update thebranch.
@@ -126,18 +97,12 @@ will know it is not up to date. Just because your local branch and remote branch
 have the same name doesn't not mean your local branch is tracking the remote 
 branch. 
 
-<<<<<<< HEAD
 <div align="center">
 <h2>STEP 6</h2>
 </div>
 
 ---
 Then, go to the GitHub Page 
-=======
-#                   STEP 6
-=====
-    Then, go to the GitHub Page 
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 (https://github.com/softstackfactory/PersonaTest-UI). 
 Make a pull request against the develop branch with your feature branch. 
 During this time you can go back to [Step 1](https://github.com/SoftStackFactory/PersonaTest-UI/tree/feature/readme-layout#step-1) while you wait for the approval.
@@ -151,7 +116,6 @@ This will notify whoever is in charge of the repository that they need to
 review the work and merge the feature/branch work if the work is approved.  
 
              
-<<<<<<< HEAD
 <div align="center">
 <h2>FINAL STEP 7</h2>
 </div>
@@ -160,12 +124,6 @@ review the work and merge the feature/branch work if the work is approved.
    **_DO NOT PROCEED TO THIS STEP IF YOUR PULL REQUEST HAS NOT FINISHED!!!_**
 
 The following command is critical to only do once your work has been integrated
-=======
-#                   FINAL STEP 7
-=====
-   _DO NOT PROCEED TO THIS STEP IF YOUR PULLREQUEST HAS NOT FINISHED!!!_
-The following command is *_critical_* to only do once your work has been integrated
->>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 into the remote develop branch. At this time you should have a feature/branch that has
 been approved and pulled into the remote develop branch. Once that is complete
 enter the folllowing:
