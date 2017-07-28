@@ -1,0 +1,57 @@
+page-flex-demo {
+    /* This * selector applies this to all elements. box-sizing property
+    is including border and padding in the width of the elements.
+    */
+    
+    *{
+         box-sizing: border-box;
+    }
+    
+    .my-header{
+        display: block;
+        width: 97vw;
+        height: 10vh;
+        max-height: 150px;
+        border: solid black 5px;
+    }
+    /*This is controlling our container for our main flex items, which in this
+    case are going to be containers for our real components. We are setting
+    a width of 97% of the screens width at all times. Same with the height 87.
+    margin: 0 auto is just saying no margins on the top and bottom but evenly 
+    apply margins to the sides. This is a common way to center items.
+    */
+    #main-container{
+        display: flex;
+        width: 97vw;
+        height: 80vh;
+        border: solid red 5px;
+        margin: 0 auto;
+    }
+    /* This is the class for the columns. They are all display block.
+    Flex:1 20%. The 1 means these elements can grow and their minimum size is 20%;
+    This element since it can grow will fill up as much size as possible unless
+    you set a max-width.
+    */
+    .column{
+        display: block;
+        flex: 1 20%;
+        height: 100%;
+        border: green solid 5px;
+    }
+    .body{
+        flex: 0 0 60%;
+    }
+    /* Below is a media query. Media queries respond to the screen and device.
+    In this example the below css is only being applied at widths under 768px.
+    There are other settings such as, min-width, orientation and device.
+    Media queries are how we make our websites and apps responsive, as in respond
+    to the size of the screen it is being used on.
+    */
+    
+    @media screen and (max-width: 768px) {
+        #body-container{
+            flex-direction: column;
+        }
+    }
+    
+}

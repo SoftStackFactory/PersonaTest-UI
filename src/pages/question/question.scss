@@ -1,0 +1,19 @@
+page-question {
+  #progressBar {
+    width: 50vw;
+    height: 5vh;
+    border: 1px solid black;
+    margin: auto;
+  }
+  .label {
+    display: flex;
+    justify-content: space-between;
+  }
+  ion-buttons[start] {
+    order: 2;
+  }
+  h2 {
+    font-weight: bold;
+  }
+
+}
