@@ -11,11 +11,12 @@ import { RegisterPage } from '../pages/register/register';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
+import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 
 
 
-const components = [ 
+const components = [
     MyApp,
     LandingPage,
     HomePage,
@@ -23,8 +24,9 @@ const components = [
     LobbyPage,
     TestListsPage,
     ResultsPage,
+    QuestionPage,
     FlexDemoPage
-  ]
+    ]
 
 @NgModule({
   declarations: components,
