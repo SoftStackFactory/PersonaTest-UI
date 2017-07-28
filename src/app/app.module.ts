@@ -11,15 +11,17 @@ import { RegisterPage } from '../pages/register/register';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
+import { QuestionPage } from '../pages/question/question';
 
-const components = [ 
+const components = [
     MyApp,
     LandingPage,
     HomePage,
     RegisterPage,
     LobbyPage,
     TestListsPage,
-    ResultsPage
+    ResultsPage,
+    QuestionPage
   ]
 
 @NgModule({
