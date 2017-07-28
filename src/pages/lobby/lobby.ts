@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
+
+import { ResultsPage } from '../results/results';
+
 
 /**
  * Generated class for the LobbyPage page.
@@ -14,11 +17,24 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class LobbyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public modalCtrl: ModalController, 
+    viewCtrl: ViewController) { }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
   }
 
+  forWork() {
+    console.log("Switch to Work View");
+  }
+  forPlay() {
+    console.log("Switch to Personal Test Selection Page");
+  }
+  showResults() {
+    this.navCtrl.push(ResultsPage);
+    console.log("go to results page for personal tests taken");
+  }
 }

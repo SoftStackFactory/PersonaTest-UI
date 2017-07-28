@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 //Pages
 import { HomePage } from '../pages/home/home';
+<<<<<<< HEAD
 import { LobbyPage } from '../pages/lobby/lobby';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
@@ -12,13 +13,21 @@ import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 
 
+=======
+// import { LobbyPage } from '../pages/lobby/lobby';
+>>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+<<<<<<< HEAD
 
   rootPage:any = FlexDemoPage;
+=======
+  rootPage:any = HomePage;
+  // rootPage:any = LobbyPage;
+>>>>>>> c2d4368cff220a38a50a7ee72775d460263f9ff3
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
