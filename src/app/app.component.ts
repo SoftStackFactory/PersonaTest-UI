@@ -3,16 +3,22 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//Pages
 import { HomePage } from '../pages/home/home';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { RegisterPage } from '../pages/register/register';
 import { QuestionPage } from '../pages/question/question';
+import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+
+
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = QuestionPage;
+  
+  rootPage:any = FlexDemoPage;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
