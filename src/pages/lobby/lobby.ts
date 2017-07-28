@@ -43,4 +43,7 @@ export class LobbyPage {
   manageAcc() {
     console.log("go to account management page");
   }
+  becomeOrg() {
+    console.log("go to Organization request page");
+  }
 }
