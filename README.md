@@ -1,5 +1,5 @@
-This is the first iteration of [PersonaTest] for SoftStackFactory's Summer 2017 
-Cohort. (https://www.softstackfactory.com)
+This is the first iteration of [PersonaTest](https://ipip.ori.org) for SoftStackFactory's Summer 2017 
+Cohort. [SoftStackFactory](https://www.softstackfactory.com)
 
 ## Skeleton UI
 
@@ -59,7 +59,7 @@ the below commands.
 
 ```bash
 $ ionic g page <name-of-page>
-$ ionic g component <name-of-component">
+$ ionic g component <name-of-component>
 ```
 ---
 
