@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+import { LandingPage } from '../pages/landing/landing';
 
 
 
@@ -18,7 +19,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 })
 export class MyApp {
 
-  rootPage:any = FlexDemoPage;
+  rootPage:any = LandingPage;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
