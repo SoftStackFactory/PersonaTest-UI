@@ -15,43 +15,52 @@
 
 </ion-header>
 
-<div padding>
-  <ion-segment [(ngModel)]="testType">
-    <ion-segment-button value="personal">
-      Personal
-    </ion-segment-button>
-    <ion-segment-button value="organization">
-      Organization
-    </ion-segment-button>
-  </ion-segment>
-</div>
-
-<div [ngSwitch]="testType">
-  <ion-list *ngSwitchCase="'personal'">
-    <ion-item>
-      <h2>Take a Test ...</h2>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="forWork()">For Work</button>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="forPlay()">For Play</button>
-    </ion-item>
-    <ion-item>
-      <h2>Show My ...</h2>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="showResults()">Results</button>
-    </ion-item>
-  </ion-list>
-
-  <ion-list *ngSwitchCase="'organization'">
-    <ion-item>
-      <h2>Luna</h2>
-    </ion-item>
-    ...
-  </ion-list>
-</div>
 <ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="testType">
+      <ion-segment-button value="personal">
+        Personal
+      </ion-segment-button>
+      <ion-segment-button value="organization">
+        Organization
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="testType">
+    <ion-list *ngSwitchCase="'personal'">
+      <h6>Hello {{ this.userName }}</h6>
+      <ion-item>
+        <h2>Take a Test ...</h2>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="forWork()">For Work</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="forPlay()">For Play</button>
+      </ion-item>
+      <ion-item>
+        <h2>Show My ...</h2>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="showResults()">Results</button>
+      </ion-item>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'organization'">
+        <h6>{{this.userName }} @ {{ this.organizationName }}</h6>
+      <ion-item>
+        <button ion-button block outline (click)="viewResults()">View Results</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="manageAcc()">Manage Account</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="becomeOrg()">Become an Organization</button>
+      </ion-item>
+    </ion-list>
+    
+</div>
+
 
 </ion-content>
