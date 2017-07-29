@@ -4,12 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 //Pages
-import { HomePage } from '../pages/home/home';
-import { LobbyPage } from '../pages/lobby/lobby';
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
-import { QuestionPage } from '../pages/question/question';
-import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+// import { HomePage } from '../pages/home/home';
+// import { LobbyPage } from '../pages/lobby/lobby';
+// import { ResultsPage } from '../pages/results/results';
+// import { RegisterPage } from '../pages/register/register';
+// import { QuestionPage } from '../pages/question/question';
+// import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+
+import { UserResultsPage } from '../pages/user-results/user-results';
 
 
 
@@ -18,7 +20,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 })
 export class MyApp {
 
-  rootPage:any = FlexDemoPage;
+  rootPage:any = UserResultsPage;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

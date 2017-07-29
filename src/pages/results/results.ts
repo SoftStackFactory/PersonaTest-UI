@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { UserResultsComponent } from '../../components/user-results/user-results';
+
 /**
  * Generated class for the ResultsPage page.
  *
@@ -13,7 +15,6 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'results.html',
 })
 export class ResultsPage {
-
   //Variables to store user's search input and the date they select
   searchInput: string = "";
   searchDate: string = "";
