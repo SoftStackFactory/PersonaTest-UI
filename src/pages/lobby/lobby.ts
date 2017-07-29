@@ -16,12 +16,19 @@ import { ResultsPage } from '../results/results';
   templateUrl: 'lobby.html',
 })
 export class LobbyPage {
-
+  testType: string
+  organizationName: string
+  userName: string
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public modalCtrl: ModalController, 
-    viewCtrl: ViewController) { }
+    viewCtrl: ViewController) {
+      this.testType = "personal";
+      this.organizationName = "SoftStack Factory";
+      this.userName = "Peter";
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');

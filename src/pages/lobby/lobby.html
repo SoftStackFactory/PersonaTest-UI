@@ -29,6 +29,7 @@
   
   <div [ngSwitch]="testType">
     <ion-list *ngSwitchCase="'personal'">
+      <h6>Hello {{ this.userName }}</h6>
       <ion-item>
         <h2>Take a Test ...</h2>
       </ion-item>
@@ -47,9 +48,7 @@
     </ion-list>
   
     <ion-list *ngSwitchCase="'organization'">
-      <ion-item>
-        <h2>{{ organizationName }}</h2>
-      </ion-item>
+        <h6>{{this.userName }} @ {{ this.organizationName }}</h6>
       <ion-item>
         <button ion-button block outline (click)="viewResults()">View Results</button>
       </ion-item>
