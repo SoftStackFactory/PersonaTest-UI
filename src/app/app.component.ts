@@ -6,12 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //Pages
 // import { HomePage } from '../pages/home/home';
 // import { LobbyPage } from '../pages/lobby/lobby';
-// import { ResultsPage } from '../pages/results/results';
+import { ResultsPage } from '../pages/results/results';
 // import { RegisterPage } from '../pages/register/register';
 // import { QuestionPage } from '../pages/question/question';
 // import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 
-import { UserResultsPage } from '../pages/user-results/user-results';
+// import { UserResultsPage } from '../pages/user-results/user-results';
 
 
 
@@ -20,7 +20,7 @@ import { UserResultsPage } from '../pages/user-results/user-results';
 })
 export class MyApp {
 
-  rootPage:any = UserResultsPage;
+  rootPage:any = ResultsPage;
   
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

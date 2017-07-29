@@ -1,17 +1,17 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
 
 @Component({
-  selector: 'user-results',
-  templateUrl: 'user-results.html'
+  selector: 'chart',
+  templateUrl: 'chart.html'
 })
-export class UserResultsComponent {
-  @ViewChild('polarCanvas') polarCanvas;
+export class ChartComponent {
+  @ViewChild('polarCanvas') polarCanvas: ElementRef
   polarChart: any;
 
 
-  ionViewDidLoad() {
+  ngOnInit() {
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'polarArea',
       data: {

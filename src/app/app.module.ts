@@ -14,13 +14,12 @@ import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
-import { UserResultsPage } from '../pages/user-results/user-results';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 
 //Components
-import { UserResultsComponent } from '../components/user-results/user-results';
+import { ChartComponent } from '../components/chart/chart';
 
 
 
@@ -35,8 +34,7 @@ let injections: any[] = [
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
-    UserResultsPage,
-    UserResultsComponent
+    ChartComponent
     ]
 
 @NgModule({

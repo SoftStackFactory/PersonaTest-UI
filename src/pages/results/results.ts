@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { UserResultsComponent } from '../../components/user-results/user-results';
+import { ChartComponent } from '../../components/chart/chart';
 
 /**
  * Generated class for the ResultsPage page.
