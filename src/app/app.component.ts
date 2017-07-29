@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LandingPage } from '../pages/landing/landing';
 
 //Pages
 import { HomePage } from '../pages/home/home';
@@ -11,17 +10,16 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
-
+import { LandingPage } from '../pages/landing/landing';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-<<<<<<< HEAD
-  rootPage:any = LandingPage;
-=======
->>>>>>> e3d8531b89896e7a2020a13b19ae6a89cda76ead
+
+  rootPage:any = HomePage;
+
 
   rootPage:any = FlexDemoPage;
   
