@@ -14,6 +14,7 @@ import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+import { QuestionsProvider } from '../providers/questions/questions';
 
 
 
@@ -41,7 +42,8 @@ const components = [
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    QuestionsProvider
   ]
 })
 export class AppModule {}
