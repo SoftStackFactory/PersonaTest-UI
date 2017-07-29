@@ -16,12 +16,19 @@ import { ResultsPage } from '../results/results';
   templateUrl: 'lobby.html',
 })
 export class LobbyPage {
-
+  testType: string
+  organizationName: string
+  userName: string
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public modalCtrl: ModalController, 
-    viewCtrl: ViewController) { }
+    viewCtrl: ViewController) {
+      this.testType = "personal";
+      this.organizationName = "SoftStack Factory";
+      this.userName = "Peter";
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
@@ -36,5 +43,14 @@ export class LobbyPage {
   showResults() {
     this.navCtrl.push(ResultsPage);
     console.log("go to results page for personal tests taken");
+  }
+  viewResults() {
+    console.log("go to results page for organization tests available to view");
+  }
+  manageAcc() {
+    console.log("go to account management page");
+  }
+  becomeOrg() {
+    console.log("go to Organization request page");
   }
 }
