@@ -22,6 +22,7 @@ import { QuestionsProvider } from '../providers/questions/questions';
 //Components
 import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 
 
@@ -37,7 +38,8 @@ let injections: any[] = [
     QuestionPage,
     FlexDemoPage,
     ChartComponent,
-    TestlistComponent
+    TestlistComponent,
+    ProgressBarComponent
     ]
 
 @NgModule({
