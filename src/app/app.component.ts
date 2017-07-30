@@ -18,7 +18,7 @@ import { LandingPage } from '../pages/landing/landing';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = FlexDemoPage 
+  rootPage:any = LobbyPage 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
