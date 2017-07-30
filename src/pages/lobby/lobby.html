@@ -26,8 +26,8 @@
     </ion-segment>
   </div>
   
-  <div [ngSwitch]="testType">
-    <ion-list *ngSwitchCase="'personal'">
+  <div id="main-container" [ngSwitch]="testType">
+    <ion-list class="list" *ngSwitchCase="'personal'">
       <h6>Hello {{ this.userName }}</h6>
       <ion-item>
         <h2>Take a Test</h2>
@@ -55,7 +55,7 @@
         <button ion-button block outline (click)="manageAcc()">Manage Account</button>
       </ion-item>
       <ion-item>
-        <button ion-button block outline (click)="becomeOrg()">Become an Organization</button>
+        <button ion-button block outline large (click)="becomeOrg()">Become an Organization</button>
       </ion-item>
     </ion-list>
     
