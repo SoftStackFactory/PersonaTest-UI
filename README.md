@@ -13,9 +13,12 @@ We are using git-flow to manage this project. (https://github.com/nvie/gitflow)
 </div>
 
 ---
-Before starting any work, ALWAYS pull from origin develop
+Make Sure you are on develop branch.
+Before starting any work, ALWAYS pull from origin develop while on the develop 
+branch. Your current branch is in () at the end of your current path in the bash
+terminal.
 ```bash
-$ git pull origin develop
+phortonssf:~/workspace/PersonaTest-UI (develop) $  git pull origin develop
 ```
 Explanation of Command:
 The above command will pull down the most recent changes from our remote 
@@ -39,8 +42,10 @@ to what the branch work relates to.
 E.g.: If I am making a component for the test results chart.
 
 ```bash
-$ git flow feature start test-results-chart
+phortonssf:~/workspace/PersonaTest-UI (develop) $ git flow feature start test-results-chart
+phortonssf:~/workspace/PersonaTest-UI (test-results-chart) $
 ```
+Notice the branch changed from develop to test-results-chart
 ---
 
 <div align="center">
@@ -106,9 +111,10 @@ Then, go to the GitHub Page
 (https://github.com/softstackfactory/PersonaTest-UI). 
 Make a pull request against the develop branch with your feature branch. 
 During this time you can go back to [Step 1](https://github.com/SoftStackFactory/PersonaTest-UI/tree/feature/readme-layout#step-1) while you wait for the approval.
-Remember to pull before starting.
+Remember to  switch to develop branch and pull before starting.
 ```bash
-$ git pull origin develop
+phortonssf:~/workspace/PersonaTest-UI (develop) $ git checkout develop
+phortonssf:~/workspace/PersonaTest-UI (develop) $ git pull origin develop
 ```
 
 ##### Explanation For Pull Request:
