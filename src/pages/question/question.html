@@ -28,7 +28,7 @@
   <p class="direction">Indicate how much the statement applies to you using the sliding scale below.</p>
   <ion-card>
     <ion-card-content text-center>
-      I'm the life of the party.
+      {{question}}
     </ion-card-content>
   </ion-card>
   <div class="label">
@@ -39,7 +39,7 @@
 
   </ion-range>
   <div text-center>
-    <button ion-button>
+    <button ion-button (click)="toNextQuestion()">
       Next Question
     </button>
   </div>

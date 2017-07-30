@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+import { QUESTIONS } from './mock-questions';
+
 /*
   Generated class for the QuestionsProvider provider.
 
@@ -15,4 +17,8 @@ export class QuestionsProvider {
     console.log('Hello QuestionsProvider Provider');
   }
 
+  getQuestion(index: number) {
+    console.log(QUESTIONS[index])
+    return QUESTIONS[index];
+  }
 }
