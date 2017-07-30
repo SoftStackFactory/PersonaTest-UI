@@ -16,10 +16,10 @@ export class ChartComponent {
       type: 'polarArea',
       data: {
         labels: [
-          "Extraversion",
           "Agreeableness",
           "Conscientiousness",
           "Emotional Stability",
+          "Extraversion",
           "Intellect"
           ],
         datasets: [{
