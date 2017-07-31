@@ -21,7 +21,7 @@ import { LandingPage } from '../pages/landing/landing';
 })
 export class MyApp {
 
-  rootPage:any = FlexDemoPage 
+  rootPage:any = LoginPage 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

@@ -1,3 +1,10 @@
 page-login {
-
+    .login-container {
+        position: relative;
+        max-width: 50%;
+        margin: auto;
+    }
+    form {
+        padding: 150px;
+    }
 }
