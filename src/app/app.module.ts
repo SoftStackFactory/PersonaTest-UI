@@ -12,7 +12,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { TestListsPage } from '../pages/test-lists/test-lists';
-import { ResultsPage } from '../pages/results/results';
+import { HistoryPage } from '../pages/history/history';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 
@@ -34,7 +34,7 @@ let injections: any[] = [
     LoginPage,
     LobbyPage,
     TestListsPage,
-    ResultsPage,
+    HistoryPage,
     QuestionPage,
     FlexDemoPage,
     ChartComponent,
