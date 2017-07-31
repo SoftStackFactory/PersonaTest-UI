@@ -5,14 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 //Pages
 
-import { HomePage } from '../pages/home/home';
-import { LobbyPage } from '../pages/lobby/lobby';
-import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
-import { QuestionPage } from '../pages/question/question';
-import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
-import { LandingPage } from '../pages/landing/landing';
-import { ResultsPage } from '../pages/results/results';
+// import { HomePage } from '../pages/home/home';
+// import { LobbyPage } from '../pages/lobby/lobby';
+// import { LoginPage } from '../pages/login/login';
+// import { RegisterPage } from '../pages/register/register';
+// import { QuestionPage } from '../pages/question/question';
+// import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+// import { LandingPage } from '../pages/landing/landing';
+// import { ResultsPage } from '../pages/results/results';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 
 
