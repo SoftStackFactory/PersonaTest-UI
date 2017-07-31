@@ -13,36 +13,40 @@
 </ion-header>
 
 
-<ion-content>
 
-  <ion-searchbar
-    [(ngModel)]="searchInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="doSearch($event)">
-  </ion-searchbar>
 
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="searchDate">
-    </ion-datetime>
-  </ion-item>
+<ion-content class="container">
+  <chart></chart> 
+  <testlist></testlist>
+
+  <!--<ion-searchbar-->
+  <!--  [(ngModel)]="searchInput"-->
+  <!--  [showCancelButton]="shouldShowCancel"-->
+  <!--  (ionInput)="doSearch($event)">-->
+  <!--</ion-searchbar>-->
+
+  <!--<ion-item>-->
+  <!--  <ion-label>Date</ion-label>-->
+  <!--  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="searchDate">-->
+  <!--  </ion-datetime>-->
+  <!--</ion-item>-->
   
-  <ion-card>
-    <ion-label>Temporary search results</ion-label>
-    <ion-list>
-    <ion-item *ngFor="let test of filteredTestList" (click)="selectedTest($event, test)">
-      <h2> {{ test.name }} </h2>
-      <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
-    </ion-item>
-    </ion-list>
-  </ion-card>
+  <!--<ion-card>-->
+  <!--  <ion-label>Temporary search results</ion-label>-->
+  <!--  <ion-list>-->
+  <!--  <ion-item *ngFor="let test of filteredTestList" (click)="selectedTest($event, test)">-->
+  <!--    <h2> {{ test.name }} </h2>-->
+  <!--    <h3> Taken on: <strong>{{ test.date }}</strong> </h3>-->
+  <!--  </ion-item>-->
+  <!--  </ion-list>-->
+  <!--</ion-card>-->
   
-  <ion-label>Tests I've taken</ion-label>
-  <ion-list>
-    <ion-item *ngFor="let test of testList" (click)="selectedTest($event, test)">
-      <h2> {{ test.name }} </h2>
-      <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
-    </ion-item>
-  </ion-list>
+  <!--<ion-label>Tests I've taken</ion-label>-->
+  <!--<ion-list>-->
+  <!--  <ion-item *ngFor="let test of testList" (click)="selectedTest($event, test)">-->
+  <!--    <h2> {{ test.name }} </h2>-->
+  <!--    <h3> Taken on: <strong>{{ test.date }}</strong> </h3>-->
+  <!--  </ion-item>-->
+  <!--</ion-list>-->
   
 </ion-content>

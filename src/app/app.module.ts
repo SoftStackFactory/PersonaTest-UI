@@ -15,11 +15,18 @@ import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+
+//Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 
+//Components
+import { ChartComponent } from '../components/chart/chart';
+import { TestlistComponent } from '../components/testlist/testlist';
+import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 
-const components = [
+
+let injections: any[] = [
     MyApp,
     LandingPage,
     HomePage,
@@ -29,18 +36,21 @@ const components = [
     TestListsPage,
     ResultsPage,
     QuestionPage,
-    FlexDemoPage
+    FlexDemoPage,
+    ChartComponent,
+    TestlistComponent,
+    ProgressBarComponent
     ]
 
 @NgModule({
-  declarations: components,
+  declarations: injections,
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
-  entryComponents: components,
+  entryComponents: injections,
   providers: [
     StatusBar,
     SplashScreen,
