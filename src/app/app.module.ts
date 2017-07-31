@@ -12,7 +12,7 @@ import { RegisterPage } from '../pages/register/register';
 import { LoginPage } from '../pages/login/login';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { TestListsPage } from '../pages/test-lists/test-lists';
-//import { ResultsPage } from '../pages/results/results';
+import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 
@@ -20,7 +20,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuestionsProvider } from '../providers/questions/questions';
 
 //Components
-//import { ChartComponent } from '../components/chart/chart';
+import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
 
 
@@ -33,10 +33,10 @@ let injections: any[] = [
     LoginPage,
     LobbyPage,
     TestListsPage,
-    //ResultsPage,
+    ResultsPage,
     QuestionPage,
     FlexDemoPage,
-    //ChartComponent,
+    ChartComponent,
     TestlistComponent
     ]
 
