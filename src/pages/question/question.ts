@@ -29,7 +29,7 @@ export class QuestionPage {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
-    if (this.questionNum === 49) {
+    if (this.questionNum === this.totalQuestionNum - 1) {
       this.navCtrl.push(ResultsPage);
     } else {
       this.questionNum++
