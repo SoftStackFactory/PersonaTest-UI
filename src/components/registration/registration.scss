@@ -15,13 +15,17 @@ registration {
     -webskit-align-items: center;
     align-items: center;
     -webskit-justify-content: center;
-    justify-content: center;
+    justify-content: space-around;
     min-height: 75vh;
     // max-width: 400px;
     margin: auto;
 }
 .registration-input {
     
+}
+.register-button {
+    display: flex;
+    justify-content: center;
 }
 
 }
