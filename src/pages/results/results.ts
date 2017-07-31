@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-//import { ChartComponent } from '../../components/chart/chart';
+import { ChartComponent } from '../../components/chart/chart';
 import { TestlistComponent } from '../../components/testlist/testlist';
 
 
