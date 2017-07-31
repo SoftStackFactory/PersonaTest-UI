@@ -6,12 +6,22 @@ registration {
 .regTitle {
     
 }
-.registrationForm {
+.registration-container {
     border-style: solid;
+    display: -webkit-flex;
     display: flex;
+    webkit-flex-direction: column;
+    flex-direction: row;
+    -webskit-align-items: center;
+    align-items: center;
+    -webskit-justify-content: center;
+    justify-content: center;
     min-height: 75vh;
-    max-width: 400px;
+    // max-width: 400px;
     margin: auto;
+}
+.registration-input {
+    
 }
 
 }
