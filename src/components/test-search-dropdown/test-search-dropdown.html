@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-item *ngFor="let test of dropDownList" (click)="setSelectedTitle(test.name)">
+    {{test.name}}
+    <h3> Taken on: {{ test.date }} </h3>
+  </ion-item>
+</ion-list>

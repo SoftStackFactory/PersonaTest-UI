@@ -6,17 +6,17 @@ import { TestlistComponent } from '../../components/testlist/testlist';
 
 
 /**
- * Generated class for the ResultsPage page.
+ * Generated class for the HistoryPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-results',
-  templateUrl: 'results.html',
+  selector: 'page-history',
+  templateUrl: 'history.html',
 })
-export class ResultsPage {
+export class HistoryPage {
   //Variables to store user's search input and the date they select
   searchInput: string = "";
   searchDate: string = "";
@@ -35,11 +35,11 @@ export class ResultsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResultsPage');
+    console.log('ionViewDidLoad HistoryPage');
   }
   
   
-  //doSearch gets called when user changes any inpuy in search bar
+  //doSearch gets called when user changes any inpur in search bar
   doSearch(searchBar){
     
     this.filteredTestList = this.testList;
