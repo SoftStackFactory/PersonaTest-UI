@@ -1,8 +1,7 @@
-<!-- Generated template for the ProgressBarComponent component -->
 <div>
   <div class="progressBar">
-  <div  [ngStyle]="displayProgress(50, 25)">
+    <div  [ngStyle]="displayProgress(totalQuestionNum, questionNum)">
+    </div>
   </div>
-</div>
-  <p>Test Progress</p>
+  <p>Test Progress ({{questionNum}}/{{totalQuestionNum}})</p>
 </div>
