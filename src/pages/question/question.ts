@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
+import { ResultsPage } from '../results/results';
+import { LobbyPage } from '../lobby/lobby';
 
 @Component({
   selector: 'page-question',
@@ -27,8 +29,16 @@ export class QuestionPage {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
-    this.questionNum++
-    this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+    if (this.questionNum === 49) {
+      this.navCtrl.push(ResultsPage);
+    } else {
+      this.questionNum++
+      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+    }
+  }
+  toLobbyPage() {
+    console.log('to lobby page');
+    this.navCtrl.setRoot(LobbyPage);
   }
 
 }
