@@ -24,6 +24,7 @@ import { QuestionsProvider } from '../providers/questions/questions';
 import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
+import { SearchHistoryComponent } from '../components/search-history/search-history';
 
 
 
@@ -41,7 +42,8 @@ let injections: any[] = [
     FlexDemoPage,
     ChartComponent,
     TestlistComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    SearchHistoryComponent
     ]
 
 @NgModule({

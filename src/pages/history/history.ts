@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+
+
 /**
  * Generated class for the HistoryPage page.
  *
@@ -18,11 +20,13 @@ export class HistoryPage {
   searchInput: string = "";
   searchDate: string = "";
   
-  //Variable to store our array of test as an array of objects
+  //Variable to store our array of test as an array of objects; Currently using mock data
   testList: { name: string, date: string }[] = 
   [{name: "Goldberg's Big Five", date: "17-3-2017"}, 
   {name: "Goldberg's Big Five", date: "23-11-2017"}, 
-  {name:"Markey and Markey's", date: "2-12-2016"}];
+  {name:"Markey and Markey's", date: "2-12-2016"},
+  {name: "Costa and McCrae's NEO Facets", date: "15-7-2016"},
+  {name:"Johnson's 120 Item NEO", date: "39-0-6-2016"}];
   
   //Variable to store copy of our original array, because we will need to filter
   filteredTestList: any = this.testList;
@@ -34,38 +38,5 @@ export class HistoryPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
   }
-  
-    
-  //doSearch gets called when user changes any inpuy in search bar
-  doSearch(searchBar){
-    
-    this.filteredTestList = this.testList;
-    // set q to the value of the searchbar
-    var q = searchBar.srcElement.value;
-
-    // if the value is an empty string don't filter the items
-    if (!q) {
-      return;
-    }
-    
-    this.filteredTestList = this.filteredTestList.filter((v) => {
-      if(v.name && q) {
-        if (v.name.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-          return true;
-        }
-        return false;
-      }
-    });
-
-  console.log(q, this.filteredTestList.length);
-  console.log(this.searchInput + " " + q);
-  console.log(this.searchDate);
-}
-  
-  //selectedTest gets called when user clicks something from our search list
-  selectedTest(moouseCLick, test){
-     console.log( test.name);
-  }
-
 
 }
