@@ -3,13 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 
-/**
- * Generated class for the QuestionPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
@@ -19,6 +12,7 @@ export class QuestionPage {
   userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
+  totalQuestionNum: number;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -27,6 +21,7 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
+    this.totalQuestionNum = this.questionsProvider.getQuestions().length;
   }
   ionViewWillEnter() {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
