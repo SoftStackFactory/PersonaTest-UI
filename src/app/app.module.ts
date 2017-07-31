@@ -15,6 +15,8 @@ import { TestListsPage } from '../pages/test-lists/test-lists';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -39,7 +41,8 @@ let injections: any[] = [
     FlexDemoPage,
     ChartComponent,
     TestlistComponent,
-    ProgressBarComponent
+    ProgressBarComponent, 
+    QuicklinksPage
     ]
 
 @NgModule({
