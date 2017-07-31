@@ -13,8 +13,8 @@ import { TestlistComponent } from '../../components/testlist/testlist';
  */
 
 @Component({
-  selector: 'page-results',
-  templateUrl: 'results.html',
+  selector: 'page-history',
+  templateUrl: 'history.html',
 })
 export class HistoryPage {
   //Variables to store user's search input and the date they select
