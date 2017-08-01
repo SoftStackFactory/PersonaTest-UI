@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Chart } from 'chart.js';
 
 /**
  * Generated class for the SearchHistoryComponent component.
@@ -30,20 +31,24 @@ export class SearchHistoryComponent {
     console.log('Hello SearchHistoryComponent Component');
   }
   
-  //doSearch gets called when user changes any inpuy in search bar
+  //doSearch gets called when user changes any key input in search bar
   doSearch(searchBar){
     
+    //get the entire array of tests
     this.filteredTestList = this.testList;
     // set q to the value of the searchbar
     var q = searchBar.srcElement.value;
 
-    // if the value is an empty string don't filter the items
+    //if the value is an empty string don't filter the items
     if (!q) {
       this.displayDropdown = false;
       return;
     }
     
+    //display the dropdown menu
     this.displayDropdown = true;
+    
+    //filter out the relevant search results
     this.filteredTestList = this.filteredTestList.filter((v) => {
       if(v.name && q) {
         if (v.name.toLowerCase().indexOf(q.toLowerCase()) > -1) {
@@ -63,6 +68,7 @@ export class SearchHistoryComponent {
   
   //onCancel gets called when user clicks outside of search bar
   onCancel(mouseClick){
+    //hide the dropdown search results
     this.displayDropdown = false;
     
   }
