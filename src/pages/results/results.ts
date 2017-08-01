@@ -24,6 +24,7 @@ export class ResultsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');
+    alert("there should be another results page? conflict here");
   }
   
 

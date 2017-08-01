@@ -21,7 +21,7 @@ import { HistoryPage } from '../pages/history/history';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LobbyPage 
+  rootPage:any = LandingPage 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

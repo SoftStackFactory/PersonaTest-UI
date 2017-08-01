@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
-
+import { ResultsPage } from '../results/results';
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
@@ -27,6 +27,10 @@ export class QuestionPage {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
+    if (this.questionNum === (this.totalQuestionNum - 1)){
+      alert("we need to save results and display the results of a real test");
+      this.navCtrl.push(ResultsPage);
+    }
     this.questionNum++
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }

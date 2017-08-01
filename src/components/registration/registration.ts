@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { LobbyPage } from '../../pages/lobby/lobby';
 /**
  * Generated class for the RegistrationComponent component.
  *
@@ -18,5 +19,10 @@ export class RegistrationComponent {
     console.log('Hello RegistrationComponent Component');
     this.text = 'Hello World';
   }
+  
+  // registration(registrationinput) {
+  //   console.log("Here's where the backend registration would happen");
+  //   this.navCtrl.push(LobbyPage);
+  // }
 
 }

@@ -9,10 +9,16 @@ import { Chart } from 'chart.js';
 export class ChartComponent {
   @ViewChild('polarCanvas') polarCanvas: ElementRef
   polarChart: any;
-
-
+  
+  IonViewDidLoad(){
+    console.log("hello ion view did load")
+  }
+  
   ngOnInit() {
+    console.log("hello ngOnInit");
+    
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
+      
       type: 'polarArea',
       data: {
         labels: [

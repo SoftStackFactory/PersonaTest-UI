@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { LoginPage } from '../login/login';
+import { RegisterPage } from '../register/register';
+import { LobbyPage } from '../lobby/lobby'; //this is just for the login page flow hack
+
 /**
  * Generated class for the LandingPage page.
  *
@@ -21,4 +25,12 @@ export class LandingPage {
     console.log('ionViewDidLoad LandingPage');
   }
 
+  login() {
+    // this.navCtrl.push(Login); //this will eventually pull the Login page/component
+    this.navCtrl.push(LobbyPage); //temporary navigation flow hack
+  }
+  
+  signup() {
+    this.navCtrl.push(RegisterPage);
+  }
 }

@@ -36,9 +36,11 @@ export class LobbyPage {
 
   forWork() {
     console.log("Switch to Work View");
+    alert("We need a For Work Test Lists page");
   }
   forPlay() {
     console.log("Switch to Personal Test Selection Page");
+    alert("We need a For Play Test lists page");
   }
   showResults() {
     this.navCtrl.push(ResultsPage);
@@ -46,11 +48,14 @@ export class LobbyPage {
   }
   viewResults() {
     console.log("go to results page for organization tests available to view");
+    this.navCtrl.push(ResultsPage);
   }
   manageAcc() {
     console.log("go to account management page");
+    alert("We need a manage account page");
   }
   becomeOrg() {
     console.log("go to Organization request page");
+    alert("We need a Become Organization page");
   }
 }

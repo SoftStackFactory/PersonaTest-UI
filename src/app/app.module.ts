@@ -45,7 +45,7 @@ let injections: any[] = [
     ChartComponent,
     TestlistComponent,
     RegistrationComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
     SearchHistoryComponent
 
     ]
