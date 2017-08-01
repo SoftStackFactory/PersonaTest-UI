@@ -3,8 +3,21 @@
   <ion-searchbar
     [(ngModel)]="searchInput"
     [showCancelButton]="shouldShowCancel"
-    (ionInput)="doSearch($event)">
+    (ionInput)="doSearch($event)"
+    (ionCancel)="onCancel($event)">
   </ion-searchbar>
+  
+  <div *ngIf="displayDropdown">
+    <ion-card>
+      <ion-label>Search results</ion-label>
+      <ion-list>
+      <ion-item *ngFor="let test of filteredTestList" (click)="selectedTest($event, test)">
+        <h2> {{ test.name }} </h2>
+        <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
+      </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
 
   <ion-item>
     <ion-label>Date</ion-label>
@@ -12,15 +25,7 @@
     </ion-datetime>
   </ion-item>
   
-  <ion-card>
-    <ion-label>Temporary search results</ion-label>
-    <ion-list>
-    <ion-item *ngFor="let test of filteredTestList" (click)="selectedTest($event, test)">
-      <h2> {{ test.name }} </h2>
-      <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
-    </ion-item>
-    </ion-list>
-  </ion-card>
+
   
   <ion-label>Tests I've taken</ion-label>
   <ion-list>

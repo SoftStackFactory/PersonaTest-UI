@@ -12,15 +12,22 @@ import { Component, Input } from '@angular/core';
 })
 export class SearchHistoryComponent {
 
+  //Variables for the tests arrays; The calling page will input them in its .html file
   @Input() testList: {  name: string, date: string }[];
   @Input() filteredTestList: { name: string, date: string }[];  
-  text: string = "";
+  
+  //Variable for user's input in search bar 
   searchInput: string = "";
+  
+  //Variable for user's input in date picker
   searchDate: string = "";
+  
+  //Boolean for displaying the search results dropdown
+  displayDropdown: boolean = false;
+  
   
   constructor() {
     console.log('Hello SearchHistoryComponent Component');
-    this.text = 'Hello World';
   }
   
   //doSearch gets called when user changes any inpuy in search bar
@@ -32,27 +39,36 @@ export class SearchHistoryComponent {
 
     // if the value is an empty string don't filter the items
     if (!q) {
+      this.displayDropdown = false;
       return;
     }
     
+    this.displayDropdown = true;
     this.filteredTestList = this.filteredTestList.filter((v) => {
       if(v.name && q) {
         if (v.name.toLowerCase().indexOf(q.toLowerCase()) > -1) {
           return true;
         }
+ 
         return false;
       }
     });
 
-  console.log(q, this.filteredTestList.length);
-  console.log(this.searchInput + " " + q);
-  console.log(this.searchDate);
-}
+    console.log(q, this.filteredTestList.length);
+    console.log(this.searchInput + " " + q);
+    console.log(this.searchDate);
+
+    
+  }
   
-  
+  //onCancel gets called when user clicks outside of search bar
+  onCancel(mouseClick){
+    this.displayDropdown = false;
+    
+  }
   
   //selectedTest gets called when user clicks something from our search list
-  selectedTest(moouseCLick, test){
+  selectedTest(mouseClick, test){
      console.log( test.name);
   }
 
