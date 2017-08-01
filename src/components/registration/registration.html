@@ -1,5 +1,5 @@
 <!-- Generated template for the RegistrationComponent component -->
-<ion-content padding class="registration">
+<div class="registration">
   <ion-title text-center class="regTitle">New User Registration</ion-title>
   <div padding class="registration-container">
     <form>
@@ -38,7 +38,9 @@
   </ion-item>
     <ion-item class="registration-input">
       <ion-label>Terms and Conditions
-      <button ion-button small round outline id="eulaButton">?</button>
+      <button ion-button icon-only small round outline id="eulaButton">
+        <ion-icon name="help"></ion-icon>
+      </button>
       </ion-label>
       <ion-checkbox checked="true"></ion-checkbox>
       
@@ -47,3 +49,4 @@
     <button ion-button round outline type="submit" class="register-button" center>Register</button>
     </form>
   </div>
+</div>
