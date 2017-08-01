@@ -13,6 +13,7 @@ import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { LandingPage } from '../pages/landing/landing';
 import { ResultsPage } from '../pages/results/results';
+import { HistoryPage } from '../pages/history/history';
 
 
 
@@ -20,6 +21,7 @@ import { ResultsPage } from '../pages/results/results';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
   rootPage:any = QuestionPage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
