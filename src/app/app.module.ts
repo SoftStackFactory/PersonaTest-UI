@@ -16,6 +16,8 @@ import { HistoryPage } from '../pages/history/history';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -44,10 +46,10 @@ let injections: any[] = [
     FlexDemoPage,
     ChartComponent,
     TestlistComponent,
+    ProgressBarComponent, 
+    QuicklinksPage,
     RegistrationComponent,
-    ProgressBarComponent
     SearchHistoryComponent
-
     ]
 
 @NgModule({
