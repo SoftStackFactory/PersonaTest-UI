@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { NavController} from 'ionic-angular';   //To navigate to test's individual results page
 import { Chart } from 'chart.js';
+import { ResultsPage } from '../../pages/results/results';
 
 /**
  * Generated class for the SearchHistoryComponent component.
@@ -27,7 +29,7 @@ export class SearchHistoryComponent {
   displayDropdown: boolean = false;
   
   
-  constructor() {
+  constructor( public navCtrl: NavController ) {
     console.log('Hello SearchHistoryComponent Component');
   }
   
@@ -75,7 +77,8 @@ export class SearchHistoryComponent {
   
   //selectedTest gets called when user clicks something from our search list
   selectedTest(mouseClick, test){
-     console.log( test.name);
+    console.log( test.name);
+    this.navCtrl.push(ResultsPage);
   }
 
   

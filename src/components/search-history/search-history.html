@@ -32,6 +32,10 @@
     <ion-item *ngFor="let test of testList" (click)="selectedTest($event, test)">
       <h2> {{ test.name }} </h2>
       <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
+      <div class="small-chart">
+        <mini-graph></mini-graph>
+      </div>
+ 
     </ion-item>
   </ion-list>
 </div>
