@@ -1,24 +1,19 @@
 registration {
-    .registration{
-        display: flex;
-        flex-direction: column;
-    }    
+    // .registration{
+    //     display: flex;
+    //     flex-direction: column;
+    // }    
     .regTitle {
        
     }
     .registration-container {
         border-style: solid;
-        // display: -webkit-flex;
         display: flex;
-        // webkit-flex-direction: column;
         flex-direction: column;
-        // -webskit-align-items: center;
         align-items: center;
-        // -webskit-justify-content: center;
         justify-content: space-around;
-        min-height: 75vh;
-        max-height: 120vh;
-        // max-width: 400px;
+        // min-height: 75vh;
+        max-width: 400px;
         margin: auto;
     }
     .registration-rows {
@@ -26,12 +21,11 @@ registration {
     }
     .registration-eula {
         flex: 1;
+        flex-direction: row;
     }
     .register-button {
         flex: 1;
-        flex-wrap: wrap;
         justify-content: center;
         margin: 6px;
-        width: 24vw;
     }
 }

@@ -1,6 +1,8 @@
 <!-- Generated template for the RegistrationComponent component -->
 <div class="registration">
-  <ion-title text-center class="regTitle">New User Registration</ion-title>
+  <div class="regTitle">
+    <ion-title text-center padding>New User Registration</ion-title>
+  </div>
   <div padding class="registration-container">
     <form>
     <div class="registration-rows">
@@ -38,16 +40,24 @@
       </ion-select>
     </ion-item>
   </div>
-    <ion-item class="registration-eula">
-      <ion-label>Terms and Conditions
-        <button ion-button icon-only small round outline id="eulaButton">
-          <ion-icon name="help"></ion-icon>
-        </button>
+  <div class="registration-eula">
+    <!--<ion-item>-->
+      <!--<ion-label>-->
+          
+        <!--</ion-label>-->
+      <ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>  I accept the Terms and Conditions
+        <button ion-button icon-only small round outline id="eulaButton"><ion-icon name="help"></ion-icon></button>
       </ion-label>
-      <ion-checkbox checked="true"></ion-checkbox>
-    </ion-item>
+        
+      <!--  <ion-label>-->
+      <!--</ion-label>-->
+      
+    <!--</ion-item>-->
+    </div>
     </form>
-    <button ion-button block small outline type="submit" class="register-button">Register</button>
-    
+    <div class="register-button">
+      <button ion-button outline type="submit">Register</button>
+    </div>
   </div>
 </div>
