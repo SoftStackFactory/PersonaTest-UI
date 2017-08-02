@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { ResultsPage } from '../results/results';
@@ -15,6 +16,7 @@ export class QuestionPage {
   question: string;
   questionNum: number = 0;
   totalQuestionNum: number;
+  sliderForm: NgForm;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -28,17 +30,19 @@ export class QuestionPage {
   ionViewWillEnter() {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
+  saveAnswer(form: NgForm) {
+    this.sliderForm = form;
+  }
   toNextQuestion() {
     if (this.questionNum === this.totalQuestionNum - 1) {
       this.navCtrl.push(ResultsPage);
     } else {
-      this.questionNum++
+      this.questionNum++;
       this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
     }
+    this.sliderForm.resetForm();
   }
   toLobbyPage() {
-    console.log('to lobby page');
     this.navCtrl.setRoot(LobbyPage);
   }
-
 }
