@@ -24,8 +24,6 @@ import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 
-
-
 let injections: any[] = [
     MyApp,
     LandingPage,
