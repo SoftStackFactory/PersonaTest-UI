@@ -3,6 +3,11 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { ResultsPage } from '../results/results';
+<<<<<<< HEAD
+=======
+import { LobbyPage } from '../lobby/lobby';
+
+>>>>>>> bf7d3ce2bc155c081fb1036a16f922d949341892
 @Component({
   selector: 'page-question',
   templateUrl: 'question.html',
@@ -27,12 +32,17 @@ export class QuestionPage {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
-    if (this.questionNum === (this.totalQuestionNum - 1)){
-      alert("we need to save results and display the results of a real test");
+    if (this.questionNum === this.totalQuestionNum - 1) {
       this.navCtrl.push(ResultsPage);
+      alert("Need to set up Back End");
+    } else {
+      this.questionNum++
+      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
     }
-    this.questionNum++
-    this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+  }
+  toLobbyPage() {
+    console.log('to lobby page');
+    this.navCtrl.setRoot(LobbyPage);
   }
 
 }
