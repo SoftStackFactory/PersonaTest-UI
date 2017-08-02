@@ -2,13 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
-
-/**
- * Generated class for the QuestionPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { ResultsPage } from '../results/results';
+import { LobbyPage } from '../lobby/lobby';
 
 @Component({
   selector: 'page-question',
@@ -19,6 +14,7 @@ export class QuestionPage {
   userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
+  totalQuestionNum: number;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -27,13 +23,22 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
+    this.totalQuestionNum = this.questionsProvider.getQuestions().length;
   }
   ionViewWillEnter() {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
-    this.questionNum++
-    this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+    if (this.questionNum === this.totalQuestionNum - 1) {
+      this.navCtrl.push(ResultsPage);
+    } else {
+      this.questionNum++
+      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+    }
+  }
+  toLobbyPage() {
+    console.log('to lobby page');
+    this.navCtrl.setRoot(LobbyPage);
   }
 
 }
