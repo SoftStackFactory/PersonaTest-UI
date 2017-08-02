@@ -1,0 +1,19 @@
+<div>
+  <form #f="ngForm" (change)="selectAnswer(f)">
+    <div class="radioBox">
+        <input type="radio" name="slider" value="1" ngModel>
+        <input type="radio" name="slider" value="2" ngModel>
+        <input type="radio" name="slider" value="3" ngModel>
+        <input type="radio" name="slider" value="4" ngModel>
+        <input type="radio" name="slider" value="5" ngModel>
+
+      </div>
+      <div class="labels">
+        <div [class.inactive]="f.value.slider != 1">Strongly Disagree</div>
+        <div [class.inactive]="f.value.slider != 2">Disagree</div>
+        <div [class.inactive]="f.value.slider != 3">Neutral</div>
+        <div [class.inactive]="f.value.slider != 4">Agree</div>
+        <div [class.inactive]="f.value.slider != 5">Strongly Agree</div>
+      </div>
+  </form>
+</div>
