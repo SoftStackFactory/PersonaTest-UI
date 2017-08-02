@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 
@@ -8,7 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class SliderComponent {
   @Output() answerSelected = new EventEmitter();
-  @ViewChild('f') sliderForm: NgForm;
 
   constructor() {
     console.log('Hello SliderComponent Component');
