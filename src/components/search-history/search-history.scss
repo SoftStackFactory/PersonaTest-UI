@@ -1,6 +1,23 @@
 search-history {
+    
+    
     .small-chart {
-        width: 250px;
+      
+        display: flex!important;
+        margin-left: auto;
+        justify-content: flex-end!important;
+        
+    }
+    
+    .chart-align > * {
+        display: flex!important;
+        margin-left: auto;
+        justify-content: flex-end!important;
+    }
+    
+
+    .container-width {
+      
     }
 
 }

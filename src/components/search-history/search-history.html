@@ -1,5 +1,5 @@
 <!-- Generated template for the SearchHistoryComponent component -->
-<div>
+<div class="container-width">
   <ion-searchbar
     [(ngModel)]="searchInput"
     [showCancelButton]="shouldShowCancel"
@@ -33,7 +33,7 @@
       <h2> {{ test.name }} </h2>
       <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
       <div class="small-chart">
-        <mini-graph></mini-graph>
+        <mini-graph class="chart-align"></mini-graph>
       </div>
  
     </ion-item>
