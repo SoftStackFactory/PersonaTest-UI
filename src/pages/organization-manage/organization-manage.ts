@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import { ToastController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 
 import { TestSelectionComponent } from '../../components/test-selection/test-selection';
 
 import { LobbyPage } from '../lobby/lobby';
+=======
+import { EmailComposer } from '@ionic-native/email-composer';
+>>>>>>> styling and some content for the manage organization page
 
 /**
  * Generated class for the OrganizationManagePage page.
@@ -19,6 +23,7 @@ import { LobbyPage } from '../lobby/lobby';
   templateUrl: 'organization-manage.html',
 })
 export class OrganizationManagePage {
+<<<<<<< HEAD
   
   //Variables to store organization and user information
   organization: any = {}
@@ -34,10 +39,23 @@ export class OrganizationManagePage {
       this.organizationLogo = "placeholder";
       this.userEmail = "Peter@SoftStack.org";
     }
+=======
+  organizationName: string
+  organizationLogo: any
+  userEmail: string
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private emailComposer: EmailComposer) {
+      this.organizationName = "SoftStack Factory";
+      this.organizationLogo = "placeholder";
+      this.userEmail = "Peter@SoftStack.org";
+  }
+>>>>>>> styling and some content for the manage organization page
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrganizationManagePage');
   }
+<<<<<<< HEAD
   
   submitChanges(form) {
     //generate email requesting to administrator
@@ -65,6 +83,22 @@ export class OrganizationManagePage {
   //home button at top right
   goHome() {
     this.navCtrl.push(LobbyPage);
+=======
+  submitChanges(form) {
+    if(form.invalid) {
+      return alert("Please make changes before submitting.");
+    }
+    let email = {
+      to: 'administrator',
+      attachments: [
+        'file://img/logo.png',
+      ],
+      subject: this.organizationLogo + ' Change Request',
+      body: 'changes requested by ' + this.userEmail +
+      '/n ',
+      isHtml: true
+    };
+>>>>>>> styling and some content for the manage organization page
   }
   
 }

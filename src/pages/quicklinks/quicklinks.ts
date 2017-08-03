@@ -13,7 +13,6 @@ import { QuestionPage }   from '../question/question';
 import { FlexDemoPage }   from '../flex-demo/flex-demo';
 import { HistoryPage }   from '../history/history';
 import { OrganizationManagePage } from '../organization-manage/organization-manage';
-import { OrganizationBecomePage } from '../organization-become/organization-become';
 
 
 /**
@@ -33,8 +32,7 @@ import { OrganizationBecomePage } from '../organization-become/organization-beco
     QuestionPage,
     FlexDemoPage,
     HistoryPage,
-    OrganizationManagePage,
-    OrganizationBecomePage
+    OrganizationManagePage
     ]
 @Component({
   selector: 'page-quicklinks',
