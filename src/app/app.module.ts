@@ -28,8 +28,6 @@ import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
-import { MarenComponent } from '../components/maren/maren';
-
 
 
 let injections: any[] = [
@@ -49,8 +47,7 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
-    SearchHistoryComponent,
-    MarenComponent
+    SearchHistoryComponent
     ]
 
 @NgModule({
