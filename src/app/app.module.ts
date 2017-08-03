@@ -19,6 +19,7 @@ import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
+import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
 
 //Providers
@@ -52,7 +53,11 @@ let injections: any[] = [
     QuestionPage,
     FlexDemoPage,
     OrganizationManagePage,
+<<<<<<< HEAD
 
+=======
+    OrganizationBecomePage,
+>>>>>>> basic content for page to become and organization
     ChartComponent,
     TestlistComponent,
     ProgressBarComponent, 

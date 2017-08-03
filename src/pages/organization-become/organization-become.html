@@ -6,49 +6,46 @@
 -->
 <ion-header>
 
-  <ion-navbar text-center>
+  <ion-navbar>
     <ion-title>PersonaTest</ion-title>
-    <ion-buttons end>
-      <button icon-only end (click)="goHome()">
-        <ion-icon name="home"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div class="joinContainer">
-    <div class="joinTitle">
+<div class="joinContainer">
+  <div class="joinTitle">
       <ion-title text-center padding>Become an Organization</ion-title>
-      <p>Please enter information about your organization.</p>
-    </div>
+  </div>
   <div class="joinForm">
-    <form #joinForm="ngForm" (ngSubmit)="requestOrg(joinForm)">
+    <form>
     <div class="joinItems">
       <ion-item>
         <ion-label floating>Organization Name</ion-label>
-        <ion-input name="orgName" type="string" [(ngModel)]="organization.name"></ion-input>
+        <ion-input name="orgName" type="string"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Organization Webpage</ion-label>
-        <ion-input name="orgWebpage" type="url" [(ngModel)]="organization.webPage"></ion-input>
+        <ion-label floating>Organization Webpage Link</ion-label>
+        <ion-input name="orgWebpage" type="url"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Organization Logo</ion-label>
+        <ion-input name="orgLogo" type="img"></ion-input>
       </ion-item>
       <ion-item class="eula">
         <ion-label>Terms and Conditions
-          <button ion-button icon-only small id="eulaButton" (click)="showEula()">
+          <button ion-button icon-only small round outline id="eulaButton" (click)="showEula()">
             <ion-icon name="help"></ion-icon>
           </button>
         </ion-label>
-        <ion-checkbox></ion-checkbox>
       </ion-item>
     </div>
     </form>
-    <div padding class="submitButton">
-      <button ion-button outline type="submit" (click)="requestOrg()">Submit</button>
+
+    <div class="register-button">
+      <button ion-button outline type="submit">Register</button>
     </div>
-    <p text-center>Please allow 48 hours for requests to be processed by administrator</p>
   </div>
 </div>
 </ion-content>

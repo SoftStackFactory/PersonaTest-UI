@@ -14,6 +14,7 @@ import { LandingPage } from '../pages/landing/landing';
 import { ResultsPage } from '../pages/results/results';
 import { HistoryPage } from '../pages/history/history';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
+import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
 
 
