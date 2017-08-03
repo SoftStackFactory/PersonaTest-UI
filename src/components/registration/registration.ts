@@ -19,7 +19,6 @@ export class RegistrationComponent {
   showEula() {
   let toast = this.toastCtrl.create({
     message: 'Terms and Conditions placeholder',
-    duration: 3000,
     showCloseButton: true,
     closeButtonText: "ok",
     position: 'bottom'
