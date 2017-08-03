@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
-import { ResultsPage } from '../results/results';
+import { HistoryPage } from '../history/history';
 
 
 /**
@@ -41,7 +41,7 @@ export class LobbyPage {
     console.log("Switch to Personal Test Selection Page");
   }
   showResults() {
-    this.navCtrl.push(ResultsPage);
+    this.navCtrl.push(HistoryPage);
     console.log("go to results page for personal tests taken");
   }
   viewResults() {

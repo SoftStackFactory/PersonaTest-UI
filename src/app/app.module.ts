@@ -28,6 +28,11 @@ import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
+<<<<<<< HEAD
+=======
+import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
+
+>>>>>>> 4a1e6b8fce08ecb2edc0d9f1c82eb16a470fee99
 
 
 let injections: any[] = [
@@ -47,7 +52,8 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    MiniGraphComponent
     ]
 
 @NgModule({
