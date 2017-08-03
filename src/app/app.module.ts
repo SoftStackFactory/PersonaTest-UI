@@ -31,7 +31,6 @@ import { SearchHistoryComponent } from '../components/search-history/search-hist
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
 
-
 let injections: any[] = [
     MyApp,
     LandingPage,
