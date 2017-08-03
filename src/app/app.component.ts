@@ -16,7 +16,6 @@ import { ResultsPage } from '../pages/results/results';
 import { HistoryPage } from '../pages/history/history';
 
 
-
 @Component({
   templateUrl: 'app.html'
 })
