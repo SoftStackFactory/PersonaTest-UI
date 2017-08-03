@@ -30,6 +30,10 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cefaec616476dc3955920dcce4ca75d410869fd
 let injections: any[] = [
     MyApp,
     LandingPage,

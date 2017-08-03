@@ -1,5 +1,9 @@
 {
   "name": "myBlank",
+<<<<<<< HEAD
   "app_id": "32c8f957",
+=======
+  "app_id": "",
+>>>>>>> 7cefaec616476dc3955920dcce4ca75d410869fd
   "type": "ionic-angular"
 }
