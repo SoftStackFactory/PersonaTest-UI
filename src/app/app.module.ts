@@ -16,6 +16,8 @@ import { HistoryPage } from '../pages/history/history';
 import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
+import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -26,7 +28,7 @@ import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
-
+import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
 let injections: any[] = [
     MyApp,
@@ -42,10 +44,13 @@ let injections: any[] = [
     FlexDemoPage,
     ChartComponent,
     TestlistComponent,
+    ProgressBarComponent, 
+    QuicklinksPage,
     RegistrationComponent,
+    SearchHistoryComponent,
+    MiniGraphComponent,
     ProgressBarComponent,
     SearchHistoryComponent
-
     ]
 
 @NgModule({
