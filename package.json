@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.0.2",
+    "@ionic/cli-plugin-cordova": "1.5.0",
     "@ionic/cli-plugin-ionic-angular": "1.4.0",
     "chart.js": "^2.6.0",
     "ionic": "3.6.0",
