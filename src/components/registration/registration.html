@@ -1,24 +1,45 @@
 <!-- Generated template for the RegistrationComponent component -->
-<ion-content padding class="registration">
-  <ion-title text-center class="regTitle">New User Registration</ion-title>
-  <div padding class="registration-container">
+<div class="registration">
+  <div class="regTitle">
+      <ion-title text-center padding>New User Registration</ion-title>
+  </div>
+  <div class="registration-container">
     <form>
-    <ion-item class="registration-input">
-      <ion-label>First Name</ion-label>
-      <ion-input name="firstName" type="string" placeholder="Jane"></ion-input>
+    <div class="registration-rows">
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input name="firstName" type="string"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input name="lastName" type="string"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Age</ion-label>
+        <ion-input name="age" type="number"></ion-input>
+      </ion-item>
+      <ion-item>    
+        <ion-label floating>Email</ion-label>
+        <ion-input name="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input name="password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input name="password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select>
+        <ion-option>Decline</ion-option>
+        <ion-option>Female</ion-option>
+        <ion-option>Male</ion-option>
+        <ion-option>Other</ion-option>
+      </ion-select>
     </ion-item>
-    <ion-item class="registration-input">
-      <ion-label>Last Name</ion-label>
-      <ion-input name="lastName" type="string" placeholder="Doe"></ion-input>
-    </ion-item>
-    <ion-item class="registration-input">
-      <ion-label>Age</ion-label>
-      <ion-input name="age" type="number" placeholder="42"></ion-input>
-    </ion-item>
-    <ion-item class="registration-input">    
-      <ion-label>Email</ion-label>
-      <ion-input name="email" type="email" placeholder="jane@doe.com"></ion-input>
-    </ion-item>
+
     <ion-item class="registration-input">
       <ion-label>Password</ion-label>
       <ion-input name="password" type="password"></ion-input>
@@ -41,11 +62,17 @@
       <button ion-button icon-only small round outline id="eulaButton" (click)="showEula()">
         <ion-icon name="help"></ion-icon>
       </button>
+
       </ion-label>
-      <ion-checkbox checked="true"></ion-checkbox>
+        
+      <!--  <ion-label>-->
+      <!--</ion-label>-->
       
-    </ion-item>
-    
-    <button ion-button round outline type="submit" class="register-button" center>Register</button>
+    <!--</ion-item>-->
+    </div>
     </form>
+    <div class="register-button">
+      <button ion-button outline type="submit">Register</button>
+    </div>
   </div>
+</div>
