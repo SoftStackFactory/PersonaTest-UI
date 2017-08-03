@@ -13,7 +13,7 @@ export class QuestionPage {
   testName: string = "Goldberg's 1992 Big 5";
   userName: string = "John Smith";
   question: string;
-  questionNum: number = 0;
+  questionNum: number = this.navParams.get('questionNum') || 0;
   totalQuestionNum: number;
 
   constructor(public navCtrl: NavController,
@@ -29,11 +29,12 @@ export class QuestionPage {
     this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
   }
   toNextQuestion() {
-    if (this.questionNum === this.totalQuestionNum - 1) {
+
+    if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
       this.navCtrl.push(ResultsPage);
     } else {
       this.questionNum++
-      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+      this.navCtrl.setRoot(QuestionPage, { questionNum: this.questionNum });
     }
   }
   toLobbyPage() {
