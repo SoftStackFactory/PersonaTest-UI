@@ -1,42 +1,44 @@
 <!-- Generated template for the RegistrationComponent component -->
 <div class="registration">
   <div class="regTitle">
-    <ion-title text-center padding>New User Registration</ion-title>
+    <ion-card>
+      <ion-title text-center padding>New User Registration</ion-title>
+    </ion-card>
   </div>
-  <div padding class="registration-container">
+  <div class="registration-container">
     <form>
     <div class="registration-rows">
       <ion-item>
-        <ion-label>First Name</ion-label>
-        <ion-input name="firstName" type="string" placeholder="Jane"></ion-input>
+        <ion-label floating>First Name</ion-label>
+        <ion-input name="firstName" type="string"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Last Name</ion-label>
-        <ion-input name="lastName" type="string" placeholder="Doe"></ion-input>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input name="lastName" type="string"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Age</ion-label>
-        <ion-input name="age" type="number" placeholder="42"></ion-input>
+        <ion-label floating>Age</ion-label>
+        <ion-input name="age" type="number"></ion-input>
       </ion-item>
       <ion-item>    
-        <ion-label>Email</ion-label>
-        <ion-input name="email" type="email" placeholder="jane@doe.com"></ion-input>
+        <ion-label floating>Email</ion-label>
+        <ion-input name="email" type="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Password</ion-label>
+        <ion-label floating>Password</ion-label>
         <ion-input name="password" type="password"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Confirm Password</ion-label>
+        <ion-label floating>Confirm Password</ion-label>
         <ion-input name="password" type="password"></ion-input>
       </ion-item>
       <ion-item>
       <ion-label>Gender</ion-label>
       <ion-select>
-        <ion-option>decline</ion-option>
-        <ion-option>female</ion-option>
-        <ion-option>male</ion-option>
-        <ion-option>other</ion-option>
+        <ion-option>Decline</ion-option>
+        <ion-option>Female</ion-option>
+        <ion-option>Male</ion-option>
+        <ion-option>Other</ion-option>
       </ion-select>
     </ion-item>
   </div>
