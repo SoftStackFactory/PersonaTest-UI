@@ -11,6 +11,7 @@ import { TestListsPage }  from '../test-lists/test-lists';
 import { ResultsPage }    from '../results/results';
 import { QuestionPage }   from '../question/question';
 import { FlexDemoPage }   from '../flex-demo/flex-demo';
+import { HistoryPage }   from '../history/history';
 /**
  * Generated class for the QuicklinksPage page.
  *
@@ -26,7 +27,8 @@ import { FlexDemoPage }   from '../flex-demo/flex-demo';
     TestListsPage,
     ResultsPage,
     QuestionPage,
-    FlexDemoPage
+    FlexDemoPage,
+    HistoryPage
     ]
 @Component({
   selector: 'page-quicklinks',

@@ -38,9 +38,45 @@ page-landing {
         .button-block{
                 color:white;
                 background:red;
-                font-size: 15px;
-                padding: 10px 5px;
+                font-size: 10px;
+                padding: 10px;
                 outline: none;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
         }
+        @media screen and (min-width: 768px){
+                .wizard{
+                        height: 450px;
+                        width: 450px;
+                }
+                .bottom{
+                        width: 250px;
+                }
+                       
+                .button-block{
+                        padding: 15px;
+                        font-size: 15px;
+                }
+                .photo{
+                        height: 100px;
+                        width: 100px;
+                }
+        } 
+        @media screen and (min-width: 1024px){
+                .wizard{
+                        height: 650px;
+                        width: 650px;
+                }
+                .bottom{
+                        width: 350px;
+                       
+               }
+                .button-block{
+                        padding: 20px;
+                        font-size: 20px;
+                }
+                .photo{
+                        height: 150px;
+                        width: 150px;
+                }
+        }        
 }
