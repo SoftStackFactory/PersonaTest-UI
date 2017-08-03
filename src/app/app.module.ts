@@ -25,7 +25,7 @@ import { QuestionsProvider } from '../providers/questions/questions';
 //Components
 import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
-import { RegistrationComponent } from '../components/registration/registration';
+//import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
@@ -47,7 +47,7 @@ let injections: any[] = [
     TestlistComponent,
     ProgressBarComponent, 
     QuicklinksPage,
-    RegistrationComponent,
+    //RegistrationComponent,
     SearchHistoryComponent,
     MiniGraphComponent
     ]
