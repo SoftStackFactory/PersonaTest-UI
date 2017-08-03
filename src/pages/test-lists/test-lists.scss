@@ -1,3 +1,22 @@
 page-test-lists {
 
+    .TestLists {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background-color: red;
+    }
+    
+    .TestLists-body {
+      display: flex;
+      flex: 1;
+      background-color: yellow;
+    }
+    
+    @media screen and (max-width: 768px) {
+        #body-container{
+        flex-direction: column;
+        }
+    }
+    
 }
