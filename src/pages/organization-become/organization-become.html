@@ -1,0 +1,51 @@
+<!--
+  Generated template for the OrganizationBecomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PersonaTest</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div class="joinContainer">
+  <div class="joinTitle">
+      <ion-title text-center padding>Become an Organization</ion-title>
+  </div>
+  <div class="joinForm">
+    <form>
+    <div class="joinItems">
+      <ion-item>
+        <ion-label floating>Organization Name</ion-label>
+        <ion-input name="orgName" type="string"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Organization Webpage Link</ion-label>
+        <ion-input name="orgWebpage" type="url"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Organization Logo</ion-label>
+        <ion-input name="orgLogo" type="img"></ion-input>
+      </ion-item>
+      <ion-item class="eula">
+        <ion-label>Terms and Conditions
+          <button ion-button icon-only small round outline id="eulaButton" (click)="showEula()">
+            <ion-icon name="help"></ion-icon>
+          </button>
+        </ion-label>
+      </ion-item>
+    </div>
+    </form>
+
+    <div class="register-button">
+      <button ion-button outline type="submit">Register</button>
+    </div>
+  </div>
+</div>
+</ion-content>
