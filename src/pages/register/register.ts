@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ToastController } from 'ionic-angular';
 
 // import { RegistrationComponent } from '../../components/registration/registration';
 
@@ -17,16 +16,11 @@ import { ToastController } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, 
+  public navParams: NavParams 
+  ) {
   }
-  presentEula() {
-    let toast = this.toastCtrl.create({
-      message: 'Terms and Conditions placeholder',
-      showCloseButton: true,
-      closeButtonText: 'ok'
-    });
-    toast.present();
-  }
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
   }

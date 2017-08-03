@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the RegistrationComponent component.
@@ -12,11 +13,24 @@ import { Component } from '@angular/core';
 })
 export class RegistrationComponent {
 
-  text: string;
-
-  constructor() {
+  constructor(public toastCtrl: ToastController) {
     console.log('Hello RegistrationComponent Component');
-    this.text = 'Hello World';
   }
+  showEula() {
+  let toast = this.toastCtrl.create({
+    message: 'Terms and Conditions placeholder',
+    duration: 3000,
+    showCloseButton: true,
+    closeButtonText: "ok",
+    position: 'bottom'
+  });
 
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
+  
+  
 }
