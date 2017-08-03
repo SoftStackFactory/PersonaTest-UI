@@ -1,7 +1,5 @@
 {
   "name": "myBlank",
-  "app_id": "",
-  "type": "ionic-angular",
-  "typescript": true,
-  "v2": true
+  "app_id": "df215f1f",
+  "type": "ionic-angular"
 }
