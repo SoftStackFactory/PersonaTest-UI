@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 
+import { LobbyPage } from '../lobby/lobby';
+
 /**
  * Generated class for the OrganizationManagePage page.
  *
@@ -29,6 +31,8 @@ export class OrganizationManagePage {
     console.log('ionViewDidLoad OrganizationManagePage');
   }
   submitChanges(form) {
+    /*
+    //generate email requesting to administrator
     if(form.invalid) {
       return alert("Please make changes before submitting.");
     }
@@ -42,6 +46,11 @@ export class OrganizationManagePage {
       '/n ',
       isHtml: true
     };
+    */
+    this.navCtrl.push(LobbyPage);
+  }
+  goHome() {
+    this.navCtrl.push(LobbyPage);
   }
   
 }
