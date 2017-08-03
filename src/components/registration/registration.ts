@@ -16,20 +16,19 @@ export class RegistrationComponent {
   constructor(public toastCtrl: ToastController) {
     console.log('Hello RegistrationComponent Component');
   }
+  
   showEula() {
-  let toast = this.toastCtrl.create({
-    message: 'Terms and Conditions placeholder',
-    showCloseButton: true,
-    closeButtonText: "ok",
-    position: 'bottom'
-  });
-
-  toast.onDidDismiss(() => {
-    console.log('Dismissed toast');
-  });
-
-  toast.present();
-}
+    let toast = this.toastCtrl.create({
+      message: 'Terms and Conditions placeholder',
+      showCloseButton: true,
+      closeButtonText: "ok",
+      position: 'bottom'
+    });
   
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
   
+    toast.present();
+  } 
 }
