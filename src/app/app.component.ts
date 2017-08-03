@@ -21,7 +21,6 @@ import { HistoryPage } from '../pages/history/history';
   templateUrl: 'app.html'
 })
 export class MyApp {
-
   rootPage:any = QuicklinksPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
