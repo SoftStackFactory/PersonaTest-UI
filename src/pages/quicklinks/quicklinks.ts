@@ -12,6 +12,8 @@ import { ResultsPage }    from '../results/results';
 import { QuestionPage }   from '../question/question';
 import { FlexDemoPage }   from '../flex-demo/flex-demo';
 import { HistoryPage }   from '../history/history';
+import { OrganizationManagePage } from '../organization-manage/organization-manage';
+
 /**
  * Generated class for the QuicklinksPage page.
  *
@@ -28,7 +30,8 @@ import { HistoryPage }   from '../history/history';
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
-    HistoryPage
+    HistoryPage,
+    OrganizationManagePage
     ]
 @Component({
   selector: 'page-quicklinks',

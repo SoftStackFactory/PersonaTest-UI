@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
@@ -17,6 +18,7 @@ import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 
 
 //Providers
@@ -43,6 +45,7 @@ let injections: any[] = [
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
+    OrganizationManagePage,
     ChartComponent,
     TestlistComponent,
     ProgressBarComponent, 
@@ -62,6 +65,7 @@ let injections: any[] = [
   bootstrap: [IonicApp],
   entryComponents: injections,
   providers: [
+    EmailComposer,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
