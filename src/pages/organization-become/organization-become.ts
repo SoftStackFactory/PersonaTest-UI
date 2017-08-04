@@ -29,4 +29,7 @@ export class OrganizationBecomePage {
   requestOrg() {
     this.navCtrl.push(LobbyPage);
   }
+  goHome() {
+    this.navCtrl.push(LobbyPage);
+  }
 }
