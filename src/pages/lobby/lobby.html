@@ -15,20 +15,7 @@
 </ion-header>
 
 <ion-content padding>
- <!-- testing-->
- <div>
-    <ion-list class="test">
-      <ion-item>
-        test 1
-      </ion-item>
-      <ion-item>
-        test2
-      </ion-item>
-      <ion-item>
-        test3
-      </ion-item>
-    </ion-list>
-  </div>
+ 
   <div padding>
     <ion-segment [(ngModel)]="testType">
       <ion-segment-button value="personal">
@@ -41,7 +28,28 @@
   </div>
   
   <div id="main-container" [ngSwitch]="testType">
-    <ion-list class="list" *ngSwitchCase="'personal'" no-lines>
+    <div *ngSwitchCase="'personal'" class="personalsegment">
+          <h2>Hello {{ this.userName }}</h2>
+           <h3>Take a Test</h3>
+           <div class="persbuttons">
+             <button ion-button block outline (click)="forWork()" id="button">For Work</button>
+             <button ion-button block outline (click)="forPlay()" id="button">For Play</button>
+           </div>
+           <div class="showmy">
+             <h3>Show My</h3>
+             <button ion-button block outline (click)="showResults()" id="button">Results</button>
+          </div>
+    </div>
+        
+    <div *ngSwitchCase="'organization'" class="organizationsegment">
+          <h2>{{this.userName }} @ {{ this.organizationName }}</h2>
+          <div class="orgbuttons">
+            <button ion-button block outline (click)="viewResults()" id="button">View Results</button>
+            <button ion-button block outline (click)="manageAcc()" id="button">Manage Account</button>
+            <button ion-button block outline (click)="becomeOrg()" id="button">Become an<br /> Organization</button>
+          </div>
+    </div>
+<!--    <ion-list class="list" *ngSwitchCase="'personal'" no-lines>
       <h6>Hello {{ this.userName }}</h6>
       <ion-item>
         <h2>Take a Test</h2>
@@ -71,9 +79,9 @@
       <ion-item>
         <button ion-button block outline (click)="becomeOrg()">Become an<br /> Organization</button>
       </ion-item>
-    </ion-list>
+    </ion-list>-->
     
-</div>
+  </div>
 
 
 </ion-content>
