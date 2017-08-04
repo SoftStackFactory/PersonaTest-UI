@@ -28,7 +28,7 @@
   </div>
   
   <div id="main-container" [ngSwitch]="testType">
-    <div *ngSwitchCase="'personal'" class="personalsegment">
+    <div *ngSwitchCase="'personal'" id="personalsegment">
           <h2>Hello {{ this.userName }}</h2>
            <h3>Take a Test</h3>
            <div class="persbuttons">
@@ -41,7 +41,7 @@
           </div>
     </div>
         
-    <div *ngSwitchCase="'organization'" class="organizationsegment">
+    <div *ngSwitchCase="'organization'" id="organizationsegment">
           <h2>{{this.userName }} @ {{ this.organizationName }}</h2>
           <div class="orgbuttons">
             <button ion-button block outline (click)="viewResults()" id="button">View Results</button>
