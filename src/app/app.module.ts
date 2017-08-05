@@ -30,7 +30,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 
 //Modals
-import { ForWorkModal } from '../modals/for-work/for-work';
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 
 
 

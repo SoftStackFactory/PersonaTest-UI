@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { ResultsPage } from '../results/results';
-import { ForWorkModal } from '../../modals/for-work/for-work';
+import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 
 /**
  * Generated class for the LobbyPage page.
@@ -36,7 +36,8 @@ export class LobbyPage {
 
   forWork() {
     console.log("Switch to Work View");
-    this.navCtrl.push(ForWorkModal);  
+    let forWorkModal = this.modalCtrl.create(ForWorkModal);
+    forWorkModal.present();
   }
   forPlay() {
     console.log("Switch to Personal Test Selection Page");
