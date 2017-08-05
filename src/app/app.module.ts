@@ -29,6 +29,8 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 
+//Modals
+import { ForWorkModal } from '../modals/for-work/for-work';
 
 
 
@@ -49,7 +51,8 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    ForWorkModal
     ]
 
 @NgModule({
