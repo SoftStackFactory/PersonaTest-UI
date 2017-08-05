@@ -14,10 +14,17 @@
     </ion-buttons>
     <ion-title>ForWorkModal</ion-title>
   </ion-navbar>
-
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+  </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-big list of organizationNames
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+<!--big list of organizationNames-->
 </ion-content>
