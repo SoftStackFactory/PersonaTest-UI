@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { ResultsPage } from '../results/results';
+
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 
 /**
  * Generated class for the LobbyPage page.
@@ -54,5 +56,7 @@ export class LobbyPage {
   }
   becomeOrg() {
     console.log("go to Organization request page");
+    let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
+    becomeOrgModal.present();
   }
 }
