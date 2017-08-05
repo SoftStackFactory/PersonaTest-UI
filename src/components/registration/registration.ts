@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+
 import { NavController } from 'ionic-angular';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
+
 
 /**
  * Generated class for the RegistrationComponent component.
@@ -45,5 +47,4 @@ export class RegistrationComponent {
     ) {
     console.log('Hello Registration Component');
   }
-
 }
