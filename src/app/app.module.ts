@@ -30,6 +30,11 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
+//Modals
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
+
 
 let injections: any[] = [
     MyApp,
@@ -48,10 +53,10 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
-    SearchHistoryComponent,
     MiniGraphComponent,
-    ProgressBarComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    ForWorkModal,
+    BeAnOrganizationModal
     ]
 
 @NgModule({

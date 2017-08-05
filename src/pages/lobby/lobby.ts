@@ -3,6 +3,8 @@ import { ModalController, NavController, NavParams, ViewController } from 'ionic
 
 import { HistoryPage } from '../history/history';
 
+import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 
 /**
  * Generated class for the LobbyPage page.
@@ -36,6 +38,8 @@ export class LobbyPage {
 
   forWork() {
     console.log("Switch to Work View");
+    let forWorkModal = this.modalCtrl.create(ForWorkModal);
+    forWorkModal.present();
   }
   forPlay() {
     console.log("Switch to Personal Test Selection Page");
@@ -52,5 +56,7 @@ export class LobbyPage {
   }
   becomeOrg() {
     console.log("go to Organization request page");
+    let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
+    becomeOrgModal.present();
   }
 }
