@@ -17,7 +17,7 @@ import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
-
+import { ManageAccountPage } from '../pages/manage-account/manage-account';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -43,6 +43,7 @@ let injections: any[] = [
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
+    ManageAccountPage,
     ChartComponent,
     TestlistComponent,
     ProgressBarComponent, 
