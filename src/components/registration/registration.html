@@ -4,35 +4,36 @@
       <ion-title text-center padding>New User Registration</ion-title>
   </div>
   <div class="registration-container">
-    <form>
+    <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate 
+        >
     <div class="registration-rows">
       <ion-item>
         <ion-label floating>First Name</ion-label>
-        <ion-input name="firstName" type="string"></ion-input>
+        <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Last Name</ion-label>
-        <ion-input name="lastName" type="string"></ion-input>
+        <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Age</ion-label>
-        <ion-input name="age" type="number"></ion-input>
+        <ion-input name="age" type="number" [(ngModel)]="user.age" required></ion-input>
       </ion-item>
       <ion-item>    
         <ion-label floating>Email</ion-label>
-        <ion-input name="email" type="email"></ion-input>
+        <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Password</ion-label>
-        <ion-input name="password" type="password"></ion-input>
+        <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label floating>Confirm Password</ion-label>
-        <ion-input name="password" type="password"></ion-input>
+        <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
       </ion-item>
       <ion-item>
       <ion-label>Gender</ion-label>
-      <ion-select>
+      <ion-select [(ngModel)]="user.gender" name="gender" required>
         <ion-option>Decline</ion-option>
         <ion-option>Female</ion-option>
         <ion-option>Male</ion-option>
@@ -41,23 +42,17 @@
     </ion-item>
   </div>
   <div class="registration-eula">
-    <!--<ion-item>-->
-      <!--<ion-label>-->
-          
-        <!--</ion-label>-->
       <ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>  I accept the Terms and Conditions
-        <button ion-button icon-only small round outline id="eulaButton"><ion-icon name="help"></ion-icon></button>
+        <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
+          <span>I accept the Terms and Conditions</span>
+        <button ion-button icon-only small round outline id="eulaButton">
+          <ion-icon name="help"></ion-icon>
+        </button>
       </ion-label>
-        
-      <!--  <ion-label>-->
-      <!--</ion-label>-->
-      
-    <!--</ion-item>-->
     </div>
-    </form>
     <div class="register-button">
       <button ion-button outline type="submit">Register</button>
     </div>
+    </form>
   </div>
 </div>
