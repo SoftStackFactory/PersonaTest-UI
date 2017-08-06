@@ -18,18 +18,19 @@ import { LobbyPage } from '../lobby/lobby';
 })
 export class OrganizationManagePage {
   
-  //Variables for organization and user information
+  //Variables to store organization and user information
   organization: any = {}
   organizationName: string
   organizationLogo: any
   userEmail: string
   
-  //Variable to store our array of test as an array of objects; Currently using mock data
-  availableTests: { name: string, description: string }[] = 
+  //Variable to store array of test as an array of objects and mock data (thanks Jenny)
+  availableTests: { name: string, description: string }[] =
   [{name: "Goldberg's Big Five", description: "some text"}, 
   {name:"Markey and Markey's", description: "some text"},
   {name: "Costa and McCrae's NEO Facets", description: "some text"},
   {name:"Johnson's 120 Item NEO", description: "some text"}];
+  testDescriptions: any
   
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -38,6 +39,15 @@ export class OrganizationManagePage {
       this.organizationName = "SoftStack Factory";
       this.organizationLogo = "placeholder";
       this.userEmail = "Peter@SoftStack.org";
+      /*this.availableTests = [{name: "Goldberg's Big Five", description: "some text"}, 
+        {name:"Markey and Markey's", description: "some text"},
+        {name: "Costa and McCrae's NEO Facets", description: "some text"},
+        {name:"Johnson's 120 Item NEO", description: "some text"}];
+      this.testDescriptions = function(){
+        for (let test in this.availableTests) {
+          return test.name + ": " + test.description + "/n"
+        }
+      }*/
   }
 
   ionViewDidLoad() {
@@ -47,14 +57,33 @@ export class OrganizationManagePage {
   //display descriptions of available tests
   testDetails() {
     let toast = this.toastCtrl.create({
-      message: "test descriptions",
+      message: this.testDescriptions,
+      //"test descriptions",
       showCloseButton: true,
       closeButtonText: "ok",
       position: 'bottom'
     });
+    
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+      console.log('Dismissed test descriptions');
     });
+    
+    toast.present();
+  }
+  
+  showDetails() {
+    let toast = this.toastCtrl.create({
+      message: this.testDescriptions,
+      //"test descriptions",
+      showCloseButton: true,
+      closeButtonText: "ok",
+      position: 'bottom'
+    });
+    
+    toast.onDidDismiss(() => {
+      console.log('Dismissed test descriptions');
+    });
+    
     toast.present();
   }
 

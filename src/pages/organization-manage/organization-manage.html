@@ -46,20 +46,9 @@
           <ion-input name="orgOwner" type="string" [(ngModel)]="organization.ownerEmail"></ion-input>
         </ion-item>
         
-        <ion-item>
-          
-          <ion-label floating>Select available tests</ion-label>
-          <ion-select multiple="true" name="orgTests" type="array" [(ngModel)]="organization.tests">
-            <ion-option *ngFor="let test of availableTests">{{ test.name }}</ion-option>
-          </ion-select>
-          
-            
-        </ion-item>
-        <ion-item>
-            <button ion-button small round outline (click)="testDetails()">
-              Test Descriptions
-            </button>
-        </ion-item>
+        <div padding class="changeTests">
+          <button ion-button outline type="submit">Change Tests</button>
+        </div>
         
       </div>
       <div padding class="submitButton">
