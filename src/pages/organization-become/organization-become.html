@@ -25,15 +25,15 @@
       <p>Please enter information about your organization.</p>
     </div>
   <div class="joinForm">
-    <form>
+    <form #joinForm="ngForm" (ngSubmit)="requestOrg(joinForm)">
     <div class="joinItems">
       <ion-item>
         <ion-label floating>Organization Name</ion-label>
-        <ion-input name="orgName" type="string"></ion-input>
+        <ion-input name="orgName" type="string" [(ngModel)]="organization.name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Organization Webpage Link</ion-label>
-        <ion-input name="orgWebpage" type="url"></ion-input>
+        <ion-label floating>Organization Webpage</ion-label>
+        <ion-input name="orgWebpage" type="url" [(ngModel)]="organization.webPage"></ion-input>
       </ion-item>
       <ion-item class="eula">
         <ion-label>Terms and Conditions
@@ -46,7 +46,7 @@
     </div>
     </form>
     <div padding class="submitButton">
-      <button ion-button outline type="submit" (click)="submitChanges()">Submit</button>
+      <button ion-button outline type="submit" (click)="requestOrg()">Submit</button>
     </div>
     <p text-center>Please allow 48 hours for requests to be processed by administrator</p>
   </div>

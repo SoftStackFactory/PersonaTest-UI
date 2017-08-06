@@ -27,37 +27,43 @@
       </div>
     </div>
     
-    <form #changeForm="ngForm" (ngSubmit)="submitChanges(changeForm)">
+    <form #changeForm="ngForm" (ngSubmit)="submitChanges(changeForm)" novalidate>
       <h6>Enter changes to your organization's profile and click submit when complete</h6>
       <div padding class="formEntries">
         
         <ion-item>
-          <ion-label floating>Organization Webpage Link</ion-label>
-          <ion-input name="orgWebpage" type="url"></ion-input>
+          <ion-label floating>Organization Webpage</ion-label>
+          <ion-input name="orgWebpage" type="url" [(ngModel)]="organization.webPage"></ion-input>
         </ion-item>
         
         <ion-item>
           <ion-label floating>Organization Logo</ion-label>
-          <ion-input name="orgLogo" type="img"></ion-input>
+          <ion-input name="orgLogo" type="img" [(ngModel)]="organization.logo"></ion-input>
         </ion-item>
         
         <ion-item>
           <ion-label floating>Organization Owner's Email</ion-label>
-          <ion-input name="orgOwner" type="string"></ion-input>
+          <ion-input name="orgOwner" type="string" [(ngModel)]="organization.ownerEmail"></ion-input>
         </ion-item>
         
         <ion-item>
+          
           <ion-label floating>Select available tests</ion-label>
-          <ion-select multiple="true">
-            <ion-option>test 1</ion-option>
-            <ion-option>test 2</ion-option>
-            <ion-option>test 3</ion-option>
+          <ion-select multiple="true" name="orgTests" type="array" [(ngModel)]="organization.tests">
+            <ion-option *ngFor="let test of availableTests">{{ test.name }}</ion-option>
           </ion-select>
+          
+            
+        </ion-item>
+        <ion-item>
+            <button ion-button small round outline (click)="testDetails()">
+              Test Descriptions
+            </button>
         </ion-item>
         
       </div>
       <div padding class="submitButton">
-        <button ion-button outline type="submit" (click)="submitChanges()">Submit</button>
+        <button ion-button outline type="submit">Submit</button>
       </div>
       <p>Please allow 48 hours for requests to be processed by administrator</p>
     </form>
