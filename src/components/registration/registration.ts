@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { ModalPage } from './modal-page';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
 
@@ -16,12 +16,18 @@ import { LobbyPage } from '../../pages/lobby/lobby';
   templateUrl: 'registration.html'
 })
 export class RegistrationComponent {
+  constructor(
+    private navCtrl: NavController,
+    private modalCtrl: ModalController
+    ) {
+    console.log('Hello Registration Component');
+  }
   
   user: any = {}
   eula: boolean;
   
-  checkEula() {
-    console.log("Terms and Conditions have been accepted", this.eula);
+  showEula() {
+    
   }
   
   signupForm(form) {
@@ -42,9 +48,5 @@ export class RegistrationComponent {
     this.navCtrl.setRoot(LobbyPage);
   }
 
-  constructor(
-    private navCtrl : NavController
-    ) {
-    console.log('Hello Registration Component');
-  }
+  
 }
