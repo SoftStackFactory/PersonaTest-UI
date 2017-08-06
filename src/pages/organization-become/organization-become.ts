@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { LobbyPage } from '../lobby/lobby';
 
@@ -15,9 +16,11 @@ import { LobbyPage } from '../lobby/lobby';
   templateUrl: 'organization-become.html',
 })
 export class OrganizationBecomePage {
-
+  organization: any = {}
+  userEmail: string
   constructor(public navCtrl: NavController, 
-  public navParams: NavParams) {
+  public navParams: NavParams,
+  private emailComposer: EmailComposer) {
   }
 
   ionViewDidLoad() {
@@ -26,7 +29,16 @@ export class OrganizationBecomePage {
   showEula() {
     alert("Terms and Conditions Placeholder");
   }
-  requestOrg() {
+  requestOrg(form) {
+    let email = {
+      to: 'administrator',
+      subject: "New Organization Request, " + this.organization.name,
+      body: "Organization Name: " + this.organization.name + 
+        "/n Organization Webpage: " + this.organization.webPage +
+        "/n Submitted by: " + this.userEmail,
+      isHtml: true
+    }
+    this.emailComposer.open(email);
     this.navCtrl.push(LobbyPage);
   }
   goHome() {
