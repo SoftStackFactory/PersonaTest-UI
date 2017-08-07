@@ -40,17 +40,20 @@
       </ion-select>
     </ion-item>
   </div>
-  <div class="registration-eula">
-        <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
-          <span>I accept the Terms and Conditions</span>
-    </div>
+  
     <div class="register-button">
       <button ion-button outline type="submit">Register</button>
     </div>
     </form>
+    <div class="registration-eula">
+        <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
+          <span>I accept the 
+            <a id="eulaButton" (click)="showEula()">Terms and Conditions</a>
+          </span>
+    
     <!--<p id="eulaButton" (click)="showEula()">-->
-    <p id="eulaButton">
-          View Terms and Conditions
-        </p>
+    <!--      View Terms and Conditions-->
+    <!--    </p>-->
+        </div>
   </div>
 </div>

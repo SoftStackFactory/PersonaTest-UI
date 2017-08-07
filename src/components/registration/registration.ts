@@ -53,8 +53,8 @@ export class RegistrationComponent {
     this.navCtrl.setRoot(LobbyPage);
   }
 
-  // showEula() {
-  //   let modal = this.modalCtrl.create(EulaComponent);
-  //   modal.present();
-  // }
+  showEula() {
+    let modal = this.modalCtrl.create(EulaComponent);
+    modal.present();
+  }
 }
