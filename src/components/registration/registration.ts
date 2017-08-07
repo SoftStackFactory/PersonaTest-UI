@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
+import { LoginPage } from '../../pages/login/login';
 import { EulaComponent } from '../eula/eula';
 
 
@@ -56,5 +57,9 @@ export class RegistrationComponent {
   showEula() {
     let modal = this.modalCtrl.create(EulaComponent);
     modal.present();
+  }
+  
+  goToLogin() {
+    this.navCtrl.push(LoginPage);
   }
 }

@@ -13,7 +13,7 @@ registration {
     }
     .registration-eula {
         flex: 1;
-        margin: 16px;
+        margin-bottom: 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -28,13 +28,15 @@ registration {
         margin: 6px;
     }
     .scroll-content {
-      footer {
-          display: flex;
-          align-items: flex-end;
-        }  
+       
     }
     .asterik {
         color: red;
     }
+    footer {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: center;
+        } 
 }
 

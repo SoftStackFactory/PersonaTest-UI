@@ -7,11 +7,11 @@
       <div class="registration-rows">
         <ion-item>
           
-          <ion-label floating><span class="asterik">*</span>First Name</ion-label>
+          <ion-label floating><small class="asterik">*</small>First Name</ion-label>
             <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating><span class="asterik">*</span>Last Name</ion-label>
+          <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
             <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
         </ion-item>
         <ion-item>
@@ -19,15 +19,15 @@
             <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
         </ion-item>
         <ion-item>    
-          <ion-label floating><span class="asterik">*</span>Email</ion-label>
+          <ion-label floating><small class="asterik">*</small>Email</ion-label>
             <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating><span class="asterik">*</span>Password</ion-label>
+          <ion-label floating><small class="asterik">*</small>Password</ion-label>
             <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label floating><span class="asterik">*</span>Confirm Password</ion-label>
+          <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
             <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
         </ion-item>
         <ion-item>
@@ -47,9 +47,14 @@
     <div class="registration-eula">
         <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
           <em>I accept the 
-            <a id="eulaButton" (click)="showEula()">Terms and Conditions</a>
+            <a (click)="showEula()">Terms and Conditions</a>
           </em>
     </div>
-    <footer><span class="asterik">*</span>required fields</footer>
   </div>
+  <footer>
+    <small class="asterik">*</small>required fields
+    </footer>
+  <footer>Already have an account? 
+    <a (click)="goToLogin()">Login here.</a>
+    </footer>
 
