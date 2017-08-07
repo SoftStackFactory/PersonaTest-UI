@@ -34,11 +34,17 @@ page-question {
     margin: 10px auto;
   }
   .progress-bar {
-    margin-top: 30px;
+    margin-top: 20px;
   }
-  @media only screen and (max-width: 567px) {
-    .label {
-      background-color: cyan;
+  .label p {
+    margin: 0;
+  }
+  @media only screen and (min-width: 375px) and (max-width: 567px) {
+    .label p {
+      margin: 14px;
+    }
+    .progress-bar {
+      margin-top: 40px;
     }
   }
   @media only screen and (min-width: 568px) and (max-width: 767px) {
@@ -88,11 +94,23 @@ page-question {
     .instruction {
       margin-bottom: 20px;
     }
+    .label p {
+      margin: 14px 0 0 0;
+    }
+    .progress-bar {
+      margin-top: 40px;
+    }
   }
   @media only screen and (min-width: 1025px) {
     .main-container {
       margin: 0 auto;
       max-width: 1024px;
+    }
+    .label p {
+      margin: 14px 0 0 0;
+    }
+    .progress-bar {
+      margin-top: 40px;
     }
   }
 }
