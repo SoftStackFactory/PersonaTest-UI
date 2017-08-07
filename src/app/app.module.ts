@@ -29,7 +29,7 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
-
+import { EulaComponent } from '../components/eula/eula';
 
 let injections: any[] = [
     MyApp,
@@ -50,7 +50,8 @@ let injections: any[] = [
     RegistrationComponent,
     ProgressBarComponent,
     SearchHistoryComponent,
-    MiniGraphComponent
+    MiniGraphComponent,
+    EulaComponent
     ]
 
 @NgModule({

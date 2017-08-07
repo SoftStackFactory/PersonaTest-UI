@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
-import { ModalPage } from './modal-page';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
+import { EulaComponent } from '../eula/eula';
 
 
 /**
@@ -16,6 +16,9 @@ import { LobbyPage } from '../../pages/lobby/lobby';
   templateUrl: 'registration.html'
 })
 export class RegistrationComponent {
+  user: any = {}
+  eula: boolean
+  
   constructor(
     private navCtrl: NavController,
     private modalCtrl: ModalController
@@ -23,30 +26,35 @@ export class RegistrationComponent {
     console.log('Hello Registration Component');
   }
   
-  user: any = {}
-  eula: boolean;
-  
-  showEula() {
-    
+  checkEula() {
+    console.log("Terms and Conditions have been accepted", this.eula);
   }
   
   signupForm(form) {
     if(form.invalid) {
       return alert("Please fill in all fields.");
+      
     } if(this.user.password !== this.user.confirmPassword) {
       //Passwords did not match, delete user passwords
       this.user.password = null;
       this.user.confirmPassword = null;
       return alert("Your passwords did not match. Please re-enter your passwords");
-    } if(this.eula == false) {
+      
+    } if(this.eula !== true) {
       //User must agree to terms and conditions before registering
       return alert("Please check the box to agree to our Terms and Conditions");
     }
+    
+    //successfull registration
     delete this.user.confirmPassword;
     console.log(this.user);
+    
     // Navigate to lobby
     this.navCtrl.setRoot(LobbyPage);
   }
 
-  
+  // showEula() {
+  //   let modal = this.modalCtrl.create(EulaComponent);
+  //   modal.present();
+  // }
 }

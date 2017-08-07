@@ -20,7 +20,7 @@ import { HistoryPage } from '../pages/history/history';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = QuicklinksPage;
+  rootPage:any = RegisterPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
