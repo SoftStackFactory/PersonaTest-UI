@@ -28,7 +28,7 @@ export class RegistrationComponent {
   }
   
   checkEula() {
-    console.log("Terms and Conditions have been accepted", this.eula);
+    console.log("User has agreed to Terms & Conditions", this.eula);
   }
   
   signupForm(form) {
@@ -53,12 +53,14 @@ export class RegistrationComponent {
     // Navigate to lobby
     this.navCtrl.setRoot(LobbyPage);
   }
-
+  
+  //When user clicks 'Terms and Conditions', display EULA through modal
   showEula() {
     let modal = this.modalCtrl.create(EulaComponent);
     modal.present();
   }
   
+  //User already has account, navigate to login page
   goToLogin() {
     this.navCtrl.push(LoginPage);
   }
