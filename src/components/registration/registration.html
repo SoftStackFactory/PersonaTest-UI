@@ -1,59 +1,55 @@
 <!-- Generated template for the RegistrationComponent component -->
-<div class="registration">
   <div class="registration-container">
   <!--<div class="regTitle">-->
   <!--    <ion-title text-center>New User Registration</ion-title>-->
   <!--</div>-->
     <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
-    <div class="registration-rows">
-      <ion-item>
-        <ion-label floating>First Name</ion-label>
-        <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Last Name</ion-label>
-        <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Age</ion-label>
-        <ion-input name="age" type="number" [(ngModel)]="user.age" required></ion-input>
-      </ion-item>
-      <ion-item>    
-        <ion-label floating>Email</ion-label>
-        <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Confirm Password</ion-label>
-        <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
-      </ion-item>
-      <ion-item>
-      <ion-label>Gender</ion-label>
-      <ion-select [(ngModel)]="user.gender" name="gender" required>
-        <ion-option>Decline</ion-option>
-        <ion-option>Female</ion-option>
-        <ion-option>Male</ion-option>
-        <ion-option>Other</ion-option>
-      </ion-select>
-    </ion-item>
-  </div>
-  
-    <div class="register-button">
-      <button ion-button outline type="submit">Register</button>
-    </div>
+      <div class="registration-rows">
+        <ion-item>
+          
+          <ion-label floating><span class="asterik">*</span>First Name</ion-label>
+            <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><span class="asterik">*</span>Last Name</ion-label>
+            <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Age</ion-label>
+            <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
+        </ion-item>
+        <ion-item>    
+          <ion-label floating><span class="asterik">*</span>Email</ion-label>
+            <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><span class="asterik">*</span>Password</ion-label>
+            <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><span class="asterik">*</span>Confirm Password</ion-label>
+            <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Gender</ion-label>
+            <ion-select [(ngModel)]="user.gender" name="gender">
+              <ion-option>Female</ion-option>
+              <ion-option>Male</ion-option>
+              <ion-option>Other</ion-option>
+              <!--<ion-option>Decline</ion-option>-->
+            </ion-select>
+        </ion-item>
+      </div>
+      <div class="register-button">
+        <button ion-button outline type="submit">Register</button>
+      </div>
     </form>
     <div class="registration-eula">
         <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
-          <span>I accept the 
+          <em>I accept the 
             <a id="eulaButton" (click)="showEula()">Terms and Conditions</a>
-          </span>
-    
-    <!--<p id="eulaButton" (click)="showEula()">-->
-    <!--      View Terms and Conditions-->
-    <!--    </p>-->
-        </div>
+          </em>
+    </div>
+    <footer><span class="asterik">*</span>required fields</footer>
   </div>
-</div>
+
