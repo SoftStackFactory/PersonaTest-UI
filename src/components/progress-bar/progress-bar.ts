@@ -9,10 +9,11 @@ export class ProgressBarComponent {
   @Input() questionNum: number;
   displayProgress(totalNum: number, currentNum: number) {
     let styles = {
-      'background-color': '#ddd',
+      'background-color': '#18314f',
       'width': `${currentNum}vw`,
       'height': '33px',
-      'border-radius': '3px',
+      'border-radius': '2px',
+      'opacity': '0.3'
     }
     return styles;
   }
