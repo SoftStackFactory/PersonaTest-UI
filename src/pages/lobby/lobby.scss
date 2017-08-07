@@ -63,9 +63,21 @@ page-lobby {
         //outline: none;
         border-radius: 5px;
     }
+    
+    $darken: color($colors,primary);
+    
     .button:hover {
-         background-color: color($colors,terciary);
+        background-color: darken($darken, 5%) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+        transform: translateY(-0.25em);
     }
+    
+    .button:after {
+        background-color: darken($darken, 5%) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+        transform: translateY(-0.25em);
+    }
+    
     
     .button2{
         flex: 0 1 auto;
@@ -76,16 +88,24 @@ page-lobby {
         padding: 10px;
         margin: 10px;
         text-align: center;
-        //white-space: normal;
+        white-space: normal;
         background-color: transparent;
         color: color($colors,primary);
         border-color: color($colors,primary);
-        border-radius: 5px;        
+        border-radius: 5px;
+        border-width: medium;
     }
     
     .button2:hover{
-        color: color($colors,terciary);
-        border-color: color($colors,terciary);
+        color: darken($darken, 50%) !important;;
+        border-color: darken($darken, 50%) !important;
+        background-color: transparent !important;
+        box-shadow: 0 0px 0px rgba(0,0,0,0) important;
+    }
+    
+    .button2:after {
+        background-color: darken($darken, 5%) !important;
+        box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
     }
     
     h2{
