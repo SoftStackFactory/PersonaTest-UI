@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { ToastController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+
+import { TestSelectionComponent } from '../../components/test-selection/test-selection';
 
 import { LobbyPage } from '../lobby/lobby';
 
@@ -24,31 +27,15 @@ export class OrganizationManagePage {
   organizationLogo: any
   userEmail: string
   
-  //Variable to store array of test as an array of objects and mock data (thanks Jenny)
-  availableTests: { name: string, description: string }[] =
-  [{name: "Goldberg's Big Five", description: "some text"}, 
-  {name:"Markey and Markey's", description: "some text"},
-  {name: "Costa and McCrae's NEO Facets", description: "some text"},
-  {name:"Johnson's 120 Item NEO", description: "some text"}];
-  testDescriptions: any
-  
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private emailComposer: EmailComposer,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    public modalCtrl: ModalController) {
       this.organizationName = "SoftStack Factory";
       this.organizationLogo = "placeholder";
       this.userEmail = "Peter@SoftStack.org";
-      /*this.availableTests = [{name: "Goldberg's Big Five", description: "some text"}, 
-        {name:"Markey and Markey's", description: "some text"},
-        {name: "Costa and McCrae's NEO Facets", description: "some text"},
-        {name:"Johnson's 120 Item NEO", description: "some text"}];
-      this.testDescriptions = function(){
-        for (let test in this.availableTests) {
-          return test.name + ": " + test.description + "/n"
-        }
-      }*/
-  }
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrganizationManagePage');
@@ -133,39 +120,6 @@ export class OrganizationManagePage {
   }
 =======
   
-  //display descriptions of available tests
-  testDetails() {
-    let toast = this.toastCtrl.create({
-      message: this.testDescriptions,
-      //"test descriptions",
-      showCloseButton: true,
-      closeButtonText: "ok",
-      position: 'bottom'
-    });
-    
-    toast.onDidDismiss(() => {
-      console.log('Dismissed test descriptions');
-    });
-    
-    toast.present();
-  }
-  
-  showDetails() {
-    let toast = this.toastCtrl.create({
-      message: this.testDescriptions,
-      //"test descriptions",
-      showCloseButton: true,
-      closeButtonText: "ok",
-      position: 'bottom'
-    });
-    
-    toast.onDidDismiss(() => {
-      console.log('Dismissed test descriptions');
-    });
-    
-    toast.present();
-  }
-
   submitChanges(form) {
     //generate email requesting to administrator
     if(form.invalid) {
