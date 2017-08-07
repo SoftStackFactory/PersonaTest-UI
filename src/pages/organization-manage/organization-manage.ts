@@ -137,10 +137,9 @@ export class OrganizationManagePage {
         isHtml: true
       };
       console.log("Change Email Sent");
+      this.navCtrl.push(LobbyPage);
       return this.emailComposer.open(email);
     }
-    
-    //this.navCtrl.push(LobbyPage);
   }
   
 
