@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { HistoryPage } from '../history/history';
+import { QuestionPage } from '../question/question';
+
 
 
 /**
@@ -35,9 +37,11 @@ export class LobbyPage {
   }
 
   forWork() {
+    this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
   }
   forPlay() {
+    this.navCtrl.push(QuestionPage);
     console.log("Switch to Personal Test Selection Page");
   }
   showResults() {
@@ -45,6 +49,7 @@ export class LobbyPage {
     console.log("go to results page for personal tests taken");
   }
   viewResults() {
+     this.navCtrl.push(HistoryPage);
     console.log("go to results page for organization tests available to view");
   }
   manageAcc() {
