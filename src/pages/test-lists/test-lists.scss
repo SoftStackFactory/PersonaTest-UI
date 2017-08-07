@@ -1,21 +1,18 @@
 page-test-lists {
 
-    .TestLists {
+    .TestLists, .TestLists-body {
       display: flex;
-      min-height: 100vh;
+      max-width: 650px;
+      max-height: 600px;
+      margin: auto;
       flex-direction: column;
-      background-color: red;
-    }
-    
-    .TestLists-body {
-      display: flex;
       flex: 1;
-      background-color: yellow;
     }
     
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 768px) {
         #body-container{
-        flex-direction: column;
+        flex-direction: row;
+        flex: 1;
         }
     }
     
