@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController} from 'ionic-angular';   //To navigate to individual test results page
 import { ResultsPage } from '../../pages/results/results';
+import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 
 /**
  * Generated class for the SearchListComponent component.

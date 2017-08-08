@@ -1,13 +1,17 @@
 search-list {
 
     .small-chart {
-    
+        width: 75%;
+        display: flex!important;
+        margin-left: auto;
+        justify-content: flex-end!important;
         
     }
     
     .chart-align > * {
         display: flex!important;
         justify-content: flex-end!important;
+        margin-left: auto;
     }
     
 
