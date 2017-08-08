@@ -30,14 +30,12 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
+import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
-
-
-//Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+
 
 let injections: any[] = [
     MyApp,
@@ -58,8 +56,10 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
+    ProgressBarComponent,
     SearchHistoryComponent,
     MiniGraphComponent,
+    EulaComponent,
     TestSelectionComponent,
     ForWorkModal,
     BeAnOrganizationModal,
