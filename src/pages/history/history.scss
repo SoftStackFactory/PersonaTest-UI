@@ -1,3 +1,24 @@
 page-history {
+    
+    /* For mobile phones: */
+    .horizontal-align-content > *
+    {
+         display: flex!important;
+         justify-content: center!important;
+         width: 100vw;
+        
+    }
+    
+ 
+    @media only screen and (min-width: 769px) {
+    /* For desktop (and bigger than iPad) */
+    
+        .container-width{
+            width: 55vw;
+        }
+            
+    }
 
+    
+        
 }
