@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="dismiss()">
+      <ion-icon name="close-circle"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>PersonaTest</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h4>Please Enter Organization Data</h4>
+  <form [formGroup]="orgRequestForm" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Name: </ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Website: </ion-label>
+        <ion-textarea formControlName="website"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!orgRequestForm.valid">Submit</button>
+    </form>
+</ion-content>
