@@ -1,7 +1,45 @@
 page-results {
     .container {
-        max-width: 600px;
+        display: flex;
+        min-width:  320px;
+        min-height: 500px;
+        flex-direction: column;
         margin: auto;
         position: relative;
     }
+    
+    @media screen and (min-width: 728px) {
+      .container {
+          flex-direction: row;
+          max-height: 580px;
+      }
+      .container > chart {
+          margin-left: 70px;
+          min-width: 60vw;
+      }
+      .container > testlist {
+          margin-right: 20px;
+          padding-right: 150px;
+          margin-top: 10px;
+          min-width: 40vw;
+          max-height: 50%;
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      .container {
+          flex-direction: row;
+          max-height: 580px;
+      }
+      .container > chart {
+          margin-left: 70px;
+          min-width: 50vw;
+      }
+      .container > testlist {
+          margin-right: 20px;
+          padding-right: 150px;
+          margin-top: 10px;
+          min-width: 45vw;
+      }
+    }
 }
+  

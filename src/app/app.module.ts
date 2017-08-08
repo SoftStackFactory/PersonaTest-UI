@@ -17,7 +17,8 @@ import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
-
+import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
+import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -28,9 +29,15 @@ import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
+import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
+import { TestSelectionComponent } from '../components/test-selection/test-selection'
 
 
+//Modals
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
+import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 
 let injections: any[] = [
     MyApp,
@@ -44,12 +51,20 @@ let injections: any[] = [
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
+    OrganizationManagePage,
+    OrganizationBecomePage,
     ChartComponent,
     TestlistComponent,
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    MiniGraphComponent,
+    TestSelectionComponent,
+    ForWorkModal,
+    BeAnOrganizationModal,
+    IpiptestlistComponent,
+    MiniGraphComponent
     ]
 
 @NgModule({
