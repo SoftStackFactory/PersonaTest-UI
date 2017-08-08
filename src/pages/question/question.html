@@ -40,7 +40,7 @@
     <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
   </div>
   <div text-center>
-    <button ion-button (click)="toNextQuestion()">
+    <button ion-button (click)="toNextQuestion()" [disabled]="degreeNum === undefined || degreeNum === null">
       Next Question
     </button>
   </div>
