@@ -1,65 +1,103 @@
 page-landing {
+        
+        #body{
+         background:#384e77;
+    }
         .container{
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                padding: 50px;
+                padding-bottom: 0;
+                font-size: 40px;
         }
-
         .title{
-                height: 50px;
-                margin: 20px;
-                border: solid black 5px;
                 text-align: center;
 
         }
-     
-        .photo{
-                height: 50px;
-                width: 50px;
-                margin: 20px;
-                border: solid black 5px;
-                text-align: center;
+
       
-     
+       .photo{
+                height: 75px;
+                width: 75px;
+                // background-image: url("https://cdn.pixabay.com/photo/2017/01/05/01/05/growth-1953662_640.jpg");
+                // background-repeat:no-repeat;
+                // background-attachment:fixed;
+                // background-position:center;
+                //border: solid black 5px;
+                position: absolute;
+                top:0;
+                left: 90px;
         }
         .wizard{
                 height: 250px;
-                width: 250px;
+                width: 248px;
                 margin: 20px;
-                border: solid black 5px;
+                //border: solid black 5px;
                 text-align: center;
+                font-size: 40px;
       
+        }
+        .h2{
+                font-size: 150px;
+                padding: 5px;
+                
         }
         .bottom{
                 width: 90px;
                 margin: auto;
                 text-align: center;
+                font-size: 15px;
+                color: white;
+                position: relative;
+                top:0;
         }
         .button-block{
                 color:white;
-                background:red;
+                background:#0d0630;
                 font-size: 10px;
-                padding: 10px;
                 outline: none;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                
+                
         }
+        .font{
+                font-size: 18px;
+                color: white;
+                font-family: Ubuntu;
+        }
+        
         @media screen and (min-width: 768px){
+                .container{
+                        padding: 150px;
+                        
+                }
+                        
                 .wizard{
                         height: 450px;
                         width: 450px;
                 }
                 .bottom{
                         width: 250px;
+                        font-size: 30px;
                 }
                        
                 .button-block{
                         padding: 15px;
-                        font-size: 15px;
+                        font-size: 20px;
+                        height: 70px;
                 }
                 .photo{
-                        height: 100px;
-                        width: 100px;
+                        height: 180px;
+                        width: 180px;
+                        top:0;
+                        left: 135px;
+                        padding: 30px;
                 }
+                .font{
+                font-size: 30px;
+                
+        }
         } 
         @media screen and (min-width: 1024px){
                 .wizard{
@@ -68,15 +106,25 @@ page-landing {
                 }
                 .bottom{
                         width: 350px;
+                        font-size: 35px;
                        
                }
                 .button-block{
                         padding: 20px;
-                        font-size: 20px;
+                        font-size: 25px;
+                        height: 70px;
                 }
                 .photo{
-                        height: 150px;
-                        width: 150px;
+                        height: 220px;
+                        width: 220px;
+                        top:0;
+                        left: 215px;
+                        padding: 20px;
                 }
+                .font{
+                font-size: 50px;
+                color: white;
+                font-family: Ubuntu;
+        }
         }        
 }
