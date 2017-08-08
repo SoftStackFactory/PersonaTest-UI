@@ -16,12 +16,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class HistoryPage {
   
-    //Variables to store user's search input and the date they select
+  //Variables to store user's search input and the date they select
   searchInput: string = "";
   searchDate: string = "";
   
+  //Boolean that turns on organization view (default to false - user view)
+  orgView: boolean = false; 
+  
   //Variable to store our array of test as an array of objects; Currently using mock data
-  testList: { name: string, date: string }[] = 
+  ourList: { name: string, date: string }[] = 
   [{name: "Goldberg's Big Five", date: "17-3-2017"}, 
   {name: "Goldberg's Big Five", date: "23-11-2017"}, 
   {name:"Markey and Markey's", date: "2-12-2016"},
@@ -29,7 +32,7 @@ export class HistoryPage {
   {name:"Johnson's 120 Item NEO", date: "30-6-2016"}];
   
   //Variable to store copy of our original array, because we will need to filter
-  filteredTestList: any = this.testList;
+  filteredList: any = this.ourList;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

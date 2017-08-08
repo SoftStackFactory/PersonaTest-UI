@@ -1,23 +1,22 @@
 import { Component, Input } from '@angular/core';
-import { NavController} from 'ionic-angular';   //To navigate to test's individual results page
-import { Chart } from 'chart.js';
+import { NavController} from 'ionic-angular';   //To navigate to individual test results page
 import { ResultsPage } from '../../pages/results/results';
 
 /**
- * Generated class for the SearchHistoryComponent component.
+ * Generated class for the SearchListComponent component.
  *
  * See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
  * for more info on Angular Components.
  */
 @Component({
-  selector: 'search-history',
-  templateUrl: 'search-history.html'
+  selector: 'search-list',
+  templateUrl: 'search-list.html'
 })
-export class SearchHistoryComponent {
+export class SearchListComponent {
 
-  //Variables for the tests arrays; The calling page will input them in its .html file
-  @Input() testList: {  name: string, date: string }[];
-  @Input() filteredTestList: { name: string, date: string }[];  
+//Variables for the tests arrays; The calling page will input them in its .html file
+  @Input() ourList: {  name: string, date: string }[];
+  @Input() filteredList: { name: string, date: string }[];  
   
   //Variable for user's input in search bar 
   searchInput: string = "";
@@ -30,14 +29,14 @@ export class SearchHistoryComponent {
   
   
   constructor( public navCtrl: NavController ) {
-    console.log('Hello SearchHistoryComponent Component');
+    console.log('Hello SearchListComponent Component');
   }
   
   //doSearch gets called when user changes any key input in search bar
   doSearch(searchBar){
     
     //get the entire array of tests
-    this.filteredTestList = this.testList;
+    this.filteredList = this.ourList;
     // set q to the value of the searchbar
     var q = searchBar.srcElement.value;
 
@@ -51,7 +50,7 @@ export class SearchHistoryComponent {
     this.displayDropdown = true;
     
     //filter out the relevant search results
-    this.filteredTestList = this.filteredTestList.filter((v) => {
+    this.filteredList = this.filteredList.filter((v) => {
       if(v.name && q) {
         if (v.name.toLowerCase().indexOf(q.toLowerCase()) > -1) {
           return true;
@@ -61,9 +60,9 @@ export class SearchHistoryComponent {
       }
     });
 
-    console.log(q, this.filteredTestList.length);
-    console.log(this.searchInput + " " + q);
-    console.log(this.searchDate);
+    console.log("The number of search results is " + this.filteredList.length);
+    console.log("Our search input is " + this.searchInput + " " + q);
+    console.log("User's search date is " + this.searchDate);
 
     
   }
@@ -75,13 +74,10 @@ export class SearchHistoryComponent {
     
   }
   
-  //selectedTest gets called when user clicks something from our search list
-  selectedTest(mouseClick, test){
-    console.log( test.name);
+  //selectedItem gets called when user clicks something from our search list
+  selectedItem(mouseClick, item){
+    console.log("The item you selected is " + item.name);
     this.navCtrl.push(ResultsPage);
   }
-
-  
-  
 
 }

@@ -1,4 +1,4 @@
-<!-- Generated template for the SearchHistoryComponent component -->
+<!-- Generated template for the SearchListComponent component -->
 <div class="container-width">
   <ion-searchbar
     [(ngModel)]="searchInput"
@@ -11,9 +11,9 @@
     <ion-card>
       <ion-label>Search results</ion-label>
       <ion-list>
-      <ion-item *ngFor="let test of filteredTestList" (click)="selectedTest($event, test)">
-        <h2> {{ test.name }} </h2>
-        <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
+      <ion-item *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
+        <h2> {{ obj.name }} </h2>
+        <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
       </ion-item>
       </ion-list>
     </ion-card>
@@ -29,10 +29,10 @@
   
   <ion-label text-center>Tests I've taken</ion-label>
   <ion-list>
-    <ion-item *ngFor="let test of testList" (click)="selectedTest($event, test)">
-      <h2> {{ test.name }} </h2>
-      <h3> Taken on: <strong>{{ test.date }}</strong> </h3>
-      <div class="small-chart">
+    <ion-item *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
+      <h2> {{ obj.name }} </h2>
+      <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
+      <div>
         <mini-graph class="chart-align"></mini-graph>
       </div>
  
