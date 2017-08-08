@@ -17,32 +17,44 @@
 
 
 <ion-content padding>
-  <h4 text-center><i>{{ userName }}</i></h4>
-  <h2 text-center>{{ testName }}</h2>
-  <p class="direction">Indicate how much the statement applies to you using the sliding scale below.</p>
-  <ion-card>
-    <ion-card-content text-center>
-      {{question}}
-    </ion-card-content>
-  </ion-card>
-  <div class="label">
-    <p>Strongly Disagree</p>
-    <p>Strongly Agree</p>
-  </div>
-  <ion-range step="25" snaps="true" [(ngModel)]="degreeNum">
+  <div class="main-container">
+    <div class="left-container">
+      <h4 text-center><span class="name">{{ userName }}</span></h4>
+      <h2 text-center class="test-name">{{ testName }}</h2>
+      <p class="instruction">Indicate how much the statement applies to you using the sliding scale below.</p>
+      <ion-card>
+        <div class="card-container">
+          <ion-card-content text-center>
+            <p>{{question}}</p>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+    <div class="right-container">
+      <div class="label">
+        <p>Strongly Disagree</p>
+        <p>Strongly Agree</p>
+      </div>
+      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum">
 
-  </ion-range>
-  <div class="labels">
-    <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
-    <div [class.inactive]="degreeNum != 25">Disagree</div>
-    <div [class.inactive]="degreeNum != 50">Neutral</div>
-    <div [class.inactive]="degreeNum != 75">Agree</div>
-    <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
+
+      </ion-range>
+      <div class="labels">
+        <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
+        <div [class.inactive]="degreeNum != 25">Disagree</div>
+        <div [class.inactive]="degreeNum != 50">Neutral</div>
+        <div [class.inactive]="degreeNum != 75">Agree</div>
+        <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
+      </div>
+      <div text-center>
+        <button ion-button (click)="toNextQuestion()">
+          Next Question
+        </button>
+      </div>
+      <div class="progress-bar">
+        <progress-bar [totalQuestionNum]="totalQuestionNum" [questionNum]="questionNum"></progress-bar>
+      </div>
+    </div>
+
   </div>
-  <div text-center>
-    <button ion-button (click)="toNextQuestion()" [disabled]="degreeNum === undefined || degreeNum === null">
-      Next Question
-    </button>
-  </div>
-  <progress-bar [totalQuestionNum]="totalQuestionNum" [questionNum]="questionNum"></progress-bar>
 </ion-content>
