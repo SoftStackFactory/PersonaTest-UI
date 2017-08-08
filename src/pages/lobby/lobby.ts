@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { HistoryPage } from '../history/history';
+import { QuestionPage } from '../question/question';
+
 
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
@@ -37,11 +39,13 @@ export class LobbyPage {
   }
 
   forWork() {
+    this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
     let forWorkModal = this.modalCtrl.create(ForWorkModal);
     forWorkModal.present();
   }
   forPlay() {
+    this.navCtrl.push(QuestionPage);
     console.log("Switch to Personal Test Selection Page");
   }
   showResults() {
@@ -49,6 +53,7 @@ export class LobbyPage {
     console.log("go to results page for personal tests taken");
   }
   viewResults() {
+     this.navCtrl.push(HistoryPage);
     console.log("go to results page for organization tests available to view");
   }
   manageAcc() {
