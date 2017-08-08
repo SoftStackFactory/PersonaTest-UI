@@ -28,6 +28,11 @@ import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
+
+//Modals
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
@@ -49,6 +54,8 @@ let injections: any[] = [
     QuicklinksPage,
     RegistrationComponent,
     SearchHistoryComponent,
+    ForWorkModal,
+    BeAnOrganizationModal,
     IpiptestlistComponent,
     MiniGraphComponent
     ]
