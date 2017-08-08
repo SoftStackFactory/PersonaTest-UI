@@ -33,7 +33,8 @@ import { SearchHistoryComponent } from '../components/search-history/search-hist
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
-
+import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
 let injections: any[] = [
     MyApp,
@@ -54,7 +55,9 @@ let injections: any[] = [
     RegistrationComponent,
     SearchHistoryComponent,
     ForWorkModal,
-    BeAnOrganizationModal
+    BeAnOrganizationModal,
+    IpiptestlistComponent,
+    MiniGraphComponent
     ]
 
 @NgModule({
