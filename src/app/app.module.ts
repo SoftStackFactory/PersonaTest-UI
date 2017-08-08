@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
-import { EmailComposer } from '@ionic-native/email-composer';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
@@ -39,7 +38,6 @@ import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
-import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 
 let injections: any[] = [
     MyApp,
@@ -79,7 +77,6 @@ let injections: any[] = [
   bootstrap: [IonicApp],
   entryComponents: injections,
   providers: [
-    EmailComposer,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
