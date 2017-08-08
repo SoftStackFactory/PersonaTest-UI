@@ -1,11 +1,28 @@
 ipiptestlist {
-.ipiplist{
-      display: flex;
-      max-width: 650px;
-      max-height: 600px;
-      margin: auto;
+    
+    .ipiplist{
+        display: flex;
+        max-width: 650px;
+        max-height: 600px;
+        margin: auto;
+        flex-direction: column;
+        flex: 1;
+        }
+        
+    .ipipcards{
+        width: 100%;
+        height: 100%;
+        display:block;
+}
+
+    ion-card{
+      max-width: 768px;
       flex-direction: column;
       flex: 1;
+    }
+    
+    ion-col{
+        flex: 1 0 310px;
     }
     
     @media screen and (min-width: 768px) {
