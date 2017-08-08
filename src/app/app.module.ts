@@ -49,7 +49,7 @@ let injections: any[] = [
     QuicklinksPage,
     RegistrationComponent,
     SearchHistoryComponent,
-    IpiptestlistComponent
+    IpiptestlistComponent,
     MiniGraphComponent
     ]
 
