@@ -4,8 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 //Pages
-
-// import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 import { LobbyPage } from '../pages/lobby/lobby';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
@@ -23,6 +22,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
   templateUrl: 'app.html'
 })
 export class MyApp {
+
   rootPage:any = QuicklinksPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

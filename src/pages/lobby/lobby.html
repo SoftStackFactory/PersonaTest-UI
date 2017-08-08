@@ -32,21 +32,21 @@
           <h2>Hello {{ this.userName }}</h2>
            <h3>Take a Test</h3>
            <div class="persbuttons">
-             <button ion-button block outline (click)="forWork()" id="button">For Work</button>
-             <button ion-button block outline (click)="forPlay()" id="button">For Play</button>
+             <button ion-button block (click)="forWork()" class="button">For Work</button>
+             <button ion-button block (click)="forPlay()" class="button">For Play</button>
            </div>
            <div class="showmy">
              <h3>Show My</h3>
-             <button ion-button block outline (click)="showResults()" id="button">Results</button>
+             <button ion-button block outline (click)="showResults()" class="button2">Results</button>
           </div>
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
           <h2>{{this.userName }} @ {{ this.organizationName }}</h2>
           <div class="orgbuttons">
-            <button ion-button block outline (click)="viewResults()" id="button">View Results</button>
-            <button ion-button block outline (click)="manageAcc()" id="button">Manage Account</button>
-            <button ion-button block outline (click)="becomeOrg()" id="button">Become an<br /> Organization</button>
+            <button ion-button block outline (click)="viewResults()" class="button">View Results</button>
+            <button ion-button block outline (click)="manageAcc()" class="button">Manage Account</button>
+            <button ion-button block outline (click)="becomeOrg()" class="button">Become an<br /> Organization</button>
           </div>
     </div>
 <!--    <ion-list class="list" *ngSwitchCase="'personal'" no-lines>
