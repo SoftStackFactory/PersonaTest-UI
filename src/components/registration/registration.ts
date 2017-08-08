@@ -35,14 +35,14 @@ export class RegistrationComponent {
     if(form.invalid) {
       return alert("Please fill in all fields.");
       
-    } if(this.user.password !== this.user.confirmPassword) {
       //Passwords did not match, delete user passwords
+    } if(this.user.password !== this.user.confirmPassword) {
       this.user.password = null;
       this.user.confirmPassword = null;
       return alert("Your passwords did not match. Please re-enter your passwords");
       
+       //User must agree to terms and conditions before registering
     } if(this.eula !== true) {
-      //User must agree to terms and conditions before registering
       return alert("Please check the box to agree to our Terms and Conditions");
     }
     
