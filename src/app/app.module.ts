@@ -17,7 +17,8 @@ import { ResultsPage } from '../pages/results/results';
 import { QuestionPage } from '../pages/question/question';
 import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
-
+import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
+import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -29,6 +30,11 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchListComponent } from '../components/search-list/search-list';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
+import { EulaComponent } from '../components/eula/eula';
+import { TestSelectionComponent } from '../components/test-selection/test-selection'
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 
 
 let injections: any[] = [
@@ -43,12 +49,21 @@ let injections: any[] = [
     ResultsPage,
     QuestionPage,
     FlexDemoPage,
+    OrganizationManagePage,
+    OrganizationBecomePage,
     ChartComponent,
     TestlistComponent,
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
     SearchListComponent,
+    ProgressBarComponent,
+    MiniGraphComponent,
+    EulaComponent,
+    TestSelectionComponent,
+    ForWorkModal,
+    BeAnOrganizationModal,
+    IpiptestlistComponent,
     MiniGraphComponent
     ]
 

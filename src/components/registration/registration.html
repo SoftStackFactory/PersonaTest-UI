@@ -1,80 +1,60 @@
 <!-- Generated template for the RegistrationComponent component -->
-<div class="registration">
-  <div class="regTitle">
-      <ion-title text-center padding>New User Registration</ion-title>
-  </div>
   <div class="registration-container">
-    <form>
-    <div class="registration-rows">
-      <ion-item>
-        <ion-label floating>First Name</ion-label>
-        <ion-input name="firstName" type="string"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Last Name</ion-label>
-        <ion-input name="lastName" type="string"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Age</ion-label>
-        <ion-input name="age" type="number"></ion-input>
-      </ion-item>
-      <ion-item>    
-        <ion-label floating>Email</ion-label>
-        <ion-input name="email" type="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <ion-input name="password" type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Confirm Password</ion-label>
-        <ion-input name="password" type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-      <ion-label>Gender</ion-label>
-      <ion-select>
-        <ion-option>Decline</ion-option>
-        <ion-option>Female</ion-option>
-        <ion-option>Male</ion-option>
-        <ion-option>Other</ion-option>
-      </ion-select>
-    </ion-item>
+  <!--<div class="regTitle">-->
+  <!--    <ion-title text-center>New User Registration</ion-title>-->
+  <!--</div>-->
+    <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
+      <div class="registration-rows">
+        <ion-item>
+          
+          <ion-label floating><small class="asterik">*</small>First Name</ion-label>
+            <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
+            <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Age</ion-label>
+            <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
+        </ion-item>
+        <ion-item>    
+          <ion-label floating><small class="asterik">*</small>Email</ion-label>
+            <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><small class="asterik">*</small>Password</ion-label>
+            <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
+            <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Gender</ion-label>
+            <ion-select [(ngModel)]="user.gender" name="gender">
+              <ion-option>Female</ion-option>
+              <ion-option>Male</ion-option>
+              <ion-option>Other</ion-option>
+              <!--<ion-option>Decline</ion-option>-->
+            </ion-select>
+        </ion-item>
+      </div>
+      <div class="register-button">
+        <button ion-button outline type="submit">Register</button>
+      </div>
+    </form>
+    <div class="registration-eula">
+        <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
+          <em>I accept the 
+            <a (click)="showEula()">Terms & Conditions</a>
+          </em>
 
-    <ion-item class="registration-input">
-      <ion-label>Password</ion-label>
-      <ion-input name="password" type="password"></ion-input>
-    </ion-item>
-    <ion-item class="registration-input">
-      <ion-label>Confirm Password</ion-label>
-      <ion-input name="password" type="password"></ion-input>
-    </ion-item>
-    <ion-item class="registration-input">
-    <ion-label>Gender</ion-label>
-    <ion-select>
-      <ion-option>decline</ion-option>
-      <ion-option>female</ion-option>
-      <ion-option>male</ion-option>
-      <ion-option>other</ion-option>
-    </ion-select>
-  </ion-item>
-    <ion-item class="registration-input">
-      <ion-label>Terms and Conditions
-      <button ion-button icon-only small round outline id="eulaButton" (click)="showEula()">
-        <ion-icon name="help"></ion-icon>
-      </button>
-
-      </ion-label>
-        
-      <!--  <ion-label>-->
-      <!--</ion-label>-->
-      
-    </ion-item>
-   
-    </div>
-       </form>
-
-    <div class="register-button">
-      <button ion-button outline type="submit">Register</button>
     </div>
   </div>
-</div>
+  <footer>
+    <small class="asterik">*</small>required fields
+    </footer>
+  <footer>Already have an account? <a (click)="goToLogin()">Login here.</a>
+    </footer>
+
