@@ -1,0 +1,54 @@
+page-organization-manage {
+.manageForm {
+    //border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: auto;
+}
+.orgInfo{
+    //border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.orgLogo{
+    //border-style: solid;
+    display: flex;
+    max-width: 200px;
+    min-width: 50px;
+    min-height: 50px;
+}
+.formEntries{
+    //border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.availableTests{
+    min-height: 100px;
+}
+.submitButton {
+    //border-style: solid;
+}
+
+@media screen and (min-width: 728px) {
+    .manageForm {
+        flex-direction: row;
+        max-height: 600px;
+        max-width: 700px;
+    }
+    .orgInfo{
+        min-height: 200px;
+    }
+    .orgLogo{
+        max-width: 300px;
+        min-width: 100px;
+        min-height: 100px;
+}
+}
+
+}

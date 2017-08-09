@@ -3,69 +3,132 @@ page-lobby {
     
     *{
          box-sizing: border-box;
-         text-align: center;
     }
     
-    .scroll-content{
-    }
-
-    .toolbar-background {
-    }
-    
-    .toolbar-title{
-    }
-
-    #header{
-    }
-    
-    .segment{
-    }
     
     #main-container{
+        width: 90vw;
+        margin: auto;
+        text-align: center;
         display: flex;
-        width: 97vw;
-        height: 80vh;
-        border: solid red 5px;
-        margin: 0 auto;
-    }
-    
-    
-    .list{
-        display: block;
-        flex: 1 20%;
-        width: 97vw;
-        height: 75vh;
-        border: green solid 5px;
         flex-direction: column;
-            -webkit-align-items: center;
         align-items: center;
-            -webkit-justify-content: center;
         justify-content: center;
-    }    
-     
-     .label-md{
-        margin: 0;
-        padding-left: 0;
-        padding-right: 0;
-     }
-    .item-md{
-        padding-left: 0;
-        padding-right: 0;
     }
-    .item-md .item-button {
-        height: 30vh;
-        width: 60vw;
-        max-width: 200px;
-        max-height: 100px;
-        font-size: 2rem;
-        position: inherit;
+    #personalsegment{
+        width: 100%;
+        height: 100%;
+        
+    }
+    #organizationsegment{
+        width: 100%;
+    }
+    .persbuttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width:  100%;
+        padding: 10px;
     }
     
+    .showmy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:  100%;
+        padding: 10px;
+    }
     
+    .orgbuttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:  100%;
+    }
     .button{
+        flex: 0 1 auto;
+        min-width: 125px;
+        min-height: 50px;
+        max-width: 300px;
+        max-height: 120px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        white-space: normal;
+        background-color: color($colors,primary);
+        color: white;
+        //outline: none;
+        border-radius: 5px;
+    }
+    
+    $primary: color($colors,primary);
+    
+    .button:hover {
+        background-color: lighten($primary, 15%) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+        transform: translateY(-0.25em);
+    }
+    
+    .button:after {
+        background-color: lighten($primary, 15%) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+        transform: translateY(-0.25em);
+    }
+    
+    
+    .button2{
+        flex: 0 1 auto;
+        min-width: 125px;
+        min-height: 50px;
+        max-width: 300px;
+        max-height: 120px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        white-space: normal;
+        background-color: transparent;
+        color: color($colors,primary);
+        border-color: color($colors,primary);
+        border-radius: 5px;
+        border-width: medium;
+    }
+    
+    .button2:hover{
+        color: lighten($primary, 15%) !important;
+        border-color: lighten($primary, 15%) !important;
+        background-color: transparent !important;
+        box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+    }
+    
+    .button2:after {
+        background-color: lighten($primary, 15%) !important;
+        box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+    }
+    
+    h2{
+        font-size: 17pt;
+        padding: 10px;
+        margin: auto;
+        min-width: 125px;
+        min-height: 50px;
+        max-width: 250px;
+        max-height: 100px;
+    }
+    
+    h3{
+        font-size: 15pt;
+        padding: 10px;
+        margin: auto;
+        min-width: 125px;
+        min-height: 50px;
+        max-width: 250px;
+        max-height: 100px;
+    }
+    
+/*   .button{
           width: 100%;
           height: 100%;
-          display:block;
           font-size: 3rem;
           font-weight:bold;
           color:#fff;
@@ -80,20 +143,21 @@ page-lobby {
           border: none;
           border-radius: 5px;
           box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;
-    }
-
-    /* Below is a media query. Media queries respond to the screen and device.
-    In this example the below css is only being applied at widths under 768px.
-    There are other settings such as, min-width, orientation and device.
-    Media queries are how we make our websites and apps responsive, as in respond
-    to the size of the screen it is being used on.
-    */
-    
-/*    @media screen and (max-width: 768px) {
-        #body-container{
-            flex-direction: column;
-        }
     }*/
+    
+     @media screen and (orientation: landscape){
+       .orgbuttons{
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        ion-segment{
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
 
     
 }

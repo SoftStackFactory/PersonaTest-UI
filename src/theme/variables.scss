@@ -34,19 +34,24 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #18314f,
+  secondary:  #384e77,
+  danger:     #e6f9af,
+  light:      #8bbeb2,
+  dark:       #0d0630
 );
 
+// override ios ion-range line color
+$range-ios-bar-background-color: color($colors, primary);
+$range-ios-bar-active-background-color: color($colors, primary);
+// override material design ion-range line color and minimum knob color
+$range-md-bar-background-color: color($colors, primary);
+$range-md-bar-active-background-color: color($colors, primary);
+$range-md-knob-min-background-color: color($colors, primary);
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
 
 
 // App Material Design Variables
@@ -54,11 +59,10 @@ $colors: (
 // Material Design only Sass variables can go here
 
 
-
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
+
 
 
 
