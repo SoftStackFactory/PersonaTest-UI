@@ -18,7 +18,7 @@ export class SearchListComponent {
 //Variables for the tests arrays; The calling page will input them in its .html file
   @Input() ourList: {  name: string, date: string }[];
   @Input() filteredList: { name: string, date: string }[];  
-  
+
   //Variable for user's input in search bar 
   searchInput: string = "";
   

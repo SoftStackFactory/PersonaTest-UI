@@ -19,17 +19,23 @@
     </ion-card>
   </div>
 
+  <div>
+    <ion-label text-center>Tests I've taken</ion-label>
+    <ion-label *ngIf="emptyHistory"> No tests taken yet </ion-label>
+    <ion-list *ngIf="!emptyHistory">
+      <ion-item class="item display-block" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
+        <div id="text-block">
+        <h2> {{ obj.name }} </h2>
+        <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
+        </div>
+        
+        <div class="small-chart half-container">
+          <mini-graph class="chart-align"></mini-graph>
+        </div>
   
-  <ion-label text-center>Tests I've taken</ion-label>
-  <ion-label *ngIf="emptyHistory"> No tests taken yet </ion-label>
-  <ion-list *ngIf="!emptyHistory">
-    <ion-item class="item" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
-      <h2> {{ obj.name }} </h2>
-      <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
-      <div class="small-chart"><mini-graph class="chart-align"></mini-graph></div>
-
-    </ion-item>
-  </ion-list>
+      </ion-item>
+    </ion-list>
+  </div>
 
     
  
