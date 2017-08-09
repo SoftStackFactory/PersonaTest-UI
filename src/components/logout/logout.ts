@@ -25,15 +25,9 @@ export class LogoutComponent {
   
   userLogout() {
     let confirmLogout = this.alertCtrl.create({
-      title: 'Logout of PersonaTest?',
+      title: 'Confirm Logout',
       message: 'Are you sure you would like to logout? Any unsaved progress may be lost.',
       buttons: [
-        {
-          text: 'No, keep me logged in',
-          handler: () => {
-            console.log("User cancelled logout");
-          }
-        },
         {
           text: 'Yes, log me out',
           handler:() => {
@@ -41,6 +35,12 @@ export class LogoutComponent {
             // this.appUser.logout(window.localStorage.token)
             window.localStorage.clear();
             this.navCtrl.setRoot(LandingPage);
+          }
+        },
+        {
+          text: 'No, keep me logged in',
+          handler: () => {
+            console.log("User cancelled logout");
           }
         }
         ]
