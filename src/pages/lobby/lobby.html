@@ -29,14 +29,14 @@
   
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
-          <h2>Hello {{ this.userName }}</h2>
-           <h3>Take a Test</h3>
+          <h3>Hello {{ this.userName }}</h3>
+           <h2>Take a Test</h2>
            <div class="persbuttons">
              <button ion-button block (click)="forWork()" class="button">For Work</button>
              <button ion-button block (click)="forPlay()" class="button">For Play</button>
            </div>
            <div class="showmy">
-             <h3>Show My</h3>
+             <h2>Show My</h2>
              <button ion-button block outline (click)="showResults()" class="button2">Results</button>
           </div>
     </div>
