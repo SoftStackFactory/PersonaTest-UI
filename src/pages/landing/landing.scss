@@ -143,7 +143,7 @@ page-landing {
                         padding: 20px;
                 }
                 .font{
-                        font-size: 50px;
+                        font-size: 45px;
                         color: color($colors, primary);
                         font-family: Ubuntu;
                 }
@@ -153,4 +153,12 @@ page-landing {
                         font-size: 50px;
                 }
         }        
+        @media screen and (min-width: 1025px){
+                .container{
+                        padding-bottom: 0;
+                        padding-top: 0px;
+                        
+                }
+                
+        }
 }
