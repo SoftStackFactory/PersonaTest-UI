@@ -35,6 +35,7 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+import { LogoutComponent } from '../components/logout/logout';
 
 
 let injections: any[] = [
@@ -64,7 +65,8 @@ let injections: any[] = [
     ForWorkModal,
     BeAnOrganizationModal,
     IpiptestlistComponent,
-    MiniGraphComponent
+    MiniGraphComponent,
+    LogoutComponent
     ]
 
 @NgModule({
