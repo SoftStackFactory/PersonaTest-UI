@@ -13,7 +13,9 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  
+  user: any = {}
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

@@ -9,17 +9,20 @@
 
 <ion-content>
     <div class="login-container">
-        <form class="form-container">
-            <ion-item>
-                <ion-label>Email</ion-label>
-                <ion-input name="email" type="email" placeholder="example@email.com" required></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Password</ion-label>
-                <ion-input name="password" type="password" placeholder="Password" required></ion-input>
-            </ion-item>
-            
-            <button ion-button type="submit" class="button-block">Login</button>
+        <form class="form-container" #logForm="ngForm" (ngSubmit)="loginForm(logForm)" novalidate>
+            <div class="login-rows">
+                <ion-item>    
+                  <ion-label floating>Email</ion-label>
+                    <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label floating>Password</ion-label>
+                    <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+                </ion-item>
+            </div>
+            <div class="login-button">
+                <button ion-button type="submit" class="outline">Login</button>
+            </div>
         </form>
     </div>
 </ion-content>
