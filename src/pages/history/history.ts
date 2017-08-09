@@ -20,8 +20,11 @@ export class HistoryPage {
   searchInput: string = "";
   searchDate: string = "";
   
-  //Boolean that turns on organization view (default to false - user view)
+  //Boolean that for organization view (default to false - aka user view)
   orgView: boolean = false; 
+  
+  //Boolean that will display the empty results page (default to false)
+  emptyHistory: boolean = false;
   
   //Variable to store our array of test as an array of objects; Currently using mock data
   ourList: { name: string, date: string }[] = 

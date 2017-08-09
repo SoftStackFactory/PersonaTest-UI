@@ -11,7 +11,7 @@
     <ion-card>
       <ion-label>Search results</ion-label>
       <ion-list>
-      <ion-item *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
+      <ion-item class="item" *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
         <h2> {{ obj.name }} </h2>
         <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
       </ion-item>
@@ -21,14 +21,16 @@
 
   
   <ion-label text-center>Tests I've taken</ion-label>
-  <ion-list>
-    <ion-item *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
+  <ion-label *ngIf="emptyHistory"> No tests taken yet </ion-label>
+  <ion-list *ngIf="!emptyHistory">
+    <ion-item class="item" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
       <h2> {{ obj.name }} </h2>
       <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
       <div class="small-chart"><mini-graph class="chart-align"></mini-graph></div>
 
     </ion-item>
   </ion-list>
+
     
  
 </div>
