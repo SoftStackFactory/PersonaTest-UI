@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
@@ -20,6 +21,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
+
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 
@@ -30,12 +32,17 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
-import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
+<<<<<<< HEAD
+
+
+//Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+=======
+>>>>>>> feature/orgFix
 
 
 let injections: any[] = [
@@ -60,13 +67,10 @@ let injections: any[] = [
     ProgressBarComponent,
     SearchHistoryComponent,
     MiniGraphComponent,
-    EulaComponent,
     TestSelectionComponent,
     ForWorkModal,
     BeAnOrganizationModal,
-    IpiptestlistComponent,
-    MiniGraphComponent,
-    LogoutComponent
+    IpiptestlistComponent
     ]
 
 @NgModule({
@@ -79,6 +83,7 @@ let injections: any[] = [
   bootstrap: [IonicApp],
   entryComponents: injections,
   providers: [
+    EmailComposer,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
