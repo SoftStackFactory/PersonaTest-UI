@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController} from 'ionic-angular';   //To navigate to individual test results page
 import { ResultsPage } from '../../pages/results/results';
+import { TestListsPage } from '../../pages/test-lists/test-lists';
 import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 
 /**
@@ -28,6 +29,8 @@ export class SearchListComponent {
   //Boolean for displaying the search results dropdown
   displayDropdown: boolean = false;
   
+  //Boolean - displays graphs if history is not empty; otherwise prompt user
+  emptyHistory: boolean = true;
   
   constructor( public navCtrl: NavController ) {
     console.log('Hello SearchListComponent Component');
@@ -79,6 +82,10 @@ export class SearchListComponent {
   selectedItem(mouseClick, item){
     console.log("The item you selected is " + item.name);
     this.navCtrl.push(ResultsPage);
+  }
+  
+  goToTestsPage(){
+    this.navCtrl.push(TestListsPage);
   }
 
 }

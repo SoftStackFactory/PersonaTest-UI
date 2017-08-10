@@ -20,12 +20,17 @@
   </div>
 
   <div>
-    <ion-label text-center>Tests I've taken</ion-label>
-    <ion-label *ngIf="emptyHistory"> No tests taken yet </ion-label>
+    <ion-label text-center> <strong>Tests I've taken</strong></ion-label>
+    <ion-label *ngIf="emptyHistory" text-center> 
+      <p> No tests taken yet </p>
+      <p> Click <u class="light-text" (click)="goToTestsPage()">here</u> to take a test </p> 
+      <p> <br></p>
+      <p (click)="emptyHistory=!emptyHistory"><u><i>View Mock Data</i></u></p> 
+    </ion-label>
     <ion-list *ngIf="!emptyHistory">
       <ion-item class="item display-block" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
         <div id="text-block">
-        <h2> {{ obj.name }} </h2>
+        <h2> <strong> {{ obj.name }} </strong> </h2>
         <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
         </div>
         
