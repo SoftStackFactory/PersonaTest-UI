@@ -23,7 +23,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  rootPage:any = QuicklinksPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
