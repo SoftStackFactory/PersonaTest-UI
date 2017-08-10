@@ -32,10 +32,12 @@ import { SearchHistoryComponent } from '../components/search-history/search-hist
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
-import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
-import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+
+//Modals
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
 
 let injections: any[] = [
