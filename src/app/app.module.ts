@@ -32,9 +32,12 @@ import { SearchListComponent } from '../components/search-list/search-list';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
+import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+import { LogoutComponent } from '../components/logout/logout';
+
+//Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 
 
 let injections: any[] = [
@@ -64,7 +67,8 @@ let injections: any[] = [
     ForWorkModal,
     BeAnOrganizationModal,
     IpiptestlistComponent,
-    MiniGraphComponent
+    MiniGraphComponent,
+    LogoutComponent
     ]
 
 @NgModule({
