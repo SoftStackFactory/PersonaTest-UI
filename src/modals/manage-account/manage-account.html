@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="dismiss()">
+      <ion-icon name="close-circle"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>PersonaTest</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h4>Enter changes to your profile and click submit when complete</h4>
+  <form [formGroup]="accountChangeForm" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>First Name: </ion-label>
+        <ion-input type="text" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name: </ion-label>
+        <ion-input type="text" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email: </ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Age: </ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gender: </ion-label>
+          <ion-select type="text" formControlName="gender">
+            <ion-option>Decline</ion-option>
+            <ion-option>Female</ion-option>
+            <ion-option>Male</ion-option>
+            <ion-option>Other</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password: </ion-label>
+        <ion-textarea formControlName="password"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
+    </form>
+</ion-content>

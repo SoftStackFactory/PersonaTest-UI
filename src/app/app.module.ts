@@ -36,6 +36,7 @@ import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
 
 
 let injections: any[] = [
@@ -66,7 +67,8 @@ let injections: any[] = [
     BeAnOrganizationModal,
     IpiptestlistComponent,
     MiniGraphComponent,
-    LogoutComponent
+    LogoutComponent,
+    ManageAccountModal
     ]
 
 @NgModule({
