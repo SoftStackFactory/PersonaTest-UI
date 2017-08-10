@@ -15,7 +15,8 @@ export class QuestionPage {
   question: string;
   questionNum: number = 0;
   totalQuestionNum: number;
-  degreeNum: any;
+  // setting slider value to Neutral
+  degreeNum: number = 50;
   answers = [];
 
   constructor(public navCtrl: NavController,
@@ -39,8 +40,8 @@ export class QuestionPage {
       this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
     }
     this.answers.push(this.convertScale(this.degreeNum))
-    // reset slider
-    this.degreeNum = null;
+    // resetting slider value to Neutral
+    this.degreeNum = 50;
   }
   toLobbyPage() {
     console.log('to lobby page');
