@@ -2,5 +2,6 @@
   "name": "myBlank",
   "app_id": "",
   "type": "ionic-angular",
+  "typescript": true,
   "v2": true
 }
