@@ -1,36 +1,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Title/AppName</ion-title>
+    <ion-title>PersonaTest</ion-title>
   </ion-navbar>
 
 </ion-header>
-git 
-<ion-content padding>
+<ion-content id="body" padding>
+
   <div class="container">
-    <div class="photo"> Photo here</div>
-  </div>
-  <div class="container">
-    <div class="wizard"><ion-slides pager>
+    <div class="wizard">
+      <ion-slides pager>
+        <ion-slide style="background-color: #384e77">
+            <div class="picture">
+              <div class="photo"><img src="https://pixabay.com/get/e83cb40c2ef2033ed1584d05fb0938c9bd22ffd41cb1134096f8c87ca1/growth-1953662_1280.jpg" height="100"></div>
+            </div>
+          <h2 class="font">Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.</h2>
+        </ion-slide>
 
-  <ion-slide style="background-color: white">
-    <h2>Welcome to PersonaTest</h2>
-  </ion-slide>
+        <ion-slide style="background-color: #384e77">
+          <div class="picture">
+              <div class="photo"><img src="https://cdn.pixabay.com/photo/2015/11/03/09/28/puzzle-1020411_640.jpg" height="100"></div>
+            </div>
+          <h2 class="font">Find That Perfect Puzzle Peace! Locate the Perfect Fit to Fill All Your Positions of Need.</h2>
+        </ion-slide>
 
-  <ion-slide style="background-color: blue">
-    <h2>Take Different Personality Test</h2>
-  </ion-slide>
-
-  <ion-slide style="background-color: red">
-    <h2>Submit to Partnering Jobs, or Take for fun!</h2>
-  </ion-slide>
-
-</ion-slides></div>
+        <ion-slide style="background-color: #384e77">
+          <div class="picture">
+              <div class="photo"><img src="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219_640.png" height="100"></div>
+            </div>
+          <h2 class="font">For Hire or for Personal Use, Take A test to Gain A Better Understanding of Your Personality Type.</h2>
+        </ion-slide>
+      </ion-slides>
+    </div>
   </div>
   <div class="bottom">
-    <button ion-button type="submit" class="button-block">
+    <button ion-button type="submit" class="button-block" (click)="Login()">
       Login
     </button>
-  <div class="Signup">Signup</div>
+  <div class="Signup" (click)="Register()">Signup</div>
   </div>
 </ion-content>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { EmailComposer } from '@ionic-native/email-composer';
 import { ToastController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 
@@ -29,7 +28,6 @@ export class OrganizationManagePage {
   
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    private emailComposer: EmailComposer,
     public toastCtrl: ToastController,
     public modalCtrl: ModalController) {
       this.organizationName = "SoftStack Factory";
@@ -59,7 +57,9 @@ export class OrganizationManagePage {
       };
       console.log("Change Email Sent");
       this.navCtrl.push(LobbyPage);
-      return this.emailComposer.open(email);
+
+      //return this.emailComposer.open(email);
+
     }
   }
   
