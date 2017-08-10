@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { LobbyPage } from '../lobby/lobby';
 
@@ -17,10 +18,10 @@ import { LobbyPage } from '../lobby/lobby';
 export class OrganizationBecomePage {
   organization: any = {}
   userEmail: string
-  constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams
-  ) {}
+  constructor(public navCtrl: NavController, 
+  public navParams: NavParams,
+  private emailComposer: EmailComposer) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrganizationBecomePage');

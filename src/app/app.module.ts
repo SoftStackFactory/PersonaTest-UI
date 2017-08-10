@@ -21,6 +21,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 
+
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 
@@ -31,8 +32,8 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchHistoryComponent } from '../components/search-history/search-history';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
-import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
+<<<<<<< HEAD
 
 
 //Modals
@@ -40,6 +41,8 @@ import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+=======
+>>>>>>> feature/orgFix
 
 
 let injections: any[] = [
@@ -67,8 +70,7 @@ let injections: any[] = [
     TestSelectionComponent,
     ForWorkModal,
     BeAnOrganizationModal,
-    IpiptestlistComponent,
-    MiniGraphComponent
+    IpiptestlistComponent
     ]
 
 @NgModule({
