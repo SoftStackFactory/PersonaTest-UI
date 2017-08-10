@@ -35,7 +35,6 @@ $app-direction: ltr;
 
 $colors: (
 
-
   //Briannasecondary:  #8bbeb2,
   terciary:   #384e77,
   accent:     #e6f9af,
@@ -45,6 +44,14 @@ $colors: (
   light:      #8bbeb2,
   dark:       #0d0630
 );
+
+// override ios ion-range line color
+$range-ios-bar-background-color: color($colors, primary);
+$range-ios-bar-active-background-color: color($colors, primary);
+// override material design ion-range line color and minimum knob color
+$range-md-bar-background-color: color($colors, primary);
+$range-md-bar-active-background-color: color($colors, primary);
+$range-md-knob-min-background-color: color($colors, primary);
 
 // App iOS Variables
 // --------------------------------------------------
