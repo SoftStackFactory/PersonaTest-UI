@@ -34,24 +34,23 @@ search-list {
     /* For desktop (and bigger than iPad) */
     
         .display-block {
-            display: inline-block!important;
-     
-        }
-        
-        #text-block {
-            width: 50%!important;
-            float: left;
-        }
-        
-        .small-chart {
-            width: 50%!important;
-            float: right;
-            padding-bottom: 2%;
+            display: inline!important;
+            width: 100%;
         }
         
         .half-container {
             width: 50%!important;
         }
+        
+        #text-block {
+            float: left;
+        }
+        
+        .small-chart {
+            float: right;
+            padding-bottom: 2%;
+        }
+        
     }
 
 }

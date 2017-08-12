@@ -29,9 +29,9 @@
     </ion-label>
     <ion-list *ngIf="!emptyHistory">
       <ion-item class="item display-block" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
-        <div id="text-block half-container">
-        <h2> <strong> {{ obj.name }} </strong> </h2>
-        <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
+        <div id="text-block" class="half-container">
+          <h2> <strong> {{ obj.name }} </strong> </h2>
+          <h3> Taken on: <strong>{{ obj.date }}</strong> </h3>
         </div>
         
         <div class="small-chart half-container">
