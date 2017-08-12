@@ -29,6 +29,7 @@ search-list {
         color: light!important;
     }
     
+    
     @media only screen and (min-width: 768px) {
     /* For desktop (and bigger than iPad) */
     
@@ -46,6 +47,10 @@ search-list {
             width: 50%!important;
             float: right;
             padding-bottom: 2%;
+        }
+        
+        .half-container {
+            width: 50%!important;
         }
     }
 
