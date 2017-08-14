@@ -22,6 +22,7 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
+import { AppUser } from '../providers/app-user';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -84,7 +85,8 @@ let injections: any[] = [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QuestionsProvider
+    QuestionsProvider,
+    AppUser
   ]
 })
 export class AppModule {}
