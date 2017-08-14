@@ -30,17 +30,21 @@
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>Hello {{ this.userName }}</h3>
-           <div class="persbuttons">
+           <div class="testbuttons">
              <button ion-button block (click)="forPlay()" class="button">Take a Test</button>
              <button ion-button block outline (click)="showResults()" class="button2">View Results</button>
           </div>
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
-          <h3>Place Org Search Here?</h3>
-          <div class="persbuttons">
+          <h3>Org Search Here?</h3>
+          <ion-toolbar>
+            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+          </ion-toolbar>
+          <div class="testbuttons">
             <button ion-button block (click)="forWork()" class="button">Take a Test</button>
             <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
+            <button ion-button block outline (click)="becomeOrg()" class="button2">Become an<br /> Organization</button>
           </div>
     </div>
     

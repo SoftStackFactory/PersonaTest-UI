@@ -24,7 +24,7 @@ page-lobby {
         width: 100%;
     }
     
-    .persbuttons{
+    .testbuttons{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -157,7 +157,7 @@ page-lobby {
     }*/
     
      @media screen and (orientation: landscape){
-       .persbuttons{
+       .testbuttons{
             flex-direction: row;
             padding: 10px;
         }
