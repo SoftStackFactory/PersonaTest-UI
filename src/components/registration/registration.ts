@@ -92,7 +92,7 @@ export class RegistrationComponent {
           this.alertTitle = "500";
           this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
           return this.showAlert();
-     }  
+        }    
       });
   }
   
