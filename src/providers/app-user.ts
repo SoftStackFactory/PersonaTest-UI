@@ -14,5 +14,14 @@ export class AppUser {
   constructor(public http: Http) {
     console.log('Hello AppUser Provider');
   }
-
+  
+  baseUrl: string = "http://sp-17-vincent-jbrownssf.c9users.io:8080/api"
+  path: string = "/AppUsers"
+  
+  register(newUserData) {
+    return this.http.post(
+      this.baseUrl + this.path,
+      newUserData
+      );
+  }
 }
