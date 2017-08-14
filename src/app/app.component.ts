@@ -22,7 +22,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
   templateUrl: 'app.html'
 })
 export class MyApp {
-
+  asdf: string = "Pedro"
   rootPage:any = QuicklinksPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
