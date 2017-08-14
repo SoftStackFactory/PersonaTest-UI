@@ -19,6 +19,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
+import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -35,6 +36,7 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+
 
 
 let injections: any[] = [
@@ -64,7 +66,8 @@ let injections: any[] = [
     ForWorkModal,
     BeAnOrganizationModal,
     IpiptestlistComponent,
-    MiniGraphComponent
+    MiniGraphComponent,
+    LobbyOrganizationPage
     ]
 
 @NgModule({
