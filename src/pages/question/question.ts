@@ -18,6 +18,7 @@ export class QuestionPage {
   // setting slider value to Neutral
   degreeNum: number = 50;
   answers = [];
+  private questions: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -26,18 +27,26 @@ export class QuestionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
-    this.totalQuestionNum = this.questionsProvider.getQuestions().length;
+    this.questionsProvider.getQuestions().subscribe(
+      questions => {
+        this.questions = questions;
+        this.totalQuestionNum = questions.length
+        console.log("questions", this.questions);
+      }, error => {
+        alert("Something went wrong. For assistance, please contact SSF");
+        console.log(error);
+      }
+    )
   }
   ionViewWillEnter() {
-    this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+    this.question = this.questions[this.questionNum]["text"];
   }
   toNextQuestion() {
-
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
       this.navCtrl.setRoot(ResultsPage);
     } else {
       this.questionNum++;
-      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+      this.question = this.questions[this.questionNum]["text"];
     }
     this.answers.push(this.convertScale(this.degreeNum))
     // resetting slider value to Neutral
