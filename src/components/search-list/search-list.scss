@@ -1,0 +1,56 @@
+search-list {
+    
+    .small-chart {
+        width: 75%;
+        display: flex!important;
+        margin-left: auto;
+        justify-content: flex-end!important;
+        
+    }
+    
+    .chart-align > * {
+        display: flex!important;
+        justify-content: flex-end!important;
+        margin-left: auto;
+    }
+    
+
+    .container-width {
+        width: 100vw;
+    }
+    
+    .item:hover{
+        background-color: accent !important;
+        cursor: pointer; cursor: hand;
+        
+    }
+    
+    .light-text {
+        color: light!important;
+    }
+    
+    
+    @media only screen and (min-width: 768px) {
+    /* For desktop (and bigger than iPad) */
+    
+        .display-block {
+            display: inline!important;
+            width: 100%;
+        }
+        
+        .half-container {
+            width: 50%!important;
+        }
+        
+        #text-block {
+            float: left;
+        }
+        
+        .small-chart {
+            float: right;
+            padding-bottom: 2%;
+        }
+        
+    }
+
+}

@@ -5,49 +5,61 @@
   <!--</div>-->
     <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
       <div class="registration-rows">
+        
         <ion-item>
-          
           <ion-label floating><small class="asterik">*</small>First Name</ion-label>
             <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
         </ion-item>
+        
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
             <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
         </ion-item>
+        
         <ion-item>
           <ion-label floating>Age</ion-label>
             <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
         </ion-item>
+        
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
             <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
         </ion-item>
+        
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Password</ion-label>
             <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
         </ion-item>
+        
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
             <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
         </ion-item>
+        
         <ion-item>
-          <ion-label floating>Gender</ion-label>
-            <ion-select [(ngModel)]="user.gender" name="gender">
+          <ion-label floating><small class="asterik">*</small>Gender</ion-label>
+            <ion-select [(ngModel)]="user.gender" name="gender" required>
               <ion-option>Female</ion-option>
               <ion-option>Male</ion-option>
               <ion-option>Other</ion-option>
-              <!--<ion-option>Decline</ion-option>-->
+              <ion-option>Decline</ion-option>
             </ion-select>
         </ion-item>
+        
+        <div class="registration-eula">
+          <ion-checkbox name="eula" [(ngModel)]="user.isEula" (ionChange)="checkEula"></ion-checkbox>
+            <span>I accept the Terms & Conditions</span>
+        </div>
+        
       </div>
       <div class="register-button">
         <button ion-button outline type="submit">Register</button>
       </div>
     </form>
-    <div class="registration-eula">
-        <ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>
-          <em>I accept the 
-            <a (click)="showEula()">Terms & Conditions</a>
+    <div class="view-eula">
+        <!--<ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>-->
+          <em> 
+            <a (click)="showEula()">View our Terms & Conditions</a>
           </em>
 
     </div>

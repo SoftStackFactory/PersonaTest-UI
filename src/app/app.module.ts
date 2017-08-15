@@ -19,25 +19,29 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
+import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
+import { AppUser } from '../providers/app-user';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
-import { SearchHistoryComponent } from '../components/search-history/search-history';
+import { SearchListComponent } from '../components/search-list/search-list';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
 
 
 let injections: any[] = [
@@ -59,8 +63,8 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
+    SearchListComponent,
     ProgressBarComponent,
-    SearchHistoryComponent,
     MiniGraphComponent,
     EulaComponent,
     TestSelectionComponent,
@@ -68,7 +72,9 @@ let injections: any[] = [
     BeAnOrganizationModal,
     IpiptestlistComponent,
     MiniGraphComponent,
-    LogoutComponent
+    LobbyOrganizationPage,
+    LogoutComponent,
+    ManageAccountModal
     ]
 
 @NgModule({
@@ -84,7 +90,8 @@ let injections: any[] = [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QuestionsProvider
+    QuestionsProvider,
+    AppUser
   ]
 })
 export class AppModule {}
