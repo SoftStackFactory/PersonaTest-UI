@@ -55,6 +55,7 @@ export class ChartComponent {
         scale: {
           ticks: {
             beginAtZero: true,
+            stepSize: 5,
             max: 100
           }
         }
