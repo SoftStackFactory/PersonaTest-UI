@@ -43,11 +43,7 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
-
-//Modals
-import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
-import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+import { AnswersProvider } from '../providers/answers/answers';
 
 
 let injections: any[] = [
@@ -66,7 +62,7 @@ let injections: any[] = [
     OrganizationBecomePage,
     ChartComponent,
     TestlistComponent,
-    ProgressBarComponent, 
+    ProgressBarComponent,
     QuicklinksPage,
     RegistrationComponent,
     SearchListComponent,
@@ -98,7 +94,8 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser
+    AppUser,
+    AnswersProvider
   ]
 })
 export class AppModule {}

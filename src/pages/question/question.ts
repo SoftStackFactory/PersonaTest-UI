@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
+import { AnswersProvider } from '../../providers/answers/answers';
 import { ResultsPage } from '../results/results';
 import { LobbyPage } from '../lobby/lobby';
 
@@ -14,6 +15,7 @@ export class QuestionPage {
   userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
+  questionText: string;
   totalQuestionNum: number;
   // setting slider value to Neutral
   degreeNum: number = 50;
@@ -22,7 +24,8 @@ export class QuestionPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private questionsProvider: QuestionsProvider) {
+              private questionsProvider: QuestionsProvider,
+              private answersProvider: AnswersProvider) {
   }
 
   ionViewDidLoad() {
@@ -31,6 +34,8 @@ export class QuestionPage {
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
+        this.question = this.questions[this.questionNum];
+        this.questionText = this.questions[this.questionNum]["text"];
         console.log("questions", this.questions);
       }, error => {
         alert("Something went wrong. For assistance, please contact SSF");
@@ -40,17 +45,35 @@ export class QuestionPage {
   }
   ionViewWillEnter() {
     if (this.questions) {
-      this.question = this.questions[this.questionNum]["text"];
+      this.question = this.questions[this.questionNum];
+      this.questionText = this.questions[this.questionNum]["text"];
     }
   }
   toNextQuestion() {
+    console.log("Question", this.question);
+    let answer = {
+      questionId: this.question["id"],
+      testTakenId: "testTaken",
+      selection: this.convertScale(this.degreeNum),
+      date: new Date(),
+    }
+    this.answers.push(answer)
+    this.answersProvider.saveAnswer(answer).subscribe(
+      answer => {
+        console.log(answer);
+      }, error => {
+        console.log(error);
+      }
+    )
+    console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
+
       this.navCtrl.setRoot(ResultsPage);
     } else {
       this.questionNum++;
-      this.question = this.questions[this.questionNum]["text"];
+      this.question = this.questions[this.questionNum];
+      this.questionText = this.questions[this.questionNum]["text"];
     }
-    this.answers.push(this.convertScale(this.degreeNum))
     // resetting slider value to Neutral
     this.degreeNum = 50;
   }
