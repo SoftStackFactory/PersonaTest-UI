@@ -3,6 +3,8 @@ import { AlertController, NavController } from 'ionic-angular';
 
 import { LandingPage } from '../../pages/landing/landing';
 
+import { AppUser } from '../../providers/app-user';
+
 /**
  * Generated class for the Logout component.
  *
@@ -19,7 +21,9 @@ export class LogoutComponent {
 
   constructor(
     private navCtrl: NavController,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController,
+    private appUser: AppUser
+    ) {
       console.log('Hello Logout Component');
     }
   
@@ -32,7 +36,7 @@ export class LogoutComponent {
           text: 'Yes, log me out',
           handler:() => {
             console.log("User has logged out");
-            // this.appUser.logout(window.localStorage.token)
+            this.appUser.logout(window.localStorage.token)
             window.localStorage.clear();
             this.navCtrl.setRoot(LandingPage);
           }
