@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 
 
@@ -15,6 +15,7 @@ import { Chart } from 'chart.js';
 export class MiniGraphComponent {
 
   @ViewChild('graphCanvas') graphCanvas;
+  @Input() testResults: any; 
    
   test: any = { Agreeableness: 55, Conscientiousness: 73, ES: 35, Extraversion: 40, Intellect: 85  }; 
   miniChart: any;
@@ -68,6 +69,9 @@ export class MiniGraphComponent {
               beginAtZero:true,
               max: 100
             }
+          }],
+         xAxes: [{
+              display: false
           }]
         },
         legend: {
