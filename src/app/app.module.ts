@@ -23,7 +23,9 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
+import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUser } from '../providers/app-user';
+
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -91,6 +93,7 @@ let injections: any[] = [
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
+    TestHistoryProvider,
     AppUser
   ]
 })
