@@ -42,6 +42,9 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
+import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
+import { OrgSearchComponent } from '../components/org-search/org-search';
+
 
 
 let injections: any[] = [
@@ -75,6 +78,7 @@ let injections: any[] = [
     LobbyOrganizationPage,
     LogoutComponent,
     ManageAccountModal
+    OrgSearchComponent
     ]
 
 @NgModule({

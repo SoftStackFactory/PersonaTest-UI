@@ -37,9 +37,9 @@
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
           <h3>Org Search Here?</h3>
-          <ion-toolbar>
-            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
-          </ion-toolbar>
+          <ion-item>
+            <org-search></org-search>
+          </ion-item>
           <div class="testbuttons">
             <button ion-button block (click)="forWork()" class="button">Take a Test</button>
             <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
