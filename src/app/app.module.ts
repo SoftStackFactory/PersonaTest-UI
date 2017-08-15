@@ -30,7 +30,7 @@ import { ChartComponent } from '../components/chart/chart';
 import { TestlistComponent } from '../components/testlist/testlist';
 import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
-import { SearchHistoryComponent } from '../components/search-history/search-history';
+import { SearchListComponent } from '../components/search-list/search-list';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
@@ -63,8 +63,8 @@ let injections: any[] = [
     ProgressBarComponent, 
     QuicklinksPage,
     RegistrationComponent,
+    SearchListComponent,
     ProgressBarComponent,
-    SearchHistoryComponent,
     MiniGraphComponent,
     EulaComponent,
     TestSelectionComponent,
