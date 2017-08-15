@@ -34,6 +34,7 @@ import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
@@ -68,7 +69,8 @@ let injections: any[] = [
     BeAnOrganizationModal,
     IpiptestlistComponent,
     MiniGraphComponent,
-    LogoutComponent
+    LogoutComponent,
+    ManageAccountModal
     ]
 
 @NgModule({

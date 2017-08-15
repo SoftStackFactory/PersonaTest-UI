@@ -7,6 +7,7 @@ import { QuestionPage } from '../question/question';
 
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
+import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 
 /**
  * Generated class for the LobbyPage page.
@@ -58,6 +59,8 @@ export class LobbyPage {
   }
   manageAcc() {
     console.log("go to account management page");
+    let manageAccModal = this.modalCtrl.create(ManageAccountModal);
+    manageAccModal.present();
   }
   becomeOrg() {
     console.log("go to Organization request page");
