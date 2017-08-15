@@ -6,6 +6,7 @@ page-results {
         flex-direction: column;
         margin: auto;
         position: relative;
+        max-height: 521px;
     }
     
     @media screen and (min-width: 728px) {
