@@ -15,6 +15,7 @@ export class AppUser {
     console.log('Hello AppUser Provider');
   }
   
+  // CHANGE THE BASE URL TO MATCH YOUR STRONGLOOP API EXPLORER
   baseUrl: string = "http://sp-17-vincent-jbrownssf.c9users.io:8080/api"
   path: string = "/AppUsers"
   
