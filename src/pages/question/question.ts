@@ -39,7 +39,9 @@ export class QuestionPage {
     )
   }
   ionViewWillEnter() {
-    this.question = this.questions[this.questionNum]["text"];
+    if (this.questions) {
+      this.question = this.questions[this.questionNum]["text"];
+    }
   }
   toNextQuestion() {
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
