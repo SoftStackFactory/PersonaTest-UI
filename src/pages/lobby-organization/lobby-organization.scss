@@ -1,5 +1,4 @@
-page-lobby {
-
+page-lobby-organization {
     
     *{
          box-sizing: border-box;
@@ -32,20 +31,13 @@ page-lobby {
         width:  100%;
     }
     
-/*    .accountbuttons{
+    .testbuttons{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width:  100%;
         padding: 10px;
-    }*/
-    
-    .orgbuttons{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width:  100%;
     }
     
     $primary: color($colors,primary);
@@ -65,7 +57,6 @@ page-lobby {
         border-radius: 5px;
     }
     
-
     .button:hover {
         //background-color: lighten($primary, 15%) !important;
         //box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
@@ -103,7 +94,6 @@ page-lobby {
     }
     
     .button2:hover{
-
         // color: lighten($primary, 15%) !important;
         // border-color: lighten($primary, 15%) !important;
         // background-color: transparent !important;
@@ -171,5 +161,4 @@ page-lobby {
         }
     }
 
-    
 }

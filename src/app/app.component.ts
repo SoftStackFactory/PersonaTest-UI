@@ -16,6 +16,7 @@ import { HistoryPage } from '../pages/history/history';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 
 @Component({

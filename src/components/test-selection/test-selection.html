@@ -1,34 +1,29 @@
 <!-- Generated template for the TestSelectionComponent component -->
 <div>
-    <ion-item class="availableTests">
-          
-          <ion-label floating>Select available tests</ion-label>
-
-             <ion-list>
-
-              <ion-item>
-                <ion-label *ngFor="let test of availableTests">{{ test.name }}
-                  <button ion-button icon-only small id="testDetail" (click)="showDetails(this.test)">
-                    <ion-icon name="help"></ion-icon>
-                  </button>
-                </ion-label>
-                <ion-checkbox></ion-checkbox>
-              </ion-item>
-            </ion-list>
-          </ion-item>
-          
-          <ion-item>
-          
-          <ion-label floating>Select available tests</ion-label>  
-          <ion-select multiple="true" name="orgTests" type="array" [(ngModel)]="organization.tests">
-            <ion-option *ngFor="let test of availableTests">{{ test.name }}</ion-option>
-          </ion-select>
-          
-            
-        </ion-item>
+  <ion-item class="availableTests">
+    <ion-label floating>Select available tests</ion-label>
+      <ion-list>
         <ion-item>
-            <button ion-button small round outline (click)="testDetails()">
-              Test Descriptions
+          <ion-label *ngFor="let test of availableTests">{{ test.name }}
+            <button ion-button icon-only small id="testDetail" (click)="showDetails(this.test)">
+              <ion-icon name="help"></ion-icon>
             </button>
+          </ion-label>
+          <ion-checkbox></ion-checkbox>
         </ion-item>
+      </ion-list>
+  </ion-item>
+          
+  <ion-item>
+    <ion-label floating>Select available tests</ion-label>  
+      <ion-select multiple="true" name="orgTests" type="array" [(ngModel)]="organization.tests">
+          <ion-option *ngFor="let test of availableTests">{{ test.name }}</ion-option>
+      </ion-select>
+  </ion-item>
+    
+  <ion-item>
+    <button ion-button small round outline (click)="testDetails()">
+      Test Descriptions
+    </button>
+  </ion-item>
 </div>
