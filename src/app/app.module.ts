@@ -37,6 +37,7 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { MenuComponent } from '../components/menu/menu';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
@@ -74,7 +75,8 @@ let injections: any[] = [
     MiniGraphComponent,
     LobbyOrganizationPage,
     LogoutComponent,
-    ManageAccountModal
+    ManageAccountModal,
+    MenuComponent
     ]
 
 @NgModule({
