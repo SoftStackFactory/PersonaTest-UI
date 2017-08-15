@@ -45,11 +45,6 @@ import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 
 
-//Modals
-import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
-import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
-
 let injections: any[] = [
     MyApp,
     LandingPage,
