@@ -22,6 +22,7 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
+import { TestHistoryProvider } from '../providers/test-history/test-history'
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -38,6 +39,7 @@ import { LogoutComponent } from '../components/logout/logout';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
 
 
 let injections: any[] = [
@@ -84,7 +86,8 @@ let injections: any[] = [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QuestionsProvider
+    QuestionsProvider,
+    TestHistoryProvider
   ]
 })
 export class AppModule {}
