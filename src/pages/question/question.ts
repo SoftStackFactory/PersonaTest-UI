@@ -34,8 +34,7 @@ export class QuestionPage {
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
-        this.question = this.questions[this.questionNum];
-        this.questionText = this.questions[this.questionNum]["text"];
+        this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
         alert("Something went wrong. For assistance, please contact SSF");
@@ -43,12 +42,7 @@ export class QuestionPage {
       }
     )
   }
-  ionViewWillEnter() {
-    if (this.questions) {
-      this.question = this.questions[this.questionNum];
-      this.questionText = this.questions[this.questionNum]["text"];
-    }
-  }
+
   toNextQuestion() {
     console.log("Question", this.question);
     let answer = {
@@ -57,7 +51,9 @@ export class QuestionPage {
       selection: this.convertScale(this.degreeNum),
       date: new Date(),
     }
+    // save answer in an array
     this.answers.push(answer)
+    // save answer in backend
     this.answersProvider.saveAnswer(answer).subscribe(
       answer => {
         console.log(answer);
@@ -71,8 +67,7 @@ export class QuestionPage {
       this.navCtrl.setRoot(ResultsPage);
     } else {
       this.questionNum++;
-      this.question = this.questions[this.questionNum];
-      this.questionText = this.questions[this.questionNum]["text"];
+      this.assignQuestion();
     }
     // resetting slider value to Neutral
     this.degreeNum = 50;
@@ -95,6 +90,10 @@ export class QuestionPage {
       case 100:
       return 5;
     }
+  }
+  private assignQuestion() {
+    this.question = this.questions[this.questionNum];
+    this.questionText = this.questions[this.questionNum]["text"];
   }
 
 }
