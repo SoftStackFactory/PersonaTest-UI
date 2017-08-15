@@ -19,6 +19,7 @@ import { FlexDemoPage } from '../pages/flex-demo/flex-demo';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
+import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -39,6 +40,7 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
 
 
 let injections: any[] = [
@@ -69,6 +71,7 @@ let injections: any[] = [
     BeAnOrganizationModal,
     IpiptestlistComponent,
     MiniGraphComponent,
+    LobbyOrganizationPage,
     LogoutComponent,
     ManageAccountModal
     ]
