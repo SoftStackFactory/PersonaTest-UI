@@ -37,13 +37,11 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { OrgSearchComponent } from '../components/org-search/org-search';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
-import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
-import { OrgSearchComponent } from '../components/org-search/org-search';
 
 
 
@@ -77,7 +75,7 @@ let injections: any[] = [
     MiniGraphComponent,
     LobbyOrganizationPage,
     LogoutComponent,
-    ManageAccountModal
+    ManageAccountModal,
     OrgSearchComponent
     ]
 

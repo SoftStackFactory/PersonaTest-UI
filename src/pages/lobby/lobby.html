@@ -36,14 +36,12 @@
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
-          <h3>Org Search Here?</h3>
           <ion-item>
-            <org-search></org-search>
+            <org-search id="searchbar"></org-search>
           </ion-item>
           <div class="testbuttons">
             <button ion-button block (click)="forWork()" class="button">Take a Test</button>
             <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
-            <button ion-button block outline (click)="becomeOrg()" class="button2">Become an<br /> Organization</button>
           </div>
     </div>
     
