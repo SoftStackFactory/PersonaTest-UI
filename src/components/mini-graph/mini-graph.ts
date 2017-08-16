@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 
 
@@ -15,8 +15,9 @@ import { Chart } from 'chart.js';
 export class MiniGraphComponent {
 
   @ViewChild('graphCanvas') graphCanvas;
+  @Input() testResults: any; 
    
-  test: any = { Avoiding: 35, Accommodating: 73, Collaborating: 85, Compromising: 40, Competing: 35  }; 
+  test: any = { Agreeableness: 55, Conscientiousness: 73, ES: 35, Extraversion: 40, Intellect: 85  }; 
   miniChart: any;
 
   constructor() {
@@ -30,19 +31,19 @@ export class MiniGraphComponent {
       type: 'bar',
       data: {
         labels: [
-            'Avoiding',
-            'Accommodating',
-            'Compromising',
-            'Competing',
-            'Collaborating'
+            "Agreeableness",
+            "Conscientiousness",
+            "Emotional Stability",
+            "Extraversion",
+            "Intellect"
           ],
         datasets: [{
           data: [
-            this.test.Avoiding,
-            this.test.Accommodating,
-            this.test.Compromising,
-            this.test.Competing,
-            this.test.Collaborating
+            this.test.Agreeableness,
+            this.test.Conscientiousness,
+            this.test.ES,
+            this.test.Extraversion,
+            this.test.Intellect
           ],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -68,6 +69,9 @@ export class MiniGraphComponent {
               beginAtZero:true,
               max: 100
             }
+          }],
+         xAxes: [{
+              display: false
           }]
         },
         legend: {

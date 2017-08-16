@@ -14,6 +14,7 @@ import { FlexDemoPage }   from '../flex-demo/flex-demo';
 import { HistoryPage }   from '../history/history';
 import { OrganizationManagePage } from '../organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../organization-become/organization-become';
+import { LobbyOrganizationPage } from '../lobby-organization/lobby-organization';
 
 
 /**
@@ -34,7 +35,8 @@ import { OrganizationBecomePage } from '../organization-become/organization-beco
     FlexDemoPage,
     HistoryPage,
     OrganizationManagePage,
-    OrganizationBecomePage
+    OrganizationBecomePage,
+    LobbyOrganizationPage
     ]
 @Component({
   selector: 'page-quicklinks',
