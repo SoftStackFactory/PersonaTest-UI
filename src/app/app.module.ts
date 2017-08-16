@@ -48,6 +48,7 @@ import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organi
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+import { ResultsProvider } from '../providers/results/results';
 
 
 let injections: any[] = [
@@ -98,7 +99,8 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser
+    AppUser,
+    ResultsProvider
   ]
 })
 export class AppModule {}
