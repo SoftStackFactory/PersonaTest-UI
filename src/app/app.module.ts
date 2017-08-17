@@ -41,7 +41,6 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
-import { MenuComponent } from '../components/menu/menu';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
 
@@ -83,7 +82,6 @@ let injections: any[] = [
     LobbyOrganizationPage,
     LogoutComponent,
     ManageAccountModal,
-    MenuComponent,
     HomeComponent,
     OrgSearchComponent
     ]

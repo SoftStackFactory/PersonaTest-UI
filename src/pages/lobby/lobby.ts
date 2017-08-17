@@ -4,7 +4,6 @@ import { ModalController, NavController, NavParams, ViewController, MenuControll
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
-
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../../modals/manage-account/manage-account';
@@ -68,18 +67,5 @@ export class LobbyPage {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
-  
-  //menu control functions
-  openMenu() {
-   this.menuCtrl.open();
- }
-
- closeMenu() {
-   this.menuCtrl.close();
- }
-
- toggleMenu() {
-   this.menuCtrl.toggle();
- }
  
 }
