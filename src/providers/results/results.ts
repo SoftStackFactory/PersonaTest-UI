@@ -13,10 +13,10 @@ export class ResultsProvider {
   
     //Strongloop API Explorer's request URL
     
-  let URL = "http://gerardo-final-jbrownssf.c9users.io:8080/explorer/api";
+  URL = "http://gerardo-final-jbrownssf.c9users.io:8080/explorer/api";
   
   
-  baseUrl: string = URL;
+  baseUrl: string = this.URL;
   
   path: string = "/TestTaken";
   
