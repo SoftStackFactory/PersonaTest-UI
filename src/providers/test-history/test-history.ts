@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { URL } from '../../assets/provider-config'
 
 /*
   Generated class for the TestHistoryProvider provider.
@@ -12,7 +13,7 @@ import 'rxjs/add/operator/map';
 export class TestHistoryProvider {
   
   //baseUrl depends on whose terminal is hosting the backend; update accordingly
-  baseUrl: string = "https://sp-17-jenny-jbrownssf.c9users.io:8080/api";
+  baseUrl: string = URL;
   
   //path is following the API url path from Pt-Backend; update accordingly if spelling changes
   path: string = "/TestTakens";

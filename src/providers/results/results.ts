@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { URL } from '../../assets/provider-config'
 
 /*
   Generated class for the ResultsProvider provider.
@@ -12,14 +13,8 @@ import 'rxjs/add/operator/map';
 export class ResultsProvider {
   
     //Strongloop API Explorer's request URL
-    
-  URL = "http://gerardo-final-jbrownssf.c9users.io:8080/explorer/api";
-  
-  
-  baseUrl: string = this.URL;
-  
+  baseUrl: string = URL;
   path: string = "/TestTaken";
-  
   
   constructor(public http: Http) {
     console.log('Hello ResultsProvider Provider');
