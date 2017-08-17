@@ -25,6 +25,8 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 import { QuestionsProvider } from '../providers/questions/questions';
 import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUser } from '../providers/app-user';
+import { AnswersProvider } from '../providers/answers/answers';
+import { ResultsProvider } from '../providers/results/results';
 
 
 //Components
@@ -46,7 +48,8 @@ import { HomeComponent } from '../components/home/home';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import { ResultsProvider } from '../providers/results/results';
+
+
 
 
 >>>>>>> 5456f9674bbdb27d11436cedc7abce7a34b0d43e
@@ -66,7 +69,7 @@ let injections: any[] = [
     OrganizationBecomePage,
     ChartComponent,
     TestlistComponent,
-    ProgressBarComponent, 
+    ProgressBarComponent,
     QuicklinksPage,
     RegistrationComponent,
     SearchListComponent,
@@ -100,6 +103,7 @@ let injections: any[] = [
     QuestionsProvider,
     TestHistoryProvider,
     AppUser,
+    AnswersProvider,
     ResultsProvider
   ]
 })
