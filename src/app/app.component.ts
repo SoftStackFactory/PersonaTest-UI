@@ -19,12 +19,13 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  rootPage:any = QuicklinksPage;
+  rootPage:any = LobbyPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
