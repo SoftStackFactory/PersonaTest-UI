@@ -35,7 +35,7 @@
         <p>Strongly Disagree</p>
         <p>Strongly Agree</p>
       </div>
-      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum">
+      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
 
 
       </ion-range>
@@ -47,7 +47,7 @@
         <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
       </div>
       <div text-center>
-        <button ion-button (click)="toNextQuestion()">
+        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
           Next Question
         </button>
       </div>

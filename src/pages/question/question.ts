@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
@@ -11,6 +11,7 @@ import { LobbyPage } from '../lobby/lobby';
   templateUrl: 'question.html',
 })
 export class QuestionPage {
+  @ViewChild('slider') slider;
   testName: string = "Goldberg's 1992 Big 5";
   userName: string = "John Smith";
   question: string;
@@ -18,7 +19,7 @@ export class QuestionPage {
   questionText: string;
   totalQuestionNum: number;
   // setting slider value to Neutral
-  degreeNum: number = 50;
+  degreeNum: number = 49;
   answers = [];
   private questions: any;
 
@@ -70,7 +71,8 @@ export class QuestionPage {
       this.assignQuestion();
     }
     // resetting slider value to Neutral
-    this.degreeNum = 50;
+    this.slider.reset();
+    this.degreeNum = 49;
   }
   toLobbyPage() {
     console.log('to lobby page');
