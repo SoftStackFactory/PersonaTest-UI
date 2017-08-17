@@ -16,6 +16,8 @@ import { HistoryPage } from '../pages/history/history';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
+import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
+
 
 
 @Component({
@@ -23,7 +25,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 })
 export class MyApp {
 
-  rootPage:any = QuicklinksPage;
+  rootPage:any = LobbyPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

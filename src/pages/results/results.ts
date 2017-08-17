@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { ChartComponent } from '../../components/chart/chart';
 import { TestlistComponent } from '../../components/testlist/testlist';
+import { LogoutComponent } from '../../components/logout/logout';
+
 
 
 /**

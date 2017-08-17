@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
+import { AnswersProvider } from '../../providers/answers/answers';
 import { ResultsPage } from '../results/results';
 import { LobbyPage } from '../lobby/lobby';
 
@@ -14,33 +15,62 @@ export class QuestionPage {
   userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
+  questionText: string;
   totalQuestionNum: number;
-  degreeNum: any;
+  // setting slider value to Neutral
+  degreeNum: number = 50;
   answers = [];
+  private questions: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private questionsProvider: QuestionsProvider) {
+              private questionsProvider: QuestionsProvider,
+              private answersProvider: AnswersProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionPage');
-    this.totalQuestionNum = this.questionsProvider.getQuestions().length;
+    this.questionsProvider.getQuestions().subscribe(
+      questions => {
+        this.questions = questions;
+        this.totalQuestionNum = questions.length
+        this.assignQuestion();
+        console.log("questions", this.questions);
+      }, error => {
+        alert("Something went wrong. For assistance, please contact SSF");
+        console.log(error);
+      }
+    )
   }
-  ionViewWillEnter() {
-    this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
-  }
-  toNextQuestion() {
 
+  toNextQuestion() {
+    console.log("Question", this.question);
+    let answer = {
+      questionId: this.question["id"],
+      testTakenId: "testTaken",
+      selection: this.convertScale(this.degreeNum),
+      date: new Date(),
+    }
+    // save answer in an array
+    this.answers.push(answer)
+    // save answer in backend
+    this.answersProvider.saveAnswer(answer).subscribe(
+      answer => {
+        console.log(answer);
+      }, error => {
+        console.log(error);
+      }
+    )
+    console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
+
       this.navCtrl.setRoot(ResultsPage);
     } else {
       this.questionNum++;
-      this.question = this.questionsProvider.getQuestion(this.questionNum).Text;
+      this.assignQuestion();
     }
-    this.answers.push(this.convertScale(this.degreeNum))
-    // reset slider
-    this.degreeNum = null;
+    // resetting slider value to Neutral
+    this.degreeNum = 50;
   }
   toLobbyPage() {
     console.log('to lobby page');
@@ -60,6 +90,10 @@ export class QuestionPage {
       case 100:
       return 5;
     }
+  }
+  private assignQuestion() {
+    this.question = this.questions[this.questionNum];
+    this.questionText = this.questions[this.questionNum]["text"];
   }
 
 }

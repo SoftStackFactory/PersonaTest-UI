@@ -11,40 +11,20 @@
     -->
     <ion-title>PersonaTest</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
- 
-  <div padding>
-    <ion-segment [(ngModel)]="testType">
-      <ion-segment-button value="personal">
-        Personal
-      </ion-segment-button>
-      <ion-segment-button value="organization">
-        Professional
-      </ion-segment-button>
-    </ion-segment>
-  </div>
   
-  <div id="main-container" [ngSwitch]="testType">
-    <div *ngSwitchCase="'personal'" id="personalsegment">
-          <h3>Hello {{ this.userName }}</h3>
-           <div class="testbuttons">
-             <button ion-button block (click)="forPlay()" class="button">Take a Test</button>
-             <button ion-button block outline (click)="showResults()" class="button2">View Results</button>
-          </div>
-    </div>
-        
-    <div *ngSwitchCase="'organization'" id="organizationsegment">
-          <ion-item>
-            <org-search id="searchbar"></org-search>
-          </ion-item>
+  <div id="main-container">
+    <h2>Hello {{this.userName }} @ {{ this.organizationName }}</h2>
           <div class="testbuttons">
             <button ion-button block (click)="forWork()" class="button">Take a Test</button>
-            <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
           </div>
-    </div>
-    
+          <div class="testbuttons">
+            <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
+            <button ion-button block outline (click)="manageAcc()" class="button2">Manage Account</button>
+          </div>
   </div>
 
 
