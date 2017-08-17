@@ -4,14 +4,16 @@ import 'rxjs/add/operator/map';
 import { URL } from '../../assets/provider-config'
 
 @Injectable()
-export class QuestionsProvider {
+export class AnswersProvider {
   baseUrl: string = URL;
-  path: string = "/Questions";
+  path: string = "/Answers";
 
   constructor(public http: Http) {
-    console.log('Hello QuestionsProvider Provider');
+    console.log('Hello AnswersProvider Provider');
   }
-  getQuestions() {
-    return this.http.get(this.baseUrl + this.path).map(res => res.json());
+
+  saveAnswer(answer) {
+    return this.http.post(this.baseUrl + this.path, answer).map(res => res.json());
   }
+
 }

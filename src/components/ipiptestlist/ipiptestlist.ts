@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { QuestionPage } from '../../pages/question/question'; 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -29,6 +29,9 @@ export class IpiptestlistComponent {
 
   text: string;
   // isAndroid: boolean = false;
+  
+  //Variable to store the lists of tests available; will be passed in through calling page's html
+  @Input() ourListofTests: {name: string, description: string, date: Date}[]; 
     
   constructor(
     public navCtrl: NavController,

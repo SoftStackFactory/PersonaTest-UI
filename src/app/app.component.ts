@@ -19,6 +19,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })

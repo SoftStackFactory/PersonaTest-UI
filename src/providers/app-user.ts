@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { URL } from '../assets/provider-config'
 
 /*
   Generated class for the AppUser provider.
@@ -10,14 +11,11 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class AppUser {
-
+  baseUrl: string = URL;
+  path: string = "/AppUsers"
   constructor(public http: Http) {
     console.log('Hello AppUser Provider');
   }
-  
-  // CHANGE THE BASE URL TO MATCH YOUR STRONGLOOP API EXPLORER
-  baseUrl: string = "http://sp-17-vincent-jbrownssf.c9users.io:8080/api"
-  path: string = "/AppUsers"
   
   register(newUserData) {
     return this.http.post(
