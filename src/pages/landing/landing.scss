@@ -1,15 +1,14 @@
 page-landing {
         
-        #body{
-         background:#384e77;
-    }
         .container{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 padding: 50px;
-                padding-bottom: 0;
+                padding-bottom: 0; 
+                padding-top: 100px;
                 font-size: 40px;
+
         }
         .title{
                 text-align: center;
@@ -20,20 +19,18 @@ page-landing {
        .photo{
                 height: 75px;
                 width: 75px;
-                // background-image: url("https://cdn.pixabay.com/photo/2017/01/05/01/05/growth-1953662_640.jpg");
-                // background-repeat:no-repeat;
-                // background-attachment:fixed;
-                // background-position:center;
-                //border: solid black 5px;
                 position: absolute;
                 top:0;
                 left: 90px;
+                // Height: auto;
+                // display: block;
+                // margin: 0 auto;
         }
         .wizard{
-                height: 250px;
-                width: 248px;
+                height: 255px;
+                width: 255px;
                 margin: 20px;
-                //border: solid black 5px;
+                border: solid color($colors, primary) 3px;
                 text-align: center;
                 font-size: 40px;
       
@@ -52,24 +49,35 @@ page-landing {
                 position: relative;
                 top:0;
         }
+         
+        .login{
+                padding-top: 15px;
+                color: color($colors, primary);
+                cursor: pointer;
+                text-decoration: underline;
+        }
+        .login:hover {
+                 text-decoration: underline;
+        }
+
         .button-block{
                 color:white;
                 background:#0d0630;
-                font-size: 10px;
+                font-size: 15px;
                 outline: none;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
                 
-                
         }
         .font{
-                font-size: 18px;
-                color: white;
+                font-size: 20px;
+                color: color($colors, primary);
                 font-family: Ubuntu;
         }
         
         @media screen and (min-width: 768px){
                 .container{
                         padding: 150px;
+                        padding-bottom: 0;
                         
                 }
                         
@@ -79,12 +87,14 @@ page-landing {
                 }
                 .bottom{
                         width: 250px;
-                        font-size: 30px;
+                        font-size: 35px;
+                        display: flex;
+                        width: 300px;
                 }
                        
                 .button-block{
                         padding: 15px;
-                        font-size: 20px;
+                        font-size: 25px;
                         height: 70px;
                 }
                 .photo{
@@ -97,21 +107,35 @@ page-landing {
                 .font{
                 font-size: 30px;
                 
-        }
+                }
+                .login{
+                        padding-top: 16px;
+                        padding-left: 30px;
+                }
         } 
         @media screen and (min-width: 1024px){
+                .container{
+                        padding-bottom: 0;
+                        padding-top: 250px;
+                        
+                        
+                }
                 .wizard{
                         height: 650px;
                         width: 650px;
+                        padding-left: 10px;
+                        padding-right: 10px;
                 }
                 .bottom{
                         width: 350px;
-                        font-size: 35px;
+                        font-size: 40px;
+                        display: flex;
+                        width: 400px;
                        
                }
                 .button-block{
                         padding: 20px;
-                        font-size: 25px;
+                        font-size: 45px;
                         height: 70px;
                 }
                 .photo{
@@ -122,9 +146,35 @@ page-landing {
                         padding: 20px;
                 }
                 .font{
-                font-size: 50px;
-                color: white;
-                font-family: Ubuntu;
-        }
+                        font-size: 45px;
+                        color: color($colors, primary);
+                        font-family: Ubuntu;
+                }
+                .login{
+                        padding-top: 5px;
+                        padding-left: 30px;
+                        font-size: 50px;
+                }
         }        
+        @media screen and (min-width: 1025px){
+                .container{
+                        padding-bottom: 0;
+                        padding-top: 0px;
+                        
+                }
+                .wizard{
+                        height: 580px;
+                        width: 580px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                }
+                .photo{
+                        left: 177px;
+                        padding-top: 10px;
+                }
+                u:hover {
+                    cursor: pointer;
+                }
+                
+        }
 }

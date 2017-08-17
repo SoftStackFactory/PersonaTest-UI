@@ -25,6 +25,8 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 import { QuestionsProvider } from '../providers/questions/questions';
 import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUser } from '../providers/app-user';
+import { AnswersProvider } from '../providers/answers/answers';
+import { ResultsProvider } from '../providers/results/results';
 
 
 //Components
@@ -39,10 +41,15 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { OrgSearchComponent } from '../components/org-search/org-search';
+import { HomeComponent } from '../components/home/home';
+
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
+
 
 
 let injections: any[] = [
@@ -61,7 +68,7 @@ let injections: any[] = [
     OrganizationBecomePage,
     ChartComponent,
     TestlistComponent,
-    ProgressBarComponent, 
+    ProgressBarComponent,
     QuicklinksPage,
     RegistrationComponent,
     SearchListComponent,
@@ -75,7 +82,9 @@ let injections: any[] = [
     MiniGraphComponent,
     LobbyOrganizationPage,
     LogoutComponent,
-    ManageAccountModal
+    ManageAccountModal,
+    OrgSearchComponent,
+    HomeComponent
     ]
 
 @NgModule({
@@ -93,7 +102,9 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser
+    AppUser,
+    AnswersProvider,
+    ResultsProvider
   ]
 })
 export class AppModule {}
