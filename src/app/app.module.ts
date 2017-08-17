@@ -43,8 +43,6 @@ import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 
-<<<<<<< HEAD
-=======
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
@@ -52,7 +50,6 @@ import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organi
 
 
 
->>>>>>> 5456f9674bbdb27d11436cedc7abce7a34b0d43e
 let injections: any[] = [
     MyApp,
     LandingPage,
@@ -94,6 +91,12 @@ let injections: any[] = [
     HttpModule,
     IonicModule.forRoot(MyApp)
   ],
+  bootstrap: [IonicApp],
+  entryComponents: injections,
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   bootstrap: [IonicApp],
   entryComponents: injections,
   providers: [
