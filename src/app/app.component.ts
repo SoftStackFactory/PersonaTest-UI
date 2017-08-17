@@ -25,7 +25,7 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 })
 export class MyApp {
 
-  rootPage:any = LobbyPage;
+  rootPage:any = QuicklinksPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
