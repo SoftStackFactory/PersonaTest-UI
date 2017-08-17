@@ -35,6 +35,4 @@ UserInterfaceState.xcuserstate
 
 
 
-/src/app/app.module.ts
-/src/app/app.component.ts
-/src/assets/provider-config.ts
+src/assets/provider-config.ts
