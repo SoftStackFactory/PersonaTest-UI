@@ -25,6 +25,8 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 import { QuestionsProvider } from '../providers/questions/questions';
 import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUser } from '../providers/app-user';
+import { AnswersProvider } from '../providers/answers/answers';
+import { ResultsProvider } from '../providers/results/results';
 
 
 //Components
@@ -39,11 +41,13 @@ import { TestSelectionComponent } from '../components/test-selection/test-select
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { HomeComponent } from '../components/home/home';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import { AnswersProvider } from '../providers/answers/answers';
+
+
 
 
 let injections: any[] = [
@@ -76,7 +80,8 @@ let injections: any[] = [
     MiniGraphComponent,
     LobbyOrganizationPage,
     LogoutComponent,
-    ManageAccountModal
+    ManageAccountModal,
+    HomeComponent
     ]
 
 @NgModule({
@@ -95,7 +100,8 @@ let injections: any[] = [
     QuestionsProvider,
     TestHistoryProvider,
     AppUser,
-    AnswersProvider
+    AnswersProvider,
+    ResultsProvider
   ]
 })
 export class AppModule {}
