@@ -41,6 +41,15 @@ import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 
+<<<<<<< HEAD
+=======
+//Modals
+import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+import { ResultsProvider } from '../providers/results/results';
+
+
+>>>>>>> 5456f9674bbdb27d11436cedc7abce7a34b0d43e
 let injections: any[] = [
     MyApp,
     LandingPage,
@@ -90,7 +99,8 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser
+    AppUser,
+    ResultsProvider
   ]
 })
 export class AppModule {}
