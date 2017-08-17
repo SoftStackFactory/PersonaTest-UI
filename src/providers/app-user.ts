@@ -16,7 +16,7 @@ export class AppUser {
   }
   
   // CHANGE THE BASE URL TO MATCH YOUR STRONGLOOP API EXPLORER
-  baseUrl: string = "http://sp-17-vincent-jbrownssf.c9users.io:8080/api"
+  baseUrl: string = "https://sum-17-final-phortonssf.c9users.io:8080/api"
   path: string = "/AppUsers"
   
   register(newUserData) {
