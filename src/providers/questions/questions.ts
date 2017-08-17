@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class QuestionsProvider {
-  baseUrl: string = "http://localhost:3000/api";
+  baseUrl: string = "http://sum-17-final-phortonssf.c9users.io/api";
   path: string = "/Questions";
 
   constructor(public http: Http) {
