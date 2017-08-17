@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { URL } from '../../assets/provider-config'
 
 @Injectable()
 export class AnswersProvider {
-  baseUrl: string = "http://localhost:3000/api";
+  baseUrl: string = URL;
   path: string = "/Answers";
 
   constructor(public http: Http) {
