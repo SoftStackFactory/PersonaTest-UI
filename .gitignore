@@ -32,4 +32,9 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 
-/src/assets/provider-config.ts
+
+
+
+./src/app/app.module.ts
+./src/app/app.component.ts
+assets/provider-config.ts
