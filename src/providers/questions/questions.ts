@@ -6,7 +6,6 @@ import { URL } from '../../assets/provider-config'
 @Injectable()
 export class QuestionsProvider {
   baseUrl: string = URL;
-  //= "http://sum-17-final-phortonssf.c9users.io/api";
   path: string = "/Questions";
 
   constructor(public http: Http) {
