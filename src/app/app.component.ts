@@ -70,6 +70,32 @@ export class MyApp {
     becomeOrgModal.present();
   }
   
+  deleteAcc(){
+    let confirmDelete = this.alertCtrl.create({
+      title: 'Confirm Account Delete',
+      message: 'Are you sure you would like to delete your account? Any test data will be lost.',
+      buttons: [
+        {
+          text: 'Yes, delete my account',
+          handler:() => {
+            console.log("User has been deleted out");
+            //add delete method to appUser
+            //this.appUser.logout(window.localStorage.token)
+            window.localStorage.clear();
+            this.nav.setRoot(LandingPage);
+          }
+        },
+        {
+          text: 'No, keep my account active',
+          handler: () => {
+            console.log("User cancelled delete");
+          }
+        }
+        ]
+    });
+    confirmDelete.present();
+  };
+  
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',
