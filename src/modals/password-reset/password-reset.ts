@@ -7,7 +7,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: 'password-reset.html',
 })
 export class PasswordResetModal {
-  private orgRequestForm : FormGroup;
+  private resetRequestForm : FormGroup;
   
 
   
@@ -16,10 +16,9 @@ export class PasswordResetModal {
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder) {
-        /*this.orgRequestForm = this.formBuilder.group({
-            name: ['', Validators.required],
-            website: ['', Validators.required]
-        }); */
+        this.resetRequestForm = this.formBuilder.group({
+            email: ['', Validators.required]
+        });
   }
 
   ionViewDidLoad() {
@@ -31,7 +30,7 @@ export class PasswordResetModal {
   }
   
   logForm() {
-      console.log(this.orgRequestForm.value)
+      console.log(this.resetRequestForm.value)
   }
 
 }

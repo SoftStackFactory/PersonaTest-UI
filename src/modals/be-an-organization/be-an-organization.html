@@ -13,7 +13,7 @@
 
 
 <ion-content padding>
-  <h4>Please Enter Organization Data</h4>
+  <p class="menu-instruction">Please Enter Organization Data</p>
   <form [formGroup]="orgRequestForm" (ngSubmit)="logForm()">
       <ion-item>
         <ion-label>Name: </ion-label>
@@ -23,7 +23,7 @@
         <ion-label>Website: </ion-label>
         <ion-textarea formControlName="website"></ion-textarea>
       </ion-item>
-      <button ion-button type="submit" [disabled]="!orgRequestForm.valid">Submit</button>
+      <button class="menu-button" ion-button type="submit" [disabled]="!orgRequestForm.valid">Submit</button>
     </form>
     <p>Please allow 48 hours for requests to be processed by the administrator</p>
 </ion-content>

@@ -30,7 +30,7 @@ import { AppUser } from '../providers/app-user';
 })
 export class MyApp {
 
-  rootPage:any = LandingPage;
+  rootPage:any = LobbyPage;
   @ViewChild(Nav) nav: Nav;
   
   constructor(platform: Platform, 

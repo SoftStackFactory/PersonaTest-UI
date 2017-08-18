@@ -13,7 +13,7 @@
 
 
 <ion-content padding>
-  <h4>Enter changes to your profile and click submit when complete</h4>
+  <p class="menu-instruction">Enter changes to your profile and click submit when complete</p>
   <form [formGroup]="accountChangeForm" (ngSubmit)="logForm()">
       <ion-item>
         <ion-label>First Name: </ion-label>
@@ -40,6 +40,6 @@
             <ion-option>Other</ion-option>
           </ion-select>
       </ion-item>
-      <button ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
+      <button class="menu-button" ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
     </form>
 </ion-content>
