@@ -49,7 +49,7 @@ export class QuestionPage {
     let answer = {
       questionId: this.question["id"],
       testTakenId: "testTaken",
-      selection: this.convertScale(this.degreeNum),
+      selection: { category: this.question["category"], choice: this.convertScale(this.degreeNum) },
       date: new Date(),
     }
     // save answer in an array
