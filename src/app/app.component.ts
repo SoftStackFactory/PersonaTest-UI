@@ -20,6 +20,7 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUser } from '../providers/app-user';
 
@@ -57,6 +58,12 @@ export class MyApp {
     manageAccModal.present();
   };
   
+  resetPassword(){
+    console.log("password reset requested");
+    let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
+    passwordResetModal.present();
+  }
+  
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
@@ -89,3 +96,9 @@ export class MyApp {
   };
 
 }
+
+/*
+<button ion-button menuClose icon-only outline (click)="closeMenu()">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+*/

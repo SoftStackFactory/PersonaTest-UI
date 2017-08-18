@@ -40,14 +40,14 @@ import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
-import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordResetModal } from '../modals/password-reset/password-reset';
 
 
 
@@ -82,6 +82,7 @@ let injections: any[] = [
     LobbyOrganizationPage,
     LogoutComponent,
     ManageAccountModal,
+    PasswordResetModal,
     HomeComponent,
     OrgSearchComponent
     ]
