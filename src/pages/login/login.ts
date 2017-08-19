@@ -4,7 +4,7 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 /**
  * Generated class for the LoginPage page.
@@ -27,7 +27,7 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private alertCtrl: AlertController,
-    private appUser: AppUser
+    private appUser: AppUserProvider
     ) {
   }
 

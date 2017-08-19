@@ -24,7 +24,7 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 import { TestHistoryProvider } from '../providers/test-history/test-history'
-import { AppUser } from '../providers/app-user';
+import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
 
@@ -101,7 +101,7 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser,
+    AppUserProvider,
     AnswersProvider,
     ResultsProvider
   ]

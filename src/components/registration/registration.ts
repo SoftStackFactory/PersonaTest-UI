@@ -4,7 +4,7 @@ import { NavController, ModalController, AlertController } from 'ionic-angular';
 import { LobbyPage } from '../../pages/lobby/lobby';
 import { LoginPage } from '../../pages/login/login';
 import { EulaComponent } from '../eula/eula';
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 
 /**
@@ -27,7 +27,7 @@ export class RegistrationComponent {
     private navCtrl: NavController,
     private modalCtrl: ModalController,
     private alertCtrl: AlertController,
-    private appUser: AppUser
+    private appUser: AppUserProvider
     ) {
     console.log('Hello Registration Component');
   }
