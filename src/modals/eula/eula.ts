@@ -11,7 +11,7 @@ import { NavParams, ViewController } from 'ionic-angular';
   selector: 'eula',
   templateUrl: 'eula.html'
 })
-export class EulaComponent {
+export class EulaModal {
 
   text: string;
 
