@@ -6,7 +6,7 @@ import { LobbyPage } from '../../pages/lobby/lobby';
 import { LoginPage } from '../../pages/login/login';
 import { EulaModal } from '../../modals/eula/eula';
 import { AppUserProvider } from '../../providers/app-user/app-user';
-
+import { AgeValidator } from '../../validators/age';
 
 /**
  * Generated class for the RegistrationComponent component.
@@ -20,7 +20,7 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class RegistrationComponent {
   user: any = {}
-  eula: boolean
+  isEula: boolean
   alertTitle: string
   alertSubtitle: string
   registerForm: FormGroup;
@@ -35,17 +35,17 @@ export class RegistrationComponent {
       this.registerForm = formBuilder.group({
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
-        age: [''],
+        age: ['', AgeValidator.isValid],
         email: ['', Validators.required],
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required],
         gender: ['', Validators.required],
-        isEula: ['', Validators.required]
+        isEula: [false, Validators.required]
       });
   }
-  
+
   checkEula() {
-    console.log("User has agreed to Terms & Conditions", this.eula);
+    console.log("User has agreed to Terms & Conditions", this.isEula);
   }
   
   showAlert() {
@@ -86,7 +86,7 @@ export class RegistrationComponent {
           return this.showAlert();
         }
     });
-  }
+    }
   }
   // signupForm(form) {
   //   if(form.invalid) {
@@ -149,5 +149,4 @@ export class RegistrationComponent {
   goToLogin() {
     this.navCtrl.push(LoginPage);
   }
-  
 }
