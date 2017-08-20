@@ -57,8 +57,6 @@ export class RegistrationComponent {
     alert.present();
   }
   
-  
-  
   submit(){
     if(!this.registerForm.valid){
       return alert("nope");
@@ -88,6 +86,7 @@ export class RegistrationComponent {
           return this.showAlert();
         }
     });
+  }
   }
   // signupForm(form) {
   //   if(form.invalid) {
@@ -141,13 +140,14 @@ export class RegistrationComponent {
   // }
   
   //When user clicks 'View Terms and Conditions', display EULA through modal
-  // showEula() {
-  //   let modal = this.modalCtrl.create(EulaModal);
-  //   modal.present();
-  // }
+  showEula(){
+    let modal = this.modalCtrl.create(EulaModal);
+    modal.present();
+  }
   
   //User already has account, navigate to login page
-  // goToLogin() {
-  //   this.navCtrl.push(LoginPage);
+  goToLogin() {
+    this.navCtrl.push(LoginPage);
   }
+  
 }
