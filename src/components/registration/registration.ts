@@ -24,7 +24,6 @@ export class RegistrationComponent {
   alertTitle: string
   alertSubtitle: string
   registerForm: FormGroup;
-  error: any;
   
   constructor(
     private navCtrl: NavController,
@@ -61,7 +60,6 @@ export class RegistrationComponent {
   
   
   submit(){
-    // this.submitAttempt = true;
     if(!this.registerForm.valid){
       return alert("nope");
     } else {
@@ -73,8 +71,22 @@ export class RegistrationComponent {
         window.localStorage.setItem('id', res.id)
         this.navCtrl.setRoot(LobbyPage);
     }, error => {
-      this.error = error;
-      console.log("Error: ", this.error)
+      //Server side errors
+        if (error.status === 404) {
+          this.alertTitle = "404";
+          this.alertSubtitle = "Not Found.";
+          return this.showAlert();
+          
+        } else if (error.status === 422) {
+          this.alertTitle = "422";
+          this.alertSubtitle = "Invalid email address or email is already taken";
+          return this.showAlert();
+          
+        } else if (error.status === 500) {
+          this.alertTitle = "500";
+          this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+          return this.showAlert();
+        }
     });
   }
   // signupForm(form) {
