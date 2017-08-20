@@ -24,6 +24,7 @@ export class RegistrationComponent {
   alertTitle: string
   alertSubtitle: string
   registerForm: FormGroup;
+  error: any;
   
   constructor(
     private navCtrl: NavController,
@@ -57,13 +58,24 @@ export class RegistrationComponent {
     alert.present();
   }
   
+  
+  
   submit(){
     // this.submitAttempt = true;
     if(!this.registerForm.valid){
       return alert("nope");
     } else {
-      this.navCtrl.setRoot(LobbyPage);
-    }
+      console.log(this.registerForm.value)
+      this.appUser.register(this.registerForm.value)
+      .map(res => res.json())
+      .subscribe(res => {
+        window.localStorage.setItem('token', res.token);
+        window.localStorage.setItem('id', res.id)
+        this.navCtrl.setRoot(LobbyPage);
+    }, error => {
+      this.error = error;
+      console.log("Error: ", this.error)
+    });
   }
   // signupForm(form) {
   //   if(form.invalid) {
@@ -117,13 +129,13 @@ export class RegistrationComponent {
   // }
   
   //When user clicks 'View Terms and Conditions', display EULA through modal
-  showEula() {
-    let modal = this.modalCtrl.create(EulaModal);
-    modal.present();
-  }
+  // showEula() {
+  //   let modal = this.modalCtrl.create(EulaModal);
+  //   modal.present();
+  // }
   
   //User already has account, navigate to login page
-  goToLogin() {
-    this.navCtrl.push(LoginPage);
+  // goToLogin() {
+  //   this.navCtrl.push(LoginPage);
   }
 }
