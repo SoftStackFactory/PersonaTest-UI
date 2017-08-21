@@ -46,4 +46,12 @@ export class AppUser {
     );
   }
   
+  changePassword(id, token, oldPassword, newPassword) {
+    return this.http.patch(
+      this.baseUrl + this.path + '/' + id +
+      '?access_token=' + token,
+      {"password": newPassword}
+    );
+  }
+  
 }

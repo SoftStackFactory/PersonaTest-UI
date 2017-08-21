@@ -121,7 +121,8 @@ export class MyApp {
           text: 'Yes, log me out',
           handler:() => {
             console.log("User has logged out");
-            this.appUser.logout(window.localStorage.token)
+            this.menuCtrl.close();
+            this.appUser.logout(window.localStorage.token);
             window.localStorage.clear();
             this.nav.setRoot(LandingPage);
           }

@@ -22,7 +22,8 @@ export class PasswordResetModal {
       private alertCtrl: AlertController,
       private appUser: AppUser) {
         this.resetRequestForm = this.formBuilder.group({
-            password: ['', Validators.required],
+            newPassword: ['', Validators.required],
+            oldPassword: ['', Validators.required],
             confirmPassword: ['', Validators.required]
         });
   }
@@ -67,11 +68,12 @@ export class PasswordResetModal {
     //successfull registration
     delete this.user.confirmPassword;
     console.log(this.user);
-    this.appUser.register(this.user)
+    this.appUser.changePassword(window.localStorage.getItem('id'), 
+        window.localStorage.getItem('token'), 
+        this.user.oldPassword,
+        this.user.newPassword)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.token);
-        window.localStorage.setItem('id', res.id)
         this.viewCtrl.dismiss();
         
       }, error => {
@@ -79,11 +81,6 @@ export class PasswordResetModal {
         if (error.status === 404) {
           this.alertTitle = "404";
           this.alertSubtitle = "Not Found.";
-          return this.showAlert();
-          
-        } else if (error.status === 422) {
-          this.alertTitle = "422";
-          this.alertSubtitle = "Invalid email address or email is already taken";
           return this.showAlert();
           
         } else if (error.status === 500) {
