@@ -4,11 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
 import { LoginPage } from '../../pages/login/login';
+
 import { EulaModal } from '../../modals/eula/eula';
+
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
 import { AgeValidator } from '../../validators/age';
 import { PasswordValidator } from '../../validators/password';
+import { EulaValidator } from '../../validators/eula';
 /**
  * Generated class for the RegistrationComponent component.
  *
@@ -42,7 +45,7 @@ export class RegistrationComponent {
         password: ['', Validators.required],
         confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         gender: ['', Validators.required],
-        isEula: [false, Validators.required]
+        isEula: [false, EulaValidator.isValid]
       });
   }
 
@@ -64,7 +67,7 @@ export class RegistrationComponent {
     
     if(!this.registerForm.valid){
       this.alertTitle = "Incomplete Form";
-      this.alertSubtitle = "Please fill in all required fields.";
+      this.alertSubtitle = "Please fill in all required fields properly.";
       return this.showAlert();
       
     }
