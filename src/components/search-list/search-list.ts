@@ -23,14 +23,25 @@ export class SearchListComponent {
   //Variable for user's input in search bar 
   searchInput: string = "";
   
-  //Variable for user's input in date picker
-  searchDate: string = "";
-  
   //Boolean for displaying the search results dropdown
   displayDropdown: boolean = false;
   
   //Boolean - displays graphs if history is not empty; otherwise prompt user
   emptyHistory: boolean = true;
+  
+  //Function to return a string 
+  searchTimes(): any {
+    return [
+      "Past six months",
+      "Past year",
+      "Past two years",
+      "All time"
+    ];
+  }
+
+  //Variable for user's input in date picker
+  searchTime: string = "Past six months";
+  
   
   constructor( public navCtrl: NavController ) {
     console.log('Hello SearchListComponent Component');
@@ -65,9 +76,7 @@ export class SearchListComponent {
     });
 
     console.log("The number of search results is " + this.filteredList.length);
-    console.log("Our search input is " + this.searchInput + " " + q);
-    console.log("User's search date is " + this.searchDate);
-
+    console.log("Our search input is " + this.searchInput );
     
   }
   
@@ -84,8 +93,14 @@ export class SearchListComponent {
     this.navCtrl.push(ResultsPage);
   }
   
+  //Go to the TestsLists Page if user clicks on the option
   goToTestsPage(){
     this.navCtrl.push(TestListsPage);
+  }
+  
+  //When user selects a new time range, update their tests view
+  changeTimeView(){
+    console.log(this.searchTime);
   }
 
 }

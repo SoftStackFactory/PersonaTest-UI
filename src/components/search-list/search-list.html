@@ -18,9 +18,10 @@
       </ion-list>
     </ion-card>
   </div>
+  
+  <ion-label text-center> <strong>Tests I've taken</strong></ion-label>
 
   <div>
-    <ion-label text-center> <strong>Tests I've taken</strong></ion-label>
     <ion-label *ngIf="emptyHistory" text-center> 
       <p> No tests taken yet </p>
       <p> Click <u class="light-text" (click)="goToTestsPage()">here</u> to take a test </p> 
@@ -28,6 +29,12 @@
       <p (click)="emptyHistory=!emptyHistory"><u><i>View Mock Data</i></u></p> 
     </ion-label>
     <ion-list *ngIf="!emptyHistory">
+      <ion-item>
+        <ion-label>View Dates From</ion-label>
+        <ion-select [(ngModel)]="searchTime" (ionChange)="changeTimeView()">
+          <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
+        </ion-select>
+      </ion-item>
       <ion-item class="item display-block" *ngFor="let obj of ourList" (click)="selectedItem($event, obj)">
         <div id="text-block" class="half-container">
           <h2> <strong> {{ obj.name }} </strong> </h2>

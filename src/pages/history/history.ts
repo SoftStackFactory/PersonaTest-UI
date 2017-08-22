@@ -18,7 +18,7 @@ export class HistoryPage {
   
   //Variables to store user's search input and the date they select
   searchInput: string = "";
-  searchDate: string = "";
+
   
   //Boolean that for organization view (default to false - aka user view)
   orgView: boolean = false; 
