@@ -24,6 +24,7 @@ export class RegistrationComponent {
   alertTitle: string
   alertSubtitle: string
   registerForm: FormGroup;
+  submitAttempt: boolean = false;
   
   constructor(
     private navCtrl: NavController,
@@ -58,9 +59,15 @@ export class RegistrationComponent {
   }
   
   submit(){
+    
+    this.submitAttempt = true;
+    
     if(!this.registerForm.valid){
-      return alert("nope");
-    } else {
+      this.alertTitle = "Incomplete Form";
+      this.alertSubtitle = "Please fill in all required fields.";
+      return this.showAlert();
+      
+    }
       console.log(this.registerForm.value)
       this.appUser.register(this.registerForm.value)
       .map(res => res.json())
@@ -86,8 +93,9 @@ export class RegistrationComponent {
           return this.showAlert();
         }
     });
-    }
+    
   }
+  
   // signupForm(form) {
   //   if(form.invalid) {
   //     this.alertTitle = "Invalid Form";

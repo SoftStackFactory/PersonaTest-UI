@@ -1,42 +1,41 @@
 <!-- Generated template for the RegistrationComponent component -->
   <div class="registration-container">
-  <!--<div class="regTitle">-->
-  <!--    <ion-title text-center>New User Registration</ion-title>-->
-  <!--</div>-->
-    <!--<form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>-->
     <form [formGroup]="registerForm" novalidate>
       <div class="registration-rows">
-        
+        <!--FIRST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>First Name</ion-label>
             <ion-input formControlName="firstName" type="string" required></ion-input>
         </ion-item>
-        
+        <!--LAST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
             <ion-input formControlName="lastName" type="string" required></ion-input>
         </ion-item>
-        
+        <!--AGE INPUT-->
         <ion-item>
           <ion-label floating>Age</ion-label>
-            <ion-input formControlName="age" type="number"></ion-input>
+            <ion-input formControlName="age" type="number" [class.invalid]="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)"></ion-input>
         </ion-item>
-        
+        <ion-item *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
+          <p>Please enter a valid age.</p>
+        </ion-item>
+        <!--EMAIL INPUT-->
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
             <ion-input formControlName="email" type="email" required></ion-input>
         </ion-item>
-        
+        <!--PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Password</ion-label>
             <ion-input formControlName="password" type="password" required></ion-input>
         </ion-item>
-        
+        <!--CONFIRM PASSWORD INPUT -->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
             <ion-input formControlName="confirmPassword" type="password" required></ion-input>
         </ion-item>
-        
+        <!--GENDER INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Gender</ion-label>
             <ion-select formControlName="gender" required>
@@ -46,12 +45,12 @@
               <ion-option>Decline</ion-option>
             </ion-select>
         </ion-item>
-        
+        <!--EULA CHECKBOX-->
         <div class="registration-eula">
           <ion-checkbox formControlName="isEula" (ionChange)="checkEula"></ion-checkbox>
             <span>I accept the Terms & Conditions</span>
         </div>
-        
+        <!--SUBMIT BUTTON-->
       </div>
       <div class="register-button">
         <button ion-button outline (click)="submit()">Register</button>
