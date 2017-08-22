@@ -22,9 +22,7 @@ export class PasswordResetModal {
       private alertCtrl: AlertController,
       private appUser: AppUser) {
         this.resetRequestForm = this.formBuilder.group({
-            newPassword: ['', Validators.required],
-            oldPassword: ['', Validators.required],
-            confirmPassword: ['', Validators.required]
+            email: ['', Validators.required]
         });
   }
 
@@ -45,33 +43,17 @@ export class PasswordResetModal {
     alert.present();
   }
   
-  logForm() {
-      console.log(this.resetRequestForm.value)
-  }
-  
-  
   passwordReset(form) {
+    console.log(this.resetRequestForm.value)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
       this.alertSubtitle = "Please fill in all required fields.";
       return this.showAlert();
-      
-      //Passwords did not match, delete user passwords
-    } else if(this.user.password !== this.user.confirmPassword) {
-      this.user.password = null;
-      this.user.confirmPassword = null;
-      this.alertTitle = "Passwords do not match";
-      this.alertSubtitle = "Please re-enter your passwords.";
-      return this.showAlert();
     }
     
-    //successfull registration
-    delete this.user.confirmPassword;
-    console.log(this.user);
-    this.appUser.changePassword(window.localStorage.getItem('id'), 
-        window.localStorage.getItem('token'), 
-        this.user.oldPassword,
-        this.user.newPassword)
+    //successfull password change
+    this.appUser.resetPassword(window.localStorage.getItem('token'), 
+        this.resetRequestForm.value)
       .map(res => res.json())
       .subscribe(res => {
         this.viewCtrl.dismiss();
