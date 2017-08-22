@@ -17,6 +17,13 @@ export class AgeValidator {
                 "not a whole number": true
             };
         }
+        
+        if(control.value >= 130){
+            
+            return {
+                "too old": true
+            };   
+        }
         return null;
     }
 }

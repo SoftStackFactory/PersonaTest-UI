@@ -41,7 +41,7 @@ export class RegistrationComponent {
         firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
         lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
         age: ['', AgeValidator.isValid],
-        email: ['', Validators.required],
+        email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
         password: ['', Validators.required],
         confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         gender: ['', Validators.required],

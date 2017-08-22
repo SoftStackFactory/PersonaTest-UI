@@ -2,42 +2,63 @@
   <div class="registration-container">
     <form [formGroup]="registerForm" novalidate>
       <div class="registration-rows">
+        
         <!--FIRST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>First Name</ion-label>
             <ion-input formControlName="firstName" type="string"></ion-input>
         </ion-item>
+        
         <!--LAST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
             <ion-input formControlName="lastName" type="string"></ion-input>
         </ion-item>
+        
         <!--AGE INPUT-->
         <ion-item>
           <ion-label floating>Age</ion-label>
-            <ion-input formControlName="age" type="number" [class.invalid]="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)"></ion-input>
+            <ion-input 
+              formControlName="age" 
+              type="number" 
+              [class.invalid]="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
+          </ion-input>
         </ion-item>
         <ion-item *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
           <p>Please enter a valid age.</p>
         </ion-item>
+        
         <!--EMAIL INPUT-->
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
-            <ion-input formControlName="email" type="email"></ion-input>
+            <ion-input 
+            formControlName="email" 
+            type="email"
+            [class.invalid]="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+            </ion-input>
         </ion-item>
+        <ion-item *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+          <p>Please enter a valid email address</p>
+        </ion-item>
+        
         <!--PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Password</ion-label>
             <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
-        <!--CONFIRM PASSWORD INPUT -->
+        
+        <!--CONFIRM PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
-            <ion-input formControlName="confirmPassword" type="password" [class.invalid]="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)"></ion-input>
+            <ion-input 
+              formControlName="confirmPassword" 
+              type="password"
+              [class.invalid]="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)"></ion-input>
         </ion-item>
         <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
           <p>Your passwords did not match</p>
         </ion-item>
+        
         <!--GENDER INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Gender</ion-label>
@@ -48,11 +69,13 @@
               <ion-option>Decline</ion-option>
             </ion-select>
         </ion-item>
+        
         <!--EULA CHECKBOX-->
         <div class="registration-eula">
           <ion-checkbox formControlName="isEula" (ionChange)="checkEula"></ion-checkbox>
             <span>I accept the Terms & Conditions</span>
         </div>
+        
         <!--SUBMIT BUTTON-->
       </div>
       <div class="register-button">
