@@ -15,7 +15,7 @@ export class AgeValidator {
         
             return {
                 "not a whole number": true
-            }
+            };
         }
         return null;
     }

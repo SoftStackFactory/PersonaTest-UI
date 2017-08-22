@@ -5,12 +5,12 @@
         <!--FIRST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>First Name</ion-label>
-            <ion-input formControlName="firstName" type="string" required></ion-input>
+            <ion-input formControlName="firstName" type="string"></ion-input>
         </ion-item>
         <!--LAST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
-            <ion-input formControlName="lastName" type="string" required></ion-input>
+            <ion-input formControlName="lastName" type="string"></ion-input>
         </ion-item>
         <!--AGE INPUT-->
         <ion-item>
@@ -23,22 +23,25 @@
         <!--EMAIL INPUT-->
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
-            <ion-input formControlName="email" type="email" required></ion-input>
+            <ion-input formControlName="email" type="email"></ion-input>
         </ion-item>
         <!--PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Password</ion-label>
-            <ion-input formControlName="password" type="password" required></ion-input>
+            <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
         <!--CONFIRM PASSWORD INPUT -->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
-            <ion-input formControlName="confirmPassword" type="password" required></ion-input>
+            <ion-input formControlName="confirmPassword" type="password" [class.invalid]="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
+          <p>Your passwords did not match</p>
         </ion-item>
         <!--GENDER INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Gender</ion-label>
-            <ion-select formControlName="gender" required>
+            <ion-select formControlName="gender">
               <ion-option>Female</ion-option>
               <ion-option>Male</ion-option>
               <ion-option>Other</ion-option>

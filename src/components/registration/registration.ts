@@ -6,8 +6,9 @@ import { LobbyPage } from '../../pages/lobby/lobby';
 import { LoginPage } from '../../pages/login/login';
 import { EulaModal } from '../../modals/eula/eula';
 import { AppUserProvider } from '../../providers/app-user/app-user';
-import { AgeValidator } from '../../validators/age';
 
+import { AgeValidator } from '../../validators/age';
+import { PasswordValidator } from '../../validators/password';
 /**
  * Generated class for the RegistrationComponent component.
  *
@@ -34,12 +35,12 @@ export class RegistrationComponent {
     private formBuilder: FormBuilder
     ) {
       this.registerForm = formBuilder.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
+        firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
         age: ['', AgeValidator.isValid],
         email: ['', Validators.required],
         password: ['', Validators.required],
-        confirmPassword: ['', Validators.required],
+        confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         gender: ['', Validators.required],
         isEula: [false, Validators.required]
       });
@@ -59,7 +60,6 @@ export class RegistrationComponent {
   }
   
   submit(){
-    
     this.submitAttempt = true;
     
     if(!this.registerForm.valid){
