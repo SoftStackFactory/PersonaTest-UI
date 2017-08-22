@@ -30,7 +30,7 @@
     </ion-label>
     <ion-list *ngIf="!emptyHistory">
       <ion-item>
-        <ion-label>View Dates From</ion-label>
+        <ion-label>View Tests From</ion-label>
         <ion-select [(ngModel)]="searchTime" (ionChange)="changeTimeView()">
           <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
         </ion-select>

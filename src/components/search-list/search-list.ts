@@ -29,17 +29,18 @@ export class SearchListComponent {
   //Boolean - displays graphs if history is not empty; otherwise prompt user
   emptyHistory: boolean = true;
   
-  //Function to return a string 
-  searchTimes(): any {
+  //Function to return an array of strings that ngFor in html file will call
+  //and display our options when user tries to select
+  searchTimes(): string[] {
     return [
-      "Past six months",
-      "Past year",
-      "Past two years",
-      "All time"
+      "Past Six Months",
+      "Past Year",
+      "Past Two Years",
+      "All Time"
     ];
   }
 
-  //Variable for user's input in date picker
+  //Variable for user's input in date selector; this is the default value
   searchTime: string = "Past six months";
   
   
