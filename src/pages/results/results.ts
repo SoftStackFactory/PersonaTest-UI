@@ -18,6 +18,7 @@ export class ResultsPage {
   
   
   private answers: any = {}; 
+  public gradedTest: any;
   
   constructor(
     public navCtrl: NavController, 
@@ -36,15 +37,16 @@ export class ResultsPage {
         alert("Answers not successfully provided!");
         console.log(error);
       },() =>{ 
-      this.gradeTest(this.answers);
+      this.gradedTest = this.testGrade(this.answers);
+      console.log("results", this.gradedTest)
       }
     )
   }
   
  
   
-  gradeTest(test) {
-    let results = test.reduce(function(total, value) {
+  testGrade(answer) {
+    let results = answer.reduce(function(total, value) {
       let category = value.category;
       if(value.keyed == false) {
         let sumSelection = function(number) {
@@ -64,7 +66,7 @@ export class ResultsPage {
           } return total
         } 
        }, {})
-    console.log("grades", results);
+       return results;
   }
 
 

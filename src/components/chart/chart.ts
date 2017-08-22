@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 import  { Chart }  from 'chart.js';
 
 
@@ -9,10 +9,19 @@ import  { Chart }  from 'chart.js';
 export class ChartComponent {
   @ViewChild('polarCanvas') polarCanvas: ElementRef
   polarChart: any;
-  test: any = { Agreeableness: 55, Conscientiousness: 73, ES: 35, Extraversion: 40, Intellect: 85  };
+  @Input("gradedTest") gradedTest: any;
+  
+  test: any = { 
+    Agreeableness: 55, 
+    Conscientiousness: 73, 
+    ES: 35, 
+    Extraversion: 40, 
+    Intellect: 85  
+  };
 
 
   ngOnInit() {
+    console.log("chart", this.gradedTest);
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'polarArea',
       data: {
