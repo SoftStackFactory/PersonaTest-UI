@@ -17,8 +17,8 @@ import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 export class SearchListComponent {
 
 //Variables for the tests arrays; The calling page will input them in its .html file
-  @Input() ourList: {  name: string, date: string }[];
-  @Input() filteredList: { name: string, date: string }[];  
+  @Input() ourList: {  name: string, date: Date }[];
+  @Input() filteredList: { name: string, date: Date }[];  
 
   //Variable for user's input in search bar 
   searchInput: string = "";

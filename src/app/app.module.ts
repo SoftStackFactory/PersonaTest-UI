@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
+//Pages
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
 import { HomePage } from '../pages/home/home';
@@ -28,6 +29,8 @@ import { AppUser } from '../providers/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
 
+//Pipes
+import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -87,7 +90,10 @@ let injections: any[] = [
     ]
 
 @NgModule({
-  declarations: injections,
+  declarations: [
+    injections, 
+    FilterTestsByTimePipe 
+  ],
   imports: [
     BrowserModule,
     HttpModule,
