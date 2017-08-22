@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { EmailComposer } from '@ionic-native/email-composer';
+
 
 import { AppUser } from '../../providers/app-user';
 
@@ -20,6 +22,7 @@ export class PasswordResetModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
+      private emailComposer: EmailComposer,
       private appUser: AppUser) {
         this.resetRequestForm = this.formBuilder.group({
             email: ['', Validators.required]
@@ -56,7 +59,10 @@ export class PasswordResetModal {
         this.resetRequestForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        this.viewCtrl.dismiss();
+        this.alertTitle = "Password reset requested",
+        this.alertSubtitle = "Check your email for further instructions",
+        this.showAlert();
+        return this.viewCtrl.dismiss();
         
       }, error => {
         //Server side errors
@@ -75,3 +81,12 @@ export class PasswordResetModal {
   
 }
   
+/*
+//show password reset form
+  app.get('/reset-password', function(req, res, next) {
+    if (!req.accessToken) return res.sendStatus(401);
+    res.render('password-reset', {
+      redirectUrl: '/api/users/reset-password?access_token='+
+        req.accessToken.id
+    });
+*/
