@@ -37,7 +37,6 @@ export class ResultsPage {
         console.log(error);
       },() =>{ 
       this.gradeTest(this.answers);
-        
       }
     )
   }
@@ -47,14 +46,27 @@ export class ResultsPage {
   gradeTest(test) {
     let results = test.reduce(function(total, value) {
       let category = value.category;
-      if(category in total) {
-        total[category] += value.selection
-      } else {
-        total[category] = value.selection
-      } return total
-    }, {})
+      if(value.keyed == false) {
+        let sumSelection = function(number) {
+               return ((3 - number) + 3)
+             }
+        if(category in total) {
+            total[category] += sumSelection(value.selection)
+          } else {
+            total[category] = sumSelection(value.selection)
+          } return total
+        }
+      else {
+        if(category in total) {
+            total[category] += value.selection
+          } else {
+            total[category] = value.selection
+          } return total
+        } 
+       }, {})
     console.log("grades", results);
   }
- 
+
+
 
 }
