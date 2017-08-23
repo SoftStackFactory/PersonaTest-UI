@@ -45,7 +45,12 @@ export class MiniGraphComponent {
             this.test.Extraversion,
             this.test.Intellect
           ],
-          backgroundColor: 'rgba(139, 190, 178, 1)'
+          backgroundColor: ['rgba(139, 190, 178, 1)',
+          'rgba(231, 101, 122, 1)',
+          'rgba(169, 174, 178, 1)',
+          'rgba(179, 236, 156, 1)',
+          'rgba(245, 223, 132, 1)'
+          ]
      
         }]
       },
