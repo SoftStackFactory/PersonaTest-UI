@@ -23,10 +23,10 @@ import { EulaValidator } from '../../validators/eula';
   templateUrl: 'registration.html'
 })
 export class RegistrationComponent {
-  user: any = {}
-  isEula: boolean
-  alertTitle: string
-  alertSubtitle: string
+  
+  isEula: boolean;
+  alertTitle: string;
+  alertSubtitle: string;
   registerForm: FormGroup;
   submitAttempt: boolean = false;
   
@@ -48,10 +48,6 @@ export class RegistrationComponent {
         isEula: [false, EulaValidator.isValid]
       });
   }
-
-  checkEula() {
-    console.log("User has agreed to Terms & Conditions", this.isEula);
-  }
   
   showAlert() {
     let alert = this.alertCtrl.create({
@@ -69,9 +65,10 @@ export class RegistrationComponent {
       this.alertTitle = "Incomplete Form";
       this.alertSubtitle = "Please fill in all required fields properly.";
       return this.showAlert();
-      
-    }
-      console.log(this.registerForm.value)
+    } 
+      //successful registration
+      delete this.registerForm.value.confirmPassword;
+      console.log("Registration Complete", this.registerForm.value)
       this.appUser.register(this.registerForm.value)
       .map(res => res.json())
       .subscribe(res => {
@@ -96,7 +93,6 @@ export class RegistrationComponent {
           return this.showAlert();
         }
     });
-    
   }
   
   // signupForm(form) {

@@ -32,9 +32,9 @@
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
             <ion-input 
-            formControlName="email" 
-            type="email"
-            [class.invalid]="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+              formControlName="email" 
+              type="email"
+              [class.invalid]="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
             </ion-input>
         </ion-item>
         <ion-item *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
@@ -53,10 +53,11 @@
             <ion-input 
               formControlName="confirmPassword" 
               type="password"
-              [class.invalid]="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)"></ion-input>
+              [class.invalid]="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
+            </ion-input>
         </ion-item>
         <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
-          <p>Your passwords did not match</p>
+          <p>Passwords did not match</p>
         </ion-item>
         
         <!--GENDER INPUT-->
@@ -72,7 +73,7 @@
         
         <!--EULA CHECKBOX-->
         <div class="registration-eula">
-          <ion-checkbox formControlName="isEula" (ionChange)="checkEula"></ion-checkbox>
+          <ion-checkbox formControlName="isEula"></ion-checkbox>
             <span>I accept the Terms & Conditions</span>
         </div>
         
