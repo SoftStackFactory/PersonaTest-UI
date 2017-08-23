@@ -18,7 +18,7 @@
 
 
 <ion-content>
-  <div class="container">
+  <div class="container" *ngIf='gradedTest'>
      <chart [gradedTest]="gradedTest"></chart>
      <testlist></testlist>
   </div>

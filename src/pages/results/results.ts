@@ -43,7 +43,6 @@ export class ResultsPage {
     )
   }
   
- 
   
   testGrade(answer) {
     let results = answer.reduce(function(total, value) {
@@ -68,7 +67,6 @@ export class ResultsPage {
        }, {})
        return results;
   }
-
 
 
 }
