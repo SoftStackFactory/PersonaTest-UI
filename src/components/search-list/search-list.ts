@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';  //To filter our dates
 import { NavController} from 'ionic-angular';   //To navigate to individual test results page
 import { ResultsPage } from '../../pages/results/results';
 import { TestListsPage } from '../../pages/test-lists/test-lists';
-import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 
 /**
  * Generated class for the SearchListComponent component.
