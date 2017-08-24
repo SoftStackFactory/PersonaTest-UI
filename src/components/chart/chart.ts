@@ -27,7 +27,7 @@ export class ChartComponent implements AfterContentInit {
           data: [
             this.gradedTest["Agreeableness"], 
             this.gradedTest["Conscientiousness"], 
-            this.gradedTest["ES"], 
+            this.gradedTest["Emotional Stability"], 
             this.gradedTest["Extraversion"], 
             this.gradedTest["Intellect"]
             ],
