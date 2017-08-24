@@ -17,28 +17,24 @@ export class LoadingControllerComponent {
     console.log('Hello LoadingControllerComponent Component');
   }
 
-  ionViewDidLoad(){
-    setTimeout(function(){ alert("hello!"); }, 3000);
-  }
-
-  presentLoadingCustom() {
-    let loading = this.loadingCtrl.create({
-      spinner: 'hide',
-      content: `
-        <div class="custom-spinner-container">
-          <div class="custom-spinner-box"></div>
-        </div>`,
-      duration: 5000,
-      showBackdrop: false,
-      // dismissOnPageChange: true,
-    });
+  // presentLoadingCustom() {
+  //   let loading = this.loadingCtrl.create({
+  //     spinner: 'hide',
+  //     content: `
+  //       <div class="custom-spinner-container">
+  //         <div class="custom-spinner-box"></div>
+  //       </div>`,
+  //     duration: 5000,
+  //     showBackdrop: false,
+  //     // dismissOnPageChange: true,
+  //   });
   
-    loading.onDidDismiss(() => {
-      console.log('Dismissed loading');
-    });
+  //   loading.onDidDismiss(() => {
+  //     console.log('Dismissed loading');
+  //   });
   
-    loading.present();
-  }
+  //   loading.present();
+  // }
   /*  ionViewLoaded() {
     let loader = this.loading.create({
       content: 'Getting latest entries...',
