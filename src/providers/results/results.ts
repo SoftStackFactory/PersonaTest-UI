@@ -16,14 +16,6 @@ export class ResultsProvider {
   constructor(public http: Http) {
     console.log('Hello ResultsProvider Provider');
   }
-  
-  getAnswers() {
-    return this.http.get(this.baseUrl + this.path).map(res => res.json());
-  }
-  
-  // getAnswers() {
-  //   return this.http.get('../../assets/mockSavedAnswers.json').map(res => res.json());
-  // }
 
   // //Retrieve test results with access token
   // getTestResults(token, userId){

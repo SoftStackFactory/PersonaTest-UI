@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 // Providers
-import { ResultsProvider } from '../../providers/results/results';
+import { AnswersProvider } from '../../providers/answers/answers';
 
 // Components
 import { ChartComponent } from '../../components/chart/chart';
@@ -23,13 +23,13 @@ export class ResultsPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private resultsProvider: ResultsProvider
+    private answersProvider: AnswersProvider
     ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');
-    this.resultsProvider.getAnswers().subscribe(
+    this.answersProvider.getAnswers().subscribe(
       answers => {
         this.answers = answers;
         console.log("answers are here", answers);
