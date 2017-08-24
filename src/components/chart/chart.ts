@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@angular/core';
 import  { Chart }  from 'chart.js';
 
 
@@ -6,13 +6,13 @@ import  { Chart }  from 'chart.js';
   selector: 'chart',
   templateUrl: 'chart.html'
 })
-export class ChartComponent {
+export class ChartComponent implements AfterContentInit {
   @ViewChild('polarCanvas') polarCanvas: ElementRef
+  @Input("gradedTest") gradedTest: any;
   polarChart: any;
-  test: any = { Agreeableness: 55, Conscientiousness: 73, ES: 35, Extraversion: 40, Intellect: 85  };
 
-
-  ngOnInit() {
+  ngAfterContentInit() {
+    console.log("chart", this.gradedTest);
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'polarArea',
       data: {
@@ -25,11 +25,11 @@ export class ChartComponent {
           ],
         datasets: [{
           data: [
-            this.test["Agreeableness"], 
-            this.test["Conscientiousness"], 
-            this.test["ES"], 
-            this.test["Extraversion"], 
-            this.test["Intellect"]
+            this.gradedTest["Agreeableness"], 
+            this.gradedTest["Conscientiousness"], 
+            this.gradedTest["ES"], 
+            this.gradedTest["Extraversion"], 
+            this.gradedTest["Intellect"]
             ],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
