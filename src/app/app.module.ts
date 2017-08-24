@@ -48,7 +48,7 @@ import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
-
+import { PasswordChangeModal } from '../modals/password-change/password-change';
 
 
 let injections: any[] = [
@@ -83,6 +83,7 @@ let injections: any[] = [
     LogoutComponent,
     ManageAccountModal,
     PasswordResetModal,
+    PasswordChangeModal,
     HomeComponent,
     OrgSearchComponent
     ]

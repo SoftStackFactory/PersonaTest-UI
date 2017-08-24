@@ -20,6 +20,7 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUser } from '../providers/app-user';
@@ -63,6 +64,12 @@ export class MyApp {
     console.log("password reset requested");
     let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
     passwordResetModal.present();
+  };
+  
+  changePassword(){
+    console.log("password change requested");
+    let passwordChangeModal = this.modalCtrl.create(PasswordChangeModal);
+    passwordChangeModal.present();
   };
   
   becomeOrg(){

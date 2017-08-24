@@ -53,6 +53,13 @@ export class AppUser {
     );
   }
   
+  changePassword(token, password) {
+    return this.http.patch(
+      this.baseUrl + this.path + '/?access_token=' + token,
+      password
+    );
+  }
+  
   changeAccount(id, token, userData) {
     return this.http.patch(
       this.baseUrl + this.path + '/' + id +
