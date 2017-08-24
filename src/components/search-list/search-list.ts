@@ -41,7 +41,7 @@ export class SearchListComponent {
   }
 
   //Variable for user's input in date selector; this is the default value
-  searchTime: string = "Past six months";
+  searchTime: string = "All Time";
   
   
   constructor( public navCtrl: NavController ) {

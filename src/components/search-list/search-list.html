@@ -10,9 +10,9 @@
   </ion-searchbar>
   
   <!---- Search Results (exists only when search bar is clicked)  ---->
-  <div *ngIf="displayDropdown">
-    <ion-card>
-      <ion-label>Search results</ion-label>
+  <div *ngIf="displayDropdown" style="position: absolute; width: 100%; z-index: 105;">
+    <ion-card style="margin-top: 0px">
+      <ion-label padding-left="16px">Search results</ion-label>
       <ion-list>
       <ion-item class="item" *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
         <h2> {{ obj.name }} </h2>
@@ -47,8 +47,8 @@
     </ion-list>
     
     <!---- Fixed Bottom Footer (filters tests by time)  ---->
-    <ion-item color="light" style="display: block; position: fixed; bottom: 0px; width: 100%; margin: 0 auto; height: 50px;">
-      <ion-label>Viewing Tests From</ion-label>
+    <ion-item no-lines color="light" style="display: block; position: fixed; bottom: 0px; width: 100%; margin: 0 auto; height: 50px;">
+      <ion-label>View Tests From</ion-label>
       <ion-select [(ngModel)]="searchTime" (ionChange)="changeTimeView()">
         <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
       </ion-select>
