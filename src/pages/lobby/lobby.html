@@ -14,7 +14,9 @@
 </ion-header>
 
 <ion-content padding>
- 
+
+<loading-controller *ngIf="pageLoading"></loading-controller>
+
   <div padding>
     <ion-segment [(ngModel)]="testType">
       <ion-segment-button value="personal">

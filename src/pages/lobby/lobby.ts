@@ -24,6 +24,7 @@ export class LobbyPage {
   testType: string
   organizationName: string
   userName: string
+  pageLoading: Boolean = true
   
   constructor(
     public navCtrl: NavController, 
@@ -37,6 +38,7 @@ export class LobbyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
+    setTimeout( ()=> {this.pageLoading=false}, 3000);
   }
 
   forWork() {

@@ -43,6 +43,7 @@ import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
+import { LoadingControllerComponent } from '../components/loading-controller/loading-controller';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
@@ -83,7 +84,8 @@ let injections: any[] = [
     LogoutComponent,
     ManageAccountModal,
     HomeComponent,
-    OrgSearchComponent
+    OrgSearchComponent,
+    LoadingControllerComponent
     ]
 
 @NgModule({

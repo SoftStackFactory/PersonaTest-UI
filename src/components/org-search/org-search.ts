@@ -44,8 +44,5 @@ export class OrgSearchComponent {
     console.log('ionViewDidLoad OrgSearchComponent');
   }
   
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
 
 }

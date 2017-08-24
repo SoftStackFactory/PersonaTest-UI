@@ -52,6 +52,7 @@ export class QuicklinksPage {
     console.log('ionViewDidLoad QuicklinksPage');
   }
   
+  
   goTo(page) {
     this.navCtrl.push(page);
   }
