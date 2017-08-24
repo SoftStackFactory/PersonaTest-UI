@@ -50,6 +50,8 @@ export class QuestionPage {
       testTakenId: "testTaken",
       selection: this.convertScale(this.degreeNum),
       date: new Date(),
+      keyed: this.question["keyed"],
+      category: this.question["category"]
     }
     // save answer in an array
     this.answers.push(answer)
