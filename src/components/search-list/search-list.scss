@@ -1,5 +1,10 @@
 search-list {
     
+    /* Mobile View by default */
+    .container-width {
+        width: 100vw;
+    }
+    
     .small-chart {
         width: 45%;
         display: flex!important;
@@ -29,6 +34,10 @@ search-list {
     
     @media only screen and (min-width: 768px) {
     /* For desktop (and bigger than iPad) */
+    
+        .container-width {
+            width: 65vw;
+        }
     
         .display-block {
             display: inline!important;
