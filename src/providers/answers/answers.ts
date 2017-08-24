@@ -15,5 +15,9 @@ export class AnswersProvider {
   saveAnswer(answer) {
     return this.http.post(this.baseUrl + this.path, answer).map(res => res.json());
   }
+  
+  getAnswers() {
+    return this.http.get(this.baseUrl + this.path).map(res => res.json());
+  }
 
 }

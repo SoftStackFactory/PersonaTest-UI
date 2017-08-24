@@ -1,33 +1,72 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+// Providers
+import { AnswersProvider } from '../../providers/answers/answers';
+
+// Components
 import { ChartComponent } from '../../components/chart/chart';
 import { TestlistComponent } from '../../components/testlist/testlist';
 import { LogoutComponent } from '../../components/logout/logout';
 
-
-
-/**
- * Generated class for the ResultsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-results',
   templateUrl: 'results.html',
 })
 export class ResultsPage {
-
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  
+  private answers: any = {}; 
+  public gradedTest: any;
+  
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private answersProvider: AnswersProvider
+    ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');
+    this.answersProvider.getAnswers().subscribe(
+      answers => {
+        this.answers = answers;
+        console.log("answers are here", answers);
+      }, error => {
+        alert("Answers not successfully provided!");
+        console.log(error);
+      },() =>{ 
+      this.gradedTest = this.testGrade(this.answers);
+      console.log("results", this.gradedTest)
+      }
+    )
   }
   
+  
+  testGrade(answer) {
+    let results = answer.reduce(function(total, value) {
+      let category = value.category;
+      if(value.keyed == false) {
+        let sumSelection = function(number) {
+               return ((3 - number) + 3)
+             }
+        if(category in total) {
+            total[category] += sumSelection(value.selection)
+          } else {
+            total[category] = sumSelection(value.selection)
+          } return total
+        }
+      else {
+        if(category in total) {
+            total[category] += value.selection
+          } else {
+            total[category] = value.selection
+          } return total
+        } 
+       }, {})
+       return results;
+  }
 
 
 }
