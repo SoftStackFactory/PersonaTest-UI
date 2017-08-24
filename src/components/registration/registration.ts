@@ -11,7 +11,6 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 
 import { AgeValidator } from '../../validators/age';
 import { PasswordValidator } from '../../validators/password';
-import { EulaValidator } from '../../validators/eula';
 /**
  * Generated class for the RegistrationComponent component.
  *
@@ -29,6 +28,8 @@ export class RegistrationComponent {
   alertSubtitle: string;
   registerForm: FormGroup;
   submitAttempt: boolean = false;
+  // eulaError: any;
+  checked: boolean = false;
   
   constructor(
     private navCtrl: NavController,
@@ -45,7 +46,7 @@ export class RegistrationComponent {
         password: ['', Validators.required],
         confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         gender: ['', Validators.required],
-        isEula: [false, EulaValidator.isValid]
+        isEula: [false]
       });
   }
   
@@ -58,14 +59,29 @@ export class RegistrationComponent {
     alert.present();
   }
   
+  clickedEula() {
+    this.checked = !this.checked;
+    console.log("checked hit", this.checked);
+  }
+  
+  
   submit(){
     this.submitAttempt = true;
     
+    //INCOMPLETE FORM!!
     if(!this.registerForm.valid){
+      console.log("incomplete form")
       this.alertTitle = "Incomplete Form";
       this.alertSubtitle = "Please fill in all required fields properly.";
       return this.showAlert();
-    } 
+      
+      //EULA CHECK!!!
+    } else if(this.checked !== true){
+        console.log("uhoh you didnt check the eula");
+        this.alertTitle = "Terms & Conditions";
+        this.alertSubtitle = "Please accept the Terms & Conditions";
+        return this.showAlert();
+    }
       //successful registration
       delete this.registerForm.value.confirmPassword;
       console.log("Registration Complete", this.registerForm.value)
