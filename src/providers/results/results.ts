@@ -11,17 +11,20 @@ export class ResultsProvider {
   
     //Strongloop API Explorer's request URL
   baseUrl: string = URL;
-  path: string = "/TestTaken";
+  path: string = "/Answers";
   
   constructor(public http: Http) {
     console.log('Hello ResultsProvider Provider');
   }
   
   getAnswers() {
-    return this.http.get('../../assets/mockSavedAnswers.json').map(res => res.json());
+    return this.http.get(this.baseUrl + this.path).map(res => res.json());
   }
-
   
+  // getAnswers() {
+  //   return this.http.get('../../assets/mockSavedAnswers.json').map(res => res.json());
+  // }
+
   // //Retrieve test results with access token
   // getTestResults(token, userId){
   //   return this.http.get(this.baseUrl + this.path + 

@@ -12,6 +12,7 @@ export class ChartComponent implements AfterContentInit {
   polarChart: any;
 
   ngAfterContentInit() {
+    console.log("chart", this.gradedTest);
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'polarArea',
       data: {
