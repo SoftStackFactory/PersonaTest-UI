@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
  * Angular Pipes.
  */
 @Pipe({
-  name: 'testsByTime',
+  name: 'testsByTimePipe',
 })
 export class FilterTestsByTimePipe implements PipeTransform {
   /*

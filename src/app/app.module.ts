@@ -31,6 +31,7 @@ import { ResultsProvider } from '../providers/results/results';
 
 //Pipes
 import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
+import { SearchTermPipe } from '../pipes/search-term/search-term';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -92,7 +93,8 @@ let injections: any[] = [
 @NgModule({
   declarations: [
     injections, 
-    FilterTestsByTimePipe 
+    FilterTestsByTimePipe,
+    SearchTermPipe 
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,7 @@
  <!---- Display our test history if it is not empty ---->
   <ion-list *ngIf="!emptyHistory">
     <!---- Each Test Card (test info and mini chart) ---->
-    <ion-item class="item display-block" *ngFor="let obj of ourList | testsByTime : searchTime " (click)="selectedItem($event, obj)">
+    <ion-item class="item display-block" *ngFor="let obj of ourList | searchTermPipe : searchInput | testsByTimePipe : searchTime " (click)="selectedItem($event, obj)">
       <div id="text-block" class="half-container">
         <h2> <strong> {{ obj.name }} </strong> </h2>
         <h3> Taken on: <strong>{{ obj.date |  date:fullDate }}</strong> </h3>
@@ -49,7 +49,7 @@
   <!---- Fixed Bottom Footer (filters tests by time)  ---->
   <ion-item no-lines color="light" class="container-width" style="display: block; position: fixed; bottom: 0px; margin: 0 auto; height: 50px;">
     <ion-label>View Tests From</ion-label>
-    <ion-select [(ngModel)]="searchTime" (ionChange)="changeTimeView()">
+    <ion-select [(ngModel)]="searchTime">
       <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
     </ion-select>
   </ion-item>

@@ -99,9 +99,5 @@ export class SearchListComponent {
     this.navCtrl.push(TestListsPage);
   }
   
-  //When user selects a new time range, update their tests view
-  changeTimeView(){
-    console.log(this.searchTime);
-  }
 
 }
