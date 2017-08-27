@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
 import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
 
+// Pages
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
-
+// Modals
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 
-/**
- * Generated class for the LobbyPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+// Providers
+import { ResultsProvider } from '../../providers/results/results';
+
 
 @Component({
   selector: 'page-lobby',
@@ -29,6 +27,7 @@ export class LobbyPage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public modalCtrl: ModalController, 
+    public resultsProvider: Provider
     viewCtrl: ViewController) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
@@ -40,6 +39,7 @@ export class LobbyPage {
   }
 
   forWork() {
+    this.resultsProvider.initializeTest();
     this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
     let forWorkModal = this.modalCtrl.create(ForWorkModal);

@@ -16,6 +16,10 @@ export class ResultsProvider {
   constructor(public http: Http) {
     console.log('Hello ResultsProvider Provider');
   }
+  
+  initializeTest(testTaken) {
+    return this.http.post(this.baseUrl + this.path, testTaken).map(res => res.json());
+  }
 
   // //Retrieve test results with access token
   // getTestResults(token, userId){
