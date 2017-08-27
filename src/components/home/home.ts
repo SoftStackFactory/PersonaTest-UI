@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 import { LobbyPage } from '../../pages/lobby/lobby';
 

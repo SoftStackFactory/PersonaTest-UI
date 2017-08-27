@@ -1,0 +1,219 @@
+[
+  {
+    "questionId": "599503fd2be1f5ad3c0055da",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:58.145Z",
+    "id": "59951cb62be1f5ad3c00560c"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055db",
+    "testTakenId": "testTaken",
+    "selection": 1,
+    "keyed": false,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:59.539Z",
+    "id": "59951cb72be1f5ad3c00560d"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dc",
+    "testTakenId": "testTaken",
+    "selection": 2,
+    "keyed": false,
+    "category": "Intellect",
+    "date": "2017-08-17T04:33:59.962Z",
+    "id": "59951cb72be1f5ad3c00560e"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dd",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Extraversion",
+    "date": "2017-08-17T04:34:00.156Z",
+    "id": "59951cb82be1f5ad3c00560f"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055de",
+    "testTakenId": "testTaken",
+    "selection": 5,
+    "keyed": true,
+    "category": "ES",
+    "date": "2017-08-17T04:34:00.316Z",
+    "id": "59951cb82be1f5ad3c005610"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055df",
+    "testTakenId": "testTaken",
+    "selection": 4,
+    "keyed": true,
+    "category": "Conscientiousness",
+    "date": "2017-08-17T04:34:00.502Z",
+    "id": "59951cb82be1f5ad3c005611"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055da",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:58.145Z",
+    "id": "59951cb62be1f5ad3c00560c"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055db",
+    "testTakenId": "testTaken",
+    "selection": 1,
+    "keyed": false,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:59.539Z",
+    "id": "59951cb72be1f5ad3c00560d"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dc",
+    "testTakenId": "testTaken",
+    "selection": 2,
+    "keyed": false,
+    "category": "Intellect",
+    "date": "2017-08-17T04:33:59.962Z",
+    "id": "59951cb72be1f5ad3c00560e"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dd",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Extraversion",
+    "date": "2017-08-17T04:34:00.156Z",
+    "id": "59951cb82be1f5ad3c00560f"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055de",
+    "testTakenId": "testTaken",
+    "selection": 5,
+    "keyed": true,
+    "category": "ES",
+    "date": "2017-08-17T04:34:00.316Z",
+    "id": "59951cb82be1f5ad3c005610"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055df",
+    "testTakenId": "testTaken",
+    "selection": 4,
+    "keyed": true,
+    "category": "Conscientiousness",
+    "date": "2017-08-17T04:34:00.502Z",
+    "id": "59951cb82be1f5ad3c005611"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055da",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:58.145Z",
+    "id": "59951cb62be1f5ad3c00560c"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055db",
+    "testTakenId": "testTaken",
+    "selection": 1,
+    "keyed": false,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:59.539Z",
+    "id": "59951cb72be1f5ad3c00560d"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dc",
+    "testTakenId": "testTaken",
+    "selection": 2,
+    "keyed": false,
+    "category": "Intellect",
+    "date": "2017-08-17T04:33:59.962Z",
+    "id": "59951cb72be1f5ad3c00560e"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dd",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Extraversion",
+    "date": "2017-08-17T04:34:00.156Z",
+    "id": "59951cb82be1f5ad3c00560f"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055de",
+    "testTakenId": "testTaken",
+    "selection": 5,
+    "keyed": true,
+    "category": "ES",
+    "date": "2017-08-17T04:34:00.316Z",
+    "id": "59951cb82be1f5ad3c005610"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055df",
+    "testTakenId": "testTaken",
+    "selection": 4,
+    "keyed": true,
+    "category": "Conscientiousness",
+    "date": "2017-08-17T04:34:00.502Z",
+    "id": "59951cb82be1f5ad3c005611"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055da",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:58.145Z",
+    "id": "59951cb62be1f5ad3c00560c"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055db",
+    "testTakenId": "testTaken",
+    "selection": 1,
+    "keyed": false,
+    "category": "Agreeableness",
+    "date": "2017-08-17T04:33:59.539Z",
+    "id": "59951cb72be1f5ad3c00560d"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dc",
+    "testTakenId": "testTaken",
+    "selection": 2,
+    "keyed": false,
+    "category": "Intellect",
+    "date": "2017-08-17T04:33:59.962Z",
+    "id": "59951cb72be1f5ad3c00560e"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055dd",
+    "testTakenId": "testTaken",
+    "selection": 3,
+    "keyed": true,
+    "category": "Extraversion",
+    "date": "2017-08-17T04:34:00.156Z",
+    "id": "59951cb82be1f5ad3c00560f"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055de",
+    "testTakenId": "testTaken",
+    "selection": 5,
+    "keyed": true,
+    "category": "ES",
+    "date": "2017-08-17T04:34:00.316Z",
+    "id": "59951cb82be1f5ad3c005610"
+  },
+  {
+    "questionId": "599503fd2be1f5ad3c0055df",
+    "testTakenId": "testTaken",
+    "selection": 4,
+    "keyed": true,
+    "category": "Conscientiousness",
+    "date": "2017-08-17T04:34:00.502Z",
+    "id": "59951cb82be1f5ad3c005611"
+  }
+  
+]
