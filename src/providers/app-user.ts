@@ -40,6 +40,8 @@ export class AppUser {
   }
   
   delete(id, token) {
+    console.log('delete:' + this.baseUrl + this.path + '/' + id + 
+      '?access_token=' + token);
     return this.http.delete(
       this.baseUrl + this.path + '/' + id + 
       '?access_token=' + token

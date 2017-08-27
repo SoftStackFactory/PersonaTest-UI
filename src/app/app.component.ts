@@ -30,7 +30,7 @@ import { AppUser } from '../providers/app-user';
   templateUrl: 'app.html'
 })
 export class MyApp {
-
+  currentPage: string;
   rootPage:any = LandingPage;
   @ViewChild(Nav) nav: Nav;
   
@@ -41,17 +41,28 @@ export class MyApp {
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
-    private appUser: AppUser) {
+    private appUser: AppUser
+  ) {
     platform.ready().then(() => {
+      console.log("nav", this.nav)
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    
+    //this.currentPage = this.nav.getActive().name;
+    //console.log(this.currentPage);
+    
   };
   
   closeMenu(){
     
+  };
+  
+  goHome(){
+    this.menuCtrl.close();
+    this.nav.setRoot(LobbyPage);
   };
   
   manageAcc(){
@@ -147,8 +158,3 @@ export class MyApp {
 
 }
 
-/*
-<button ion-button menuClose icon-only outline (click)="closeMenu()">
-              <ion-icon name="close-circle"></ion-icon>
-            </button>
-*/

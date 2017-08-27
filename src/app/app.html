@@ -11,13 +11,14 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            
+            <button ion-item (click)="goHome()"><ion-icon name="home"></ion-icon>
+                Home</button>
             <button ion-item (click)="manageAcc()">Manage Account Profile</button>
             <button ion-item (click)="changePassword()">Change Password</button>
-            <button ion-item (click)="resetPassword()">Reset Password</button>
             <button ion-item (click)="becomeOrg()">Become an Organization</button>
             <button ion-item (click)="deleteAcc()">Delete Account</button>
-            <button ion-item (click)="logout()">Logout</button>
+            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>
+                Logout</button>
             
         </ion-list>
     </ion-content>

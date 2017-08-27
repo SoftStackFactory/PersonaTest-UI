@@ -55,6 +55,7 @@ export class PasswordChangeModal {
 
     //Passwords did not match, delete user passwords
     } else if(this.user.newPassword !== this.user.confirmNewPassword) {
+      this.user.oldPassword = null;
       this.user.newPassword = null;
       this.user.confirmNewPassword = null;
       this.alertTitle = "Passwords do not match";
@@ -66,9 +67,9 @@ export class PasswordChangeModal {
     
     //verify old password with api call
     
-    this.password = { "password" : this.user.newPassword };
     
     //submit new password
+    this.password = { "password" : this.user.newPassword };    
     this.appUser.changePassword(window.localStorage.getItem('token'), 
         this.password)
       .map(res => res.json())
