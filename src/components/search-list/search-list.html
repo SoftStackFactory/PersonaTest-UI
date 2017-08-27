@@ -9,8 +9,8 @@
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
   
-  <!---- Search Results (exists only when search bar is clicked)  ---->
-  <div *ngIf="displayDropdown" style="position:fixed; z-index: 105;" class="container-width">
+  <!---- Search Results ORG VIEW ONLY  (exists only when search bar is clicked)  ---->
+  <div *ngIf="orgView && displayDropdown" style="position:fixed; z-index: 105;" class="container-width">
     <ion-card style="margin-top: 0px;">
       <ion-label padding-left="16px">Search results</ion-label>
       <ion-list>

@@ -23,6 +23,9 @@ export class SearchListComponent {
   //Variable for user's input in search bar 
   searchInput: string = "";
   
+  //Boolean to display if is an org
+  orgView: boolean = false;
+  
   //Boolean for displaying the search results dropdown
   displayDropdown: boolean = false;
   

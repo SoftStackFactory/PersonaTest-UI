@@ -30,8 +30,6 @@ export class SearchTermPipe implements PipeTransform {
       }
     });
 
-    console.log("The number of search results is " + testsObj.length);
-    
     return testsObj; 
   }
   
