@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 // Providers
 import { AnswersProvider } from '../../providers/answers/answers';
+import { ResultsProvider } from '../../providers/results/results';
 
 // Components
 import { ChartComponent } from '../../components/chart/chart';
@@ -23,7 +24,8 @@ export class ResultsPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private answersProvider: AnswersProvider
+    private answersProvider: AnswersProvider,
+    private resultsProvider: ResultsProvider
     ) {
   }
 
@@ -40,7 +42,8 @@ export class ResultsPage {
       },() =>{ 
       // Sort answer's selection by category
       this.gradedTest = this.testGrade(this.answers);
-      console.log("results", this.gradedTest)
+      console.log("results", this.gradedTest);
+      this.resultsProvider.updateTest(this.navParams.get('testTaken'));
       }
     )
   }

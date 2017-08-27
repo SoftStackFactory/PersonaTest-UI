@@ -68,7 +68,7 @@ export class LobbyPage {
           console.log(error);
         }
       )
-    this.navCtrl.push(QuestionPage);
+    this.navCtrl.push(QuestionPage, {testTaken: testTaken} );
     console.log("Switch to Personal Test Selection Page");
   }
   showResults() {

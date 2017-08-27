@@ -20,6 +20,11 @@ export class ResultsProvider {
   initializeTest(testTaken) {
     return this.http.post(this.baseUrl + this.path, testTaken).map(res => res.json());
   }
+  
+  updateTest(testTaken) {
+    console.log("provider", testTaken)
+    return this.http.put(this.baseUrl + this.path, testTaken.id).map(res => res.json());
+  }
 
   // //Retrieve test results with access token
   // getTestResults(token, userId){
