@@ -62,7 +62,7 @@ export class LoginPage {
       .map(res => res.json())
       .subscribe(res => {
         window.localStorage.setItem('token', res.token);
-        window.localStorage.setItem('id', res.id)
+        window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
       }, error => {
