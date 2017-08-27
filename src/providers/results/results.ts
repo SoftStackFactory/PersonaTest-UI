@@ -11,7 +11,7 @@ export class ResultsProvider {
   
     //Strongloop API Explorer's request URL
   baseUrl: string = URL;
-  path: string = "/Answers";
+  path: string = "/testTakens";
   
   constructor(public http: Http) {
     console.log('Hello ResultsProvider Provider');

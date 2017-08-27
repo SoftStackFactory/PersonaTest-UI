@@ -19,15 +19,17 @@ import { ResultsProvider } from '../../providers/results/results';
   templateUrl: 'lobby.html',
 })
 export class LobbyPage {
-  testType: string
-  organizationName: string
-  userName: string
+  testType: string;
+  organizationName: string;
+  userName: string;
+  user: string;
+  
   
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public modalCtrl: ModalController, 
-    public resultsProvider: Provider
+    public resultsProvider: ResultsProvider,
     viewCtrl: ViewController) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
@@ -39,13 +41,33 @@ export class LobbyPage {
   }
 
   forWork() {
-    this.resultsProvider.initializeTest();
     this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
     let forWorkModal = this.modalCtrl.create(ForWorkModal);
     forWorkModal.present();
   }
   forPlay() {
+    let testTaken = {
+      // Hard coded ID, generated from the App user model in the backend
+      userId: "59a32e40a35bbc79d8931602",
+      // Hard coded ID, generated from the test model in the backend
+      // Eventually will reference each test's unique id
+      testId: "59a323f32eb4c1781fd6c1e3",
+      date: new Date(),
+      extraversion: 0,
+      agreeableness: 0,
+      conscientiousness: 0,
+      emotionalStability: 0,
+      intellect: 0
+    };
+    this.resultsProvider.initializeTest(testTaken)
+      .subscribe(
+        test => {
+          console.log("Initalized Test", test);
+        }, error => {
+          console.log(error);
+        }
+      )
     this.navCtrl.push(QuestionPage);
     console.log("Switch to Personal Test Selection Page");
   }
