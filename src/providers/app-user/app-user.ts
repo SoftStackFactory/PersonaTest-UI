@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { URL } from '../assets/provider-config'
+import { URL } from '../../assets/provider-config'
 
 /*
   Generated class for the AppUser provider.
@@ -10,7 +10,7 @@ import { URL } from '../assets/provider-config'
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class AppUser {
+export class AppUserProvider {
   baseUrl: string = URL;
   path: string = "/AppUsers"
   constructor(public http: Http) {

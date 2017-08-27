@@ -1,44 +1,63 @@
 <!-- Generated template for the RegistrationComponent component -->
   <div class="registration-container">
-  <!--<div class="regTitle">-->
-  <!--    <ion-title text-center>New User Registration</ion-title>-->
-  <!--</div>-->
-    <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
+    <form [formGroup]="registerForm" novalidate>
       <div class="registration-rows">
         
+        <!--FIRST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>First Name</ion-label>
-            <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
+            <ion-input formControlName="firstName" type="string"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.firstName.valid && (registerForm.controls.firstName.dirty || submitAttempt)">
+          <p>Please use letters for your first name.</p>
         </ion-item>
         
+        <!--LAST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
-            <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
+            <ion-input formControlName="lastName" type="string"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.lastName.valid && (registerForm.controls.lastName.dirty || submitAttempt)">
+          <p>Please use letters for your last name.</p>
         </ion-item>
         
+        <!--AGE INPUT-->
         <ion-item>
           <ion-label floating>Age</ion-label>
-            <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
+            <ion-input formControlName="age" type="number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
+          <p>Please enter a valid age.</p>
         </ion-item>
         
+        <!--EMAIL INPUT-->
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>Email</ion-label>
-            <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+            <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+          <p>Please enter a valid email address</p>
         </ion-item>
         
+        <!--PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Password</ion-label>
-            <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+            <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
         
+        <!--CONFIRM PASSWORD INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
-            <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
+            <ion-input formControlName="confirmPassword" type="password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
+          <p>Passwords did not match</p>
         </ion-item>
         
+        <!--GENDER INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>Gender</ion-label>
-            <ion-select [(ngModel)]="user.gender" name="gender" required>
+            <ion-select formControlName="gender">
               <ion-option>Female</ion-option>
               <ion-option>Male</ion-option>
               <ion-option>Other</ion-option>
@@ -46,18 +65,19 @@
             </ion-select>
         </ion-item>
         
+        <!--EULA CHECKBOX-->
         <div class="registration-eula">
-          <ion-checkbox name="eula" [(ngModel)]="user.isEula" (ionChange)="checkEula"></ion-checkbox>
+          <ion-checkbox formControlName="isEula" (ionChange)="clickedEula()"></ion-checkbox>
             <span>I accept the Terms & Conditions</span>
         </div>
         
+        <!--SUBMIT BUTTON-->
       </div>
       <div class="register-button">
-        <button ion-button outline type="submit">Register</button>
+        <button ion-button outline (click)="submit()">Register</button>
       </div>
     </form>
     <div class="view-eula">
-        <!--<ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>-->
           <em> 
             <a (click)="showEula()">View our Terms & Conditions</a>
           </em>
