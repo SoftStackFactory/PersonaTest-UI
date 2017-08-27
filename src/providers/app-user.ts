@@ -48,16 +48,17 @@ export class AppUser {
     );
   }
   
-  resetPassword(token, email) {
+  resetPassword(email) {
     return this.http.post(
-      this.baseUrl + this.path + '/?access_token=' + token,
+      this.baseUrl + this.path,
       email
     );
   }
   
-  changePassword(token, password) {
+  changePassword(id, token, password) {
     return this.http.patch(
-      this.baseUrl + this.path + '/?access_token=' + token,
+      this.baseUrl + this.path + '/' + id +
+      '?access_token=' + token,
       password
     );
   }

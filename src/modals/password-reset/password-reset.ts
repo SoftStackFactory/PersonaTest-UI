@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { EmailComposer } from '@ionic-native/email-composer';
+//import { EmailComposer } from '@ionic-native/email-composer';
 
 
 import { AppUser } from '../../providers/app-user';
@@ -22,7 +22,7 @@ export class PasswordResetModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private emailComposer: EmailComposer,
+      //private emailComposer: EmailComposer,
       private appUser: AppUser) {
         this.resetRequestForm = this.formBuilder.group({
             email: ['', Validators.required]
@@ -55,28 +55,47 @@ export class PasswordResetModal {
     }
     
     //successfull password change
-    this.appUser.resetPassword(window.localStorage.getItem('token'), 
-        this.resetRequestForm.value)
-      .map(res => res.json())
-      .subscribe(res => {
-        this.alertTitle = "Password reset requested",
-        this.alertSubtitle = "Check your email for further instructions",
-        this.showAlert();
-        return this.viewCtrl.dismiss();
+    let confirmReset = this.alertCtrl.create({
+      title: 'Confirm Password Reset',
+      message: 'Are you sure you would like to reset your password?',
+      buttons: [
+        {
+          //when user does want to reset their password
+          text: 'Yes, reset my password',
+          handler:() => {
+            this.appUser.resetPassword(this.resetRequestForm.value)
+            .map(res => res.json())
+            .subscribe(res => {
+              this.alertTitle = "Password reset requested",
+              this.alertSubtitle = "Check your email for further instructions",
+              this.showAlert();
+              return this.viewCtrl.dismiss();
         
-      }, error => {
-        //Server side errors
-        if (error.status === 404) {
-          this.alertTitle = "404";
-          this.alertSubtitle = "Not Found.";
-          return this.showAlert();
+            }, error => {
+              //Server side errors
+              if (error.status === 404) {
+                this.alertTitle = "404";
+                this.alertSubtitle = "Not Found.";
+                return this.showAlert();
           
-        } else if (error.status === 500) {
-          this.alertTitle = "500";
-          this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
-          return this.showAlert();
-        }    
-      });
+              } else if (error.status === 500) {
+                this.alertTitle = "500";
+                this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+                return this.showAlert();
+              }
+            })
+          }
+        },
+        {
+          //when user does not want to reset password
+          text: 'No, keep my current password',
+          handler: () => {
+            console.log("User cancelled reset");
+          }
+        }
+      ]
+    });
+    confirmReset.present();
   }
   
 }

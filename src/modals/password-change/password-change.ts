@@ -10,10 +10,10 @@ import { AppUser } from '../../providers/app-user';
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
-  user: any = {}
-  password: any = {}
-  alertTitle: string
-  alertSubtitle: string
+  user: any = {};
+  password: any = {};
+  alertTitle: string;
+  alertSubtitle: string;
   
   constructor(
       public navCtrl: NavController, 
@@ -24,8 +24,8 @@ export class PasswordChangeModal {
       private appUser: AppUser) {
         this.changeRequestForm = this.formBuilder.group({
             oldPassword: ['', Validators.required],
-            newPassword: ['', Validators.required],
-            confirmNewPassword: ['', Validators.required]
+            password: ['', Validators.required],
+            confirmPassword: ['', Validators.required]
         });
   }
 
@@ -46,8 +46,8 @@ export class PasswordChangeModal {
     alert.present();
   }
   
-  passwordReset(form) {
-    console.log(this.changeRequestForm.value)
+  passwordChange(form) {
+    console.log("form", this.changeRequestForm.value)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
       this.alertSubtitle = "Please fill in all required fields.";
@@ -56,8 +56,8 @@ export class PasswordChangeModal {
     //Passwords did not match, delete user passwords
     } else if(this.user.newPassword !== this.user.confirmNewPassword) {
       this.user.oldPassword = null;
-      this.user.newPassword = null;
-      this.user.confirmNewPassword = null;
+      this.user.password = null;
+      this.user.confirmPassword = null;
       this.alertTitle = "Passwords do not match";
       this.alertSubtitle = "Please re-enter your passwords.";
       return this.showAlert();
@@ -69,9 +69,14 @@ export class PasswordChangeModal {
     
     
     //submit new password
-    this.password = { "password" : this.user.newPassword };    
-    this.appUser.changePassword(window.localStorage.getItem('token'), 
-        this.password)
+    console.log("user data", this.user);
+    delete this.user.oldPassword;
+    delete this.user.confirmPassword;
+    console.log("user data to send", this.user);
+    //this.password = { "password" : this.user.password };    
+    this.appUser.changePassword(window.localStorage.getItem('id'),
+      window.localStorage.getItem('token'), 
+        this.user)
       .map(res => res.json())
       .subscribe(res => {
         this.alertTitle = "Password Change",
