@@ -9,6 +9,7 @@ import { URL } from '../../assets/provider-config';
 @Injectable()
 export class ResultsProvider {
   
+  
     //Strongloop API Explorer's request URL
   baseUrl: string = URL;
   path: string = "/testTakens";
@@ -21,9 +22,10 @@ export class ResultsProvider {
     return this.http.post(this.baseUrl + this.path, testTaken).map(res => res.json());
   }
   
-  updateTest(testTaken) {
-    console.log("provider", testTaken)
-    return this.http.put(this.baseUrl + this.path, testTaken.id).map(res => res.json());
+  updateTest(updatedTest) {
+    
+    console.log("provider", updatedTest)
+    return this.http.put(this.baseUrl + this.path, updatedTest).map(res => res.json());
   }
 
   // //Retrieve test results with access token

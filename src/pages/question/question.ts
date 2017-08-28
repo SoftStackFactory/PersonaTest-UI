@@ -50,8 +50,8 @@ export class QuestionPage {
     console.log("Question", this.testTaken);
     let answer = {
       questionId: this.question["id"],
-      // testTakenId: this.testTaken["id"],
-      testTakenId: "testTaken",
+      testTakenId: this.testTaken["id"],
+      // testTakenId: "testTaken",
       selection: this.convertScale(this.degreeNum),
       date: new Date(),
       keyed: this.question["keyed"],
@@ -70,7 +70,8 @@ export class QuestionPage {
     console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
 
-      this.navCtrl.setRoot(ResultsPage, {teskTaken: this.testTaken});
+      this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken});
+      console.log("lastQ", this.testTaken);
     } else {
       this.questionNum++;
       this.assignQuestion();

@@ -23,6 +23,7 @@ export class LobbyPage {
   organizationName: string;
   userName: string;
   user: string;
+  TEST: any;
   
   
   constructor(
@@ -54,22 +55,26 @@ export class LobbyPage {
       // Eventually will reference each test's unique id
       testId: "59a323f32eb4c1781fd6c1e3",
       date: new Date(),
-      extraversion: 0,
-      agreeableness: 0,
-      conscientiousness: 0,
-      emotionalStability: 0,
-      intellect: 0
+      Extraversion: 0,
+      Agreeableness: 0,
+      Conscientiousness: 0,
+      'Emotional Stability': 0,
+      Intellect: 0
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
         test => {
-          console.log("Initalized Test", test);
+          this.TEST = test
+          console.log("Initalized Test", this.TEST);
+          
         }, error => {
           console.log(error);
-        }
+        },
+       () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
+        
       )
-    this.navCtrl.push(QuestionPage, {testTaken: testTaken} );
-    console.log("Switch to Personal Test Selection Page");
+   
+   
   }
   showResults() {
     this.navCtrl.push(HistoryPage);

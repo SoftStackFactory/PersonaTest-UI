@@ -20,19 +20,21 @@ export class ResultsPage {
   
   private answers: any = {}; 
   public gradedTest: any;
+  testTaken: any;
   
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private answersProvider: AnswersProvider,
-    private resultsProvider: ResultsProvider
+    private resultsProvider: ResultsProvider,
     ) {
+     this.testTaken = this.navParams.get('testTaken')
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResultsPage');
+    console.log('ionViewDidLoad ResultsPage', this.testTaken);
     // Retrieve user's test answers from the backend
-    this.answersProvider.getAnswers().subscribe(
+    this.answersProvider.getAnswers(this.testTaken.id).subscribe(
       answers => {
         this.answers = answers;
         console.log("answers are here", answers);
@@ -43,16 +45,22 @@ export class ResultsPage {
       // Sort answer's selection by category
       this.gradedTest = this.testGrade(this.answers);
       console.log("results", this.gradedTest);
-      this.resultsProvider.updateTest(this.navParams.get('testTaken'));
+      this.resultsProvider.updateTest(this.gradedTest)
+        .subscribe(
+          res => console.log("response update", res),
+          err => console.log("error", err)
+          )
       }
     )
   }
   
   
   testGrade(answer) {
+    let test = this.testTaken
     // Pass each answer into a reduce method
     let results = answer.reduce(function(total, value) {
       let category = value.category;
+      console.log("category", category)
       // invert the value of a selection if keyed negatively 
       // If the question is keyed false, then a selection of strongly agree would equate to a value of 1 towards the appropiate category
       if(value.keyed == false) {
@@ -77,7 +85,12 @@ export class ResultsPage {
           } return total
         } 
        }, {})
-
+    
+        results.date = new Date()
+        results.testId = test.testId
+        results.userId = test.userId
+        results.id = test.id;
+        console.log('reduc', results);
        return results;
   }
 
