@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController, NavParams, ViewController } from 'ionic-angular';
+import { ModalController, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
@@ -24,13 +24,15 @@ export class LobbyPage {
   testType: string
   organizationName: string
   userName: string
-  pageLoading: Boolean = true
+  //used for ionic spinner only:
+  //pageLoading: Boolean = true
   
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public modalCtrl: ModalController, 
-    viewCtrl: ViewController) {
+    viewCtrl: ViewController,
+    public loadingCtrl: LoadingController) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
@@ -38,7 +40,19 @@ export class LobbyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
-    setTimeout( ()=> {this.pageLoading=false}, 3000);
+    //used for ionic spinner only:
+    //setTimeout( ()=> {this.pageLoading=false}, 3000);
+    
+    let loading = this.loadingCtrl.create({
+      spinner: "dots",
+      duration: 5000
+    });
+    
+    loading.onDidDismiss(() => {
+      console.log("Dismissed loading");
+    });
+    
+    loading.present();
   }
 
   forWork() {
