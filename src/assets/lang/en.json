@@ -1,0 +1,21 @@
+
+{
+    "HOME": {
+      "TITLE": "PersonaTest"
+      
+    },
+    "LANDING":{
+        "SLIDEONE": "Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.",
+        "SLIDETWO": "Find That Perfect Puzzle Peace! Locate the Perfect Fit to Fill All Your Positions of Need.",
+        "SLIDETHREE": "For Hire or for Personal Use, Take A test to Gain A Better Understanding of Your Personality Type.",
+        "JOIN": "Join Today!",
+        "LOGIN": "Login",
+        "SIGNUP": "SignUp"
+    },
+        
+    "LOBBY": {
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organization"
+    }
+}

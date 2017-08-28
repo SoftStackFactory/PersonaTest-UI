@@ -1,0 +1,21 @@
+
+{
+    "HOME": {
+      "TITLE": "PersonaTest"
+      
+    },
+    "LANDING":{
+        "SLIDEONE": "Bienvenido a PersonaTest, clasifique la fuerza de trabajo en subgrupos para maximizar la efectividad.",
+        "SLIDETWO": "¡Encuentra esa paz perfecta del rompecabezas! Busque el ajuste perfecto para llenar todas sus posiciones de necesidad.",
+        "SLIDETHREE": "Para el alquiler o para uso personal, tomar una prueba para ganar una mejor comprensión de su tipo de personalidad.",
+        "JOIN": "¡Únete hoy!",
+        "LOGIN": "iniciar sesión",
+        "SIGNUP": "Regístrate"
+    },
+        
+    "LOBBY": {
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organization"
+    }
+}
