@@ -17,5 +17,29 @@
         "TITLE": "PersonaTest",
         "PERSONAL": "Personal",
         "ORGANIZATION": "Organization"
+    },
+    "REGISTER":{
+        "FIRST": "Nombre De Pila",
+        "LAST": "Apellido",
+        "AGE": "Años",
+        "EMAIL": "Correo Electrónico",
+        "PASSWORD": "Contraseña",
+        "CONFIRM": "Confirmar Contraseña",
+        "GENDER": "Género",
+        "ERRORFIRST": "Por favor, utilice letras para su primer nombre.",
+        "ERRORLAST": "Por favor, utilice letras para su apellido.",
+        "ERRORAGE":"Ingrese una edad válida.",
+        "ERROREMAIL":"Por favor, introduce una dirección de correo electrónico válida",
+        "ERRORPASSWORD":"Las contraseñas no coinciden",
+        "MALE":"Masculino",
+        "FEMALE":"Hembra",
+        "OTHER":"Otro",
+        "DECLINE":"Disminución",
+        "EULA":"Acepto Los Términos Y Condiciones",
+        "TERMS":"Ver nuestros términos y condiciones",
+        "REQ":"Campos Requeridos",
+        "ALREADY":"¿Ya tienes una cuenta?",
+        "HERE":"Entre aquí.",
+        "REGISTER":"Registro"
     }
 }

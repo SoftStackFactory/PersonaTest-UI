@@ -17,5 +17,28 @@
         "TITLE": "PersonaTest",
         "PERSONAL": "Personal",
         "ORGANIZATION": "Organization"
+    },
+      "REGISTER":{
+        "FIRST": "First Name",
+        "LAST": "Last Name",
+        "AGE": "Age",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "CONFIRM": "Confirm Password",
+        "GENDER": "Gender",
+        "ERRORFIRST": "Please use letters for your first name.",
+        "ERRORLAST": "Please use letters for your last name.",
+        "ERRORAGE":"Please enter a valid age.",
+        "ERROREMAIL":"Please enter a valid email address",
+        "ERRORPASSWORD":"Passwords did not match",
+        "MALE":"Male",
+        "FEMALE":"Female",
+        "OTHER":"Other",
+        "DECLINE":"Decline",
+        "EULA":"I accept the Terms & Conditions",
+        "TERMS":"View our Terms & Conditions",
+        "REQ":"Required Fields",
+        "ALREADY":"Already have an account?",
+        "HERE":"Login Here."
     }
 }
