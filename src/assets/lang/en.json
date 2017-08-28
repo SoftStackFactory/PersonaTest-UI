@@ -40,5 +40,19 @@
         "REQ":"Required Fields",
         "ALREADY":"Already have an account?",
         "HERE":"Login Here."
+    },
+    "LOGIN": {
+        "FOOTER": "Don't have an account yet?",
+        "SH": "Sign up here.",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "LOGIN": "Login"
+    },
+    "LOBBY": {
+        "PERSONAL": "PERSONAL",
+        "PROFESSIONAL": "PROFESSIONAL",
+        "NAME": "Hello",
+        "TAKE": "Take a Test",
+        "RESULTS": "View Results"
     }
 }

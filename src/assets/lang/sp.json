@@ -41,5 +41,19 @@
         "ALREADY":"¿Ya tienes una cuenta?",
         "HERE":"Entre aquí.",
         "REGISTER":"Registro"
+    },
+    "LOGIN": {
+        "FOOTER": "¿Aún no tienes una cuenta?",
+        "SH": "Registrate aquí.",
+        "EMAIL": "Correo Electrónico",
+        "PASSWORD": "Contraseña",
+        "LOGIN": "Iniciar Sesión"
+    },
+        "LOBBY": {
+        "PERSONAL": "PERSONAL",
+        "PROFESSIONAL": "PROFESIONAL",
+        "NAME": "Hola",
+        "TAKE": "Tomar Una Prueba",
+        "RESULTS": "Ver Resultados"
     }
 }
