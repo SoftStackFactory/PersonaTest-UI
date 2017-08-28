@@ -8,7 +8,7 @@ import { QuestionPage } from '../question/question';
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../../modals/manage-account/manage-account';
-
+import { LoadingControllerModal } from '../../modals/loading-controller/loading-controller'
 /**
  * Generated class for the LobbyPage page.
  *
@@ -43,16 +43,16 @@ export class LobbyPage {
     //used for ionic spinner only:
     //setTimeout( ()=> {this.pageLoading=false}, 3000);
     
-    let loading = this.loadingCtrl.create({
-      spinner: "dots",
-      duration: 5000
-    });
+    // let loading = this.loadingCtrl.create({
+    //   spinner: "dots",
+    //   duration: 5000
+    // });
     
-    loading.onDidDismiss(() => {
-      console.log("Dismissed loading");
-    });
+    // loading.onDidDismiss(() => {
+    //   console.log("Dismissed loading");
+    // });
     
-    loading.present();
+    // loading.present();
   }
 
   forWork() {

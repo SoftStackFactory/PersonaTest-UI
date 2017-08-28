@@ -15,7 +15,9 @@
 
 <ion-content padding>
 
-<loading-controller *ngIf="pageLoading"></loading-controller>
+<!--use with ionic spinner only-->
+<!--<loading-controller *ngIf="pageLoading"></loading-controller>-->
+<loading-controller></loading-controller>
 
   <div padding>
     <ion-segment [(ngModel)]="testType">

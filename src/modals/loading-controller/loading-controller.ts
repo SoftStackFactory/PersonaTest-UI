@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadingController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the LoadingControllerComponent component.
@@ -11,12 +11,25 @@ import { LoadingController } from 'ionic-angular';
   selector: 'loading-controller',
   templateUrl: 'loading-controller.html',
 })
-export class LoadingControllerComponent {
+export class LoadingControllerModal {
 
   constructor(public loadingCtrl: LoadingController) {
-    console.log('Hello LoadingControllerComponent Component');
+    console.log('Hello LoadingControllerModal');
+        let loading = this.loadingCtrl.create({
+              spinner: "dots",
+              duration: 5000
+            });
+            
+            loading.onDidDismiss(() => {
+              console.log("Dismissed loading");
+            });
+            
+            loading.present();
   }
 
+
+    
+    
   // presentLoadingCustom() {
   //   let loading = this.loadingCtrl.create({
   //     spinner: 'hide',
