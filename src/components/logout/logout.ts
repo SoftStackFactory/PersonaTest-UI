@@ -3,7 +3,7 @@ import { AlertController, NavController } from 'ionic-angular';
 
 import { LandingPage } from '../../pages/landing/landing';
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 /**
  * Generated class for the Logout component.
@@ -22,7 +22,7 @@ export class LogoutComponent {
   constructor(
     private navCtrl: NavController,
     private alertCtrl: AlertController,
-    private appUser: AppUser
+    private appUser: AppUserProvider
     ) {
       console.log('Hello Logout Component');
     }

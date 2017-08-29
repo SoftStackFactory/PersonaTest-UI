@@ -1,0 +1,59 @@
+
+{
+    "HOME": {
+      "TITLE": "PersonaTest"
+      
+    },
+    "LANDING":{
+        "SLIDEONE": "Bienvenido a PersonaTest, clasifique la fuerza de trabajo en subgrupos para maximizar la efectividad.",
+        "SLIDETWO": "¡Encuentra esa paz perfecta del rompecabezas! Busque el ajuste perfecto para llenar todas sus posiciones de necesidad.",
+        "SLIDETHREE": "Para el alquiler o para uso personal, tomar una prueba para ganar una mejor comprensión de su tipo de personalidad.",
+        "JOIN": "¡Únete hoy!",
+        "LOGIN": "iniciar sesión",
+        "SIGNUP": "Regístrate"
+    },
+        
+    "LOBBY": {
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organization"
+    },
+    "REGISTER":{
+        "FIRST": "Nombre De Pila",
+        "LAST": "Apellido",
+        "AGE": "Años",
+        "EMAIL": "Correo Electrónico",
+        "PASSWORD": "Contraseña",
+        "CONFIRM": "Confirmar Contraseña",
+        "GENDER": "Género",
+        "ERRORFIRST": "Por favor, utilice letras para su primer nombre.",
+        "ERRORLAST": "Por favor, utilice letras para su apellido.",
+        "ERRORAGE":"Ingrese una edad válida.",
+        "ERROREMAIL":"Por favor, introduce una dirección de correo electrónico válida",
+        "ERRORPASSWORD":"Las contraseñas no coinciden",
+        "MALE":"Masculino",
+        "FEMALE":"Hembra",
+        "OTHER":"Otro",
+        "DECLINE":"Disminución",
+        "EULA":"Acepto Los Términos Y Condiciones",
+        "TERMS":"Ver nuestros términos y condiciones",
+        "REQ":"Campos Requeridos",
+        "ALREADY":"¿Ya tienes una cuenta?",
+        "HERE":"Entre aquí.",
+        "REGISTER":"Registro"
+    },
+    "LOGIN": {
+        "FOOTER": "¿Aún no tienes una cuenta?",
+        "SH": "Registrate aquí.",
+        "EMAIL": "Correo Electrónico",
+        "PASSWORD": "Contraseña",
+        "LOGIN": "Iniciar Sesión"
+    },
+        "LOBBY": {
+        "PERSONAL": "PERSONAL",
+        "PROFESSIONAL": "PROFESIONAL",
+        "NAME": "Hola",
+        "TAKE": "Tomar Una Prueba",
+        "RESULTS": "Ver Resultados"
+    }
+}

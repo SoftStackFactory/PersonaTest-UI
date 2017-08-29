@@ -6,10 +6,16 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
     <!-- 
     <ion-title>{{ HOME.TITLE | translate }}<ion-title>
     -->
-    <ion-title>PersonaTest</ion-title>
+    <ion-title text-center>PersonaTest</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
@@ -18,20 +24,20 @@
   <div padding>
     <ion-segment [(ngModel)]="testType">
       <ion-segment-button value="personal">
-        Personal
+        {{'LOBBY.PERSONAL' | translate}}
       </ion-segment-button>
       <ion-segment-button value="organization">
-        Professional
+        {{'LOBBY.PROFESSIONAL' | translate}}
       </ion-segment-button>
     </ion-segment>
   </div>
   
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
-          <h3>Hello {{ this.userName }}</h3>
+          <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
            <div class="testbuttons">
-             <button ion-button block (click)="forPlay()" class="button">Take a Test</button>
-             <button ion-button block outline (click)="showResults()" class="button2">View Results</button>
+             <button ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+             <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
           </div>
     </div>
         
@@ -40,8 +46,8 @@
             <org-search id="searchbar"></org-search>
           </ion-item>
           <div class="testbuttons">
-            <button ion-button block (click)="forWork()" class="button">Take a Test</button>
-            <button ion-button block outline (click)="viewResults()" class="button2">View Results</button>
+            <button ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+            <button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
           </div>
     </div>
     
