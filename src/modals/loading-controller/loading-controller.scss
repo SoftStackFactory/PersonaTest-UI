@@ -1,60 +1,59 @@
-// .svg-test{
-//         animation: bouncy 3s linear infinite; 
+.svg-test{
+        animation: bouncy 3s linear infinite; 
     
-//         @-webkit-keyframes bouncy{
-//             0% {
-//             	transform:translateY(-100%);
-//             	opacity: 0;
-//             }
-//             5% {
-//               	transform:translateY(-100%);
-//                 opacity: 0;
-//             }
-//             15% {
-//               transform:translateY(0);
-//               padding-bottom: 5px;
-//             }
+        @-webkit-keyframes bouncy{
+            0% {
+            	transform:translateY(-100%);
+            	opacity: 0;
+            }
+            5% {
+              	transform:translateY(-100%);
+                opacity: 0;
+            }
+            15% {
+              transform:translateY(0);
+              padding-bottom: 5px;
+            }
             
-//             30% {
-//               transform:translateY(-50%);
-//             }
+            30% {
+              transform:translateY(-50%);
+            }
             
-//             40% {
-//               	transform:translateY(0%);
-//                 padding-bottom: 6px;
-//             }
+            40% {
+              	transform:translateY(0%);
+                padding-bottom: 6px;
+            }
             
-//             50% {
-//               transform:translateY(-30%);
-//             }
+            50% {
+              transform:translateY(-30%);
+            }
     
-//             70% {
-//                 transform:translateY(0%);
-//                 padding-bottom: 7px;
-//             }
-//             80% {
-//               transform:translateY(-15%);
-//             }
-//             90% {
-//               transform:translateY(0%);
-//               padding-bottom: 8px;
-//             }
-//             95% {
-//               transform:translateY(-7%);
-//             }
-//             97% {
-//               transform:translateY(0%);
-//               padding-bottom: 9px;
-//             }
-//             99% {
-//               transform:translateY(-3%);
-//             }
-//             100% {
-//               transform:translateY(0);
-//               padding-bottom: 9px;
-//               opacity: 1;
-//             }
-//         }
-    
-//     }
+            70% {
+                transform:translateY(0%);
+                padding-bottom: 7px;
+            }
+            80% {
+              transform:translateY(-15%);
+            }
+            90% {
+              transform:translateY(0%);
+              padding-bottom: 8px;
+            }
+            95% {
+              transform:translateY(-7%);
+            }
+            97% {
+              transform:translateY(0%);
+              padding-bottom: 9px;
+            }
+            99% {
+              transform:translateY(-3%);
+            }
+            100% {
+              transform:translateY(0);
+              padding-bottom: 9px;
+              opacity: 1;
+            }
+        }
+    }
     
