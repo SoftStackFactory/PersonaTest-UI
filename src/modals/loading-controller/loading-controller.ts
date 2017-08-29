@@ -15,18 +15,24 @@ export class LoadingControllerModal {
 
   constructor(public loadingCtrl: LoadingController) {
     console.log('Hello LoadingControllerModal');
-        let loading = this.loadingCtrl.create({
-              spinner: "dots",
-              duration: 5000
-            });
+        // let loading = this.loadingCtrl.create({
+        //       spinner: "dots",
+        //       duration: 5000
+        //     });
             
-            loading.onDidDismiss(() => {
-              console.log("Dismissed loading");
-            });
+        //     loading.onDidDismiss(() => {
+        //       console.log("Dismissed loading");
+        //     });
             
-            loading.present();
+        //     loading.present();
   }
-
+  
+// maybe replace ionic default spinner?
+// $ionicLoading.show({
+//   template: '<object data="assets/so-spinner.svg" type="image/svg+xml"></object>',
+//   animation: 'fade-in',
+//   showDelay: 0
+// });
 
     
     
