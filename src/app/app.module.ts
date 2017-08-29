@@ -7,6 +7,7 @@ import { Http, HttpModule } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//Pages
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
 import { HomePage } from '../pages/home/home';
@@ -30,6 +31,9 @@ import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
 
+//Pipes
+import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
+import { SearchTermPipe } from '../pipes/search-term/search-term';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -44,6 +48,7 @@ import { LogoutComponent } from '../components/logout/logout';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
+import { RememberMeComponent } from '../components/remember-me/remember-me';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
@@ -88,11 +93,16 @@ let injections: any[] = [
     LogoutComponent,
     ManageAccountModal,
     HomeComponent,
-    OrgSearchComponent
+    OrgSearchComponent,
+    RememberMeComponent
     ]
 
 @NgModule({
-  declarations: injections,
+  declarations: [
+    injections, 
+    FilterTestsByTimePipe,
+    SearchTermPipe 
+  ],
   imports: [
     BrowserModule,
     HttpModule,
