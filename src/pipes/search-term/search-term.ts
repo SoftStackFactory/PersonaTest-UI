@@ -11,26 +11,24 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchTermPipe implements PipeTransform {
   /**
-   * Takes an array of test objects and returns the ones that match the input string
+   * Takes an array of test objects and returns the ones whose 'name' property has the input string
    */
-  transform( testsObj: { name: string }[], searchTerm: string) {
+  transform( ourList: { name: string }[], searchTerm: string) {
 
     //if the search value is an empty string don't filter the items and just return 
     if (!searchTerm) {
-      return testsObj;
-    }
+      return ourList;
+    } 
     
-    //filter out the relevant search results
-    testsObj = testsObj.filter((v) => {
-      if(v.name && searchTerm) {
-        if (v.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
-          return true;
-        }
-        return false;
+    //else filter out the relevant search results
+    ourList = ourList.filter((v) => {
+      if( v.name ) {
+        //return true if search term exists within the name property of your object
+        return (v.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) ;
       }
     });
 
-    return testsObj; 
+    return ourList; 
   }
   
   
