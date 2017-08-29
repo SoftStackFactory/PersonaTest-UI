@@ -1,1 +1,16 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent">
+    <ion-content>
+        <ion-list>
+            <button ion-button menuClose icon-only outline (click)="closeMenu()">
+              <ion-icon name="close-circle"></ion-icon>
+            </button>
+            <button ion-item (click)="manageAcc()">Manage Account</button>
+            <button ion-item (click)="becomeOrg()">Become an Organization</button>
+            <button ion-item (click)="logout()">Logout</button>
+            
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
