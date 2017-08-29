@@ -4,6 +4,10 @@ import { ModalController, NavController, NavParams, ViewController, MenuControll
 // Pages
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/LobbyNav
 
 
 // Modals
@@ -51,6 +55,7 @@ export class LobbyPage {
     forWorkModal.present();
   }
   forPlay() {
+<<<<<<< HEAD
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
       userId: "59a32e40a35bbc79d8931602",
@@ -78,6 +83,10 @@ export class LobbyPage {
       )
    
    
+=======
+    this.navCtrl.push(QuestionPage);
+    console.log("Switch to Personal Test Selection Page");
+>>>>>>> feature/LobbyNav
   }
   showResults() {
     this.navCtrl.push(HistoryPage);
