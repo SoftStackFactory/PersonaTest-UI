@@ -25,19 +25,19 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 })
 export class MyApp {
 
-  rootPage:any = HistoryPage;
+  rootPage:any
 
-  // constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen ) {
-  //   platform.ready().then(() => {
-  //     let storage = window.localStorage.getItem('token'); 
-  //     if(storage === null){ 
-  //     this.rootPage = LandingPage; 
-  //     }else{ 
-  //     this.rootPage = LobbyPage; }
-  //     // Okay, so the platform is ready and our plugins are available.
-  //     // Here you can do any higher level native things you might need.
-  //     statusBar.styleDefault();
-  //     splashScreen.hide();
-  //   });
-  // }
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen ) {
+    platform.ready().then(() => {
+      let storage = window.localStorage.getItem('token'); 
+      if(storage === null){ 
+      this.rootPage = LandingPage; 
+      }else{ 
+      this.rootPage = LobbyPage; }
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      statusBar.styleDefault();
+      splashScreen.hide();
+    });
+  }
 }
