@@ -1,12 +1,24 @@
 <ion-menu [content]="mycontent">
+    <ion-header>
+        <ion-navbar>
+            <ion-buttons end>
+                <button ion-button icon-only menuClose (click)="closeMenu()">
+                  <ion-icon name="close-circle"></ion-icon>
+                </button>
+            </ion-buttons>
+            <ion-title>PersonaTest</ion-title>
+          </ion-navbar>
+    </ion-header>
     <ion-content>
         <ion-list>
-            <button ion-button menuClose icon-only outline (click)="closeMenu()">
-              <ion-icon name="close-circle"></ion-icon>
-            </button>
-            <button ion-item (click)="manageAcc()">Manage Account</button>
+            <button ion-item (click)="goHome()"><ion-icon name="home"></ion-icon>
+                Home</button>
+            <button ion-item (click)="manageAcc()">Manage Account Profile</button>
+            <button ion-item (click)="changePassword()">Change Password</button>
             <button ion-item (click)="becomeOrg()">Become an Organization</button>
-            <button ion-item (click)="logout()">Logout</button>
+            <button ion-item (click)="deleteAcc()">Delete Account</button>
+            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>
+                Logout</button>
             
         </ion-list>
     </ion-content>

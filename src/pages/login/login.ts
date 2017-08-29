@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+=======
+import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
+>>>>>>> feature/passwordReset
 
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
@@ -28,6 +32,7 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private alertCtrl: AlertController,
+    private menu: MenuController,
     private appUser: AppUserProvider,
     private formBuilder: FormBuilder
     ) {
@@ -39,6 +44,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
   }
   
   showAlert() {
@@ -61,8 +70,9 @@ export class LoginPage {
     this.appUser.login(this.loginForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.token);
-        window.localStorage.setItem('userId', res.userId)
+        console.log(res);
+        window.localStorage.setItem('token', res.id);
+        window.localStorage.setItem('id', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
       }, error => {
