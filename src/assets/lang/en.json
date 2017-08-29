@@ -1,0 +1,58 @@
+
+{
+    "HOME": {
+      "TITLE": "PersonaTest"
+      
+    },
+    "LANDING":{
+        "SLIDEONE": "Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.",
+        "SLIDETWO": "Find That Perfect Puzzle Peace! Locate the Perfect Fit to Fill All Your Positions of Need.",
+        "SLIDETHREE": "For Hire or for Personal Use, Take A test to Gain A Better Understanding of Your Personality Type.",
+        "JOIN": "Join Today!",
+        "LOGIN": "Login",
+        "SIGNUP": "SignUp"
+    },
+        
+    "LOBBY": {
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organization"
+    },
+      "REGISTER":{
+        "FIRST": "First Name",
+        "LAST": "Last Name",
+        "AGE": "Age",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "CONFIRM": "Confirm Password",
+        "GENDER": "Gender",
+        "ERRORFIRST": "Please use letters for your first name.",
+        "ERRORLAST": "Please use letters for your last name.",
+        "ERRORAGE":"Please enter a valid age.",
+        "ERROREMAIL":"Please enter a valid email address",
+        "ERRORPASSWORD":"Passwords did not match",
+        "MALE":"Male",
+        "FEMALE":"Female",
+        "OTHER":"Other",
+        "DECLINE":"Decline",
+        "EULA":"I accept the Terms & Conditions",
+        "TERMS":"View our Terms & Conditions",
+        "REQ":"Required Fields",
+        "ALREADY":"Already have an account?",
+        "HERE":"Login Here."
+    },
+    "LOGIN": {
+        "FOOTER": "Don't have an account yet?",
+        "SH": "Sign up here.",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "LOGIN": "Login"
+    },
+    "LOBBY": {
+        "PERSONAL": "PERSONAL",
+        "PROFESSIONAL": "PROFESSIONAL",
+        "NAME": "Hello",
+        "TAKE": "Take a Test",
+        "RESULTS": "View Results"
+    }
+}
