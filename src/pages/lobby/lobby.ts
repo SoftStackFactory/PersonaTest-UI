@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { ModalController, NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
+import { ModalController, NavController, NavParams, ViewController, MenuController } from 'ionic-angular';
 
 // Pages
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
-<<<<<<< HEAD
-=======
 
->>>>>>> feature/LobbyNav
 
 
 // Modals
@@ -81,6 +78,8 @@ export class LobbyPage {
        () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
         
       )
+   
+   
   }
   showResults() {
     this.navCtrl.push(HistoryPage);
@@ -100,3 +99,5 @@ export class LobbyPage {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
+ 
+}
