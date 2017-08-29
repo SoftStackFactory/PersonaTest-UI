@@ -5,7 +5,6 @@ import { ModalController, NavController, NavParams, ViewController, MenuControll
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
-
 // Modals
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
