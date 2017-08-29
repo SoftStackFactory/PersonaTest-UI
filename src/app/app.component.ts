@@ -18,10 +18,13 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
+import {TranslateService} from '@ngx-translate/core'
+
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
+
 
 
 @Component({
@@ -38,17 +41,20 @@ export class MyApp {
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     private alertCtrl: AlertController,
-    private appUser: AppUserProvider) {
+    private appUser: AppUserProvider,
+    private translate: TranslateService
+  ) {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage = LandingPage; 
-        }else{ 
+        this.rootPage =QuicklinksPage; 
+      }else{ 
         this.rootPage = LobbyPage; }
-        // Okay, so the platform is ready and our plugins are available.
-        // Here you can do any higher level native things you might need.
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
         statusBar.styleDefault();
         splashScreen.hide();
+        this.translate.setDefaultLang('en');
     });
   };
   
