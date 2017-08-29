@@ -17,7 +17,7 @@ import { OrganizationManagePage } from '../pages/organization-manage/organizatio
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
-
+import {TranslateService} from '@ngx-translate/core'
 
 
 @Component({
@@ -27,17 +27,18 @@ export class MyApp {
 
   rootPage:any
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen ) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private translate: TranslateService ) {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('token'); 
       if(storage === null){ 
-      this.rootPage = LandingPage; 
+      this.rootPage =QuicklinksPage; 
       }else{ 
       this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.translate.setDefaultLang('en');
     });
   }
 }
