@@ -29,10 +29,10 @@ import { AppUser } from '../providers/app-user';
 })
 export class MyApp {
 
-  rootPage:any = LandingPage;
+  rootPage: any;
   @ViewChild(Nav) nav: Nav;
-  
-  constructor(platform: Platform, 
+  constructor(
+    platform: Platform, 
     statusBar: StatusBar, 
     splashScreen: SplashScreen, 
     public menuCtrl: MenuController,
@@ -40,10 +40,15 @@ export class MyApp {
     private alertCtrl: AlertController,
     private appUser: AppUser) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      let storage = window.localStorage.getItem('remembered'); 
+      if(storage === null){ 
+        this.rootPage = LandingPage; 
+        }else{ 
+        this.rootPage = LobbyPage; }
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
+        statusBar.styleDefault();
+        splashScreen.hide();
     });
   };
   
@@ -62,6 +67,7 @@ export class MyApp {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
+
   
   logout(){
     let confirmLogout = this.alertCtrl.create({
@@ -89,3 +95,6 @@ export class MyApp {
   };
 
 }
+
+}
+

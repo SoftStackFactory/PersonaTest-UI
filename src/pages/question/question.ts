@@ -21,15 +21,18 @@ export class QuestionPage {
   degreeNum: number = 50;
   answers = [];
   private questions: any;
+  testTaken: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private questionsProvider: QuestionsProvider,
-              private answersProvider: AnswersProvider) {
+              private answersProvider: AnswersProvider
+              ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad QuestionPage');
+    this.testTaken = this.navParams.get("testTaken");
+    console.log('ionViewDidLoad QuestionPage', this.testTaken);
     this.questionsProvider.getQuestions().subscribe(
       questions => {
         this.questions = questions;
@@ -44,12 +47,15 @@ export class QuestionPage {
   }
 
   toNextQuestion() {
-    console.log("Question", this.question);
+    console.log("Question", this.testTaken);
     let answer = {
       questionId: this.question["id"],
-      testTakenId: "testTaken",
+      testTakenId: this.testTaken["id"],
+      // testTakenId: "testTaken",
       selection: this.convertScale(this.degreeNum),
       date: new Date(),
+      keyed: this.question["keyed"],
+      category: this.question["category"]
     }
     // save answer in an array
     this.answers.push(answer)
@@ -64,7 +70,8 @@ export class QuestionPage {
     console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
 
-      this.navCtrl.setRoot(ResultsPage);
+      this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken});
+      console.log("lastQ", this.testTaken);
     } else {
       this.questionNum++;
       this.assignQuestion();

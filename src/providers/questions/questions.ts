@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { URL } from '../../assets/provider-config'
+import { URL } from '../../assets/provider-config';
+
 
 @Injectable()
 export class QuestionsProvider {
@@ -14,4 +15,6 @@ export class QuestionsProvider {
   getQuestions() {
     return this.http.get(this.baseUrl + this.path).map(res => res.json());
   }
+  
+  
 }

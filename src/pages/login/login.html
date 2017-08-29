@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar text-center>
-    <ion-title>IPIP Multi-Tenant App</ion-title>
+    <ion-title>PersonaTest</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,22 +9,24 @@
 
 <ion-content>
     <div class="login-container">
-        <form class="form-container" #logForm="ngForm" (ngSubmit)="loginForm(logForm)" novalidate>
+        <form [formGroup]="loginForm" novalidate>
             <div class="login-rows">
                 <ion-item>    
                   <ion-label floating>Email</ion-label>
-                    <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+                    <ion-input name="email" type="email" formControlName="email"></ion-input>
                 </ion-item>
                 <ion-item>
                   <ion-label floating>Password</ion-label>
-                    <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+                    <ion-input name="password" type="password" formControlName="password"></ion-input>
                 </ion-item>
             </div>
             <div class="login-button">
-                <button ion-button type="submit" class="outline">Login</button>
+                <button ion-button (click)="submit()" class="outline">Login</button>
             </div>
         </form>
+        <remember-me></remember-me>
     </div>
+    
     <footer>
         Don't have an account yet? 
             <a (click)="goToRegister()"> Sign up here.</a>
