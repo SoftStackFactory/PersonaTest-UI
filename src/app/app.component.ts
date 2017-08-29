@@ -21,7 +21,7 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import { AppUser } from '../providers/app-user';
+import { AppUserProvider } from '../providers/app-user/app-user';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class MyApp {
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     private alertCtrl: AlertController,
-    private appUser: AppUser) {
+    private appUser: AppUserProvider) {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
@@ -96,5 +96,4 @@ export class MyApp {
 
 }
 
-}
 
