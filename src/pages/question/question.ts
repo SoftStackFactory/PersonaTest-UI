@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
@@ -11,6 +11,7 @@ import { LobbyPage } from '../lobby/lobby';
   templateUrl: 'question.html',
 })
 export class QuestionPage {
+  @ViewChild('slider') slider;
   testName: string = "Goldberg's 1992 Big 5";
   userName: string = "John Smith";
   question: string;
@@ -18,8 +19,9 @@ export class QuestionPage {
   questionText: string;
   totalQuestionNum: number;
   // setting slider value to Neutral
-  degreeNum: number = 50;
+  degreeNum: number = 49;
   answers = [];
+  testTakenId: string = this.navParams.get("testTakenId") || 'testTakenId' //need to remove the second value 
   private questions: any;
 
   constructor(public navCtrl: NavController,
@@ -47,8 +49,8 @@ export class QuestionPage {
     console.log("Question", this.question);
     let answer = {
       questionId: this.question["id"],
-      testTakenId: "testTaken",
-      selection: this.convertScale(this.degreeNum),
+      testTakenId: this.testTakenId,
+      selection: { category: this.question["category"], choice: this.convertScale(this.degreeNum) },
       date: new Date(),
       keyed: this.question["keyed"],
       category: this.question["category"]
@@ -65,14 +67,16 @@ export class QuestionPage {
     )
     console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
-
-      this.navCtrl.setRoot(ResultsPage);
+      console.log("answers ", this.answers);
+      console.log("testTakenId ", this.testTakenId);
+      this.navCtrl.setRoot(ResultsPage, { answers: this.answers, testTakenId: this.testTakenId });
     } else {
       this.questionNum++;
       this.assignQuestion();
     }
     // resetting slider value to Neutral
-    this.degreeNum = 50;
+    this.slider.reset();
+    this.degreeNum = 49;
   }
   toLobbyPage() {
     console.log('to lobby page');
