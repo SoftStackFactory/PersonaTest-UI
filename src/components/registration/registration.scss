@@ -38,10 +38,19 @@ registration {
           flex-wrap: nowrap;
           justify-content: center;
         } 
+    .footer-margin {
+        margin-top: 9%;
+    }
     .button {
         background-color: #384e77;
         color: #e6f9af;
         border-color: #384e77;
+    }
+    .checkbox-icon {
+        margin-right: 6px;
+    }
+    a {
+        margin-left: 4px;
     }
     .item-md p {
         font-size: 0.8em;
