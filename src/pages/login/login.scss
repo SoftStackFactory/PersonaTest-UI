@@ -27,6 +27,11 @@ page-login {
     a {
         margin-left: 4px;
     }
+    .error {
+        font-size: 0.8em;
+        color: red;
+        padding-left: 16px;
+        }
     @media (max-width: 600px){
         .large-screen {
             
