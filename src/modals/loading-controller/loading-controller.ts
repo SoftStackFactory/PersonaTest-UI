@@ -17,7 +17,7 @@ export class LoadingControllerModal {
     console.log('Hello LoadingControllerModal');
         // functioning ionic loader
         let loading = this.loadingCtrl.create({
-              spinner: "dots",
+              spinner: "crescent",
               duration: 5000
             });
             
