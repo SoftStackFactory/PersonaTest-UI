@@ -1,0 +1,9 @@
+{
+  "name": "PersonaTest-UI",
+  "app_id": "b77259a3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+
+}
