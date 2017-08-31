@@ -109,6 +109,14 @@ export class ChartComponent implements AfterContentInit {
         title: {
           display: true,
           text: 'IPIP Test Results'
+        },
+        scale: {
+          ticks: {
+            beginAtZero: true,
+            min: 0,
+            max: 50,
+            stepSize: 5
+          }
         }
       }
     });

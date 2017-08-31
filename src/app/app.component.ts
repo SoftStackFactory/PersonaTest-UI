@@ -47,7 +47,8 @@ export class MyApp {
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private appUser: AppUserProvider,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private statusBar: StatusBar
   ) {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
@@ -57,7 +58,7 @@ export class MyApp {
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-        statusBar.styleDefault();
+        this.statusBar.styleDefault();
         splashScreen.hide();
         this.translate.setDefaultLang('en');
     });

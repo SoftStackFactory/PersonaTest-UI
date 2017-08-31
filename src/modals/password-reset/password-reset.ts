@@ -4,7 +4,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 //import { EmailComposer } from '@ionic-native/email-composer';
 
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
   selector: 'password-reset-modal',
@@ -23,7 +23,7 @@ export class PasswordResetModal {
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
       //private emailComposer: EmailComposer,
-      private appUser: AppUser) {
+      private appUser: AppUserProvider) {
         this.resetRequestForm = this.formBuilder.group({
             email: ['', Validators.required]
         });
