@@ -5,7 +5,6 @@ import { ModalController, NavController, NavParams, ViewController, MenuControll
 import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
-
 // Modals
 import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
@@ -25,6 +24,7 @@ export class LobbyPage {
   userName: string;
   user: string;
   TEST: any;
+  ID: any;
   
   
   constructor(
@@ -38,6 +38,7 @@ export class LobbyPage {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
+      this.ID = window.localStorage.getItem('userId')
     }
 
   ionViewDidLoad() {
@@ -53,7 +54,8 @@ export class LobbyPage {
   forPlay() {
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
-      userId: "59a32e40a35bbc79d8931602",
+      // userId: "59a32e40a35bbc79d8931602",
+      userId: this.ID,
       // Hard coded ID, generated from the test model in the backend
       // Eventually will reference each test's unique id
       testId: "59a323f32eb4c1781fd6c1e3",
@@ -62,7 +64,8 @@ export class LobbyPage {
       Agreeableness: 0,
       Conscientiousness: 0,
       'Emotional Stability': 0,
-      Intellect: 0
+      Intellect: 0,
+      name: "Goldberg"
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
@@ -97,5 +100,6 @@ export class LobbyPage {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
- 
+
+  
 }

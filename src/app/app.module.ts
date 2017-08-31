@@ -52,6 +52,10 @@ import { RememberMeComponent } from '../components/remember-me/remember-me';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordResetModal } from '../modals/password-reset/password-reset';
+import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { EulaModal } from '../modals/eula/eula';
 
 export function createTranslateLoader(http: Http){

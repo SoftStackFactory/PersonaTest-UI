@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-
 import { AppUserProvider } from '../../providers/app-user/app-user';
+
 
 @Component({
   selector: 'password-change-modal',
@@ -10,7 +10,6 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
-  passwordToCheck: any = {};
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
@@ -21,7 +20,8 @@ export class PasswordChangeModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUserProvider) {
+      private appUser: AppUserProvider
+    ) {
         this.changeRequestForm = this.formBuilder.group({
             oldPassword: ['', Validators.required],
             password: ['', Validators.required],
@@ -99,7 +99,7 @@ export class PasswordChangeModal {
     delete this.changeRequestForm.value.confirmPassword;
     console.log("New Password to Send", this.changeRequestForm.value);
     //this.password = { "password" : this.user.password };    
-    this.appUser.changeData(window.localStorage.getItem('id'),
+    this.appUser.changeData(window.localStorage.getItem('userId'),
       window.localStorage.getItem('token'), 
         this.changeRequestForm.value)
       .map(res => res.json())
