@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ToastController, Platform, Nav, ModalController, MenuController, AlertController } from 'ionic-angular';
+import { Platform, Nav, ModalController, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,17 +18,12 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
-
-//menu elements
-import { ManageAccountModal } from '../modals/manage-account/manage-account';
-import { PasswordChangeModal } from '../modals/password-change/password-change';
-import { PasswordResetModal } from '../modals/password-reset/password-reset';
-import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import {TranslateService} from '@ngx-translate/core'
 
 //menu elements
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
-
 
 
 
@@ -36,16 +31,15 @@ import { AppUserProvider } from '../providers/app-user/app-user';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  currentPage: string;
+
   rootPage: any;
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
-    splashScreen: SplashScreen,
-    statusBar: StatusBar,
+    statusBar: StatusBar, 
+    splashScreen: SplashScreen, 
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
-    public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private appUser: AppUserProvider,
     private translate: TranslateService
@@ -53,24 +47,19 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage = QuicklinksPage; 
+        this.rootPage =QuicklinksPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
         statusBar.styleDefault();
         splashScreen.hide();
-        this.translate.setDefaultLang('en');
+        this.translate.setDefaultLang('sp');
     });
-  }
+  };
   
   closeMenu(){
     
-  };
-  
-  goHome(){
-    this.menuCtrl.close();
-    this.nav.setRoot(LobbyPage);
   };
   
   manageAcc(){
@@ -79,67 +68,13 @@ export class MyApp {
     manageAccModal.present();
   };
   
-
-  resetPassword(){
-    console.log("password reset requested");
-    let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
-    passwordResetModal.present();
-  };
-  
-  changePassword(){
-    console.log("password change requested");
-    let passwordChangeModal = this.modalCtrl.create(PasswordChangeModal);
-    passwordChangeModal.present();
-  };
-  
-
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
-  };
-  
-  deleteAcc(){
-    
-    //prompt user to confirm request to delete account
-    let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Delete',
-      message: 'Are you sure you would like to delete your account? Any test data will be lost.',
-      buttons: [
-        {
-          //when user does want to delete account
-          text: 'Yes, delete my account',
-          handler:() => {
-            console.log("User has been deleted");
-            this.menuCtrl.close();
-            this.appUser.delete(window.localStorage.id, window.localStorage.token)
-            window.localStorage.clear();
-            this.nav.setRoot(LandingPage);
-            
-            let toast = this.toastCtrl.create({
-              message: 'Your account has been deleted.  Please visit us again for future testing needs.',
-              duration: 3000,
-              position: 'top'
-            });
-            toast.onDidDismiss(() => {
-              console.log('Dismissed toast');
-            });
-            toast.present();
-          }
-        },
-        {
-          
-          //when user does not want to delete account
-          text: 'No, keep my account active',
-          handler: () => {
-            console.log("User cancelled delete");
-          }
-        }
-        ]
-    });
-    confirmDelete.present();
-  };
+  }
 
+  
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',
@@ -149,8 +84,7 @@ export class MyApp {
           text: 'Yes, log me out',
           handler:() => {
             console.log("User has logged out");
-            this.menuCtrl.close();
-            this.appUser.logout(window.localStorage.token);
+            this.appUser.logout(window.localStorage.token)
             window.localStorage.clear();
             this.nav.setRoot(LandingPage);
           }
@@ -167,4 +101,5 @@ export class MyApp {
   };
 
 }
+
 
