@@ -44,9 +44,11 @@
         <ion-label>Password: </ion-label>
         <ion-textarea formControlName="password"></ion-textarea>
       </ion-item>
-      <button ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
+      <button ion-button type="submit" [disabled]="!accountChangeForm.valid" class="button">Submit</button>
+      </div>
     </form>
-    <div class="bottom">
+     <h4 class ="f">Set Language Preference</h4>
+     <div class="bottom">
       <button ion-button type (click)="setLanguage('en')">English</button>
       <button ion-button type (click)="setLanguage('sp')">Spanish</button>
       </div>
