@@ -4,7 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Http, HttpModule } from '@angular/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//Pages
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
 import { HomePage } from '../pages/home/home';
@@ -28,6 +31,9 @@ import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
 
+//Pipes
+import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
+import { SearchTermPipe } from '../pipes/search-term/search-term';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -48,6 +54,10 @@ import { RememberMeComponent } from '../components/remember-me/remember-me';
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { EulaModal } from '../modals/eula/eula';
+
+export function createTranslateLoader(http: Http){
+  return new TranslateHttpLoader(http, './assets/lang/', '.json');
+}
 
 
 
@@ -88,11 +98,22 @@ let injections: any[] = [
     ]
 
 @NgModule({
-  declarations: injections,
+  declarations: [
+    injections, 
+    FilterTestsByTimePipe,
+    SearchTermPipe 
+  ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
     
   ],
   bootstrap: [IonicApp],

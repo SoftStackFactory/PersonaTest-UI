@@ -12,7 +12,7 @@
         <form [formGroup]="loginForm" novalidate>
             <div class="login-rows">
                 <ion-item>    
-                  <ion-label floating>Email</ion-label>
+                  <ion-label floating>{{'LOGIN.EMAIL' | translate}}</ion-label>
                     <ion-input name="email" type="email" formControlName="email"></ion-input>
                 </ion-item>
                 <div class="error" *ngIf="!loginForm.controls.email.valid && (loginForm.controls.email.dirty || submitAttempt)">
@@ -20,21 +20,20 @@
                 </div>
                 
                 <ion-item>
-                  <ion-label floating>Password</ion-label>
+                  <ion-label floating>{{'LOGIN.PASSWORD' | translate}}</ion-label>
                     <ion-input name="password" type="password" formControlName="password"></ion-input>
                 </ion-item>
             </div>
-            <!--<div class="large-screen">-->
             <div class="login-button">
-                <button ion-button (click)="submit()" class="outline">Login</button>
+                <button ion-button (click)="submit()" class="outline">{{'LOGIN.LOGIN' | translate}}</button>
             </div>
         </form>
         <remember-me></remember-me>
-        <!--</div>-->
+
     </div>
     
     <footer>
-        Don't have an account yet? 
-            <a (click)="goToRegister()"> Sign up here.</a>
+        {{'LOGIN.FOOTER' | translate}}
+            <a (click)="goToRegister()"> {{'LOGIN.SH' | translate}}</a>
     </footer>
 </ion-content>
