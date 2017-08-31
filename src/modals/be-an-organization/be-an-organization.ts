@@ -46,9 +46,12 @@ export class BeAnOrganizationModal {
   
   logForm() {
       console.log(this.orgRequestForm.value)
+      /*
       this.org.becomeOrg(window.localStorage.getItem('userId'),
           this.orgRequestForm.value.name,
           this.orgRequestForm.value.website)
+          */
+      this.org.becomeOrg()
         .map(res => res.json())
         .subscribe(res => {
           this.alertTitle = "Organization Request sent",
