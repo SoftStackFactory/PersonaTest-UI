@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { LobbyPage } from '../lobby/lobby';
@@ -22,14 +22,17 @@ export class LoginPage {
   
   loginForm: FormGroup;
   alertTitle: string;
-  alertSubtitle: string
+  alertSubtitle: string;
+  submitAttempt: boolean = false;
   
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private alertCtrl: AlertController,
+    private menu: MenuController,
     private appUser: AppUserProvider,
     private formBuilder: FormBuilder
+
     ) {
       this.loginForm = formBuilder.group({
         email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
@@ -39,6 +42,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
   }
   
   showAlert() {
@@ -51,6 +58,8 @@ export class LoginPage {
   }
   
   submit(){
+    this.submitAttempt = true;
+    
     if(!this.loginForm.valid){
       this.alertTitle = "Incomplete Login";
       this.alertSubtitle = "Please enter your email and password.";
@@ -61,7 +70,8 @@ export class LoginPage {
     this.appUser.login(this.loginForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.token);
+        console.log("hit", res);
+        window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
