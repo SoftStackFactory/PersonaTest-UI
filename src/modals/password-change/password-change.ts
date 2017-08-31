@@ -64,7 +64,7 @@ export class PasswordChangeModal {
     }
     
     //successfull password form
-    
+    /*
     //verify old password with api call
     this.passwordToCheck = { "password": this.changeRequestForm.value.oldPassword };
     console.log("Old Password to Verify", this.passwordToCheck);
@@ -72,7 +72,7 @@ export class PasswordChangeModal {
       window.localStorage.getItem('token'))
       .map(res => res.json())
       .subscribe(res => {
-        
+        console.log("user data", res);
         //password entered matches old password on backend
         
         
@@ -92,9 +92,9 @@ export class PasswordChangeModal {
           return this.showAlert();
         }    
       });
+    */
     
     //submit new password
-    console.log("user provided data", this.changeRequestForm.value);
     delete this.changeRequestForm.value.oldPassword;
     delete this.changeRequestForm.value.confirmPassword;
     console.log("New Password to Send", this.changeRequestForm.value);
