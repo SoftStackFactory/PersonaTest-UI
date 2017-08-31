@@ -24,6 +24,7 @@ export class LobbyPage {
   userName: string;
   user: string;
   TEST: any;
+  ID: any;
   
   
   constructor(
@@ -37,6 +38,7 @@ export class LobbyPage {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
+      this.ID = window.localStorage.getItem('userId')
     }
 
   ionViewDidLoad() {
@@ -52,7 +54,8 @@ export class LobbyPage {
   forPlay() {
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
-      userId: "59a32e40a35bbc79d8931602",
+      // userId: "59a32e40a35bbc79d8931602",
+      userId: this.ID,
       // Hard coded ID, generated from the test model in the backend
       // Eventually will reference each test's unique id
       testId: "59a323f32eb4c1781fd6c1e3",
