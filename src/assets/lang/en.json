@@ -39,7 +39,8 @@
         "TERMS":"View our Terms & Conditions",
         "REQ":"Required Fields",
         "ALREADY":"Already have an account?",
-        "HERE":"Login Here."
+        "HERE":"Login Here.",
+        "REGISTER":"Register"
     },
     "LOGIN": {
         "FOOTER": "Don't have an account yet?",
