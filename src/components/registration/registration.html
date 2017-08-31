@@ -8,36 +8,36 @@
           <ion-label floating><small class="asterik">*</small>{{'REGISTER.FIRST' | translate}}</ion-label>
             <ion-input formControlName="firstName" type="string"></ion-input>
         </ion-item>
-        <ion-item *ngIf="!registerForm.controls.firstName.valid && (registerForm.controls.firstName.dirty || submitAttempt)">
+        <div class="errors" *ngIf="!registerForm.controls.firstName.valid && (registerForm.controls.firstName.dirty || submitAttempt)">
           <p>{{'REGISTER.ERRORFIRST' | translate}}</p>
-        </ion-item>
+        </div>
         
         <!--LAST NAME INPUT-->
         <ion-item>
           <ion-label floating><small class="asterik">*</small>{{'REGISTER.LAST' | translate}}</ion-label>
             <ion-input formControlName="lastName" type="string"></ion-input>
         </ion-item>
-        <ion-item *ngIf="!registerForm.controls.lastName.valid && (registerForm.controls.lastName.dirty || submitAttempt)">
+        <div class="errors" *ngIf="!registerForm.controls.lastName.valid && (registerForm.controls.lastName.dirty || submitAttempt)">
           <p>{{'REGISTER.ERRORLAST' | translate}}</p>
-        </ion-item>
+        </div>
         
         <!--AGE INPUT-->
         <ion-item>
           <ion-label floating>{{'REGISTER.AGE' | translate}}</ion-label>
             <ion-input formControlName="age" type="number"></ion-input>
         </ion-item>
-        <ion-item *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
+        <div class="errors" *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
           <p>{{'REGISTER.ERRORAGE' | translate}}</p>
-        </ion-item>
+        </div>
         
         <!--EMAIL INPUT-->
         <ion-item>    
           <ion-label floating><small class="asterik">*</small>{{'REGISTER.EMAIL' | translate}}</ion-label>
             <ion-input formControlName="email" type="email"></ion-input>
         </ion-item>
-        <ion-item *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+        <div class="errors" *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
           <p>{{'REGISTER.ERROREMAIL' | translate}}</p>
-        </ion-item>
+        </div>
         
         <!--PASSWORD INPUT-->
         <ion-item>
@@ -50,9 +50,9 @@
           <ion-label floating><small class="asterik">*</small>{{'REGISTER.CONFIRM' | translate}}</ion-label>
             <ion-input formControlName="confirmPassword" type="password"></ion-input>
         </ion-item>
-        <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
+        <div class="errors" *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
           <p>{{'REGISTER.ERRORPASSWORD' | translate}}</p>
-        </ion-item>
+        </div>
         
         <!--GENDER INPUT-->
         <ion-item>
@@ -81,12 +81,11 @@
           <em> 
             <a (click)="showEula()">{{'REGISTER.TERMS' | translate}}</a>
           </em>
-
     </div>
-  </div>
-  <footer>
+  
+  <footer class="footer-margin">
     <small class="asterik">*</small>{{'REGISTER.REQ' | translate}}
     </footer>
   <footer>{{'REGISTER.ALREADY' | translate}}<a (click)="goToLogin()">{{'REGISTER.HERE' | translate}}</a>
     </footer>
-
+</div>

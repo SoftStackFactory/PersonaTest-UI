@@ -27,9 +27,6 @@ registration {
         justify-content: center;
         margin: 6px;
     }
-    .scroll-content {
-       
-    }
     .asterik {
         color: red;
     }
@@ -38,14 +35,24 @@ registration {
           flex-wrap: nowrap;
           justify-content: center;
         } 
+    .footer-margin {
+        margin-top: 10%;
+    }
+    a {
+        margin-left: 4px;
+    }
+    .checkbox-icon {
+        margin-right: 6px;
+    }
     .button {
         background-color: #384e77;
         color: #e6f9af;
         border-color: #384e77;
     }
-    .item-md p {
+    .errors {
         font-size: 0.8em;
         color: red;
+        padding-left: 16px;
         }
     // .invalid {
     //         border: 1px solid #ea6153;
