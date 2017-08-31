@@ -22,7 +22,8 @@ export class LoginPage {
   
   loginForm: FormGroup;
   alertTitle: string;
-  alertSubtitle: string
+  alertSubtitle: string;
+  submitAttempt: boolean = false;
   
   constructor(
     public navCtrl: NavController, 
@@ -51,6 +52,8 @@ export class LoginPage {
   }
   
   submit(){
+    this.submitAttempt = true;
+    
     if(!this.loginForm.valid){
       this.alertTitle = "Incomplete Login";
       this.alertSubtitle = "Please enter your email and password.";
