@@ -55,19 +55,18 @@ export class AppUserProvider {
     );
   }
   
-  changePassword(id, token, password) {
-    return this.http.patch(
+  checkPassword(id, token) {
+    return this.http.get(
       this.baseUrl + this.path + '/' + id +
-      '?access_token=' + token,
-      password
+      '?access_token=' + token
     );
   }
   
-  changeAccount(id, token, userData) {
+  changeData(id, token, data) {
     return this.http.patch(
       this.baseUrl + this.path + '/' + id +
       '?access_token=' + token,
-      userData
+      data
     );
   }
   

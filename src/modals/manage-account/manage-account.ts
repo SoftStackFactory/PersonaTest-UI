@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
   selector: 'manage-account-modal',
@@ -10,7 +10,6 @@ import { AppUser } from '../../providers/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
-  user: any = {}
   alertTitle: string
   alertSubtitle: string
   
@@ -20,7 +19,7 @@ export class ManageAccountModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUser) {
+      private appUser: AppUserProvider) {
         this.accountChangeForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
@@ -47,7 +46,7 @@ export class ManageAccountModal {
   }
   
   accountChange(form) {
-    console.log(this.accountChangeForm.value)
+    console.log("New Account Data", this.accountChangeForm.value)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
       this.alertSubtitle = "Please fill in all required fields.";
@@ -55,8 +54,7 @@ export class ManageAccountModal {
     }
     
     //successfull registration
-    console.log(this.user);
-    this.appUser.changeAccount(window.localStorage.getItem('id'), 
+    this.appUser.changeData(window.localStorage.getItem('id'), 
         window.localStorage.getItem('token'), 
         this.accountChangeForm.value)
       .map(res => res.json())
@@ -69,12 +67,7 @@ export class ManageAccountModal {
           this.alertTitle = "404";
           this.alertSubtitle = "Not Found.";
           return this.showAlert();
-          
-        } else if (error.status === 422) {
-          this.alertTitle = "422";
-          this.alertSubtitle = "Invalid email address or email is already taken";
-          return this.showAlert();
-          
+
         } else if (error.status === 500) {
           this.alertTitle = "500";
           this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";

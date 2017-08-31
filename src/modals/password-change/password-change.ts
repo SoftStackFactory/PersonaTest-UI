@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
   selector: 'password-change-modal',
@@ -10,7 +10,7 @@ import { AppUser } from '../../providers/app-user';
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
-  user: any = {};
+  passwordToCheck: any = {};
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
@@ -21,7 +21,7 @@ export class PasswordChangeModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUser) {
+      private appUser: AppUserProvider) {
         this.changeRequestForm = this.formBuilder.group({
             oldPassword: ['', Validators.required],
             password: ['', Validators.required],
@@ -54,10 +54,10 @@ export class PasswordChangeModal {
       return this.showAlert();
 
     //Passwords did not match, delete user passwords
-    } else if(this.user.newPassword !== this.user.confirmNewPassword) {
-      this.user.oldPassword = null;
-      this.user.password = null;
-      this.user.confirmPassword = null;
+    } else if(this.changeRequestForm.value.newPassword !== this.changeRequestForm.value.confirmNewPassword) {
+      this.changeRequestForm.value.oldPassword = null;
+      this.changeRequestForm.value.password = null;
+      this.changeRequestForm.value.confirmPassword = null;
       this.alertTitle = "Passwords do not match";
       this.alertSubtitle = "Please re-enter your passwords.";
       return this.showAlert();
@@ -66,17 +66,42 @@ export class PasswordChangeModal {
     //successfull password form
     
     //verify old password with api call
-    
+    this.passwordToCheck = { "password": this.changeRequestForm.value.oldPassword };
+    console.log("Old Password to Verify", this.passwordToCheck);
+    this.appUser.checkPassword(window.localStorage.getItem('id'),
+      window.localStorage.getItem('token'))
+      .map(res => res.json())
+      .subscribe(res => {
+        
+        //password entered matches old password on backend
+        
+        
+        //passwords do not match
+        
+        
+      }, error => {
+        //Server side errors
+        if (error.status === 404) {
+          this.alertTitle = "404";
+          this.alertSubtitle = "Not Found.";
+          return this.showAlert();
+          
+        } else if (error.status === 500) {
+          this.alertTitle = "500";
+          this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+          return this.showAlert();
+        }    
+      });
     
     //submit new password
-    console.log("user data", this.user);
-    delete this.user.oldPassword;
-    delete this.user.confirmPassword;
-    console.log("user data to send", this.user);
+    console.log("user provided data", this.changeRequestForm.value);
+    delete this.changeRequestForm.value.oldPassword;
+    delete this.changeRequestForm.value.confirmPassword;
+    console.log("New Password to Send", this.changeRequestForm.value);
     //this.password = { "password" : this.user.password };    
-    this.appUser.changePassword(window.localStorage.getItem('id'),
+    this.appUser.changeData(window.localStorage.getItem('id'),
       window.localStorage.getItem('token'), 
-        this.user)
+        this.changeRequestForm.value)
       .map(res => res.json())
       .subscribe(res => {
         this.alertTitle = "Password Change",

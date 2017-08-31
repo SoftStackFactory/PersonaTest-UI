@@ -41,6 +41,7 @@ export class MyApp {
     splashScreen: SplashScreen, 
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
+    public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private appUser: AppUserProvider,
     private translate: TranslateService
@@ -48,7 +49,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage =QuicklinksPage; 
+        this.rootPage = LandingPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -97,21 +98,21 @@ export class MyApp {
     
     //prompt user to confirm request to delete account
     let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Delete',
-      message: 'Are you sure you would like to delete your account? Any test data will be lost.',
+      title: 'Confirm Account Cancel',
+      message: 'Are you sure you would like to cancel your account? Any test data will be lost.',
       buttons: [
         {
           //when user does want to delete account
-          text: 'Yes, delete my account',
+          text: 'Yes, cancel my account',
           handler:() => {
             console.log("User has been deleted");
             this.menuCtrl.close();
-            this.appUser.delete(window.localStorage.id, window.localStorage.token)
+            this.appUser.delete(window.localStorage.userId, window.localStorage.token)
             window.localStorage.clear();
             this.nav.setRoot(LandingPage);
             
             let toast = this.toastCtrl.create({
-              message: 'Your account has been deleted.  Please visit us again for future testing needs.',
+              message: 'Your account has been deleted.  Please visit again for future testing needs.',
               duration: 3000,
               position: 'top'
             });

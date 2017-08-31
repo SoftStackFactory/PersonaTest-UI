@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-=======
 import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
->>>>>>> feature/passwordReset
 
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
@@ -26,7 +22,7 @@ export class LoginPage {
   
   loginForm: FormGroup;
   alertTitle: string;
-  alertSubtitle: string
+  alertSubtitle: string;
   
   constructor(
     public navCtrl: NavController, 
