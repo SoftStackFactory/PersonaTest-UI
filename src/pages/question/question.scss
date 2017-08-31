@@ -9,6 +9,10 @@ page-question {
   .name {
     font-style: italic;
   }
+  .questionText {
+    font-size: 1.5em;
+    color: color($colors, secondary);
+  }
   h2 {
     font-weight: bold;
   }
