@@ -41,7 +41,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
-    splashScreen: SplashScreen, 
+    splashScreen: SplashScreen,
+    statusBar: StatusBar,
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,

@@ -33,9 +33,7 @@ export class LobbyPage {
     public modalCtrl: ModalController, 
     public menuCtrl: MenuController,
     public resultsProvider: ResultsProvider,
-    public  viewCtrl: ViewController,
-    public viewCtrl: ViewController) {
-
+    public  viewCtrl: ViewController
   ) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
@@ -102,5 +100,6 @@ export class LobbyPage {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
- 
+
+  
 }
