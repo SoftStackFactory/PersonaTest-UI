@@ -1,6 +1,6 @@
 {
-  "name": "myBlank",
-  "app_id": "",
+  "name": "Persona App",
+  "app_id": "421d9cc0",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -74,7 +74,8 @@ export class LobbyPage {
       Agreeableness: 0,
       Conscientiousness: 0,
       'Emotional Stability': 0,
-      Intellect: 0
+      Intellect: 0,
+      name: "Goldberg"
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
