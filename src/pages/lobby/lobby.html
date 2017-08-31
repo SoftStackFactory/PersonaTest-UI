@@ -41,14 +41,14 @@
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
-          <ion-card class="fixed-card">
+          <!--<ion-card class="fixed-card">-->
             <ion-item>
               <org-search id="searchbar" [(orgSelected)]="orgSelected"></org-search>
             </ion-item>
-          </ion-card>
-          <ion-card *ngIf="orgSelected" class="fixed-card">
+          <!--</ion-card>-->
+          <!--<ion-card *ngIf="orgSelected" class="fixed-card">-->
             <test-search id="searchbar" [(testSelected)]="testSelected"></test-search>
-          </ion-card>
+          <!--</ion-card>-->
           <div class="orgbuttons">
             <button [disabled]="!testSelected" ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
             <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
