@@ -100,5 +100,6 @@ export class LobbyPage {
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
   }
- 
+
+  
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
   selector: 'manage-account-modal',
@@ -9,6 +10,9 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
+  user: any = {}
+  alertTitle: string
+  alertSubtitle: string
   
   constructor(
       public navCtrl: NavController, 
@@ -16,13 +20,14 @@ export class ManageAccountModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private translate: TranslateService) {
+      private alertCtrl: AlertController,
+      private appUser: AppUserProvider
+     ) {
         this.accountChangeForm = this.formBuilder.group({
-            firstName: [''],
-            lastName: [''],
-            email: [''],
+            firstName: ['', Validators.required],
+            lastName: ['', Validators.required],
             age: [''],
-            gender: [''],
-            password: ['', Validators.minLength(4)]
+            gender: ['', Validators.required]
         });
   }
 
@@ -34,8 +39,50 @@ export class ManageAccountModal {
     this.viewCtrl.dismiss();
   }
   
-  logForm() {
-      console.log(this.accountChangeForm.value)
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: this.alertTitle,
+      subTitle: this.alertSubtitle,
+      buttons: ["Dismiss"]
+    });
+    alert.present();
+  }
+  
+  accountChange(form) {
+    console.log(this.accountChangeForm.value)
+    if(form.invalid) {
+      this.alertTitle = "Invalid Form";
+      this.alertSubtitle = "Please fill in all required fields.";
+      return this.showAlert();
+    }
+    
+    //successfull registration
+    console.log(this.user);
+    this.appUser.changeAccount(window.localStorage.getItem('id'), 
+        window.localStorage.getItem('token'), 
+        this.accountChangeForm.value)
+      .map(res => res.json())
+      .subscribe(res => {
+        this.viewCtrl.dismiss();
+        
+      }, error => {
+        //Server side errors
+        if (error.status === 404) {
+          this.alertTitle = "404";
+          this.alertSubtitle = "Not Found.";
+          return this.showAlert();
+          
+        } else if (error.status === 422) {
+          this.alertTitle = "422";
+          this.alertSubtitle = "Invalid email address or email is already taken";
+          return this.showAlert();
+          
+        } else if (error.status === 500) {
+          this.alertTitle = "500";
+          this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+          return this.showAlert();
+        }    
+      });
   }
 setLanguage(lng){
   this.translate.use(lng);

@@ -38,4 +38,37 @@ export class AppUserProvider {
       {}
       );
   }
+  
+  delete(id, token) {
+    console.log('delete:' + this.baseUrl + this.path + '/' + id + 
+      '?access_token=' + token);
+    return this.http.delete(
+      this.baseUrl + this.path + '/' + id + 
+      '?access_token=' + token
+    );
+  }
+  
+  resetPassword(email) {
+    return this.http.post(
+      this.baseUrl + this.path,
+      email
+    );
+  }
+  
+  changePassword(id, token, password) {
+    return this.http.patch(
+      this.baseUrl + this.path + '/' + id +
+      '?access_token=' + token,
+      password
+    );
+  }
+  
+  changeAccount(id, token, userData) {
+    return this.http.patch(
+      this.baseUrl + this.path + '/' + id +
+      '?access_token=' + token,
+      userData
+    );
+  }
+  
 }
