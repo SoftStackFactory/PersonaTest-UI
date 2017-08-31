@@ -18,7 +18,6 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
-
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
@@ -28,6 +27,7 @@ import {TranslateService} from '@ngx-translate/core'
 
 //menu elements
 import { AppUserProvider } from '../providers/app-user/app-user';
+import {TranslateService} from '@ngx-translate/core'
 
 
 
@@ -53,7 +53,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage = QuicklinksPage; 
+=        this.rootPage = LandingPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -62,7 +62,9 @@ export class MyApp {
         splashScreen.hide();
         this.translate.setDefaultLang('en');
     });
-  }
+
+  };
+
   
   closeMenu(){
     
@@ -79,7 +81,6 @@ export class MyApp {
     manageAccModal.present();
   };
   
-
   resetPassword(){
     console.log("password reset requested");
     let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
@@ -103,21 +104,21 @@ export class MyApp {
     
     //prompt user to confirm request to delete account
     let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Delete',
-      message: 'Are you sure you would like to delete your account? Any test data will be lost.',
+      title: 'Confirm Account Cancel',
+      message: 'Are you sure you would like to cancel your account? Any test data will be lost.',
       buttons: [
         {
           //when user does want to delete account
-          text: 'Yes, delete my account',
+          text: 'Yes, cancel my account',
           handler:() => {
             console.log("User has been deleted");
             this.menuCtrl.close();
-            this.appUser.delete(window.localStorage.id, window.localStorage.token)
+            this.appUser.delete(window.localStorage.userId, window.localStorage.token)
             window.localStorage.clear();
             this.nav.setRoot(LandingPage);
             
             let toast = this.toastCtrl.create({
-              message: 'Your account has been deleted.  Please visit us again for future testing needs.',
+              message: 'Your account has been deleted.  Please visit again for future testing needs.',
               duration: 3000,
               position: 'top'
             });
