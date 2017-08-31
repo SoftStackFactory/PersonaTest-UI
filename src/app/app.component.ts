@@ -47,14 +47,14 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage =QuicklinksPage; 
-      }else{ 
+        this.rootPage = LandingPage; 
+        }else{ 
         this.rootPage = LobbyPage; }
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
         statusBar.styleDefault();
         splashScreen.hide();
-        this.translate.setDefaultLang('en');
+
     });
   };
   

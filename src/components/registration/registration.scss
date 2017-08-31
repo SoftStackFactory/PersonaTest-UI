@@ -38,14 +38,24 @@ registration {
           flex-wrap: nowrap;
           justify-content: center;
         } 
+    .footer-margin {
+        margin-top: 9%;
+    }
     .button {
         background-color: #384e77;
         color: #e6f9af;
         border-color: #384e77;
     }
-    .item-md p {
+    .checkbox-icon {
+        margin-right: 6px;
+    }
+    a {
+        margin-left: 4px;
+    }
+    .error {
         font-size: 0.8em;
         color: red;
+        padding-left: 16px;
         }
     // .invalid {
     //         border: 1px solid #ea6153;

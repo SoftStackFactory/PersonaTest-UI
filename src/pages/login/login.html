@@ -15,6 +15,10 @@
                   <ion-label floating>{{'LOGIN.EMAIL' | translate}}</ion-label>
                     <ion-input name="email" type="email" formControlName="email"></ion-input>
                 </ion-item>
+                <div class="error" *ngIf="!loginForm.controls.email.valid && (loginForm.controls.email.dirty || submitAttempt)">
+                  <p>Please enter a valid email address</p>
+                </div>
+                
                 <ion-item>
                   <ion-label floating>{{'LOGIN.PASSWORD' | translate}}</ion-label>
                     <ion-input name="password" type="password" formControlName="password"></ion-input>
@@ -25,6 +29,7 @@
             </div>
         </form>
         <remember-me></remember-me>
+
     </div>
     
     <footer>
