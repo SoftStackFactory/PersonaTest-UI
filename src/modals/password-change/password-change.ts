@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
-import { AppUser } from '../../providers/app-user';
 
 @Component({
   selector: 'password-change-modal',
@@ -21,7 +21,8 @@ export class PasswordChangeModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUser) {
+      private appUser: AppUserProvider
+    ) {
         this.changeRequestForm = this.formBuilder.group({
             oldPassword: ['', Validators.required],
             password: ['', Validators.required],
