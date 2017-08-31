@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
@@ -18,6 +19,7 @@ export class ManageAccountModal {
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
+      private translate: TranslateService,
       private alertCtrl: AlertController,
       private appUser: AppUserProvider
      ) {
@@ -82,5 +84,8 @@ export class ManageAccountModal {
         }    
       });
   }
+setLanguage(lng){
+  this.translate.use(lng);
+}
 
 }
