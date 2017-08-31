@@ -24,9 +24,6 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import {TranslateService} from '@ngx-translate/core'
-
-//menu elements
 import { AppUserProvider } from '../providers/app-user/app-user';
 import {TranslateService} from '@ngx-translate/core'
 
@@ -67,7 +64,7 @@ export class MyApp {
   };
   
   closeMenu(){
-    
+    this.menuCtrl.close();
   };
   
   goHome(){
@@ -142,47 +139,6 @@ export class MyApp {
     confirmDelete.present();
   };
   
-  deleteAcc(){
-    
-    //prompt user to confirm request to delete account
-    let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Delete',
-      message: 'Are you sure you would like to delete your account? Any test data will be lost.',
-      buttons: [
-        {
-          //when user does want to delete account
-          text: 'Yes, delete my account',
-          handler:() => {
-            console.log("User has been deleted");
-            this.menuCtrl.close();
-            this.appUser.delete(window.localStorage.id, window.localStorage.token)
-            window.localStorage.clear();
-            this.nav.setRoot(LandingPage);
-            
-            let toast = this.toastCtrl.create({
-              message: 'Your account has been deleted.  Please visit us again for future testing needs.',
-              duration: 3000,
-              position: 'top'
-            });
-            toast.onDidDismiss(() => {
-              console.log('Dismissed toast');
-            });
-            toast.present();
-          }
-        },
-        {
-          
-          //when user does not want to delete account
-          text: 'No, keep my account active',
-          handler: () => {
-            console.log("User cancelled delete");
-          }
-        }
-        ]
-    });
-    confirmDelete.present();
-  };
-
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',
