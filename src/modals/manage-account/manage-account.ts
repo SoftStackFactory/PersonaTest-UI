@@ -11,6 +11,10 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
 
+<<<<<<< HEAD
+=======
+  user: any = {}
+>>>>>>> refs/remotes/origin/feature/menuUpdate
   alertTitle: string
   alertSubtitle: string
   
@@ -77,10 +81,10 @@ export class ManageAccountModal {
           return this.showAlert();
         }    
       });
-  }
+    }
   
-setLanguage(lng){
-  this.translate.use(lng);
-}
+  setLanguage(lng){
+    this.translate.use(lng);
+  }
 
 }

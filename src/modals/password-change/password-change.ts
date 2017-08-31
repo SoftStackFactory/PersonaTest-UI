@@ -10,6 +10,7 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
+
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
