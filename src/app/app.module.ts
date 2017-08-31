@@ -54,6 +54,7 @@ import { RememberMeComponent } from '../components/remember-me/remember-me';
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { EulaModal } from '../modals/eula/eula';
+import { TestSearchComponent } from '../components/test-search/test-search';
 
 export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
@@ -101,7 +102,8 @@ let injections: any[] = [
   declarations: [
     injections, 
     FilterTestsByTimePipe,
-    SearchTermPipe 
+    SearchTermPipe,
+    TestSearchComponent 
   ],
   imports: [
     BrowserModule,

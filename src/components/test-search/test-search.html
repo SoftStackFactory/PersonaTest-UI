@@ -5,7 +5,7 @@
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
   </ion-toolbar>
   <ion-list>
-    <ion-item *ngFor="let item of items" (click)="selectOrg(item)">
+    <ion-item *ngFor="let item of items" (click)="selectedTest(item)">
       {{ item }}
     </ion-item>
   </ion-list>
