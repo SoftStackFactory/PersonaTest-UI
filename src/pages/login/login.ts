@@ -23,6 +23,7 @@ export class LoginPage {
   loginForm: FormGroup;
   alertTitle: string;
   alertSubtitle: string;
+  submitAttempt: boolean = false;
   
   constructor(
     public navCtrl: NavController, 
@@ -31,6 +32,7 @@ export class LoginPage {
     private menu: MenuController,
     private appUser: AppUserProvider,
     private formBuilder: FormBuilder
+
     ) {
       this.loginForm = formBuilder.group({
         email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
@@ -56,6 +58,8 @@ export class LoginPage {
   }
   
   submit(){
+    this.submitAttempt = true;
+    
     if(!this.loginForm.valid){
       this.alertTitle = "Incomplete Login";
       this.alertSubtitle = "Please enter your email and password.";

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
 @Component({
@@ -11,6 +10,7 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
   passwordToCheck: any = {};
+  user: any = {};
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
@@ -21,7 +21,8 @@ export class PasswordChangeModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUserProvider) {
+      private appUser: AppUserProvider
+    ) {
         this.changeRequestForm = this.formBuilder.group({
             oldPassword: ['', Validators.required],
             password: ['', Validators.required],

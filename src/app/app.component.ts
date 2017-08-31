@@ -23,8 +23,12 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+import {TranslateService} from '@ngx-translate/core'
+
+//menu elements
 import { AppUserProvider } from '../providers/app-user/app-user';
 import {TranslateService} from '@ngx-translate/core'
+
 
 
 
@@ -32,13 +36,13 @@ import {TranslateService} from '@ngx-translate/core'
   templateUrl: 'app.html'
 })
 export class MyApp {
-
+  currentPage: string;
   rootPage: any;
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
-    statusBar: StatusBar, 
-    splashScreen: SplashScreen, 
+    splashScreen: SplashScreen,
+    statusBar: StatusBar,
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
@@ -49,7 +53,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-        this.rootPage = LandingPage; 
+=        this.rootPage = LandingPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -60,6 +64,7 @@ export class MyApp {
     });
 
   };
+
   
   closeMenu(){
     
@@ -88,6 +93,7 @@ export class MyApp {
     passwordChangeModal.present();
   };
   
+
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
@@ -134,7 +140,7 @@ export class MyApp {
     });
     confirmDelete.present();
   };
-  
+
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',

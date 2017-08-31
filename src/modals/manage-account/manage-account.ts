@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
@@ -10,6 +12,8 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
+
+  user: any = {}
   alertTitle: string
   alertSubtitle: string
   
@@ -18,8 +22,10 @@ export class ManageAccountModal {
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
+      private translate: TranslateService,
       private alertCtrl: AlertController,
-      private appUser: AppUserProvider) {
+      private appUser: AppUserProvider
+     ) {
         this.accountChangeForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
@@ -74,6 +80,9 @@ export class ManageAccountModal {
           return this.showAlert();
         }    
       });
+
+  setLanguage(lng){
+    this.translate.use(lng);
   }
 
 }
