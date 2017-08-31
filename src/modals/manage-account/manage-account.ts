@@ -19,7 +19,7 @@ export class ManageAccountModal {
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
-      private translate: TranslateService) {
+      private translate: TranslateService,
       private alertCtrl: AlertController,
       private appUser: AppUserProvider
      ) {
