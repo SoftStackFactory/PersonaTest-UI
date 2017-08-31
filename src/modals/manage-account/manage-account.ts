@@ -54,7 +54,7 @@ export class ManageAccountModal {
     }
     
     //successfull registration
-    this.appUser.changeData(window.localStorage.getItem('id'), 
+    this.appUser.changeData(window.localStorage.getItem('userId'), 
         window.localStorage.getItem('token'), 
         this.accountChangeForm.value)
       .map(res => res.json())
