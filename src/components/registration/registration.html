@@ -1,72 +1,92 @@
 <!-- Generated template for the RegistrationComponent component -->
   <div class="registration-container">
-  <!--<div class="regTitle">-->
-  <!--    <ion-title text-center>New User Registration</ion-title>-->
-  <!--</div>-->
-    <form #registerForm="ngForm" (ngSubmit)="signupForm(registerForm)" novalidate>
+    <form [formGroup]="registerForm" novalidate>
       <div class="registration-rows">
         
+        <!--FIRST NAME INPUT-->
         <ion-item>
-          <ion-label floating><small class="asterik">*</small>First Name</ion-label>
-            <ion-input name="firstName" type="string" [(ngModel)]="user.firstName" required></ion-input>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.FIRST' | translate}}</ion-label>
+            <ion-input formControlName="firstName" type="string"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.firstName.valid && (registerForm.controls.firstName.dirty || submitAttempt)">
+          <p>{{'REGISTER.ERRORFIRST' | translate}}</p>
         </ion-item>
         
+        <!--LAST NAME INPUT-->
         <ion-item>
-          <ion-label floating><small class="asterik">*</small>Last Name</ion-label>
-            <ion-input name="lastName" type="string" [(ngModel)]="user.lastName" required></ion-input>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.LAST' | translate}}</ion-label>
+            <ion-input formControlName="lastName" type="string"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.lastName.valid && (registerForm.controls.lastName.dirty || submitAttempt)">
+          <p>{{'REGISTER.ERRORLAST' | translate}}</p>
         </ion-item>
         
+        <!--AGE INPUT-->
         <ion-item>
-          <ion-label floating>Age</ion-label>
-            <ion-input name="age" type="number" [(ngModel)]="user.age"></ion-input>
+          <ion-label floating>{{'REGISTER.AGE' | translate}}</ion-label>
+            <ion-input formControlName="age" type="number"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.age.valid && (registerForm.controls.age.dirty || submitAttempt)">
+          <p>{{'REGISTER.ERRORAGE' | translate}}</p>
         </ion-item>
         
+        <!--EMAIL INPUT-->
         <ion-item>    
-          <ion-label floating><small class="asterik">*</small>Email</ion-label>
-            <ion-input name="email" type="email" [(ngModel)]="user.email" required></ion-input>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.EMAIL' | translate}}</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.email.valid && (registerForm.controls.email.dirty || submitAttempt)">
+          <p>{{'REGISTER.ERROREMAIL' | translate}}</p>
         </ion-item>
         
+        <!--PASSWORD INPUT-->
         <ion-item>
-          <ion-label floating><small class="asterik">*</small>Password</ion-label>
-            <ion-input name="password" type="password" [(ngModel)]="user.password" required></ion-input>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.PASSWORD' | translate}}</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
         
+        <!--CONFIRM PASSWORD INPUT-->
         <ion-item>
-          <ion-label floating><small class="asterik">*</small>Confirm Password</ion-label>
-            <ion-input name="confirmPassword" type="password" [(ngModel)]="user.confirmPassword" required></ion-input>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.CONFIRM' | translate}}</ion-label>
+            <ion-input formControlName="confirmPassword" type="password"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="!registerForm.controls.confirmPassword.valid && (registerForm.controls.confirmPassword.dirty || submitAttempt)">
+          <p>{{'REGISTER.ERRORPASSWORD' | translate}}</p>
         </ion-item>
         
+        <!--GENDER INPUT-->
         <ion-item>
-          <ion-label floating><small class="asterik">*</small>Gender</ion-label>
-            <ion-select [(ngModel)]="user.gender" name="gender" required>
-              <ion-option>Female</ion-option>
-              <ion-option>Male</ion-option>
-              <ion-option>Other</ion-option>
-              <ion-option>Decline</ion-option>
+          <ion-label floating><small class="asterik">*</small>{{'REGISTER.GENDER' | translate}}</ion-label>
+            <ion-select formControlName="gender">
+              <ion-option translate>REGISTER.FEMALE</ion-option>
+              <ion-option translate>REGISTER.MALE</ion-option>
+              <ion-option translate>REGISTER.OTHER</ion-option>
+              <ion-option translate>REGISTER.DECLINE</ion-option>
             </ion-select>
         </ion-item>
         
+        <!--EULA CHECKBOX-->
         <div class="registration-eula">
-          <ion-checkbox name="eula" [(ngModel)]="user.isEula" (ionChange)="checkEula"></ion-checkbox>
-            <span>I accept the Terms & Conditions</span>
+          <ion-checkbox formControlName="isEula" (ionChange)="clickedEula()"></ion-checkbox>
+            <span>{{'REGISTER.EULA' | translate}}</span>
         </div>
         
+        <!--SUBMIT BUTTON-->
       </div>
       <div class="register-button">
-        <button ion-button outline type="submit">Register</button>
+        <button ion-button outline (click)="submit()">{{'REGISTER.REGISTER' | translate}}</button>
       </div>
     </form>
     <div class="view-eula">
-        <!--<ion-checkbox name="eula" [(ngModel)]="eula" (ionChange)="checkEula"></ion-checkbox>-->
           <em> 
-            <a (click)="showEula()">View our Terms & Conditions</a>
+            <a (click)="showEula()">{{'REGISTER.TERMS' | translate}}</a>
           </em>
 
     </div>
   </div>
   <footer>
-    <small class="asterik">*</small>required fields
+    <small class="asterik">*</small>{{'REGISTER.REQ' | translate}}
     </footer>
-  <footer>Already have an account? <a (click)="goToLogin()">Login here.</a>
+  <footer>{{'REGISTER.ALREADY' | translate}}<a (click)="goToLogin()">{{'REGISTER.HERE' | translate}}</a>
     </footer>
 

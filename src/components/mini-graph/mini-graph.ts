@@ -28,7 +28,7 @@ export class MiniGraphComponent {
   //Since a component doesn't have a view, we use angular's ngOnInit method 
   ngOnInit(){
     this.miniChart = new Chart(this.graphCanvas.nativeElement, {
-      type: 'bar',
+      type: 'polarArea',
       data: {
         labels: [
             "Agreeableness",
@@ -45,33 +45,22 @@ export class MiniGraphComponent {
             this.test.Extraversion,
             this.test.Intellect
           ],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
-          borderWidth: 1
+          backgroundColor: ['rgba(139, 190, 178, 1)', //Teal (our light theme color)
+          'rgba(231, 101, 122, 1)', //Pink
+          'rgba(169, 174, 178, 1)', //Gray
+          'rgba(179, 236, 156, 1)', //Green
+          'rgba(245, 223, 132, 1)' //Yellow
+          ]
+     
         }]
       },
       options: {
         scales: {
           yAxes: [{
-            ticks: {
-              beginAtZero:true,
-              max: 100
-            }
+             display: false
           }],
          xAxes: [{
-              display: false
+            display: false
           }]
         },
         legend: {
@@ -79,7 +68,12 @@ export class MiniGraphComponent {
        },
        tooltips: {
           enabled: false
-       }
+       },
+       scale:  {
+            ticks: {
+                display: false
+            }
+        }
       }
     });
   }

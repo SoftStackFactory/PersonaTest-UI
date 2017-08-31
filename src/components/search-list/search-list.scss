@@ -1,10 +1,16 @@
 search-list {
     
+    /* Mobile View by default */
+    .container-width {
+        width: 100vw;
+    }
+    
     .small-chart {
-        width: 75%;
+        width: 45%;
         display: flex!important;
         margin-left: auto;
         justify-content: flex-end!important;
+        padding: 5px;
         
     }
     
@@ -14,10 +20,6 @@ search-list {
         margin-left: auto;
     }
     
-
-    .container-width {
-        width: 100vw;
-    }
     
     .item:hover{
         background-color: accent !important;
@@ -33,13 +35,17 @@ search-list {
     @media only screen and (min-width: 768px) {
     /* For desktop (and bigger than iPad) */
     
+        .container-width {
+            width: 65vw;
+        }
+    
         .display-block {
             display: inline!important;
             width: 100%;
         }
         
         .half-container {
-            width: 50%!important;
+            width: 40%!important;
         }
         
         #text-block {

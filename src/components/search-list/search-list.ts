@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';  //To filter our dates
 import { NavController} from 'ionic-angular';   //To navigate to individual test results page
 import { ResultsPage } from '../../pages/results/results';
 import { TestListsPage } from '../../pages/test-lists/test-lists';
-import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 
 /**
  * Generated class for the SearchListComponent component.
@@ -16,21 +16,36 @@ import { MiniGraphComponent } from '../../components/mini-graph/mini-graph';
 })
 export class SearchListComponent {
 
-//Variables for the tests arrays; The calling page will input them in its .html file
-  @Input() ourList: {  name: string, date: string }[];
-  @Input() filteredList: { name: string, date: string }[];  
+  //Variables for the tests arrays; The calling page will input them in its .html file
+  @Input() ourList: {  name: string, date: Date }[];
+  @Input() filteredList: { name: string, date: Date }[];  
+  
+  //Boolean - displays graphs if history is not empty; otherwise prompt user
+  @Input() emptyHistory: boolean = true;
 
   //Variable for user's input in search bar 
   searchInput: string = "";
   
-  //Variable for user's input in date picker
-  searchDate: string = "";
+  //Boolean to display if is an org
+  orgView: boolean = false;
   
   //Boolean for displaying the search results dropdown
   displayDropdown: boolean = false;
   
-  //Boolean - displays graphs if history is not empty; otherwise prompt user
-  emptyHistory: boolean = true;
+  //Function to return an array of strings that ngFor in html file will call
+  //and display our options when user tries to select
+  searchTimes(): string[] {
+    return [
+      "Past Six Months",
+      "Past Year",
+      "Past Two Years",
+      "All Time"
+    ];
+  }
+
+  //Variable for user's input in date selector; this is the default value
+  searchTime: string = "All Time";
+  
   
   constructor( public navCtrl: NavController ) {
     console.log('Hello SearchListComponent Component');
@@ -65,9 +80,7 @@ export class SearchListComponent {
     });
 
     console.log("The number of search results is " + this.filteredList.length);
-    console.log("Our search input is " + this.searchInput + " " + q);
-    console.log("User's search date is " + this.searchDate);
-
+    console.log("Our search input is " + this.searchInput );
     
   }
   
@@ -81,11 +94,13 @@ export class SearchListComponent {
   //selectedItem gets called when user clicks something from our search list
   selectedItem(mouseClick, item){
     console.log("The item you selected is " + item.name);
-    this.navCtrl.push(ResultsPage);
+    this.navCtrl.push(ResultsPage, {testTaken: item});
   }
   
+  //Go to the TestsLists Page if user clicks on the option
   goToTestsPage(){
     this.navCtrl.push(TestListsPage);
   }
+  
 
 }

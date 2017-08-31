@@ -3,8 +3,11 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//Pages
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
 import { HomePage } from '../pages/home/home';
@@ -24,10 +27,13 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
 import { TestHistoryProvider } from '../providers/test-history/test-history'
-import { AppUser } from '../providers/app-user';
+import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
 
+//Pipes
+import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
+import { SearchTermPipe } from '../pipes/search-term/search-term';
 
 //Components
 import { ChartComponent } from '../components/chart/chart';
@@ -36,20 +42,25 @@ import { RegistrationComponent } from '../components/registration/registration';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { SearchListComponent } from '../components/search-list/search-list';
 import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
-import { EulaComponent } from '../components/eula/eula';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
+import { RememberMeComponent } from '../components/remember-me/remember-me';
 
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
+import { EulaModal } from '../modals/eula/eula';
 
+export function createTranslateLoader(http: Http){
+  return new TranslateHttpLoader(http, './assets/lang/', '.json');
+}
 
 let injections: any[] = [
     MyApp,
@@ -73,7 +84,7 @@ let injections: any[] = [
     SearchListComponent,
     ProgressBarComponent,
     MiniGraphComponent,
-    EulaComponent,
+    EulaModal,
     TestSelectionComponent,
     ForWorkModal,
     BeAnOrganizationModal,
@@ -85,15 +96,28 @@ let injections: any[] = [
     PasswordResetModal,
     PasswordChangeModal,
     HomeComponent,
-    OrgSearchComponent
+    OrgSearchComponent,
+    RememberMeComponent
     ]
 
 @NgModule({
-  declarations: injections,
+  declarations: [
+    injections, 
+    FilterTestsByTimePipe,
+    SearchTermPipe 
+  ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: injections,
@@ -103,7 +127,7 @@ let injections: any[] = [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     QuestionsProvider,
     TestHistoryProvider,
-    AppUser,
+    AppUserProvider,
     AnswersProvider,
     ResultsProvider
   ]

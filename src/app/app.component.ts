@@ -18,12 +18,18 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
+
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import { AppUser } from '../providers/app-user';
+import {TranslateService} from '@ngx-translate/core'
+
+//menu elements
+import { AppUserProvider } from '../providers/app-user/app-user';
+
+
 
 
 @Component({
@@ -31,30 +37,31 @@ import { AppUser } from '../providers/app-user';
 })
 export class MyApp {
   currentPage: string;
-  rootPage:any = LandingPage;
+  rootPage: any;
   @ViewChild(Nav) nav: Nav;
-  
-  constructor(platform: Platform, 
-    statusBar: StatusBar, 
+  constructor(
+    platform: Platform, 
     splashScreen: SplashScreen, 
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
-    private appUser: AppUser
+    private appUser: AppUserProvider,
+    private translate: TranslateService
   ) {
     platform.ready().then(() => {
-      console.log("nav", this.nav)
+      let storage = window.localStorage.getItem('remembered'); 
+      if(storage === null){ 
+        this.rootPage = QuicklinksPage; 
+      }else{ 
+        this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+        statusBar.styleDefault();
+        splashScreen.hide();
+        this.translate.setDefaultLang('en');
     });
-    
-    //this.currentPage = this.nav.getActive().name;
-    //console.log(this.currentPage);
-    
-  };
+  }
   
   closeMenu(){
     
@@ -71,6 +78,7 @@ export class MyApp {
     manageAccModal.present();
   };
   
+
   resetPassword(){
     console.log("password reset requested");
     let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
@@ -83,6 +91,7 @@ export class MyApp {
     passwordChangeModal.present();
   };
   
+
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
@@ -129,7 +138,7 @@ export class MyApp {
     });
     confirmDelete.present();
   };
-  
+
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',

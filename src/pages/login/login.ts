@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
+=======
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+>>>>>>> develop
 
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
 
-import { AppUser } from '../../providers/app-user';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,8 +24,8 @@ import { AppUser } from '../../providers/app-user';
 })
 export class LoginPage {
   
-  user: any = {}
-  alertTitle: string
+  loginForm: FormGroup;
+  alertTitle: string;
   alertSubtitle: string
   
   constructor(
@@ -28,8 +33,14 @@ export class LoginPage {
     public navParams: NavParams,
     private alertCtrl: AlertController,
     private menu: MenuController,
-    private appUser: AppUser
+    private appUser: AppUserProvider,
+    private formBuilder: FormBuilder
+
     ) {
+      this.loginForm = formBuilder.group({
+        email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
+        password: ['', Validators.required],
+      });
   }
 
   ionViewDidLoad() {
@@ -49,21 +60,19 @@ export class LoginPage {
     alert.present();
   }
   
-  loginForm(form){
-    if(form.invalid) {
-      this.alertTitle = "Invalid Form";
-      this.alertSubtitle = "Please fill in all required fields.";
+  submit(){
+    if(!this.loginForm.valid){
+      this.alertTitle = "Incomplete Login";
+      this.alertSubtitle = "Please enter your email and password.";
       return this.showAlert();
     }
-    
     //successful login
-    console.log(this.user);
-    this.appUser.login(this.user)
+    console.log("User Credentials", this.loginForm.value);
+    this.appUser.login(this.loginForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        console.log(res);
-        window.localStorage.setItem('token', res.id);
-        window.localStorage.setItem('id', res.userId)
+        window.localStorage.setItem('token', res.token);
+        window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
       }, error => {
@@ -71,6 +80,11 @@ export class LoginPage {
         if (error.status === 404) {
           this.alertTitle = "404";
           this.alertSubtitle = "Not Found.";
+          return this.showAlert();
+        
+        } else if(error.status === 401) {
+          this.alertTitle = "Invalid Login";
+          this.alertSubtitle = "Incorrect email or password. Please try again."
           return this.showAlert();
           
         } else if (error.status === 422) {
@@ -84,6 +98,7 @@ export class LoginPage {
           return this.showAlert();
         }    
       });
+    
   }
   
   //user has not created an account yet, link to Registration
