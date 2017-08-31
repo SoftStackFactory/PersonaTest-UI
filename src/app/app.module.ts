@@ -62,6 +62,8 @@ export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
 }
 
+import { OrganizationProvider } from '../providers/organization/organization';
+
 let injections: any[] = [
     MyApp,
     LandingPage,
@@ -129,7 +131,8 @@ let injections: any[] = [
     TestHistoryProvider,
     AppUserProvider,
     AnswersProvider,
-    ResultsProvider
+    ResultsProvider,
+    OrganizationProvider
   ]
 })
 export class AppModule {}

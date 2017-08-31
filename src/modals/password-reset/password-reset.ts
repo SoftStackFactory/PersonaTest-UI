@@ -5,7 +5,6 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
 
-
 @Component({
   selector: 'password-reset-modal',
   templateUrl: 'password-reset.html',
@@ -22,8 +21,9 @@ export class PasswordResetModal {
       public viewCtrl: ViewController,
       private formBuilder: FormBuilder,
       private alertCtrl: AlertController,
-      private appUser: AppUserProvider
-    ) {
+      //private emailComposer: EmailComposer,
+      private appUser: AppUserProvider) {
+
         this.resetRequestForm = this.formBuilder.group({
             email: ['', Validators.required]
         });
