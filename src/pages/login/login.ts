@@ -64,7 +64,8 @@ export class LoginPage {
     this.appUser.login(this.loginForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.token);
+        console.log("hit", res);
+        window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
