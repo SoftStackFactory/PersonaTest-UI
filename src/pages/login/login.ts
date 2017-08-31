@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
+import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
+=======
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+>>>>>>> develop
 
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
@@ -28,8 +32,10 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private alertCtrl: AlertController,
+    private menu: MenuController,
     private appUser: AppUserProvider,
     private formBuilder: FormBuilder
+
     ) {
       this.loginForm = formBuilder.group({
         email: ['', Validators.compose([Validators.maxLength(70), Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'), Validators.required])],
@@ -39,6 +45,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+  
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
   }
   
   showAlert() {
