@@ -27,7 +27,6 @@ import {TranslateService} from '@ngx-translate/core'
 
 //menu elements
 import { AppUserProvider } from '../providers/app-user/app-user';
-import {TranslateService} from '@ngx-translate/core'
 
 
 
@@ -53,7 +52,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-=        this.rootPage = LandingPage; 
+       this.rootPage = LandingPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.

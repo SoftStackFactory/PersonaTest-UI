@@ -4,8 +4,6 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
-import { AppUserProvider } from '../../providers/app-user/app-user';
-
 @Component({
   selector: 'manage-account-modal',
   templateUrl: 'manage-account.html',
@@ -80,7 +78,7 @@ export class ManageAccountModal {
           return this.showAlert();
         }    
       });
-
+  }
   setLanguage(lng){
     this.translate.use(lng);
   }

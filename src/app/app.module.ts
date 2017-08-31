@@ -62,9 +62,6 @@ export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
 }
 
-import { ManageAccountModal } from '../modals/manage-account/manage-account';
-import { PasswordResetModal } from '../modals/password-reset/password-reset';
-import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { OrganizationProvider } from '../providers/organization/organization';
 
 let injections: any[] = [
