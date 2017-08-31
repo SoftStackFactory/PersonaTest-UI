@@ -46,4 +46,8 @@
       </ion-item>
       <button ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
     </form>
+    <div class="bottom">
+      <button ion-button type (click)="setLanguage('en')">English</button>
+      <button ion-button type (click)="setLanguage('sp')">Spanish</button>
+      </div>
 </ion-content>

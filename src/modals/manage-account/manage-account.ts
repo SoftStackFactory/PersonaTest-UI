@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'manage-account-modal',
@@ -13,7 +14,8 @@ export class ManageAccountModal {
       public navCtrl: NavController, 
       public navParams: NavParams, 
       public viewCtrl: ViewController,
-      private formBuilder: FormBuilder) {
+      private formBuilder: FormBuilder,
+      private translate: TranslateService) {
         this.accountChangeForm = this.formBuilder.group({
             firstName: [''],
             lastName: [''],
@@ -35,5 +37,8 @@ export class ManageAccountModal {
   logForm() {
       console.log(this.accountChangeForm.value)
   }
+setLanguage(lng){
+  this.translate.use(lng);
+}
 
 }
