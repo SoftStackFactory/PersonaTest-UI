@@ -63,7 +63,7 @@ export class LobbyPage {
       Conscientiousness: 0,
       'Emotional Stability': 0,
       Intellect: 0,
-      name:"Goldberg"
+      name: "Goldberg"
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
