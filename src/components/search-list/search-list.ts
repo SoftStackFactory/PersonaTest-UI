@@ -16,9 +16,12 @@ import { TestListsPage } from '../../pages/test-lists/test-lists';
 })
 export class SearchListComponent {
 
-//Variables for the tests arrays; The calling page will input them in its .html file
+  //Variables for the tests arrays; The calling page will input them in its .html file
   @Input() ourList: {  name: string, date: Date }[];
   @Input() filteredList: { name: string, date: Date }[];  
+  
+  //Boolean - displays graphs if history is not empty; otherwise prompt user
+  @Input() emptyHistory: boolean = true;
 
   //Variable for user's input in search bar 
   searchInput: string = "";
@@ -28,9 +31,6 @@ export class SearchListComponent {
   
   //Boolean for displaying the search results dropdown
   displayDropdown: boolean = false;
-  
-  //Boolean - displays graphs if history is not empty; otherwise prompt user
-  emptyHistory: boolean = true;
   
   //Function to return an array of strings that ngFor in html file will call
   //and display our options when user tries to select
@@ -94,7 +94,7 @@ export class SearchListComponent {
   //selectedItem gets called when user clicks something from our search list
   selectedItem(mouseClick, item){
     console.log("The item you selected is " + item.name);
-    this.navCtrl.push(ResultsPage);
+    this.navCtrl.push(ResultsPage, {testTaken: item});
   }
   
   //Go to the TestsLists Page if user clicks on the option

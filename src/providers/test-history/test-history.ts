@@ -27,12 +27,13 @@ export class TestHistoryProvider {
       this.baseUrl + this.path,
       newTestData
     );
+  
   }
   
-  getAllTestsTaken( token ) {
+  getAllTestsTaken( ) {
     return this.http.get(
-      this.baseUrl + this.path + "/" + token
-    );
+      this.baseUrl + this.path 
+    ).map(res => res.json());
   }
 
 }
