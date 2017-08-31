@@ -89,7 +89,8 @@ export class ResultsPage {
         results.date = new Date()
         results.testId = test.testId
         results.userId = test.userId
-        results.id = test.id;
+        results.id = test.id
+        results.name = test.name;
         console.log('reduc', results);
        return results;
   }
