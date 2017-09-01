@@ -18,7 +18,6 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
-
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
@@ -79,7 +78,6 @@ export class MyApp {
     manageAccModal.present();
   };
   
-
   resetPassword(){
     console.log("password reset requested");
     let passwordResetModal = this.modalCtrl.create(PasswordResetModal);

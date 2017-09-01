@@ -3,14 +3,12 @@ import { NavController, NavParams, ViewController, AlertController } from 'ionic
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
-
 @Component({
   selector: 'password-change-modal',
   templateUrl: 'password-change.html',
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
-
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
