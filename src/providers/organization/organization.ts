@@ -12,7 +12,11 @@ import { URL } from '../../assets/provider-config'
 @Injectable()
 export class OrganizationProvider {
   baseUrl: string = URL;
+<<<<<<< HEAD
   path: string = "/Organizations"
+=======
+  path: string = "/Organization"
+>>>>>>> develop
   
   constructor(public http: Http) {
     console.log('Hello OrganizationProvider Provider');
