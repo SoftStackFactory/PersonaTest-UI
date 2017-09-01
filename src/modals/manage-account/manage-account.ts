@@ -10,8 +10,6 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
-
-  user: any = {}
   alertTitle: string
   alertSubtitle: string
   
@@ -78,9 +76,12 @@ export class ManageAccountModal {
           return this.showAlert();
         }    
       });
-  }
+    }
+  
   setLanguage(lng){
     this.translate.use(lng);
   }
+
+
 
 }

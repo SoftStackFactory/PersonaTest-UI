@@ -23,10 +23,8 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-import {TranslateService} from '@ngx-translate/core'
-
-//menu elements
 import { AppUserProvider } from '../providers/app-user/app-user';
+import {TranslateService} from '@ngx-translate/core'
 
 
 
@@ -52,7 +50,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-       this.rootPage = LandingPage; 
+         this.rootPage = LandingPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -66,7 +64,7 @@ export class MyApp {
 
   
   closeMenu(){
-    
+    this.menuCtrl.close();
   };
   
   goHome(){

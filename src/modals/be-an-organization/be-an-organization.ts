@@ -51,7 +51,7 @@ export class BeAnOrganizationModal {
           this.orgRequestForm.value.name,
           this.orgRequestForm.value.website)
           */
-      this.org.becomeOrg()
+      this.org.becomeOrg(window.localStorage.getItem('token'))
         .map(res => res.json())
         .subscribe(res => {
           this.alertTitle = "Organization Request sent",
