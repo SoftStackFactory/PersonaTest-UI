@@ -33,6 +33,7 @@ page-lobby {
         width:  100%;
     }
     
+    
     .orgbuttons{
         display: flex;
         flex-direction: column;
@@ -42,7 +43,8 @@ page-lobby {
     }
     
     .fixed-card{
-        height: 400px;
+        height: auto;
+        max-height: 400px;
     }
     
     #searchbar{

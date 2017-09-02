@@ -28,6 +28,10 @@ export class LobbyPage {
   hasHistory: boolean;
   orgSelected: string;
   ID: any;
+  testSelected: string;
+  hasHistory: boolean;
+  orgSelected: string;
+
   
   constructor(
     public navCtrl: NavController, 
@@ -35,15 +39,16 @@ export class LobbyPage {
     public modalCtrl: ModalController, 
     public menuCtrl: MenuController,
     public resultsProvider: ResultsProvider,
-    public  viewCtrl: ViewController
+    public viewCtrl: ViewController
   ) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
+      this.ID = window.localStorage.getItem('userId');
       this.testSelected = null;
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
-      this.ID = window.localStorage.getItem('userId')
+
     }
 
   ionViewDidLoad() {
