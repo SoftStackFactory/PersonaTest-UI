@@ -43,9 +43,11 @@
     <div *ngSwitchCase="'organization'" id="organizationsegment">
           <ion-card class="fixed-card" *ngIf="!orgSelected">
             <ion-card-header>Find an Organization</ion-card-header>
+            <ion-card-content>
               <org-search id="searchbar" [(orgSelected)]="orgSelected"></org-search>
+            </ion-card-content>
           </ion-card>
-          <ion-card *ngIf="orgSelected">
+          <ion-card class="fixed-card" *ngIf="orgSelected">
             <ion-item>
               <ion-input [(ngModel)]="orgSelected" clearInput></ion-input>
             </ion-item>
@@ -54,7 +56,7 @@
             <ion-card-header>Find a Test</ion-card-header>
             <test-search id="searchbar" [(testSelected)]="testSelected"></test-search>
           </ion-card>
-          <ion-card *ngIf="testSelected">
+          <ion-card class="fixed-card" *ngIf="testSelected">
             <ion-item>
               <ion-input [(ngModel)]="testSelected" clearInput></ion-input>
             </ion-item>
