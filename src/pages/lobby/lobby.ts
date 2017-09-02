@@ -6,7 +6,7 @@ import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
 // Modals
-import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
+// import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 
@@ -24,8 +24,10 @@ export class LobbyPage {
   userName: string;
   user: string;
   TEST: any;
+  testSelected: string;
+  hasHistory: boolean;
+  orgSelected: string;
   ID: any;
-  
   
   constructor(
     public navCtrl: NavController, 
@@ -38,6 +40,9 @@ export class LobbyPage {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
+      this.testSelected = null;
+      this.orgSelected = null;
+      this.hasHistory = this.userHasHistory();
       this.ID = window.localStorage.getItem('userId')
     }
 
@@ -45,11 +50,18 @@ export class LobbyPage {
     console.log('ionViewDidLoad LobbyPage');
   }
 
+  userHasHistory() {
+    console.log('this should get the users history and return true or false');
+    return false;
+  }
+
   forWork() {
+    //this should take into accout which organization, and test has been selected
+    // this.navCtrl.push(QuestionPage, testSettings=>{orgSelected: SoftStackFactory, testSelected: Goldberg})
     this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
-    let forWorkModal = this.modalCtrl.create(ForWorkModal);
-    forWorkModal.present();
+    // let forWorkModal = this.modalCtrl.create(ForWorkModal);
+    // forWorkModal.present();
   }
   forPlay() {
     let testTaken = {
