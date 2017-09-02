@@ -19,7 +19,7 @@
 <ion-content padding>
   <div class="main-container">
     <div class="left-container">
-      <h4 text-center><span class="name">{{ userName }}</span></h4>
+      <h4 text-center><span class="name">{{ (user | async)?.firstName }}</span></h4>
       <h2 text-center class="test-name">{{ testName }}</h2>
       <p class="instruction">Indicate how much the statement applies to you using the sliding scale below.</p>
       <ion-card>

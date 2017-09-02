@@ -1,8 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 import { ResultsPage } from '../results/results';
 import { LobbyPage } from '../lobby/lobby';
 
@@ -13,7 +15,6 @@ import { LobbyPage } from '../lobby/lobby';
 export class QuestionPage {
   @ViewChild('slider') slider;
   testName: string = "";
-  userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
   questionText: string;
@@ -23,16 +24,18 @@ export class QuestionPage {
   answers = [];
   private questions: any;
   testTaken: any;
-  errorExists: boolean = false;
+  user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("id"), window.localStorage.getItem("token"));
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private questionsProvider: QuestionsProvider,
               private answersProvider: AnswersProvider,
-              private alertCtrl: AlertController
+              private alertCtrl: AlertController,
+              private appUserProvider: AppUserProvider
               ) {}
 
   ionViewDidLoad() {
+    console.log("User: ", this.user);
     this.testTaken = this.navParams.get("testTaken");
     this.testName = this.testTaken["name"];
     console.log('ionViewDidLoad QuestionPage', this.testTaken);

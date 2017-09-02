@@ -16,52 +16,52 @@ export class AppUserProvider {
   constructor(public http: Http) {
     console.log('Hello AppUser Provider');
   }
-  
+
   register(newUserData) {
     return this.http.post(
       this.baseUrl + this.path,
       newUserData
       );
   }
-  
+
   login(UserData) {
     return this.http.post(
       this.baseUrl + this.path + "/login",
       UserData
     );
   }
-  
+
   logout(token) {
     return this.http.post(
-      this.baseUrl + this.path + '/logout' + 
+      this.baseUrl + this.path + '/logout' +
       '?access_token=' + token,
       {}
       );
   }
-  
+
   delete(id, token) {
-    console.log('delete:' + this.baseUrl + this.path + '/' + id + 
+    console.log('delete:' + this.baseUrl + this.path + '/' + id +
       '?access_token=' + token);
     return this.http.delete(
-      this.baseUrl + this.path + '/' + id + 
+      this.baseUrl + this.path + '/' + id +
       '?access_token=' + token
     );
   }
-  
+
   resetPassword(email) {
     return this.http.post(
       this.baseUrl + this.path,
       email
     );
   }
-  
+
   checkPassword(id, token) {
     return this.http.get(
       this.baseUrl + this.path + '/' + id +
       '?access_token=' + token
     );
   }
-  
+
   changeData(id, token, data) {
     return this.http.patch(
       this.baseUrl + this.path + '/' + id +
@@ -69,7 +69,13 @@ export class AppUserProvider {
       data
     );
   }
-  
-  
+
+  getUser(id, token) {
+    return this.http.get(
+      this.baseUrl + this.path + '/' + id +
+      '?access_token' + token
+    ).map(res => res.json());
+  }
+
 
 }
