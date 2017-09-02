@@ -19,19 +19,16 @@ import { ResultsProvider } from '../../providers/results/results';
   templateUrl: 'lobby.html',
 })
 export class LobbyPage {
-  testType: string;
-  organizationName: string;
-  userName: string;
-  user: string;
   TEST: any;
+  testType: string;
   testSelected: string;
-  hasHistory: boolean;
+  organizationName: string;
   orgSelected: string;
   ID: any;
-  testSelected: string;
+  userName: string;
+  user: string;
   hasHistory: boolean;
-  orgSelected: string;
-
+  hasIncompleteTest: boolean;
   
   constructor(
     public navCtrl: NavController, 
@@ -44,11 +41,11 @@ export class LobbyPage {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
-      this.ID = window.localStorage.getItem('userId');
+      this.ID = window.localStorage.getItem('id');
       this.testSelected = null;
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
-
+      this.hasIncompleteTest = this.userHasIncompleteTest();
     }
 
   ionViewDidLoad() {
@@ -58,6 +55,11 @@ export class LobbyPage {
   userHasHistory() {
     console.log('this should get the users history and return true or false');
     return false;
+  }
+  
+  userHasIncompleteTest() {
+    console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
+    return true;
   }
 
   forWork() {
