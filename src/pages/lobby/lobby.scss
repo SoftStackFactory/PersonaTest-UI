@@ -33,6 +33,11 @@ page-lobby {
         width:  100%;
     }
     
+    ion-list{
+        overflow-y: scroll;
+        height: 200px;
+    }
+    
     .orgbuttons{
         display: flex;
         flex-direction: column;
@@ -42,7 +47,8 @@ page-lobby {
     }
     
     .fixed-card{
-        height: 30vh;
+        height: auto;
+        max-height: 200px;
     }
     
     #searchbar{
