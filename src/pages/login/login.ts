@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
-=======
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
->>>>>>> develop
 
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
@@ -26,7 +22,8 @@ export class LoginPage {
   
   loginForm: FormGroup;
   alertTitle: string;
-  alertSubtitle: string
+  alertSubtitle: string;
+  submitAttempt: boolean = false;
   
   constructor(
     public navCtrl: NavController, 
@@ -61,6 +58,8 @@ export class LoginPage {
   }
   
   submit(){
+    this.submitAttempt = true;
+    
     if(!this.loginForm.valid){
       this.alertTitle = "Incomplete Login";
       this.alertSubtitle = "Please enter your email and password.";
@@ -71,7 +70,8 @@ export class LoginPage {
     this.appUser.login(this.loginForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.token);
+        console.log("hit", res);
+        window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
