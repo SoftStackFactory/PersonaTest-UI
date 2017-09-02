@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, AlertController, AlertOptions } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
@@ -18,7 +18,7 @@ export class QuestionPage {
   questionNum: number = 0;
   questionText: string;
   totalQuestionNum: number;
-  // setting slider value to Neutral
+  // putting slider knob in the middle
   degreeNum: number = 49;
   answers = [];
   private questions: any;
@@ -80,8 +80,9 @@ export class QuestionPage {
       this.questionNum++;
       this.assignQuestion();
     }
-    // resetting slider value to Neutral
+
     this.slider.reset();
+    // Putting slider knob in the middle
     this.degreeNum = 49;
   }
   toLobbyPage() {
