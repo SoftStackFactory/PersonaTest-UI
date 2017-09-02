@@ -37,9 +37,14 @@ export class HistoryPage {
   //Variable to store copy of our original array, because we will need to filter
   filteredList: any = this.ourList;
   
+  //User id
+  myUserId: string = "";
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private testTakensProv: TestHistoryProvider) {
+    this.myUserId = window.localStorage.getItem('userId');
+    console.log("Our user id is " + this.myUserId);
   }
 
   ionViewDidLoad() {
