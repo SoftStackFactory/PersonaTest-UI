@@ -12,14 +12,26 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 })
 export class TestSearchComponent {
   searchQuery: string = '';
-  items: string[];
+  items:any;
 
   initializeItems() {
     this.items = [
-      "SoftStack Factory",
-      "SalCo",
-      "MindSpring",
-      "Learn Academy"];
+      {
+        pic:"../../assets/blue-puzzle.jpg",
+        title: "Goldberg",
+        sub: "Big Five Personality Traits",
+      },
+      {
+        pic:"../../assets/blue-puzzle2.jpg",
+        title: "Cattell",
+        sub: "16 Personality Factor Questionnaire",
+      },
+      {
+        pic:"../../assets/blue-puzzle.jpg",
+        title: "Levenson",
+        sub: "Locus of Control",
+      }
+    ]
   }
 
   getItems(ev: any) {

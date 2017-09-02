@@ -1,14 +1,24 @@
 <!-- Generated template for the OrgSearchComponent component -->
-<div id="search">
-<ion-content padding>
-  <ion-toolbar>
+<ion-toolbar>
     <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
   </ion-toolbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
-    </ion-item>
-  </ion-list>
-<!--big list of organizationNames-->
-</ion-content>
-</div>
+<ion-list class="testList">
+    <ion-content class="card-background-page" *ngFor="let item of items">
+      <ion-card>
+        <img src="{{ item.pic }}"/>
+        <div class="card-title">{{ item.title }}</div>
+        <div class="card-subtitle">{{ item.sub }}</div>
+      </ion-card>
+    </ion-content>
+</ion-list>
+<!--<ion-list>-->
+<!--    <ion-item *ngFor="let item of items">-->
+<!--      <ion-content class="card-background-page">-->
+<!--        <ion-card>-->
+<!--          <img src="{{ item.pic }}"/>-->
+<!--          <div class="card-title">{{item.title}}</div>-->
+<!--          <div class="card-subtitle">{{item.sub}}</div>-->
+<!--        </ion-card>-->
+<!--      </ion-content>-->
+<!--    </ion-item>-->
+<!--</ion-list>-->
