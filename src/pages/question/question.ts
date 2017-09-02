@@ -90,7 +90,7 @@ export class QuestionPage {
     this.navCtrl.setRoot(LobbyPage);
   }
   showAlert(errorMessage: string) {
-    let alert = this.alertCtrl.create(<AlertOptions>{
+    let alert = this.alertCtrl.create({
       subTitle: errorMessage,
       // if there is an error, user is moved back to the previous page
       buttons: [{ text: "Dismiss", handler: () =>  this.toPreviousPage() }]
