@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController, AlertOptions } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
@@ -12,7 +12,7 @@ import { LobbyPage } from '../lobby/lobby';
 })
 export class QuestionPage {
   @ViewChild('slider') slider;
-  testName: string = "Goldberg's 1992 Big 5";
+  testName: string = "";
   userName: string = "John Smith";
   question: string;
   questionNum: number = 0;
@@ -23,16 +23,18 @@ export class QuestionPage {
   answers = [];
   private questions: any;
   testTaken: any;
+  errorExists: boolean = false;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private questionsProvider: QuestionsProvider,
-              private answersProvider: AnswersProvider
-              ) {
-  }
+              private answersProvider: AnswersProvider,
+              private alertCtrl: AlertController
+              ) {}
 
   ionViewDidLoad() {
     this.testTaken = this.navParams.get("testTaken");
+    this.testName = this.testTaken["name"];
     console.log('ionViewDidLoad QuestionPage', this.testTaken);
     this.questionsProvider.getQuestions().subscribe(
       questions => {
@@ -41,7 +43,7 @@ export class QuestionPage {
         this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
-        alert("Something went wrong. For assistance, please contact SSF");
+        this.showAlert("There was a problem retrieving " + this.testName + ". Please try again later.");
         console.log(error);
       }
     )
@@ -65,6 +67,7 @@ export class QuestionPage {
       answer => {
         console.log(answer);
       }, error => {
+        this.showAlert("There was a problem saving your answers. Please try again later.");
         console.log(error);
       }
     )
@@ -85,8 +88,19 @@ export class QuestionPage {
     console.log('to lobby page');
     this.navCtrl.setRoot(LobbyPage);
   }
+  showAlert(errorMessage: string) {
+    let alert = this.alertCtrl.create(<AlertOptions>{
+      subTitle: errorMessage,
+      // if there is an error, user is moved back to the previous page
+      buttons: [{ text: "Dismiss", handler: () =>  this.toPreviousPage() }]
+    });
+    alert.present();
+  }
+  toPreviousPage() {
+    this.navCtrl.pop();
+  }
   // convert ion-range value to 1-5
-  convertScale(num: number) {
+  private convertScale(num: number) {
     switch(num) {
       case 0:
       return 1;
