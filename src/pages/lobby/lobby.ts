@@ -27,9 +27,6 @@ export class LobbyPage {
   userName: string;
   user: string;
   TEST: any;
-  testSelected: string;
-  proTestSelected: string;
-  
   
   constructor(
     public navCtrl: NavController, 
@@ -46,12 +43,6 @@ export class LobbyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
-  }
-  
-  //when test is selected
-  selectedItem(mouseClick, item){
-    return this.testSelected = item.title;
-    console.log('Test Selected', item.title);
   }
 
   forWork() {
@@ -74,7 +65,7 @@ export class LobbyPage {
       Conscientiousness: 0,
       'Emotional Stability': 0,
       Intellect: 0,
-      Name: 'Goldberg'
+      name: 'Goldberg'
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(

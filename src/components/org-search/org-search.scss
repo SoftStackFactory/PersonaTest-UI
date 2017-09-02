@@ -2,10 +2,18 @@ org-search {
 
     #toolbar{
         height: 100%;
-        width: 70%;
+        width: 100%;
         margin: auto;
     }
+    
     .searchbar-clear-icon {
         display: none !important;
+    }
+    
+    @media screen and (min-width: 768px) {
+        #toolbar{
+            width: 60%;
+            margin: 0 auto;
+        }
     }
 }

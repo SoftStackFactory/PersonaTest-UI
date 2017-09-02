@@ -14,6 +14,7 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 export class TestSearchComponent {
   searchQuery: string = '';
   items:any;
+  testSelected: string;
 
   //mock data for existing tests
   initializeItems() {
@@ -58,6 +59,11 @@ export class TestSearchComponent {
       })
     }
   }
-  
 
+  //when a test is selected
+  // selectedItem(mouseClick, item){
+  //   return this.testSelected = item.title;
+  //   console.log('Test Selected');
+  // }
+  
 }

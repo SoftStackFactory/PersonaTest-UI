@@ -1,17 +1,23 @@
 <!-- Generated template for the OrgSearchComponent component -->
 <ion-toolbar id="toolbar">
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+    <ion-searchbar 
+    (ionInput)="getItems($event)"
+    placeholder="Select a test"></ion-searchbar>      
   </ion-toolbar>
 
 <!--search through existing tests-->
+
 <ion-list class="testList">
-    <ion-content class="card-background-page" *ngFor="let item of items">
-      <!--if searchint pro tests-->
-      <!--(click)="selectProTest()"-->
-      <ion-card (click)="selectTest()">
-        <img src="{{ item.pic }}"/>
-        <div class="card-title">{{ item.title }}</div>
-        <div class="card-subtitle">{{ item.sub }}</div>
-      </ion-card>
-    </ion-content>
+  <ion-content class="card-background-page" *ngFor="let item of items" >
+    <!--if searchint pro tests-->
+    <!--(click)="selectProTest()"-->
+    <ion-card (click)="selectedItem($event, item)" >
+      <img src="{{ item.pic }}"/>
+      <div class="card-title">{{ item.title }}</div>
+      <div class="card-subtitle">{{ item.sub }}</div>
+    </ion-card>
+  </ion-content>
 </ion-list>
+
+
+
