@@ -1,14 +1,4 @@
 <!-- Generated template for the OrgSearchComponent component -->
-<div id="search">
-<ion-content padding>
-  <ion-toolbar>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
-  </ion-toolbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
-    </ion-item>
-  </ion-list>
-<!--big list of organizationNames-->
-</ion-content>
-</div>
+<ion-toolbar id="toolbar">
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+</ion-toolbar>

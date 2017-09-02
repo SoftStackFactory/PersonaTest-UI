@@ -7,23 +7,13 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
  * for more info on Angular Components.
  */
 @Component({
-  selector: 'org-search',
-  templateUrl: 'org-search.html'
+  selector: 'test-search',
+  templateUrl: 'test-search.html'
 })
-export class OrgSearchComponent {
+export class TestSearchComponent {
   searchQuery: string = '';
   items: string[];
 
-
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-      this.initializeItems();
-    }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OrgSearchComponent');
-  }
-  
   initializeItems() {
     this.items = [
       "SoftStack Factory",
@@ -31,7 +21,7 @@ export class OrgSearchComponent {
       "MindSpring",
       "Learn Academy"];
   }
-  
+
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -45,6 +35,17 @@ export class OrgSearchComponent {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.initializeItems();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TestSearchComponent');
+  }
+  
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

@@ -1,7 +1,11 @@
 org-search {
-    
-    #search{
-        height: 20vh;
-        width: 50 vh;
+
+    #toolbar{
+        height: 100%;
+        width: 70%;
+        margin: auto;
+    }
+    .searchbar-clear-icon {
+        display: none !important;
     }
 }
