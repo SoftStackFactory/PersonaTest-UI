@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
+
 /**
  * Generated class for the OrgSearchComponent component.
  *
@@ -14,6 +15,7 @@ export class TestSearchComponent {
   searchQuery: string = '';
   items:any;
 
+  //mock data for existing tests
   initializeItems() {
     this.items = [
       {
@@ -34,6 +36,14 @@ export class TestSearchComponent {
     ]
   }
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.initializeItems();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TestSearchComponent');
+  }
+  
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -48,16 +58,6 @@ export class TestSearchComponent {
       })
     }
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-    this.initializeItems();
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestSearchComponent');
-  }
   
-  dismiss() {
-    this.viewCtrl.dismiss();
-  }
 
 }

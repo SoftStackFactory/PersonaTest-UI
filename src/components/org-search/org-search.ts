@@ -14,7 +14,13 @@ export class OrgSearchComponent {
   searchQuery: string = '';
   items: string[];
 
-
+  initializeItems() {
+    this.items = [
+      "SoftStack Factory",
+      "SalCo",
+      "MindSpring",
+      "Learn Academy"];
+  }
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
       this.initializeItems();
@@ -22,14 +28,6 @@ export class OrgSearchComponent {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrgSearchComponent');
-  }
-  
-  initializeItems() {
-    this.items = [
-      "SoftStack Factory",
-      "SalCo",
-      "MindSpring",
-      "Learn Academy"];
   }
   
   getItems(ev: any) {

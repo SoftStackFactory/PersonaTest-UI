@@ -1,13 +1,22 @@
 test-search {
   
+    #toolbar{
+        height: 100%;
+        width: 50%;
+        margin: auto;
+    }
+    
     .testList{
-      height:50vh;
+      height: 70vh;
+      width: 50%;
+      margin: auto;
     }
     
     .card-background-page {
       ion-card {
         position: relative;
         text-align: center;
+        height:50%;
       }
     
       .card-title {
