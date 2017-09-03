@@ -35,8 +35,10 @@
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
            <div class="testbuttons">
-             <button ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+             <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
              <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
+             <!-- we'll need to get this next button going for the TRANSLATE feature -->
+             <button *ngIf="hasIncompleteTest" ion-button block (click)="resumeTest()" class="button">Resume Test</button>
           </div>
     </div>
         
