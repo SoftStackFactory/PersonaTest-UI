@@ -49,9 +49,9 @@ export class BeAnOrganizationModal {
       console.log('website', this.orgRequestForm.value.website);
       //this.org.becomeOrg(window.localStorage.getItem('token'))
       this.org.becomeOrg(window.localStorage.getItem('token'),
+          window.localStorage.getItem('userId'),
+          this.orgRequestForm.value.name,
           this.orgRequestForm.value.website)
-          //window.localStorage.getItem('userId'),
-          //this.orgRequestForm.value.name,
           
         .map(res => res.json())
         .subscribe(res => {
