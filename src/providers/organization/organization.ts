@@ -12,22 +12,19 @@ import { URL } from '../../assets/provider-config'
 @Injectable()
 export class OrganizationProvider {
   baseUrl: string = URL;
-<<<<<<< HEAD
   path: string = "/Organizations"
-=======
-  path: string = "/Organization"
->>>>>>> develop
   
   constructor(public http: Http) {
     console.log('Hello OrganizationProvider Provider');
   }
 
-  //becomeOrg( userId, name, website ) {
-  becomeOrg( token ) {
+  becomeOrg( token, website ) {
+  //becomeOrg( token, userId, name, website ) {
+  //becomeOrg( token ) {
     return this.http.post(
       this.baseUrl + this.path +'/request?access_token=' + token,
-      //{ userId, name, website }
-      {}
+      { website }
+      //{}
     );
   }
 
