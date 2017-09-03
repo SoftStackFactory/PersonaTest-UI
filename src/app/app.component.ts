@@ -18,12 +18,16 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
+<<<<<<< HEAD
 import {TranslateService} from '@ngx-translate/core'
 
+=======
+>>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
+import {TranslateService} from '@ngx-translate/core'
 
 
 
@@ -47,7 +51,11 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
+<<<<<<< HEAD
         this.rootPage =QuicklinksPage; 
+=======
+         this.rootPage = LandingPage; 
+>>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -56,10 +64,16 @@ export class MyApp {
         splashScreen.hide();
         this.translate.setDefaultLang('en');
     });
+<<<<<<< HEAD
   };
+=======
+
+  };
+
+>>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
   
   closeMenu(){
-    
+    this.menuCtrl.close();
   };
   
   manageAcc(){
@@ -68,11 +82,68 @@ export class MyApp {
     manageAccModal.present();
   };
   
+<<<<<<< HEAD
+=======
+  resetPassword(){
+    console.log("password reset requested");
+    let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
+    passwordResetModal.present();
+  };
+  
+  changePassword(){
+    console.log("password change requested");
+    let passwordChangeModal = this.modalCtrl.create(PasswordChangeModal);
+    passwordChangeModal.present();
+  };
+  
+
+>>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
     becomeOrgModal.present();
-  }
+  };
+  
+  deleteAcc(){
+    
+    //prompt user to confirm request to delete account
+    let confirmDelete = this.alertCtrl.create({
+      title: 'Confirm Account Cancel',
+      message: 'Are you sure you would like to cancel your account? Any test data will be lost.',
+      buttons: [
+        {
+          //when user does want to delete account
+          text: 'Yes, cancel my account',
+          handler:() => {
+            console.log("User has been deleted");
+            this.menuCtrl.close();
+            this.appUser.delete(window.localStorage.userId, window.localStorage.token)
+            window.localStorage.clear();
+            this.nav.setRoot(LandingPage);
+            
+            let toast = this.toastCtrl.create({
+              message: 'Your account has been deleted.  Please visit again for future testing needs.',
+              duration: 3000,
+              position: 'top'
+            });
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+            toast.present();
+          }
+        },
+        {
+          
+          //when user does not want to delete account
+          text: 'No, keep my account active',
+          handler: () => {
+            console.log("User cancelled delete");
+          }
+        }
+        ]
+    });
+    confirmDelete.present();
+  };
 
   
   logout(){

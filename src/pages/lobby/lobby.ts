@@ -6,26 +6,32 @@ import { HistoryPage } from '../history/history';
 import { QuestionPage } from '../question/question';
 
 // Modals
-import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
+// import { ForWorkModal } from '../../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../../modals/be-an-organization/be-an-organization';
 import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 
 // Providers
 import { ResultsProvider } from '../../providers/results/results';
-
+import { AnswersProvider } from '../../providers/answers/answers';
+import { TestHistoryProvider } from '../../providers/test-history/test-history';
 
 @Component({
   selector: 'page-lobby',
   templateUrl: 'lobby.html',
 })
 export class LobbyPage {
+  TEST: any;
   testType: string;
+  testSelected: string;
   organizationName: string;
+  orgSelected: string;
+  ID: any;
   userName: string;
   user: string;
-  TEST: any;
-  ID: any;
-  
+  hasHistory: boolean;
+  hasIncompleteTest: boolean;
+  recentTestId: any;
+  count: any;
   
   constructor(
     public navCtrl: NavController, 
@@ -33,24 +39,72 @@ export class LobbyPage {
     public modalCtrl: ModalController, 
     public menuCtrl: MenuController,
     public resultsProvider: ResultsProvider,
-    public  viewCtrl: ViewController
+    public answersProvider: AnswersProvider,
+    public viewCtrl: ViewController,
+    public testHistoryProvider: TestHistoryProvider
   ) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
-      this.ID = window.localStorage.getItem('userId')
+      this.ID = window.localStorage.getItem('id');
+      this.testSelected = null;
+      this.orgSelected = null;
+      this.hasHistory = this.userHasHistory();
+      this.hasIncompleteTest = this.userHasIncompleteTest();
     }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
+    
+  }
+
+  userHasHistory() {
+    console.log('this should get the users history and return true or false');
+    return false;
+  }
+  
+  userHasIncompleteTest() {
+    console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
+    this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
+    .subscribe(
+        testId => {
+          this.recentTestId = testId[0].id;
+          console.log("most recent test", this.recentTestId);
+        }, error => {
+          console.log(error);
+        },
+        () =>  {
+          console.log("done with first callback", this.recentTestId);
+          this.testHistoryProvider.getAnswerCountByTestTakenId(this.recentTestId)
+          .subscribe(
+              res => {
+                this.count = res.count;
+              }, error => {
+                console.log(error);
+              },
+              () => {
+                console.log("done with second callback", this.count);
+              }
+            )
+            console.log("last after");
+      }
+    )
+    return (this.count < 50) ? true : false;
   }
 
   forWork() {
+    //this should take into accout which organization, and test has been selected
+    // this.navCtrl.push(QuestionPage, testSettings=>{orgSelected: SoftStackFactory, testSelected: Goldberg})
     this.navCtrl.push(QuestionPage);
     console.log("Switch to Work View");
-    let forWorkModal = this.modalCtrl.create(ForWorkModal);
-    forWorkModal.present();
+    // let forWorkModal = this.modalCtrl.create(ForWorkModal);
+    // forWorkModal.present();
   }
+  
+  resumeTest() {
+    alert("This should put you back where you were in the test");
+  }
+  
   forPlay() {
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend

@@ -6,14 +6,13 @@
 <ion-header>
 
   <ion-navbar>
+
     <ion-buttons start>
       <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <!-- 
-    <ion-title>{{ HOME.TITLE | translate }}<ion-title>
-    -->
+    
     <ion-title text-center>PersonaTest</ion-title>
     
   </ion-navbar>
@@ -36,18 +35,40 @@
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
            <div class="testbuttons">
-             <button ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+             <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
              <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
+             <!-- we'll need to get this next button going for the TRANSLATE feature -->
+             <button *ngIf="hasIncompleteTest" ion-button block (click)="resumeTest()" class="button">Resume Test</button>
           </div>
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
-          <ion-item>
-            <org-search id="searchbar"></org-search>
-          </ion-item>
-          <div class="testbuttons">
-            <button ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
-            <button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
+          <ion-card class="fixed-card" *ngIf="!orgSelected">
+            <ion-card-header>Find an Organization</ion-card-header>
+            <ion-card-content>
+              <org-search id="searchbar" [(orgSelected)]="orgSelected"></org-search>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="fixed-card" *ngIf="orgSelected">
+            <ion-item>
+              <ion-input [(ngModel)]="orgSelected" clearInput></ion-input>
+            </ion-item>
+          </ion-card>
+          <ion-card *ngIf="orgSelected && !testSelected" class="fixed-card">
+            <ion-card-header>Find a Test</ion-card-header>
+            <test-search id="searchbar" [(testSelected)]="testSelected"></test-search>
+          </ion-card>
+          <ion-card class="fixed-card" *ngIf="testSelected">
+            <ion-item>
+              <ion-input [(ngModel)]="testSelected" clearInput></ion-input>
+            </ion-item>
+          </ion-card>
+          <div class="orgbuttons">
+            <!-- kluge switching forWork() to forPlay() for testTaken backend creation 
+            <button [disabled]="!testSelected" ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+            -->
+            <button [disabled]="!testSelected" ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+            <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
           </div>
     </div>
     
