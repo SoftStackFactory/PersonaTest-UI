@@ -36,4 +36,21 @@ export class TestHistoryProvider {
     ).map(res => res.json());
   }
 
+  getMostRecentTestTakenIdByUserId(userId) {
+    return this.http.get(
+      this.baseUrl + this.path + 
+      `?filter={"where":{"userId": "${ userId }"}, "order":"date DESC","limit":1,"fields":"id"}`
+      // `&filter={"order":"date DESC"}` +
+      // `&filter={"limit":1}` +
+      // `&filter={"fields":{"id":true}}`
+    ).map(res => res.json());
+  }
+  
+  getAnswerCountByTestTakenId(testTakenId) {
+    return this.http.get(
+      this.baseUrl + this.path + "/" +
+      testTakenId + `/Answer/count` 
+    ).map(res => res.json());
+  }
+
 }

@@ -12,7 +12,8 @@ import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 
 // Providers
 import { ResultsProvider } from '../../providers/results/results';
-
+import { AnswersProvider } from '../../providers/answers/answers';
+import { TestHistoryProvider } from '../../providers/test-history/test-history';
 
 @Component({
   selector: 'page-lobby',
@@ -29,6 +30,8 @@ export class LobbyPage {
   user: string;
   hasHistory: boolean;
   hasIncompleteTest: boolean;
+  recentTestId: any;
+  count: any;
   
   constructor(
     public navCtrl: NavController, 
@@ -36,7 +39,9 @@ export class LobbyPage {
     public modalCtrl: ModalController, 
     public menuCtrl: MenuController,
     public resultsProvider: ResultsProvider,
-    public viewCtrl: ViewController
+    public answersProvider: AnswersProvider,
+    public viewCtrl: ViewController,
+    public testHistoryProvider: TestHistoryProvider
   ) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
@@ -50,6 +55,7 @@ export class LobbyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
+    
   }
 
   userHasHistory() {
@@ -59,7 +65,31 @@ export class LobbyPage {
   
   userHasIncompleteTest() {
     console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
-    return true;
+    this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
+    .subscribe(
+        testId => {
+          this.recentTestId = testId[0].id;
+          console.log("most recent test", this.recentTestId);
+        }, error => {
+          console.log(error);
+        },
+        () =>  {
+          console.log("done with first callback", this.recentTestId);
+          this.testHistoryProvider.getAnswerCountByTestTakenId(this.recentTestId)
+          .subscribe(
+              res => {
+                this.count = res.count;
+              }, error => {
+                console.log(error);
+              },
+              () => {
+                console.log("done with second callback", this.count);
+              }
+            )
+            console.log("last after");
+      }
+    )
+    return (this.count < 50) ? true : false;
   }
 
   forWork() {
@@ -70,6 +100,11 @@ export class LobbyPage {
     // let forWorkModal = this.modalCtrl.create(ForWorkModal);
     // forWorkModal.present();
   }
+  
+  resumeTest() {
+    alert("This should put you back where you were in the test");
+  }
+  
   forPlay() {
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
