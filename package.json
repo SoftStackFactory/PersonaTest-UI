@@ -51,7 +51,7 @@
     "@ionic/cli-plugin-cordova": "1.5.0",
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
     "chart.js": "^2.6.0",
-    "ionic": "3.6.0",
+    "ionic": "3.9.2",
     "typescript": "2.3.4"
   },
   "description": "An Ionic project",
