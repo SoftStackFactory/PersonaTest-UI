@@ -9,8 +9,6 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class PasswordChangeModal {
   private changeRequestForm : FormGroup;
-  passwordToCheck: any = {};
-  user: any = {};
   password: any = {};
   alertTitle: string;
   alertSubtitle: string;
@@ -100,7 +98,7 @@ export class PasswordChangeModal {
     delete this.changeRequestForm.value.confirmPassword;
     console.log("New Password to Send", this.changeRequestForm.value);
     //this.password = { "password" : this.user.password };    
-    this.appUser.changeData(window.localStorage.getItem('id'),
+    this.appUser.changeData(window.localStorage.getItem('userId'),
       window.localStorage.getItem('token'), 
         this.changeRequestForm.value)
       .map(res => res.json())

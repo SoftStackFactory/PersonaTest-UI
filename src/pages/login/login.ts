@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
-
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
 

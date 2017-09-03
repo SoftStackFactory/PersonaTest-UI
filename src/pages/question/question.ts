@@ -48,7 +48,7 @@ export class QuestionPage {
   }
 
   toNextQuestion() {
-    console.log("Question", this.testTaken);
+    console.log("Question - this.testTaken is: ", this.testTaken);
     let answer = {
       questionId: this.question["id"],
       testTakenId: this.testTaken["id"],
