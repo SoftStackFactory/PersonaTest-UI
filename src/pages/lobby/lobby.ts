@@ -89,6 +89,7 @@ export class LobbyPage {
             console.log("last after");
       }
     )
+    console.log("calculating whether or not they have another test ", this.count);
     return (this.count < 50) ? true : false;
   }
 
