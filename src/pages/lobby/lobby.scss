@@ -4,6 +4,7 @@ page-lobby {
     *{
          box-sizing: border-box;
     }
+    
     #main-container{
         width: 90vw;
         //margin: 10% auto;
@@ -13,15 +14,17 @@ page-lobby {
         align-items: center;
         justify-content: center;
     }
+    
     #personalsegment{
         width: 100%;
         height: 100%;
         margin: auto;
-        
     }
+    
     #organizationsegment{
         width: 100%;
     }
+    
     .testbuttons{
         display: flex;
         flex-direction: column;
@@ -29,6 +32,7 @@ page-lobby {
         justify-content: center;
         width:  100%;
     }
+    
     .orgbuttons{
         display: flex;
         flex-direction: column;

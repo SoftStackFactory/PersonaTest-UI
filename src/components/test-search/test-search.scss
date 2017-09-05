@@ -31,13 +31,15 @@ test-search {
     }
     
     .testList{
-      height: 70vh;
+      height: 50vh;
       width: 100%;
       margin: auto;
     }
     
     .card-background-page {
-      ion-card {
+    background: white;
+    
+    ion-card {
         position: relative;
         text-align: center;
         height: 50%;
@@ -68,5 +70,10 @@ test-search {
             width: 60%;
             margin: 0 auto;
         }
+        .card-background-page{
+            max-width: 60%;
+            margin: 0 auto;
+        }
     }
+
 }
