@@ -10,7 +10,6 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
-  user: any = {}
   alertTitle: string
   alertSubtitle: string
   
@@ -49,7 +48,7 @@ export class ManageAccountModal {
   }
   
   accountChange(form) {
-    console.log(this.accountChangeForm.value)
+    console.log("New Account Data", this.accountChangeForm.value)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
       this.alertSubtitle = "Please fill in all required fields.";
@@ -57,8 +56,7 @@ export class ManageAccountModal {
     }
     
     //successfull registration
-    console.log(this.user);
-    this.appUser.changeAccount(window.localStorage.getItem('id'), 
+    this.appUser.changeData(window.localStorage.getItem('userId'), 
         window.localStorage.getItem('token'), 
         this.accountChangeForm.value)
       .map(res => res.json())
@@ -71,21 +69,19 @@ export class ManageAccountModal {
           this.alertTitle = "404";
           this.alertSubtitle = "Not Found.";
           return this.showAlert();
-          
-        } else if (error.status === 422) {
-          this.alertTitle = "422";
-          this.alertSubtitle = "Invalid email address or email is already taken";
-          return this.showAlert();
-          
+
         } else if (error.status === 500) {
           this.alertTitle = "500";
           this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
           return this.showAlert();
         }    
       });
+    }
+  
+  setLanguage(lng){
+    this.translate.use(lng);
   }
-setLanguage(lng){
-  this.translate.use(lng);
-}
+
+
 
 }

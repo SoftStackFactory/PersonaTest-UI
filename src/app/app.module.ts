@@ -30,6 +30,7 @@ import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
+import { OrganizationProvider } from '../providers/organization/organization'
 
 //Pipes
 import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
@@ -57,10 +58,12 @@ import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { EulaModal } from '../modals/eula/eula';
+import { TestSearchComponent } from '../components/test-search/test-search';
 
 export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
 }
+
 
 let injections: any[] = [
     MyApp,
@@ -104,7 +107,8 @@ let injections: any[] = [
   declarations: [
     injections, 
     FilterTestsByTimePipe,
-    SearchTermPipe 
+    SearchTermPipe,
+    TestSearchComponent 
   ],
   imports: [
     BrowserModule,
@@ -129,7 +133,8 @@ let injections: any[] = [
     TestHistoryProvider,
     AppUserProvider,
     AnswersProvider,
-    ResultsProvider
+    ResultsProvider,
+    OrganizationProvider
   ]
 })
 export class AppModule {}

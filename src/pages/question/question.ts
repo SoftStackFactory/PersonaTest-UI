@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
@@ -11,6 +11,7 @@ import { LobbyPage } from '../lobby/lobby';
   templateUrl: 'question.html',
 })
 export class QuestionPage {
+  @ViewChild('slider') slider;
   testName: string = "Goldberg's 1992 Big 5";
   userName: string = "John Smith";
   question: string;
@@ -18,7 +19,7 @@ export class QuestionPage {
   questionText: string;
   totalQuestionNum: number;
   // setting slider value to Neutral
-  degreeNum: number = 50;
+  degreeNum: number = 49;
   answers = [];
   private questions: any;
   testTaken: any;
@@ -47,7 +48,7 @@ export class QuestionPage {
   }
 
   toNextQuestion() {
-    console.log("Question", this.testTaken);
+    console.log("Question - this.testTaken is: ", this.testTaken);
     let answer = {
       questionId: this.question["id"],
       testTakenId: this.testTaken["id"],
@@ -70,14 +71,15 @@ export class QuestionPage {
     console.log(this.answers)
     if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
 
-      this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken});
+      this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken, answers: this.answers});
       console.log("lastQ", this.testTaken);
     } else {
       this.questionNum++;
       this.assignQuestion();
     }
     // resetting slider value to Neutral
-    this.degreeNum = 50;
+    this.slider.reset();
+    this.degreeNum = 49;
   }
   toLobbyPage() {
     console.log('to lobby page');

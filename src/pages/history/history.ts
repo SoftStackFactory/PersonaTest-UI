@@ -43,13 +43,13 @@ export class HistoryPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private testTakensProv: TestHistoryProvider) {
-    this.myUserId = window.localStorage.getItem('userId');
+    this.myUserId = window.localStorage.getItem('id');
     console.log("Our user id is " + this.myUserId);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
-    this.testTakensProv.getAllTestsTaken().subscribe(
+    this.testTakensProv.getUserTestTaken(this.myUserId).subscribe(
       res => {
         console.log(res);
         //Do not update page if there are no tests in test history
