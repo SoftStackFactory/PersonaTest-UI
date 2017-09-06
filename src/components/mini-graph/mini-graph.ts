@@ -17,7 +17,7 @@ export class MiniGraphComponent {
   @ViewChild('graphCanvas') graphCanvas;
   @Input() testResults: any; 
    
-  test: any = { Agreeableness: 55, Conscientiousness: 73, 'Emotional Stability': 35, Extraversion: 40, Intellect: 85  }; 
+  test: any = {}; 
   miniChart: any;
 
   constructor() {
@@ -28,53 +28,56 @@ export class MiniGraphComponent {
   ngOnInit(){
     this.test = this.testResults;
     this.miniChart = new Chart(this.graphCanvas.nativeElement, {
-      type: 'polarArea',
+      type: 'radar',
       data: {
-        labels: [
-            "Agreeableness",
-            "Conscientiousness",
-            "Emotional Stability",
-            "Extraversion",
-            "Intellect"
-          ],
-        datasets: [{
-          data: [
-            this.test.Agreeableness,
-            this.test.Conscientiousness,
-            this.test['Emotional Stability'],
-            this.test.Extraversion,
-            this.test.Intellect
-          ],
-          backgroundColor: ['rgba(139, 190, 178, 1)', //Teal (our light theme color)
-          'rgba(231, 101, 122, 1)', //Pink
-          'rgba(169, 174, 178, 1)', //Gray
-          'rgba(179, 236, 156, 1)', //Green
-          'rgba(245, 223, 132, 1)' //Yellow
-          ]
-     
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-             display: false
-          }],
-         xAxes: [{
-            display: false
-          }]
-        },
-        legend: {
-          display: false
-       },
-       tooltips: {
-          enabled: false
-       },
-       scale:  {
-            ticks: {
-                display: false
+          //required property of radar chart, but we will input empty strings since we do not wnat to display labels
+          labels: [
+              "",
+              "",
+              "",
+              "",
+              ""
+              ],
+          datasets: [
+            {
+              backgroundColor: 'rgba(0, 153, 153, 0.2)',
+              borderColor: 'rgba(0,132,132,0.8)',
+              pointBorderColor: "#fff",
+              pointBackgroundColor: 'rgba(0, 99, 132, 0.2)',
+              data: [
+                this.test["Agreeableness"], 
+                this.test["Conscientiousness"], 
+                this.test["Emotional Stability"], 
+                this.test["Extraversion"], 
+                this.test["Intellect"]
+                ]
             }
-        }
+          ]
+        },
+      options: {
+              responsive: true,
+              maintainAspectRatio: true,
+              scale: {
+                  ticks: {
+                      beginAtZero: true,
+                      max: 50,
+                      stepSize: 10,
+                      callback: function() {
+								        return '';
+                      }
+                  }
+              },
+              title: {
+                display: false
+              },
+            legend: {
+              display: false
+            }
       }
-    });
-  }
-}
+    });//closing of new Chart expression
+    
+    this.miniChart.options.legend.display = false;
+    
+  }//closes ngOnInit function
+
+}//close of MiniGraph Component class
