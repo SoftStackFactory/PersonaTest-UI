@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
+//Pages
+import { QuestionPage } from '../../pages/question/question';
+
+//Providers
+import { ResultsProvider } from '../../providers/results/results';
+
 /**
  * Generated class for the OrgSearchComponent component.
  *
@@ -15,6 +21,7 @@ export class TestSearchComponent {
   searchQuery: string = '';
   items:any;
   testSelected: string;
+  TEST: any;
 
   //mock data for existing tests
   initializeItems() {
@@ -37,7 +44,7 @@ export class TestSearchComponent {
     ]
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private alertCtrl: AlertController, public resultsProvider:ResultsProvider) {
     this.initializeItems();
   }
 
@@ -61,11 +68,7 @@ export class TestSearchComponent {
         text: 'Ok',
         handler: () => {
           console.log('Ok clicked');
-        
-          
-          
-          
-          
+          this.forPlay();
         }
       }
     ]
@@ -73,6 +76,35 @@ export class TestSearchComponent {
     alert.present();
   }
 
+  forPlay() {
+    let testTaken = {
+      // Hard coded ID, generated from the App user model in the backend
+      userId: "59a32e40a35bbc79d8931602",
+      // Hard coded ID, generated from the test model in the backend
+      // Eventually will reference each test's unique id
+      testId: "59a323f32eb4c1781fd6c1e3",
+      date: new Date(),
+      Extraversion: 0,
+      Agreeableness: 0,
+      Conscientiousness: 0,
+      'Emotional Stability': 0,
+      Intellect: 0,
+      name: 'Goldberg'
+    };
+    this.resultsProvider.initializeTest(testTaken)
+      .subscribe(
+        test => {
+          this.TEST = test
+          console.log("Initalized Test", this.TEST);
+          
+        }, error => {
+          console.log(error);
+        },
+       () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
+        
+      )
+  }
+            
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
