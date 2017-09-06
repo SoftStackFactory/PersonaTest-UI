@@ -1,6 +1,5 @@
 {
-  "name": "PersonaTest-UI",
-  "app_id": "37a8246e",
-  "type": "ionic-angular"
-
+ "name": "PersonaTest-UI",
+ "app_id": "37a8246e",
+ "type": "ionic-angular"
 }
