@@ -39,6 +39,7 @@ export class TestHistoryProvider {
   getUserTestTaken( userId: string ){
     return this.http.get(
       this.baseUrl + this.path + '?filter[where][userId]=' + userId  
+      + '&filter[order]=date%20DESC&filter'
     ).map( res=> res.json()); 
   }
 
