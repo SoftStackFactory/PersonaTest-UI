@@ -49,7 +49,26 @@ export class TestSearchComponent {
     let alert = this.alertCtrl.create({
       title: 'Ready?',
       subTitle: 'This test will take approximately 20 min.',
-      buttons: ['Dismiss']
+      buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Ok',
+        handler: () => {
+          console.log('Ok clicked');
+        
+          
+          
+          
+          
+        }
+      }
+    ]
     });
     alert.present();
   }
