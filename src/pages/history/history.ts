@@ -44,7 +44,7 @@ export class HistoryPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private testTakensProv: TestHistoryProvider) {
     this.myUserId = window.localStorage.getItem('id');
-    console.log("Our user id is " + this.myUsergitId);
+    console.log("Our user id is " + this.myUserId);
   }
 
   ionViewDidLoad() {
