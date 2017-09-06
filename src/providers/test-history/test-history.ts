@@ -36,10 +36,11 @@ export class TestHistoryProvider {
     ).map(res => res.json());
   }
   
-  getUserTestTaken( userId: string ){
+  getUserTestTaken( userId: string , accessToken: string ){
     return this.http.get(
       this.baseUrl + this.path + '?filter[where][userId]=' + userId  
-      + '&filter[order]=date%20DESC&filter'
+      + '&filter[order]=date%20DESC&filter' + 
+      '&access_token=' + accessToken
     ).map( res=> res.json()); 
   }
 
