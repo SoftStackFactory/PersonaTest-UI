@@ -11,7 +11,7 @@
   <ion-content color="grey" class="card-background-page" >
     <!--if searchint pro tests-->
     <!--(click)="selectProTest()"-->
-    <ion-card *ngFor="let item of items" (click)="selectedItem($event, item)" >
+    <ion-card *ngFor="let item of items" (click)="tesetAlert()" >
       <img src="{{ item.pic }}"/>
       <div class="card-title">{{ item.title }}</div>
       <div class="card-subtitle">{{ item.sub }}</div>

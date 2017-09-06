@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the OrgSearchComponent component.
@@ -37,7 +37,7 @@ export class TestSearchComponent {
     ]
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private alertCtrl: AlertController) {
     this.initializeItems();
   }
 
@@ -45,6 +45,15 @@ export class TestSearchComponent {
     console.log('ionViewDidLoad TestSearchComponent');
   }
   
+  testAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Ready?',
+      subTitle: 'This test will take approximately 20 min.',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
+
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
