@@ -25,7 +25,7 @@
       <ion-card>
         <div class="card-container">
           <ion-card-content text-center>
-            <p>{{questionText}}</p>
+            <p class="questionText">{{questionText}}</p>
           </ion-card-content>
         </div>
       </ion-card>
@@ -35,9 +35,7 @@
         <p>Strongly Disagree</p>
         <p>Strongly Agree</p>
       </div>
-      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum">
-
-
+      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
       </ion-range>
       <div class="labels">
         <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
@@ -47,7 +45,7 @@
         <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
       </div>
       <div text-center>
-        <button ion-button (click)="toNextQuestion()">
+        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
           Next Question
         </button>
       </div>

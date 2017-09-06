@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { URL } from '../../assets/provider-config'
+import { URL } from '../../assets/provider-config';
 
 /*
   Generated class for the AppUser provider.
@@ -55,20 +55,21 @@ export class AppUserProvider {
     );
   }
   
-  changePassword(id, token, password) {
-    return this.http.patch(
+  checkPassword(id, token) {
+    return this.http.get(
       this.baseUrl + this.path + '/' + id +
-      '?access_token=' + token,
-      password
+      '?access_token=' + token
     );
   }
   
-  changeAccount(id, token, userData) {
+  changeData(id, token, data) {
     return this.http.patch(
       this.baseUrl + this.path + '/' + id +
       '?access_token=' + token,
-      userData
+      data
     );
   }
   
+  
+
 }
