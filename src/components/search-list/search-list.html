@@ -41,7 +41,7 @@
         <h3> <strong>{{ obj.date |  date:'longDate' }} {{ obj.date | date:'shortTime' }}</strong> </h3>
       </div>
       <div class="small-chart half-container">
-        <mini-graph class="chart-align"></mini-graph>
+        <mini-graph class="chart-align" [testResults]="obj" ></mini-graph>
       </div>
     </ion-item>
   </ion-list>

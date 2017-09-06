@@ -58,7 +58,7 @@ export class HistoryPage {
       res => {
         console.log(res);
         //Do not update page if there are no tests in test history
-        if(!res){
+        if(!res || res.length == 0){
           return;
         }else{
           //Boolean empty history should be false so we can pass it to our search-list component 
