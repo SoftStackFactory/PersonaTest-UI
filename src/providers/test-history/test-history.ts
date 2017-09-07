@@ -60,5 +60,12 @@ export class TestHistoryProvider {
       testTakenId + `/Answer/count` 
     ).map(res => res.json());
   }
+  
+  hasTestHistory(userId) {
+    return this.http.get(
+      this.baseUrl + `/AppUsers/` +
+      userId + `/testTakens/count`
+      ).map(res => res.json());
+  }
 
 }
