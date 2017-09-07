@@ -18,12 +18,10 @@ export class OrganizationProvider {
     console.log('Hello OrganizationProvider Provider');
   }
 
-  //becomeOrg( userId, name, website ) {
-  becomeOrg( token ) {
+  becomeOrg( token, userId, name, website ) {
     return this.http.post(
       this.baseUrl + this.path +'/request?access_token=' + token,
-      //{ userId, name, website }
-      {}
+      { userId, name, website }
     );
   }
 

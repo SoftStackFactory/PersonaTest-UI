@@ -10,6 +10,7 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
+
   alertTitle: string
   alertSubtitle: string
   

@@ -39,19 +39,17 @@ export class BeAnOrganizationModal {
     let alert = this.alertCtrl.create({
       title: this.alertTitle,
       subTitle: this.alertSubtitle,
-      buttons: ["Dismiss"]
+      buttons: ["Ok"]
     });
     alert.present();
   }
   
   logForm() {
-      console.log(this.orgRequestForm.value)
-      /*
-      this.org.becomeOrg(window.localStorage.getItem('userId'),
+      console.log('form', this.orgRequestForm.value);
+      this.org.becomeOrg(window.localStorage.getItem('token'),
+          window.localStorage.getItem('userId'),
           this.orgRequestForm.value.name,
           this.orgRequestForm.value.website)
-          */
-      this.org.becomeOrg(window.localStorage.getItem('token'))
         .map(res => res.json())
         .subscribe(res => {
           this.alertTitle = "Organization Request sent",
