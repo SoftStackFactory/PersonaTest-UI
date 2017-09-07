@@ -51,6 +51,7 @@ export class LobbyPage {
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
       this.hasIncompleteTest = this.userHasIncompleteTest();
+      console.log(this.hasIncompleteTest);
     }
 
   ionViewDidLoad() {
@@ -65,6 +66,7 @@ export class LobbyPage {
   
   userHasIncompleteTest() {
     console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
+    let rValue = null;
     this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
     .subscribe(
         testId => {
@@ -79,19 +81,22 @@ export class LobbyPage {
           .subscribe(
               res => {
                 this.count = res.count;
+                console.log("first subscribe count= ", this.count);
               }, error => {
                 console.log(error);
               },
               () => {
+                
                 console.log("done with second callback", this.count);
+                console.log("calculating whether or not they have another test ", this.count);
+                rValue = (this.count < 50) ? true : false;
               }
             )
             console.log("last after");
       }
     )
     console.log("blah blah blah");
-    console.log("calculating whether or not they have another test ", this.count);
-    return (this.count < 50) ? true : false;
+    return rValue;
   }
 
   forWork() {
