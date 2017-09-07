@@ -18,7 +18,6 @@ export class HistoryPage {
   
   //Variables to store user's search input and the date they select
   searchInput: string = "";
-
   
   //Boolean that for organization view (default to false - aka user view)
   orgView: boolean = false; 
@@ -40,20 +39,26 @@ export class HistoryPage {
   //User id
   myUserId: string = "";
   
+  //access token 
+  accessToken: string = ""
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private testTakensProv: TestHistoryProvider) {
+                
+    //Get userId and access token from local storage            
     this.myUserId = window.localStorage.getItem('userId');
-    console.log("Our user id is " + this.myUserId);
+    this.accessToken = window.localStorage.getItem('token');
+    console.log("Our user id is " + this.myUserId + ", and access token is " + this.accessToken);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
-    this.testTakensProv.getAllTestsTaken().subscribe(
+    this.testTakensProv.getUserTestTaken(this.myUserId, this.accessToken).subscribe(
       res => {
         console.log(res);
         //Do not update page if there are no tests in test history
-        if(!res){
+        if(!res || res.length == 0){
           return;
         }else{
           //Boolean empty history should be false so we can pass it to our search-list component 
