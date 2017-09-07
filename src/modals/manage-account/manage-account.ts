@@ -24,10 +24,10 @@ export class ManageAccountModal {
       private appUser: AppUserProvider
      ) {
         this.accountChangeForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            age: [''],
-            gender: ['', Validators.required]
+          firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+          lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+          age: ['', AgeValidator.isValid],
+          gender: ['', Validators.required]
         });
   }
 
