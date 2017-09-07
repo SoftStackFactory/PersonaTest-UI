@@ -47,7 +47,7 @@ export class HistoryPage {
               private testTakensProv: TestHistoryProvider) {
                 
     //Get userId and access token from local storage            
-    this.myUserId = window.localStorage.getItem('id');
+    this.myUserId = window.localStorage.getItem('userId');
     this.accessToken = window.localStorage.getItem('token');
     console.log("Our user id is " + this.myUserId + ", and access token is " + this.accessToken);
   }
