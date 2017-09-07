@@ -87,8 +87,8 @@ export class RegistrationComponent {
       this.appUser.register(this.registerForm.value)
       .map(res => res.json())
       .subscribe(res => {
-        window.localStorage.setItem('token', res.id);
-        window.localStorage.setItem('userId', res.userId);
+        window.localStorage.setItem('token', res.token);
+        window.localStorage.setItem('userId', res.id);
         this.navCtrl.setRoot(LobbyPage);
     }, error => {
       //Server side errors
