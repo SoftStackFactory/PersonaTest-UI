@@ -39,7 +39,7 @@ export class BeAnOrganizationModal {
     let alert = this.alertCtrl.create({
       title: this.alertTitle,
       subTitle: this.alertSubtitle,
-      buttons: ["Dismiss"]
+      buttons: ["Ok"]
     });
     alert.present();
   }
