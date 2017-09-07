@@ -1,8 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
+import { AppUserProvider } from '../../providers/app-user/app-user';
 import { ResultsPage } from '../results/results';
 import { LobbyPage } from '../lobby/lobby';
 
@@ -12,27 +14,30 @@ import { LobbyPage } from '../lobby/lobby';
 })
 export class QuestionPage {
   @ViewChild('slider') slider;
-  testName: string = "Goldberg's 1992 Big 5";
-  userName: string = "John Smith";
+  testName: string = "";
   question: string;
   questionNum: number = 0;
   questionText: string;
   totalQuestionNum: number;
-  // setting slider value to Neutral
+  // putting slider knob in the middle
   degreeNum: number = 49;
   answers = [];
   private questions: any;
   testTaken: any;
+  user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("id"), window.localStorage.getItem("token"));
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private questionsProvider: QuestionsProvider,
-              private answersProvider: AnswersProvider
-              ) {
-  }
+              private answersProvider: AnswersProvider,
+              private alertCtrl: AlertController,
+              private appUserProvider: AppUserProvider
+              ) {}
 
   ionViewDidLoad() {
+    console.log("User: ", this.user);
     this.testTaken = this.navParams.get("testTaken");
+    this.testName = this.testTaken["name"];
     console.log('ionViewDidLoad QuestionPage', this.testTaken);
     this.questionsProvider.getQuestions().subscribe(
       questions => {
@@ -41,7 +46,7 @@ export class QuestionPage {
         this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
-        alert("Something went wrong. For assistance, please contact SSF");
+        this.showAlert("There was a problem retrieving " + this.testName + ". Please try again later.");
         console.log(error);
       }
     )
@@ -65,6 +70,7 @@ export class QuestionPage {
       answer => {
         console.log(answer);
       }, error => {
+        this.showAlert("There was a problem saving your answers. Please try again later.");
         console.log(error);
       }
     )
@@ -77,16 +83,46 @@ export class QuestionPage {
       this.questionNum++;
       this.assignQuestion();
     }
-    // resetting slider value to Neutral
+
     this.slider.reset();
+    // Putting slider knob in the middle
     this.degreeNum = 49;
   }
   toLobbyPage() {
     console.log('to lobby page');
     this.navCtrl.setRoot(LobbyPage);
   }
+  showAlert(errorMessage: string) {
+    let alert = this.alertCtrl.create({
+      subTitle: errorMessage,
+      // if there is an error, user is moved back to the previous page
+      buttons: [{ text: "Dismiss", handler: () =>  this.toPreviousPage() }]
+    });
+    alert.present();
+  }
+  toPreviousPage() {
+    this.navCtrl.pop();
+  }
+  saveAnswers() {
+    let alert = this.alertCtrl.create({
+      title: 'Save Answers',
+      message: 'Do you want to save answers and leave?',
+      buttons:[
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => console.log('cancel clicked')
+        },
+        {
+          text: 'Save',
+          handler: () => this.toLobbyPage()
+        }
+      ]
+    });
+    alert.present();
+  }
   // convert ion-range value to 1-5
-  convertScale(num: number) {
+  private convertScale(num: number) {
     switch(num) {
       case 0:
       return 1;
