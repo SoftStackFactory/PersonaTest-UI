@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 /**
  * Generated class for the OrgSearchComponent component.
@@ -11,16 +12,9 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
   templateUrl: 'org-search.html'
 })
 export class OrgSearchComponent {
-  searchQuery: string = '';
-  items: string[];
-
-  initializeItems() {
-    this.items = [
-      "SoftStack Factory",
-      "SalCo",
-      "MindSpring",
-      "Learn Academy"];
-  }
+  orgLists: string[];
+  orgName: string;
+  //searchTerm: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
       this.initializeItems();
@@ -30,19 +24,29 @@ export class OrgSearchComponent {
     console.log('ionViewDidLoad OrgSearchComponent');
   }
   
-  getItems(ev: any) {
+  initializeItems() {
+    this.orgLists = [
+      "SoftStack Factory",
+      "SalCo",
+      "MindSpring",
+      "Learn Academy"
+      ];
+  }
+  
+  filterOrgs(orgName){
     // Reset items back to all of the items
     this.initializeItems();
 
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
+    console.log("hi hello" + this.orgName);
+    
     // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+    if (orgName && orgName.trim() != '') {
+      this.orgLists= this.orgLists.filter((orgList) => {
+        return (orgList.toString().toLowerCase().indexOf(orgName.toLowerCase()) > -1);
       })
     }
+    
+    //this.searchTerm = val;
+    // console.log("hi hello" + this.searchTerm);
   }
-
 }

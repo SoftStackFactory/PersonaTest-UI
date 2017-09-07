@@ -1,5 +1,9 @@
 test-search {
-  
+    
+    .searchbar-clear-icon {
+    display: none !important;
+    }
+      
     div::-webkit-scrollbar {
       border:none;
       width:0;
@@ -43,7 +47,7 @@ test-search {
         position: relative;
         text-align: center;
         height: 50%;
-        with: 100%;
+        width: 100%;
       }
     
     .card-title {
@@ -62,12 +66,12 @@ test-search {
         width: 100%;
         color: #fff;
       }
-    
+        
     }
     
     @media screen and (min-width: 768px) {
         #toolbar{
-            width: 60%;
+            width: 40%;
             margin: 0 auto;
         }
         .card-background-page{
@@ -75,5 +79,10 @@ test-search {
             margin: 0 auto;
         }
     }
-
+    
+    @media screen and (orientation : landscape) {
+        .card-background-page ion-card{
+            height: 100%;
+        }
+    }
 }

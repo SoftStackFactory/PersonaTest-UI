@@ -39,7 +39,7 @@
             <test-search></test-search>
           </ion-item>
           <div class="testbuttons">
-             <button ion-button block *ngIf="testSelected" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+             <!--<button ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>-->
              <!--<button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
           </div>
     </div>
@@ -48,11 +48,11 @@
           <ion-item>
             <org-search></org-search>
           </ion-item>
-          <ion-item>
+          <ion-item *ngIf="orgName">
             <test-search></test-search>
           </ion-item>
           <div class="testbuttons">
-            <button ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+            <!--<button ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>-->
             <!--<button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
           </div>
     </div>

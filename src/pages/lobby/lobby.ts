@@ -51,52 +51,52 @@ export class LobbyPage {
     let forWorkModal = this.modalCtrl.create(ForWorkModal);
     forWorkModal.present();
   }
-  forPlay() {
+  // forPlay() {
 
-    let testTaken = {
-      // Hard coded ID, generated from the App user model in the backend
-      userId: "59a32e40a35bbc79d8931602",
-      // Hard coded ID, generated from the test model in the backend
-      // Eventually will reference each test's unique id
-      testId: "59a323f32eb4c1781fd6c1e3",
-      date: new Date(),
-      Extraversion: 0,
-      Agreeableness: 0,
-      Conscientiousness: 0,
-      'Emotional Stability': 0,
-      Intellect: 0,
-      name: 'Goldberg'
-    };
-    this.resultsProvider.initializeTest(testTaken)
-      .subscribe(
-        test => {
-          this.TEST = test
-          console.log("Initalized Test", this.TEST);
+  //   let testTaken = {
+  //     // Hard coded ID, generated from the App user model in the backend
+  //     userId: "59a32e40a35bbc79d8931602",
+  //     // Hard coded ID, generated from the test model in the backend
+  //     // Eventually will reference each test's unique id
+  //     testId: "59a323f32eb4c1781fd6c1e3",
+  //     date: new Date(),
+  //     Extraversion: 0,
+  //     Agreeableness: 0,
+  //     Conscientiousness: 0,
+  //     'Emotional Stability': 0,
+  //     Intellect: 0,
+  //     name: 'Goldberg'
+  //   };
+  //   this.resultsProvider.initializeTest(testTaken)
+  //     .subscribe(
+  //       test => {
+  //         this.TEST = test
+  //         console.log("Initalized Test", this.TEST);
           
-        }, error => {
-          console.log(error);
-        },
-       () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
+  //       }, error => {
+  //         console.log(error);
+  //       },
+  //     () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
         
-      )
-  }
-  showResults() {
-    this.navCtrl.push(HistoryPage);
-    console.log("go to results page for personal tests taken");
-  }
-  viewResults() {
-     this.navCtrl.push(HistoryPage);
-    console.log("go to results page for organization tests available to view");
-  }
-  manageAcc() {
-    console.log("go to account management page");
-    let manageAccModal = this.modalCtrl.create(ManageAccountModal);
-    manageAccModal.present();
-  }
-  becomeOrg() {
-    console.log("go to Organization request page");
-    let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
-    becomeOrgModal.present();
-  }
+  //     )
+  // }
+  // showResults() {
+  //   this.navCtrl.push(HistoryPage);
+  //   console.log("go to results page for personal tests taken");
+  // }
+  // viewResults() {
+  //   this.navCtrl.push(HistoryPage);
+  //   console.log("go to results page for organization tests available to view");
+  // }
+  // manageAcc() {
+  //   console.log("go to account management page");
+  //   let manageAccModal = this.modalCtrl.create(ManageAccountModal);
+  //   manageAccModal.present();
+  // }
+  // becomeOrg() {
+  //   console.log("go to Organization request page");
+  //   let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
+  //   becomeOrgModal.present();
+  // }
  
 }

@@ -18,14 +18,26 @@ import { ResultsProvider } from '../../providers/results/results';
   templateUrl: 'test-search.html'
 })
 export class TestSearchComponent {
-  searchQuery: string = '';
-  items:any;
-  testSelected: string;
+  //searchQuery: string = '';
+  testLists: any;
   TEST: any;
+  // Jenny's search 
+  //Boolean for displaying the search results dropdown
+  displayDropdown: boolean = false;
+  //Variable for user's input in search bar 
+  //searchInput: string = "";
 
-  //mock data for existing tests
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private alertCtrl: AlertController, public resultsProvider:ResultsProvider) {
+    this.initializeItems();
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TestSearchComponent');
+  }
+  
+  //mock data for existing tests, future use of test list provider
   initializeItems() {
-    this.items = [
+    this.testLists = [
       {
         pic:"../../assets/blue-puzzle.jpg",
         title: "Goldberg",
@@ -43,13 +55,22 @@ export class TestSearchComponent {
       }
     ]
   }
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private alertCtrl: AlertController, public resultsProvider:ResultsProvider) {
+  
+  filterTests(ev: any){
+    // Reset items back to all of the items
     this.initializeItems();
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestSearchComponent');
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+    
+    console.log("Search term is " + val);
+    
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.testLists= this.testLists.filter((testList) => {
+        return (testList.toString().toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
   
   testAlert() {
@@ -103,21 +124,6 @@ export class TestSearchComponent {
        () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
         
       )
-  }
-            
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
   }
 
   //when a test is selected
