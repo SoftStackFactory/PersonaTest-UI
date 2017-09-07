@@ -36,8 +36,9 @@ export class FilterTestsByTimePipe implements PipeTransform {
       //Filter out our tests array; only return tests that have been taken before
       //the cut off date (eg. within six months, or one year, or two years)
       testObjs = testObjs.filter( (v) =>  {
-          console.log("The test date is " + v.date + " and the cut off date is " + oldDate)
-          return v.date  > oldDate;
+          let newDate = new Date(v.date);
+          console.log("The test date is " + newDate + " and the cut off date is " + oldDate)
+          return newDate  > oldDate;
         }
       );
       

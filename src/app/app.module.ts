@@ -30,6 +30,7 @@ import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
+import { OrganizationProvider } from '../providers/organization/organization'
 
 //Pipes
 import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
@@ -45,7 +46,6 @@ import { MiniGraphComponent } from '../components/mini-graph/mini-graph';
 import { TestSelectionComponent } from '../components/test-selection/test-selection'
 import { IpiptestlistComponent } from '../components/ipiptestlist/ipiptestlist';
 import { LogoutComponent } from '../components/logout/logout';
-import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { HomeComponent } from '../components/home/home';
 import { OrgSearchComponent } from '../components/org-search/org-search';
 import { RememberMeComponent } from '../components/remember-me/remember-me';
@@ -53,12 +53,16 @@ import { RememberMeComponent } from '../components/remember-me/remember-me';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
+
+import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordResetModal } from '../modals/password-reset/password-reset';
+import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { EulaModal } from '../modals/eula/eula';
+import { TestSearchComponent } from '../components/test-search/test-search';
 
 export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
 }
-
 
 
 let injections: any[] = [
@@ -92,6 +96,8 @@ let injections: any[] = [
     LobbyOrganizationPage,
     LogoutComponent,
     ManageAccountModal,
+    PasswordResetModal,
+    PasswordChangeModal,
     HomeComponent,
     OrgSearchComponent,
     RememberMeComponent
@@ -101,7 +107,8 @@ let injections: any[] = [
   declarations: [
     injections, 
     FilterTestsByTimePipe,
-    SearchTermPipe 
+    SearchTermPipe,
+    TestSearchComponent 
   ],
   imports: [
     BrowserModule,
@@ -126,7 +133,8 @@ let injections: any[] = [
     TestHistoryProvider,
     AppUserProvider,
     AnswersProvider,
-    ResultsProvider
+    ResultsProvider,
+    OrganizationProvider
   ]
 })
 export class AppModule {}

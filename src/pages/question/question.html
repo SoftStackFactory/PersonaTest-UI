@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <ion-buttons start>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="saveAnswers()">
         <ion-icon name="archive"></ion-icon>
       </button>
     </ion-buttons>
@@ -19,13 +19,13 @@
 <ion-content padding>
   <div class="main-container">
     <div class="left-container">
-      <h4 text-center><span class="name">{{ userName }}</span></h4>
+      <h4 text-center><span class="name">{{ (user | async)?.firstName }}</span></h4>
       <h2 text-center class="test-name">{{ testName }}</h2>
       <p class="instruction">Indicate how much the statement applies to you using the sliding scale below.</p>
       <ion-card>
         <div class="card-container">
           <ion-card-content text-center>
-            <p>{{questionText}}</p>
+            <p class="questionText">{{questionText}}</p>
           </ion-card-content>
         </div>
       </ion-card>
@@ -35,9 +35,7 @@
         <p>Strongly Disagree</p>
         <p>Strongly Agree</p>
       </div>
-      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum">
-
-
+      <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
       </ion-range>
       <div class="labels">
         <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
@@ -47,7 +45,7 @@
         <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
       </div>
       <div text-center>
-        <button ion-button (click)="toNextQuestion()">
+        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
           Next Question
         </button>
       </div>

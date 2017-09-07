@@ -7,23 +7,23 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
  * for more info on Angular Components.
  */
 @Component({
-  selector: 'org-search',
-  templateUrl: 'org-search.html'
+  selector: 'test-search',
+  templateUrl: 'test-search.html'
 })
-export class OrgSearchComponent {
-  @Input() orgSelected: String;
-  @Output() orgSelectedChange = new EventEmitter();
+export class TestSearchComponent {
+  @Input() testSelected: String;
+  @Output() testSelectedChange = new EventEmitter();
   
   searchQuery: string = '';
   items: string[];
-
+  
   initializeItems() {
     //this should actually get a list of organizations from the back end
     this.items = [
-      "SoftStack Factory",
-      "SalCo",
-      "MindSpring",
-      "Learn Academy"];
+      "Goldberg's Big 5 Factors",
+      "test",
+      "test",
+      "test"];
   }
 
   getItems(ev: any) {
@@ -48,8 +48,8 @@ export class OrgSearchComponent {
     console.log('ionViewDidLoad OrgSearchComponent');
   }
   
-  selectOrg(organization){
-    this.orgSelectedChange.emit(organization);  
+  selectedTest(test) {
+    this.testSelectedChange.emit(test);
   }
   
   dismiss() {

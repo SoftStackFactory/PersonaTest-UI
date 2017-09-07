@@ -1,9 +1,6 @@
 {
-  "name": "myBlank",
-  "app_id": "",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
-
+ "name": "PersonaTest-UI",
+  "app_id": "37a8246e",
+  "type": "ionic-angular"
+ 
 }

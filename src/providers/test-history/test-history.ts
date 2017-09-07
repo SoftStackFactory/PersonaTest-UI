@@ -27,12 +27,37 @@ export class TestHistoryProvider {
       this.baseUrl + this.path,
       newTestData
     );
+  
   }
   
-  getAllTestsTaken( token ) {
+  getAllTestsTaken( ) {
     return this.http.get(
-      this.baseUrl + this.path + "/" + token
-    );
+      this.baseUrl + this.path 
+    ).map(res => res.json());
+  }
+
+  getMostRecentTestTakenIdByUserId(userId) {
+    return this.http.get(
+      this.baseUrl + this.path + 
+      `?filter={"where":{"userId": "${ userId }"}, "order":"date DESC","limit":1,"fields":"id"}`
+      // `&filter={"order":"date DESC"}` +
+      // `&filter={"limit":1}` +
+      // `&filter={"fields":{"id":true}}`
+    ).map(res => res.json());
+  }
+  
+  getAnswerCountByTestTakenId(testTakenId) {
+    return this.http.get(
+      this.baseUrl + this.path + "/" +
+      testTakenId + `/Answer/count` 
+    ).map(res => res.json());
+  }
+  
+  hasTestHistory(userId) {
+    return this.http.get(
+      this.baseUrl + `/AppUsers/` +
+      userId + `/testTakens/count`
+      ).map(res => res.json());
   }
 
 }
