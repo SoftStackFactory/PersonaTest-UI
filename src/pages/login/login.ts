@@ -71,7 +71,7 @@ export class LoginPage {
       .subscribe(res => {
         console.log(res);
         window.localStorage.setItem('token', res.id);
-        window.localStorage.setItem('id', res.userId)
+        window.localStorage.setItem('userId', res.userId)
         this.navCtrl.setRoot(LobbyPage);
         
       }, error => {
