@@ -68,7 +68,7 @@ export class LobbyPage {
     this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
     .subscribe(
         testId => {
-          this.recentTestId = testId[0].id;
+          this.recentTestId = testId[0].userId;
           console.log("most recent test", this.recentTestId);
         }, error => {
           console.log(error);
