@@ -103,6 +103,24 @@ export class QuestionPage {
   toPreviousPage() {
     this.navCtrl.pop();
   }
+  saveAnswers() {
+    let alert = this.alertCtrl.create({
+      title: 'Save Answers',
+      message: 'Do you want to save answers and leave?',
+      buttons:[
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => console.log('cancel clicked')
+        },
+        {
+          text: 'Save',
+          handler: () => this.toLobbyPage()
+        }
+      ]
+    });
+    alert.present();
+  }
   // convert ion-range value to 1-5
   private convertScale(num: number) {
     switch(num) {
