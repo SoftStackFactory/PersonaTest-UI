@@ -30,10 +30,18 @@ export class TestHistoryProvider {
   
   }
   
-  getAllTestsTaken( ) {
+  getAllTestTaken() {
     return this.http.get(
       this.baseUrl + this.path 
     ).map(res => res.json());
+  }
+  
+  getUserTestTaken( userId: string , accessToken: string ){
+    return this.http.get(
+      this.baseUrl + this.path + '?filter[where][userId]=' + userId  
+      + '&filter[order]=date%20DESC&filter' + 
+      '&access_token=' + accessToken
+    ).map( res=> res.json()); 
   }
 
   getMostRecentTestTakenIdByUserId(userId) {

@@ -17,16 +17,16 @@ export class MiniGraphComponent {
   @ViewChild('graphCanvas') graphCanvas;
   @Input() testResults: any; 
    
-  test: any = { Agreeableness: 55, Conscientiousness: 73, ES: 35, Extraversion: 40, Intellect: 85  }; 
+  test: any = { Agreeableness: 55, Conscientiousness: 73, 'Emotional Stability': 35, Extraversion: 40, Intellect: 85  }; 
   miniChart: any;
 
   constructor() {
     console.log('Hello MiniGraphComponent Component');
-  
   }
 
   //Since a component doesn't have a view, we use angular's ngOnInit method 
   ngOnInit(){
+    this.test = this.testResults;
     this.miniChart = new Chart(this.graphCanvas.nativeElement, {
       type: 'polarArea',
       data: {
@@ -41,7 +41,7 @@ export class MiniGraphComponent {
           data: [
             this.test.Agreeableness,
             this.test.Conscientiousness,
-            this.test.ES,
+            this.test['Emotional Stability'],
             this.test.Extraversion,
             this.test.Intellect
           ],
