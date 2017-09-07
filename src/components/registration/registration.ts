@@ -87,6 +87,7 @@ export class RegistrationComponent {
       this.appUser.register(this.registerForm.value)
       .map(res => res.json())
       .subscribe(res => {
+        console.log("result from appUser.register ", res);
         window.localStorage.setItem('token', res.token);
         window.localStorage.setItem('userId', res.id);
         this.navCtrl.setRoot(LobbyPage);
