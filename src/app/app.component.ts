@@ -18,11 +18,7 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
-<<<<<<< HEAD
-import {TranslateService} from '@ngx-translate/core'
 
-=======
->>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
@@ -51,11 +47,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-<<<<<<< HEAD
-        this.rootPage =QuicklinksPage; 
-=======
          this.rootPage = LandingPage; 
->>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.
@@ -64,13 +56,9 @@ export class MyApp {
         splashScreen.hide();
         this.translate.setDefaultLang('en');
     });
-<<<<<<< HEAD
-  };
-=======
 
   };
 
->>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
   
   closeMenu(){
     this.menuCtrl.close();
@@ -82,8 +70,6 @@ export class MyApp {
     manageAccModal.present();
   };
   
-<<<<<<< HEAD
-=======
   resetPassword(){
     console.log("password reset requested");
     let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
@@ -97,7 +83,6 @@ export class MyApp {
   };
   
 
->>>>>>> 4c420a8fb5d824f8fcb91d5694e63fe5c7885ea4
   becomeOrg(){
     console.log("go to Organization request page");
     let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
