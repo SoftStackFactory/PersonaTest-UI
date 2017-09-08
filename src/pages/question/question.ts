@@ -147,7 +147,7 @@ export class QuestionPage {
   private saveAnswerToBackend(answer) {
     this.answersProvider.saveAnswer(answer).subscribe(
       answer => {
-        console.log("answer saved in backend!", answer);
+        console.log("answer saved", answer);
       }, error => {
         this.showAlert("There was a problem saving your answers. Please try again later.");
       }

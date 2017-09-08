@@ -10,7 +10,7 @@ export class ProgressBarComponent {
   displayProgress(totalNum: number, currentNum: number) {
     let styles = {
       'background-color': '#18314f',
-      'width': `${currentNum}vw`,
+      'width': `${currentNum/(totalNum/50)}vw`,
       'height': '33px',
       'border-radius': '2px',
       'opacity': '0.3'
