@@ -17,6 +17,7 @@ import { OrganizationManagePage } from '../pages/organization-manage/organizatio
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
+import { CreateTestPage } from '../pages/create-test/create-test';
 
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
@@ -50,7 +51,7 @@ export class MyApp {
     platform.ready().then(() => {
       let storage = window.localStorage.getItem('remembered'); 
       if(storage === null){ 
-         this.rootPage = LandingPage; 
+         this.rootPage = CreateTestPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.

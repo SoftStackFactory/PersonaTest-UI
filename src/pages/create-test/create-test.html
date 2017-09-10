@@ -1,0 +1,31 @@
+<!--
+  Generated template for the CreateTestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PersonaTest</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-list>
+    <div *ngFor="let item of items">
+      <ion-checkbox></ion-checkbox>
+    <button detail-none (click)="expandItem(item)" ion-item>
+      <h2>TITLE</h2>
+      <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+        DESCRIPTION
+      </expandable>
+      <button ion-button clear item-end>View</button>
+    </button>
+    </div>
+  </ion-list>
+  
+</ion-content>

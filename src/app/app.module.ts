@@ -23,6 +23,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
+import { CreateTestPage } from '../pages/create-test/create-test';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -59,6 +60,7 @@ import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { EulaModal } from '../modals/eula/eula';
 import { TestSearchComponent } from '../components/test-search/test-search';
+import { ExpandableComponent } from '../components/expandable/expandable';
 
 export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
@@ -100,7 +102,8 @@ let injections: any[] = [
     PasswordChangeModal,
     HomeComponent,
     OrgSearchComponent,
-    RememberMeComponent
+    RememberMeComponent,
+    CreateTestPage
     ]
 
 @NgModule({
@@ -108,7 +111,8 @@ let injections: any[] = [
     injections, 
     FilterTestsByTimePipe,
     SearchTermPipe,
-    TestSearchComponent 
+    TestSearchComponent,
+    ExpandableComponent 
   ],
   imports: [
     BrowserModule,
