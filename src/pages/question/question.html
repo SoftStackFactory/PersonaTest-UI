@@ -44,8 +44,9 @@
         <div [class.inactive]="degreeNum != 75">Agree</div>
         <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
       </div>
+
       <div text-center>
-        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
+        <button ion-button (click)="toNextQuestion()" [class.button-disabled]="slider.untouched" >
           Next Question
         </button>
       </div>

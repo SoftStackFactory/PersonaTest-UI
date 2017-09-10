@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
 import { QuestionsProvider } from '../../providers/questions/questions';
@@ -31,7 +31,8 @@ export class QuestionPage {
               private questionsProvider: QuestionsProvider,
               private answersProvider: AnswersProvider,
               private alertCtrl: AlertController,
-              private appUserProvider: AppUserProvider
+              private appUserProvider: AppUserProvider,
+              private toastCtrl: ToastController
               ) {}
 
   ionViewDidLoad() {
@@ -60,21 +61,34 @@ export class QuestionPage {
       keyed: this.question["keyed"],
       category: this.question["category"]
     }
-    // save answer in an array
-    this.answers.push(answer)
-    // save answer in backend
-    this.saveAnswerToBackend(answer);
-    console.log(this.answers)
-    if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
-      this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken, answers: this.answers});
-      console.log("lastQ", this.testTaken);
+    if (answer.selection === undefined) {
+      // display error message
+      let toast = this.toastCtrl.create({
+        message: 'Please select an answer in the slider',
+        duration: 1500,
+        position: 'bottom'
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+      toast.present();
     } else {
-      this.questionNum++;
-      this.assignQuestion();
+      // save answer in an array
+      this.answers.push(answer)
+      // save answer in backend
+      this.saveAnswerToBackend(answer);
+      console.log(this.answers)
+      if (this.questionNum === this.totalQuestionNum - 1) { // if it's the last question
+        this.navCtrl.setRoot(ResultsPage, {testTaken: this.testTaken, answers: this.answers});
+        console.log("lastQ", this.testTaken);
+      } else {
+        this.questionNum++;
+        this.assignQuestion();
+      }
+      this.slider.reset();
+      // Putting slider knob in the middle
+      this.degreeNum = 49;
     }
-    this.slider.reset();
-    // Putting slider knob in the middle
-    this.degreeNum = 49;
   }
   toLobbyPage() {
     console.log('to lobby page');
