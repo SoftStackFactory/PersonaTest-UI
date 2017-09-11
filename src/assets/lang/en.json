@@ -1,9 +1,9 @@
-
 {
     "HOME": {
       "TITLE": "PersonaTest"
       
     },
+    
     "LANDING":{
         "SLIDEONE": "Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.",
         "SLIDETWO": "Find That Perfect Puzzle Peace! Locate the Perfect Fit to Fill All Your Positions of Need.",
@@ -17,6 +17,12 @@
         "TITLE": "PersonaTest",
         "PERSONAL": "Personal",
         "ORGANIZATION": "Organization"
+    },
+    "QUE":{
+        "INSTRUCTION":"Indicate how much the statement applies to you using the sliding scale below.",
+        "SA":"Strongly Agree",
+        "SD":"Strongly Disagree",
+        "NEXT":"Next Question"
     },
       "REGISTER":{
         "FIRST": "First Name",
@@ -42,6 +48,7 @@
         "HERE":"Login Here.",
         "REGISTER":"Register"
     },
+    
     "LOGIN": {
         "FOOTER": "Don't have an account yet?",
         "SH": "Sign up here.",
@@ -49,11 +56,162 @@
         "PASSWORD": "Password",
         "LOGIN": "Login"
     },
+    
     "LOBBY": {
         "PERSONAL": "PERSONAL",
         "PROFESSIONAL": "PROFESSIONAL",
         "NAME": "Hello",
         "TAKE": "Take a Test",
         "RESULTS": "View Results"
+    },
+    
+    "ORGANIZATION": {
+        "HELLO": "HELLO",
+        "BUTTONONE":"View Results",
+        "BUTTONTWO":"Manage Account",
+        "BUTTONTHREE":"Take A Test",
+        "BECOME":"Become an Organization",
+        "ENTER":"Please enter information about your organization.",
+        "NAME":"Organization Name",
+        "PAGE":"Organization Webpage",
+        "TERMS":"Terms and Conditions",
+        "BUTTON":"Submit",
+        "Text":"Please allow 48 hours for requests to be processed by administrator"
+    },
+    
+    "ORGANIZATIONM": {
+         "HEAD":"Enter changes to your organization's profile and click submit when complete",
+         "PAGE":"Organization Webpage",
+         "LOGO":"Organization Logo",
+         "EMAIL":"Organization Owner's Email",
+         "BUTTON":"Submit",
+         "END":"Please allow 48 hours for requests to be processed by administrator"
+     },
+     
+     "QUESTION": {
+         "INSTRUCTION":"Indicate how much the statement applies to you using the sliding scale below.",
+         "STRONGLYD":"Strongly Disagree",
+         "STRONGLYA":"Strongly Agree",
+         "DISAGREE":"Disagree",
+         "NEUTRAL":"Neutral",
+         "AGREE":"Agree",
+         "NEXTQ":"Next Question"
+     },
+     
+    "TESTLIST": {
+        "HTWO":"Unsponsored Testing Options",
+        "HTHREE":"Know Thyself!",
+        "HONE":"We offer a variety of personality tests & inventories sourced from the International Personality Item Pool (http://ipip.ori.org)"
+        },
+        
+    "CHART": {
+        "USER":"User Results"
+    },
+    
+    "TESTLIST": {
+        "TITLE":"Available Test",
+        "HTWO":"Want Full Access?",
+        "HTHREE":"Signup Here",
+        "P":"We offer a variety of personality tests to suit your companies needs."
+    },
+    
+    "PROGRESSBAR": {
+        "TEST":"Test Progress"
+    },
+    
+    "REMEMBERME": {
+        "ME":"Remember Me"
+    },
+    
+    "PASSWORDRESET": {
+        "INSTRUCTION":"Please enter your new password.",
+        "PASSWORD":"Password:",
+        "CONFIRM":"Confirm Password:",
+        "SUBMIT":"Submit"
+    },
+    
+    "SEARCHLIST": {
+        "RESULTS":"Search Results",
+        "TAKEN":"Tests I've Taken",
+        "NOTEST":"No tests taken yet",
+        "CLICK":"Click",
+        "HERE":"Here",
+        "TAKE":"To Take a Test",
+        "VIEW":"View Mock Data",
+        "ON":"Taken On:",
+        "FROM":"View Test From"
+    },
+    
+    "TESTSELECT": {
+        "SELECT":"Select Available Tests",
+        "TEST":"Test Descriptions"
+    },
+    
+    "TESTLIST": {
+        "TITLE":"Test Name",
+        "DATE":"Date of Submission",
+        "DESCRIP":"Description:",
+        "AGREE":"Agreeableness",
+        "AGREED":"A person with a high level of agreeableness in a personality test is usually warm, friendly, and tactful. They generally have an optimistic view of human nature and get along well with others",        
+        "CONSCIENTIOUSNESS":"Conscientiousness",
+        "CONSCIENTIOUSNESSD":"A trait characterized by organization, purposeful action, self-discipline, and a drive to achieve.",
+        "EMOTIONAL":"Emotional Stability",
+        "EMOTIONALD":"A trait characterized by a steadiness of mood, ability to withstand minor setbacks, failures, difficulties, and other stresses without becoming upset emotionally",
+        "EXTRAVERSION":"Extraversion",
+        "EXTRAVERSIOND":"Defined as a behavior where a person enjoys being around people more than being alone.",
+        "INTELLECT":"Intellect",
+        "INTELLECTD":"The faculty of reasoning and understanding objectively, especially with regard to abstract or academic matters."
+    },
+    "BEORG": {
+        "INSTRUCTION":"Please Enter Organization Data",
+        "NAME":"Name",
+        "WEB":"Website",
+        "SUBMIT":"SUBMIT",
+        "PLEASE":"Please allow 48 hours for requests to be processed by the administrator"
+    },
+    
+    "EULA": {
+        "END":"End User License Agreement",
+        "CLOSE":"Close"
+    },
+    
+    "MANAGEACC": {
+        "INSTRUCTION":"Enter changes to your profile and click submit when complete",
+        "FIRST":"First Name:",
+        "LAST":"Last Name:",
+        "AGE":"Age:",
+        "GENDER":"Gender:",
+        "MALE":"Male",
+        "FEMALE":"Female",
+        "OTHER":"Other",
+        "DECLINE":"Decline",
+        "SUBMIT":"Submit",
+        "REQ":"required fields",
+        "SET":"Set Language Preference"
+    },
+    
+    "PASSWORDCHANGE": {
+        "INSTRUCT":"Confirm your current password, then enter your new password and confirm. Click submit to complete.",
+        "OLD":"Old Password:",
+        "NEW":"New Password:",
+        "CONFIRM":"Confirm New Password:",
+        "SUBMIT":"Submit",
+        "REQ":"required fields"
+    },
+    
+    "PASSWORDRESET": {
+        "INSTRUCT":"Enter your email and click submit.",
+        "EMAIL":"Email:",
+        "SUBMIT":"Submit",
+        "REQ":"required fields"
+    },
+    
+    "MENU":{
+        "HOME":"Home",
+        "MANAGE":"Manage Account Profile",
+        "CHANGE":"Change Password",
+        "BECOME":"Become an Organization",
+        "CANCEL":"Cancel Account",
+        "LOGOUT":"Logout"
     }
 }

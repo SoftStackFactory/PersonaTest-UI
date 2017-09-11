@@ -21,7 +21,7 @@
     <div class="left-container">
       <h4 text-center><span class="name">{{ (user | async)?.firstName }}</span></h4>
       <h2 text-center class="test-name">{{ testName }}</h2>
-      <p class="instruction">Indicate how much the statement applies to you using the sliding scale below.</p>
+      <p class="instruction">{{'QUE.INSTRUCTION' | translate}}</p>
       <ion-card>
         <div class="card-container">
           <ion-card-content text-center>
@@ -32,8 +32,8 @@
     </div>
     <div class="right-container">
       <div class="label">
-        <p>Strongly Disagree</p>
-        <p>Strongly Agree</p>
+        <p>{{'QUE.SD' | translate}}</p>
+        <p>{{'QUE.SA' | translate}}</p>
       </div>
       <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
       </ion-range>
@@ -46,7 +46,7 @@
       </div>
       <div text-center>
         <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
-          Next Question
+          {{'QUE.NEXT' | translate}}
         </button>
       </div>
       <div class="progress-bar">
