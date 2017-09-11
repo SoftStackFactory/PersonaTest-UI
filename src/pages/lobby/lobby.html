@@ -15,22 +15,22 @@
     <ion-title>{{ HOME.TITLE | translate }}<ion-title>
     -->
     <ion-title text-center>PersonaTest</ion-title>
-    
+    <div padding>
+      <ion-segment [(ngModel)]="testType">
+        <ion-segment-button value="personal">
+          {{'LOBBY.PERSONAL' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="organization">
+          {{'LOBBY.PROFESSIONAL' | translate}}
+        </ion-segment-button>
+      </ion-segment>
+    </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
  
-  <div padding>
-    <ion-segment [(ngModel)]="testType">
-      <ion-segment-button value="personal">
-        {{'LOBBY.PERSONAL' | translate}}
-      </ion-segment-button>
-      <ion-segment-button value="organization">
-        {{'LOBBY.PROFESSIONAL' | translate}}
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+
   
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">

@@ -10,12 +10,26 @@
 
 <!--search through existing tests-->
 
-  <ion-list class="testList">
-    <ion-content color="grey" class="card-background-page" >
-      <ion-card *ngFor="let testList of testLists" (click)="testAlert()" >
-        <img src="{{ testList.pic }}"/>
-        <div class="card-title">{{ testList.title }}</div>
-        <div class="card-subtitle">{{ testList.sub }}</div>
-      </ion-card>
-    </ion-content>
-  </ion-list>
+  <!--<ion-list class="testList">-->
+  <!--  <ion-content color="grey" class="card-background-page" >-->
+  <!--    <ion-card *ngFor="let testList of testLists" (click)="testAlert()" >-->
+  <!--      <img src="{{ testList.pic }}"/>-->
+  <!--      <div class="card-title">{{ testList.title }}</div>-->
+  <!--      <div class="card-subtitle">{{ testList.sub }}</div>-->
+  <!--    </ion-card>-->
+  <!--  </ion-content>-->
+  <!--</ion-list>-->
+
+<ion-list class="testList">
+   <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col color="grey" class="card-background-page" *ngFor="let testList of testLists" (click)="testAlert()" col-12 col-md-4>
+          <ion-card>
+            <img src="{{ testList.pic }}"/>
+            <div class="card-title">{{ testList.title }}</div>
+            <div class="card-subtitle">{{ testList.sub }}</div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-list>

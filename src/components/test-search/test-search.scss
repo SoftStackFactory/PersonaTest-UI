@@ -35,19 +35,31 @@ test-search {
     }
     
     .testList{
-      height: 50vh;
-      width: 100%;
+      height: 100vh;
       margin: auto;
     }
     
+    // $grid-breakpoints: (
+    //   sm: 0,
+    //   md: 768px,
+    //   lg: 1024px
+    // );
+    
+    // $grid-max-widths: (
+    //   sm: 420px,
+    //   md: 720px,
+    //   lg: 960px
+    // );
+    
     .card-background-page {
-    background: white;
+    background: grey;
     
     ion-card {
         position: relative;
         text-align: center;
-        height: 50%;
-        width: 100%;
+        // height: 20vh;
+        // width: 40vw;
+        // margin: 0 auto;
       }
     
     .card-title {
@@ -74,15 +86,16 @@ test-search {
             width: 40%;
             margin: 0 auto;
         }
-        .card-background-page{
-            max-width: 60%;
-            margin: 0 auto;
-        }
+        // .card-background-page{
+        //     max-width: 60%;
+        //     margin: 0 auto;
+        // }
+        
     }
     
-    @media screen and (orientation : landscape) {
+/*    @media screen and (orientation : landscape) {
         .card-background-page ion-card{
             height: 100%;
         }
-    }
+    }*/
 }
