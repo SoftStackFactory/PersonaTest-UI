@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, ModalController, MenuController, AlertController } from 'ionic-angular';
+import { ToastController, Platform, Nav, ModalController, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -18,12 +18,14 @@ import { OrganizationBecomePage } from '../pages/organization-become/organizatio
 import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
 
-
 //menu elements
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
+import { PasswordChangeModal } from '../modals/password-change/password-change';
+import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
 import {TranslateService} from '@ngx-translate/core'
+
 
 
 
@@ -31,15 +33,16 @@ import {TranslateService} from '@ngx-translate/core'
   templateUrl: 'app.html'
 })
 export class MyApp {
-
+  currentPage: string;
   rootPage: any;
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
-    statusBar: StatusBar, 
-    splashScreen: SplashScreen, 
+    splashScreen: SplashScreen,
+    statusBar: StatusBar,
     public menuCtrl: MenuController,
     public modalCtrl: ModalController,
+    public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private appUser: AppUserProvider,
     private translate: TranslateService
@@ -62,6 +65,11 @@ export class MyApp {
   
   closeMenu(){
     this.menuCtrl.close();
+  };
+  
+  goHome(){
+    this.menuCtrl.close();
+    this.nav.setRoot(LobbyPage);
   };
   
   manageAcc(){
@@ -130,7 +138,6 @@ export class MyApp {
     confirmDelete.present();
   };
 
-  
   logout(){
     let confirmLogout = this.alertCtrl.create({
       title: 'Confirm Logout',
@@ -140,7 +147,8 @@ export class MyApp {
           text: 'Yes, log me out',
           handler:() => {
             console.log("User has logged out");
-            this.appUser.logout(window.localStorage.token)
+            this.menuCtrl.close();
+            this.appUser.logout(window.localStorage.token);
             window.localStorage.clear();
             this.nav.setRoot(LandingPage);
           }
@@ -157,5 +165,3 @@ export class MyApp {
   };
 
 }
-
-
