@@ -46,7 +46,7 @@ export class LobbyPage {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";
       this.userName = "Peter";
-      this.ID = window.localStorage.getItem('id');
+      this.ID = window.localStorage.getItem('userId');
       this.testSelected = null;
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
