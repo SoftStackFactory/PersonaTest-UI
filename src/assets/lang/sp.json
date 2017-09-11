@@ -23,6 +23,9 @@
         "SA":"Totalmente De Acuerdo",
         "SD":"Muy En Desacuerdo",
         "NEXT":"Próxima Pregunta"
+        "DIS":"Discrepar",
+        "NEU":"Neutral",
+        "AGREE":"De Acuerdo"
     },
     "REGISTER":{
         "FIRST": "Nombre",

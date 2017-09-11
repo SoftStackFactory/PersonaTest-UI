@@ -38,11 +38,11 @@
       <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
       </ion-range>
       <div class="labels">
-        <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
-        <div [class.inactive]="degreeNum != 25">Disagree</div>
-        <div [class.inactive]="degreeNum != 50">Neutral</div>
-        <div [class.inactive]="degreeNum != 75">Agree</div>
-        <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
+        <div [class.inactive]="degreeNum != 0">{{'QUE.SD' | translate}}</div>
+        <div [class.inactive]="degreeNum != 25">{{'QUE.DIS' | translate}}</div>
+        <div [class.inactive]="degreeNum != 50">{{'QUE.NEU' | translate}}</div>
+        <div [class.inactive]="degreeNum != 75">{{'QUE.AGREE' | translate}}</div>
+        <div [class.inactive]="degreeNum != 100">{{'QUE.SA' | translate}}</div>
       </div>
       <div text-center>
         <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">

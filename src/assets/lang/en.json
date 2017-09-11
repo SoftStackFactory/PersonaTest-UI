@@ -22,7 +22,10 @@
         "INSTRUCTION":"Indicate how much the statement applies to you using the sliding scale below.",
         "SA":"Strongly Agree",
         "SD":"Strongly Disagree",
-        "NEXT":"Next Question"
+        "NEXT":"Next Question",
+        "DIS":"Disagree",
+        "NEU":"Neutral",
+        "AGREE":"Agree"
     },
       "REGISTER":{
         "FIRST": "First Name",
