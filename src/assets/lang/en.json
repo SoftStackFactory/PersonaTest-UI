@@ -7,7 +7,7 @@
     "LANDING":{
         "SLIDEONE": "Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.",
         "SLIDETWO": "Find That Perfect Puzzle Peace! Locate the Perfect Fit to Fill All Your Positions of Need.",
-        "SLIDETHREE": "For Hire or for Personal Use, Take A test to Gain A Better Understanding of Your Personality Type.",
+        "SLIDETHREE": "For Hire or for Personal Use, Take a Test to Gain a Better Understanding of Your Personality Type.",
         "JOIN": "Join Today!",
         "LOGIN": "Login",
         "SIGNUP": "SignUp"
@@ -19,7 +19,7 @@
         "ORGANIZATION": "Organization"
     },
     "QUE":{
-        "INSTRUCTION":"Indicate how much the statement applies to you using the sliding scale below.",
+        "INSTRUCTION":"Indicate How Much The Statement Applies To You Using The Sliding Scale Below.",
         "SA":"Strongly Agree",
         "SD":"Strongly Disagree",
         "NEXT":"Next Question",

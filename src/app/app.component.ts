@@ -140,7 +140,7 @@ export class MyApp {
 
   logout(){
     let confirmLogout = this.alertCtrl.create({
-      title: 'Confirm Logout',
+      title: 'translate.instant("BEORG.NAME");',
       message: 'Are you sure you would like to logout? Any unsaved progress may be lost.',
       buttons: [
         {

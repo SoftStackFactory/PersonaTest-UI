@@ -7,7 +7,7 @@ page-landing {
                 padding: 50px;
                 padding-bottom: 0; 
                 padding-top: 100px;
-                font-size: 40px;
+                font-size: 30px;
 
         }
         .title{
@@ -22,6 +22,7 @@ page-landing {
                 top:0;
                 left: 90px;
                 margin: auto;
+                justify-content: center;
         }
         .wizard{
                 height: 255px;
@@ -33,8 +34,9 @@ page-landing {
       
         }
         .h2{
-                font-size: 150px;
+                font-size: 10px;
                 padding: 5px;
+                margin-top: 0px
                 
         }
         .bottom{
@@ -67,13 +69,30 @@ page-landing {
                 
         }
         .font{
-                font-size: 20px;
+                font-size: 15px;
                 color: color($colors, primary);
                 font-family: Ubuntu;
                 margin-bottom: 40px;
         }
-        .img{
-             
+   
+        .spanish:hover {
+                 text-decoration: underline;
+                 cursor: pointer;
+                 display: inline-block;
+        }
+        .english:hover {
+                 text-decoration: underline;
+                 cursor: pointer;
+                 display: inline-block;
+        }
+         .lang{
+                 display: inline-block;
+                 font-size: 10px;
+                 color: color($colors, primary);
+                font-family: Ubuntu;
+        }
+        .spanish{
+        padding-left: 5px;
         }
         
         @media screen and (min-width: 768px){

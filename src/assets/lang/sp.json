@@ -5,24 +5,24 @@
       
     },
     "LANDING":{
-        "SLIDEONE": "Bienvenido a PersonaTest, clasifique su fuerza de trabajo usando categorias para maximizar la efectividad de sus empleados.",
-        "SLIDETWO": "¡Encuentra esa pieza perfecta del rompecabezas! Busque el ajuste perfecto para llenar todas sus posiciones vacantes.",
-        "SLIDETHREE": "Para contratar empleados o para uso personal, toma examenes para enterder tu tipo de personalidad.",
+        "SLIDEONE": "Bienvenido a PersonaTest, Clasifique Su Fuerza De Trabajo Usando Categorias Para Maximizar la Efectividad De Sus Empleados.",
+        "SLIDETWO": "¡Encuentra Esa Pieza Perfecta Del Rompecabezas! Busque el Ajuste Perfecto Para Llenar Todas sus Posiciones Vacantes.",
+        "SLIDETHREE": "Para Contratar Empleados o Para Uso Personal, Toma Examenes Para Enterder tu Tipo de Personalidad.",
         "JOIN": "¡Únete hoy!",
-        "LOGIN": "inicia sesión",
+        "LOGIN": "Inicia sesión",
         "SIGNUP": "Regístrate"
     },
         
     "LOBBY": {
         "TITLE": "PersonaTest",
         "PERSONAL": "Personal",
-        "ORGANIZATION": "organización"
+        "ORGANIZATION": "Organización"
     },
      "QUE":{
         "INSTRUCTION":"Indique Cuánto Se Aplica La Declaración A Usted Usando La Escala Siguiente.",
         "SA":"Totalmente De Acuerdo",
         "SD":"Muy En Desacuerdo",
-        "NEXT":"Próxima Pregunta"
+        "NEXT":"Próxima Pregunta",
         "DIS":"Discrepar",
         "NEU":"Neutral",
         "AGREE":"De Acuerdo"
