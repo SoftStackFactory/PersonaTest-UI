@@ -1,9 +1,13 @@
 org-search {
-
-    .searchbar-clear-icon {
-        display: none !important;
+ 
+    .button{
+        background-color: grey !important;
+        min-width: 25px !important;
+        min-height: 25px !important;
+        max-width: 25px !important;
+        max-height: 25px !important;
     }
-      
+    
     #toolbar{
         height: 100%;
         width: 100%;

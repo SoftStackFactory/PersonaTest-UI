@@ -41,10 +41,12 @@ export class OrgSearchComponent {
 
     console.log("hi hello" + orgName);
     
+    let val=orgName.target.value;
+    
     // if the value is an empty string don't filter the items
-    if (orgName && orgName.trim() != '') {
+    if (val && val.trim() != '') {
       this.orgLists= this.orgLists.filter((orgList) => {
-        return (orgList.toString().toLowerCase().indexOf(orgName.toLowerCase()) > -1);
+        return (orgList.toString().toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
     
