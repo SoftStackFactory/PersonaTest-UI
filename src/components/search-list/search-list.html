@@ -38,10 +38,10 @@
     <ion-item class="item display-block" *ngFor="let obj of ourList | searchTermPipe : searchInput | testsByTimePipe : searchTime " (click)="selectedItem($event, obj)">
       <div id="text-block" class="half-container">
         <h2> <strong> {{ obj.name }} </strong> </h2>
-        <h3> Taken on: <strong>{{ obj.date |  date:fullDate }}</strong> </h3>
+        <h3> <strong>{{ obj.date |  date:'longDate' }} {{ obj.date | date:'shortTime' }}</strong> </h3>
       </div>
       <div class="small-chart half-container">
-        <mini-graph class="chart-align"></mini-graph>
+        <mini-graph class="chart-align" [testResults]="obj" ></mini-graph>
       </div>
     </ion-item>
   </ion-list>

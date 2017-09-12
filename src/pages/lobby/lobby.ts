@@ -51,7 +51,7 @@ export class LobbyPage {
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
       this.hasIncompleteTest = this.userHasIncompleteTest();
-      console.log(this.hasIncompleteTest);
+      console.log( "this.hasIncompleteTest ", this.hasIncompleteTest);
     }
 
   ionViewDidLoad() {
@@ -68,10 +68,30 @@ export class LobbyPage {
     console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
     let rValue = null;
     this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
+    let countOfTestsTaken;
+    this.testHistoryProvider.hasTestHistory(this.ID)
     .subscribe(
+      res => {
+        console.log("hasTestHistory response ", res);
+        countOfTestsTaken = res.count;
+      }, 
+      error => {
+        console.log("error ", error);
+      },
+      () => {
+        if (countOfTestsTaken > 0){
+        this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
+        .subscribe(
         testId => {
-          this.recentTestId = testId[0].id;
-          console.log("most recent test", this.recentTestId);
+          if (testId != []){
+            console.log("testId ", testId);
+            console.log("testId[0].id ", testId[0].id);
+            console.log("this.recentTestId ", this.recentTestId);
+            this.recentTestId = testId[0].id;
+            console.log("most recent test", this.recentTestId);
+          } else {
+            this.recentTestId = [{}];
+          }
         }, error => {
           console.log(error);
         },
@@ -95,7 +115,11 @@ export class LobbyPage {
             console.log("last after");
       }
     )
-    console.log("blah blah blah");
+        console.log("done with hasTestHistory callback");
+      }})
+      
+    // return (this.count < 50) ? true : false;
+    console.log("rValue ", rValue);
     return rValue;
   }
 
