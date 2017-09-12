@@ -24,7 +24,6 @@ export class PasswordChangeModal {
       private appUser: AppUserProvider
     ) {
         this.changeRequestForm = this.formBuilder.group({
-            oldPassword: ['', Validators.required],
             password: ['', Validators.required],
             confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         });
