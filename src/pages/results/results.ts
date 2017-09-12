@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 
 // Providers
 import { AnswersProvider } from '../../providers/answers/answers';
@@ -25,6 +25,7 @@ export class ResultsPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
+    public menuCtrl: MenuController,
     private answersProvider: AnswersProvider,
     private resultsProvider: ResultsProvider,
     ) {
