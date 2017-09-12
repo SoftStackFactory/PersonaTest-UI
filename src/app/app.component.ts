@@ -22,9 +22,10 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
+import { SetLanguageModal } from '../modals/set-language/set-language';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
-import {TranslateService} from '@ngx-translate/core'
+import { TranslateService } from '@ngx-translate/core'
 
 
 
@@ -90,6 +91,11 @@ export class MyApp {
     passwordChangeModal.present();
   };
   
+  setLanguage(){
+    console.log("set language requested");
+    let setLanguageModal = this.modalCtrl.create(SetLanguageModal);
+    setLanguageModal.present();
+  };
 
   becomeOrg(){
     console.log("go to Organization request page");

@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent">
+<ion-menu side="right" [content]="mycontent">
 
     <ion-header>
         <ion-navbar>
@@ -16,6 +16,7 @@
                 Home</button>
             <button ion-item (click)="manageAcc()">Manage Account Profile</button>
             <button ion-item (click)="changePassword()">Change Password</button>
+            <button ion-item (click)="setLanguage()">Set Language Preference</button>
             <button ion-item (click)="becomeOrg()">Become an Organization</button>
             <button ion-item (click)="deleteAcc()">Cancel Account</button>
             <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>Logout</button>
