@@ -1,5 +1,20 @@
 org-search {
+
+    .searchbar-clear-icon {
+        display: none !important;
+    }
+      
+    #toolbar{
+        height: 100%;
+        width: 100%;
+        margin: auto;
+    }
     
+    @media screen and (min-width: 768px) {
+        #toolbar{
+            width: 60%;
+            margin: 0 auto;
+        }
     
     ion-scroll{
         height: 150px;

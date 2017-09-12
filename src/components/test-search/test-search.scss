@@ -3,4 +3,103 @@ test-search {
         height: 150px;
     }
 
+    
+    .searchbar-clear-icon {
+    display: none !important;
+    }
+      
+    div::-webkit-scrollbar {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
+    }
+     
+    div::-webkit-scrollbar-track {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
+    }
+     
+    div::-webkit-scrollbar-thumb {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
+    }
+
+    #toolbar{
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        outline: 0;
+        padding: 0;
+    }
+    
+    .scroll-content {
+        padding: 0 !important;
+    }
+    
+    .testList{
+      height: 100vh;
+      margin: auto;
+    }
+    
+    // $grid-breakpoints: (
+    //   sm: 0,
+    //   md: 768px,
+    //   lg: 1024px
+    // );
+    
+    // $grid-max-widths: (
+    //   sm: 420px,
+    //   md: 720px,
+    //   lg: 960px
+    // );
+    
+    .card-background-page {
+    background: grey;
+    
+    ion-card {
+        position: relative;
+        text-align: center;
+        // height: 20vh;
+        // width: 40vw;
+        // margin: 0 auto;
+      }
+    
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+      }
+        
+    }
+    
+    @media screen and (min-width: 768px) {
+        #toolbar{
+            width: 40%;
+            margin: 0 auto;
+        }
+        // .card-background-page{
+        //     max-width: 60%;
+        //     margin: 0 auto;
+        // }
+        
+    }
+    
+/*    @media screen and (orientation : landscape) {
+        .card-background-page ion-card{
+            height: 100%;
+        }
+    }*/
 }

@@ -5,7 +5,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
 
     <ion-buttons start>
       <button ion-button icon-only menuToggle>
@@ -14,26 +14,29 @@
     </ion-buttons>
     
     <ion-title text-center>PersonaTest</ion-title>
-    
+    <div padding>
+      <ion-segment [(ngModel)]="testType">
+        <ion-segment-button value="personal">
+          {{'LOBBY.PERSONAL' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="organization">
+          {{'LOBBY.PROFESSIONAL' | translate}}
+        </ion-segment-button>
+      </ion-segment>
+    </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
  
-  <div padding>
-    <ion-segment [(ngModel)]="testType">
-      <ion-segment-button value="personal">
-        {{'LOBBY.PERSONAL' | translate}}
-      </ion-segment-button>
-      <ion-segment-button value="organization">
-        {{'LOBBY.PROFESSIONAL' | translate}}
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+
   
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
+          <ion-item>
+            <test-search></test-search>
+          </ion-item>
            <div class="testbuttons">
              <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
              <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
@@ -71,7 +74,7 @@
             <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
           </div>
     </div>
-    
+          
   </div>
 
 

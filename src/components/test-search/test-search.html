@@ -1,13 +1,29 @@
 <!-- Generated template for the OrgSearchComponent component -->
+<!--<ion-toolbar id="toolbar">-->
+   <!---- Search Bar ---->
+<!--  <ion-searchbar(ionInput)="getItems($event)" placeholder="Select a test"></ion-searchbar>-->
+<!--</ion-toolbar>-->
+
+ <!---- Search Bar ---->
+
+
 <div id="search">
   <ion-toolbar>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Tests"></ion-searchbar>      
   </ion-toolbar>
   <ion-scroll scrollX="false" scrollY="true">
-    <ion-list>
-      <ion-item *ngFor="let item of items" (click)="selectedTest(item)">
-        {{ item }}
-      </ion-item>
+    <ion-list class="testList">
+      <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col color="grey" class="card-background-page" *ngFor="let testList of testLists" (click)="selectedTest(testList); testAlert()" col-12 col-md-4>
+            <ion-card>
+              <img src="{{ testList.pic }}"/>
+              <div class="card-title">{{ testList.title }}</div>
+              <div class="card-subtitle">{{ testList.sub }}</div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-list>
   </ion-scroll>
 </div>
