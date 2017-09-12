@@ -20,18 +20,10 @@ import { ResultsProvider } from '../../providers/results/results';
 export class TestSearchComponent {
   @Input() testSelected: String;
   @Output() testSelectedChange = new EventEmitter();
-  
+  TEST: any;
   searchQuery: string = '';
-  items: string[];
+  testLists: any;
   
-  initializeItems() {
-    //this should actually get a list of organizations from the back end
-    this.items = [
-      "Goldberg's Big 5 Factors",
-      "test",
-      "test",
-      "test"];
-  }
 
   getItems(ev: any) {
     // Reset items back to all of the items
@@ -42,12 +34,17 @@ export class TestSearchComponent {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.testLists = this.testLists.filter((testList) => {
+        return (testList.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController,
+    public alertCtrl: AlertController,
+    public resultsProvider: ResultsProvider) {
     this.initializeItems();
   }
 

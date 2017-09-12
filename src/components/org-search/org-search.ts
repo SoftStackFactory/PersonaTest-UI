@@ -15,7 +15,7 @@ export class OrgSearchComponent {
   @Output() orgSelectedChange = new EventEmitter();
   
   searchQuery: string = '';
-  items: string[];
+  orgLists: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
       this.initializeItems();
@@ -39,7 +39,7 @@ export class OrgSearchComponent {
     // Reset items back to all of the items
     this.initializeItems();
 
-    console.log("hi hello" + this.orgName);
+    console.log("hi hello" + orgName);
     
     // if the value is an empty string don't filter the items
     if (orgName && orgName.trim() != '') {
