@@ -20,6 +20,8 @@
               <img src="{{ testList.pic }}"/>
               <div class="card-title">{{ testList.title }}</div>
               <div class="card-subtitle">{{ testList.sub }}</div>
+              <button ion-button block (click)="testAlert()" class="button">{{'LOBBY.TAKE' | translate}}</button>
+              <button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
             </ion-card>
           </ion-col>
         </ion-row>

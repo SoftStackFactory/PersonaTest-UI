@@ -3,35 +3,13 @@ test-search {
         height: 350px;
     }
 
-    .button{
+    .searchbar .button{
         background-color: grey !important;
         min-width: 25px !important;
         min-height: 25px !important;
         max-width: 25px !important;
         max-height: 25px !important;
     }
-    
-    // .searchbar-clear-icon {
-    // display: none !important;
-    // }
-      
-    // div::-webkit-scrollbar {
-    //   border:none;
-    //   width:0;
-    //   background: rgba(0,0,0,0);
-    // }
-     
-    // div::-webkit-scrollbar-track {
-    //   border:none;
-    //   width:0;
-    //   background: rgba(0,0,0,0);
-    // }
-     
-    // div::-webkit-scrollbar-thumb {
-    //   border:none;
-    //   width:0;
-    //   background: rgba(0,0,0,0);
-    // }
 
     #toolbar{
         height: 100%;
@@ -49,18 +27,6 @@ test-search {
       height: 100vh;
       margin: auto;
     }
-    
-    // $grid-breakpoints: (
-    //   sm: 0,
-    //   md: 768px,
-    //   lg: 1024px
-    // );
-    
-    // $grid-max-widths: (
-    //   sm: 420px,
-    //   md: 720px,
-    //   lg: 960px
-    // );
     
     .card-background-page {
     // background: grey;
@@ -89,6 +55,28 @@ test-search {
         width: 100%;
         color: #fff;
       }
+      
+    .button{
+        position: absolute;
+        top: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 40% !important;
+        min-height: 20% !important;
+        max-width: 20% !important;
+        max-height: 40% !important;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        white-space: normal;
+        background-color: transparent;
+        color: #fff;
+        border: medium solid #fff !important;
+        border-radius: 5px;
+    }
+
         
     }
     
