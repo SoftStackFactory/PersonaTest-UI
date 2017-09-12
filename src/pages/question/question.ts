@@ -6,7 +6,6 @@ import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 import { ResultsPage } from '../results/results';
-import { LobbyPage } from '../lobby/lobby';
 
 @Component({
   selector: 'page-question',
@@ -88,10 +87,7 @@ export class QuestionPage {
     // Putting slider knob in the middle
     this.degreeNum = 49;
   }
-  toLobbyPage() {
-    console.log('to lobby page');
-    this.navCtrl.setRoot(LobbyPage);
-  }
+  
   showAlert(errorMessage: string) {
     let alert = this.alertCtrl.create({
       subTitle: errorMessage,
