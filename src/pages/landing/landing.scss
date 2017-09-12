@@ -68,7 +68,6 @@ page-landing {
         .font{
                 font-size: 20px;
                 color: color($colors, primary);
-                font-family: Ubuntu;
                 margin-bottom: 40px;
         }
         
@@ -111,6 +110,7 @@ page-landing {
                         padding-left: 30px;
                 }
         } 
+        
         @media screen and (min-width: 1024px){
                 .container{
                         padding-bottom: 0;
@@ -146,7 +146,6 @@ page-landing {
                 .font{
                         font-size: 45px;
                         color: color($colors, primary);
-                        font-family: Ubuntu;
                 }
                 .login{
                         padding-top: 5px;
@@ -176,4 +175,45 @@ page-landing {
                 }
                 
         }
+        
+        @media screen and (max-height: 901px){
+                .container{
+                        padding: 0;
+                        padding-bottom: 0;
+                        
+                }
+                        
+                .wizard{
+                        height: 320px;
+                        width: 320px;
+                }
+                .bottom{
+                        font-size: 15px;
+                        display: flex;
+                        width: 300px;
+                }
+                       
+                .button-block{
+                        padding: 15px;
+                        font-size: 15px;
+                        height: 40px;
+                }
+                .photo{
+                        height: 180px;
+                        width: 200px;
+                        top:0;
+                        left: 135px;
+                        padding: 10px;
+                }
+                .font{
+                font-size: 18px;
+                
+                }
+                .login{
+                        font-size: 20px;
+                        padding-top: 16px;
+                        padding-left: 30px;
+                }
+        } 
+        
 }
