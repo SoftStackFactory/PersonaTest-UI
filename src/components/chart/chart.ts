@@ -88,24 +88,22 @@ export class ChartComponent implements AfterContentInit {
             this.gradedTest["Extraversion"], 
             this.gradedTest["Intellect"]
             ]
-        }, {
-          label: "Test #2",
-          fill: true,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          pointBorderColor: "#fff",
-          pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
-          data: [
-            this.gradedTest["Agreeableness"], 
-            this.gradedTest["Conscientiousness"], 
-            this.gradedTest["Emotional Stability"], 
-            this.gradedTest["Extraversion"], 
-            this.gradedTest["Intellect"]
-            ]
         }
       ]
     },
-      options: {
+        options: {
+          responsive: true,
+              maintainAspectRatio: true,
+              scale: {
+                  ticks: {
+                      beginAtZero: true,
+                      max: 65,
+                      stepSize: 5,
+                      callback: function() {
+								        return '';
+                      }
+                  }
+              },
         title: {
           display: true,
           text: 'IPIP Test Results'
