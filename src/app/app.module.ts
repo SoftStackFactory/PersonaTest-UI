@@ -30,7 +30,9 @@ import { TestHistoryProvider } from '../providers/test-history/test-history'
 import { AppUserProvider } from '../providers/app-user/app-user';
 import { AnswersProvider } from '../providers/answers/answers';
 import { ResultsProvider } from '../providers/results/results';
-import { OrganizationProvider } from '../providers/organization/organization'
+import { OrganizationProvider } from '../providers/organization/organization';
+import { TestsProvider } from '../providers/tests/tests';
+
 
 //Pipes
 import { FilterTestsByTimePipe } from '../pipes/filter-tests-by-time/filter-tests-by-time';
@@ -136,7 +138,8 @@ let injections: any[] = [
     AppUserProvider,
     AnswersProvider,
     ResultsProvider,
-    OrganizationProvider
+    OrganizationProvider,
+    TestsProvider
   ]
 })
 export class AppModule {}

@@ -15,11 +15,11 @@
     <ion-list class="testList">
       <ion-grid>
         <ion-row justify-content-center>
-          <ion-col color="grey" class="card-background-page" *ngFor="let testList of testLists" (click)="selectedTest(testList); testAlert()" col-12 col-md-4>
+          <ion-col color="grey" class="card-background-page" *ngFor="let testArray of testArrays" (click)="testAlert(testArray)" col-12 col-md-4>
             <ion-card>
-              <img src="{{ testList.pic }}"/>
-              <div class="card-title">{{ testList.title }}</div>
-              <div class="card-subtitle">{{ testList.sub }}</div>
+              <img src="../../assets/blue-puzzle.jpg"/>
+              <div class="card-title">{{ testArray.name }}</div>
+              <div class="card-subtitle">{{ testArray.description }}</div>
               <button ion-button block (click)="testAlert()" class="button">{{'LOBBY.TAKE' | translate}}</button>
               <button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
             </ion-card>

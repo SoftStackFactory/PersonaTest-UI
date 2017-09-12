@@ -6,6 +6,8 @@ import { QuestionPage } from '../../pages/question/question';
 
 //Providers
 import { ResultsProvider } from '../../providers/results/results';
+import { TestsProvider } from '../../providers/tests/tests';
+
 
 /**
  * Generated class for the OrgSearchComponent component.
@@ -23,8 +25,66 @@ export class TestSearchComponent {
   TEST: any;
   searchQuery: string = '';
   testLists: any;
+  items: string[];
+  nameArray: any = [];
+  idArray: any = [];
+  testArrays: any = [];
+  testName: any;
   
+  
+  initializeItems() {
+    
+    this.testsProvider.getTests()
+      .subscribe(
+        test => {
+          // this.nameArray = [];
+          // test.forEach((t)=> this.nameArray.push(t.name))
+          // console.log("Test Names", this.nameArray);
+          
+          // this.idArray = [];
+          // test.forEach((t)=> this.idArray.push(t.id))
+          // console.log("Test Ids", this.idArray)
+          
+          this.testArrays = [];
+          test.forEach((t)=> this.testArrays.push(t))
+          console.log("Test Object", this.testArrays)
+      
+        }, error => {
+          console.log(error)
+        }
+      )
+      
+      this.items = this.nameArray;
+      console.log("items", this.items);
+    // //this should actually get a list of organizations from the back end
+    // this.items = [
+    //   "Goldberg's Big 5 Factors",
+    //   "test",
+    //   "test",
+    //   "test"];
+  }
 
+  // initializeItems() {
+  //   this.testLists = [
+  //     {
+  //       pic:"../../assets/blue-puzzle.jpg",
+  //       title: "Goldberg",
+  //       sub: "Big Five Personality Traits",
+  //     },
+  //     {
+  //       pic:"../../assets/blue-puzzle2.jpg",
+  //       title: "Cattell",
+  //       sub: "16 Personality Factor Questionnaire",
+  //     },
+  //     {
+  //       pic:"../../assets/blue-puzzle.jpg",
+  //       title: "Levenson",
+  //       sub: "Locus of Control",
+  //     }
+  //   ]
+  // }
+  
+  
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
@@ -39,12 +99,15 @@ export class TestSearchComponent {
       })
     }
   }
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public viewCtrl: ViewController,
     public alertCtrl: AlertController,
-    public resultsProvider: ResultsProvider) {
+    public resultsProvider: ResultsProvider,
+    public testsProvider: TestsProvider,
+    ) {
     this.initializeItems();
   }
 
@@ -53,14 +116,19 @@ export class TestSearchComponent {
   }
   
   selectedTest(test) {
-    this.testSelectedChange.emit(test);
+   this.testSelectedChange.emit(test);
+      
+      // this.items = this.nameArray;
+      // console.log("items", this.items);
   }
+
+
   
   dismiss() {
     this.viewCtrl.dismiss();
   }
   
-  testAlert() {
+  testAlert(test) {
     let alert = this.alertCtrl.create({
       title: 'Ready?',
       subTitle: 'This test will take approximately 20 min.',
@@ -76,47 +144,28 @@ export class TestSearchComponent {
         text: 'Ok',
         handler: () => {
           console.log('Ok clicked');
-          this.forPlay();
+          this.forPlay(test);
         }
       }
     ]
     });
     alert.present();
   }
-  initializeItems() {
-    this.testLists = [
-      {
-        pic:"../../assets/blue-puzzle.jpg",
-        title: "Goldberg",
-        sub: "Big Five Personality Traits",
-      },
-      {
-        pic:"../../assets/blue-puzzle2.jpg",
-        title: "Cattell",
-        sub: "16 Personality Factor Questionnaire",
-      },
-      {
-        pic:"../../assets/blue-puzzle.jpg",
-        title: "Levenson",
-        sub: "Locus of Control",
-      }
-    ]
-  }
 
-  forPlay() {
+  forPlay(test) {
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
-      userId: "59a32e40a35bbc79d8931602",
+      userId: localStorage.getItem('userId'),
       // Hard coded ID, generated from the test model in the backend
       // Eventually will reference each test's unique id
-      testId: "59a323f32eb4c1781fd6c1e3",
+      testId: test.id,
       date: new Date(),
       Extraversion: 0,
       Agreeableness: 0,
       Conscientiousness: 0,
       'Emotional Stability': 0,
       Intellect: 0,
-      name: 'Goldberg'
+      name: test.name
     };
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
