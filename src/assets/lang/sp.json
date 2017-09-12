@@ -4,12 +4,20 @@
       "TITLE": "PersonaTest"
       
     },
+    
      "APPALERT":{
-        "ALERTONE":"hollla",
-        "ALETWO": "Are you sure you would like to cancel your account? Any test data will be lost.",
-        "TEXT":"Yes, cancel my account",
-        "MESSAGE":"Your account has been deleted.  Please visit again for future testing needs.",
-        "TEXTTWO":"No, keep my account active"
+        "ALERTONE":"Confirmar cancelación de cuenta",
+        "ALETWO": "¿Seguro que desea cancelar su cuenta? Se perderán todos los datos de prueba.",
+        "TEXT":"Sí, Cancelar Mi Cuenta",
+        "MESSAGE":"Tu Cuenta ha Sido Eliminada. Por favor, Vuelva a Visitarlo Para Futuras Pruebas.",
+        "TEXTTWO":"No, Mantener mi Cuenta Activa"
+    },
+    
+     "LOGOUT":{
+        "TITLE":"Confirmar Cerrar Sesión",
+        "MESSAGE": "¿Seguro Que Desea Cerrar La Sesión? Se Perderá Cualquier Progreso No Guardado.",
+        "TEXT":"Sí, Cierre La Sesión",
+        "TEXTTWO":"No, Mantente Conectado"
     },
     "LANDING":{
         "SLIDEONE": "Bienvenido a PersonaTest, Clasifique Su Fuerza De Trabajo Usando Categorias Para Maximizar la Efectividad De Sus Empleados.",

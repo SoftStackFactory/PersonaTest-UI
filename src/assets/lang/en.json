@@ -4,11 +4,17 @@
       
     },
     "APPALERT":{
-        "ALERTONE":"Confirm account cancellation",
+        "ALERTONE":"Confirm Account Cancellation",
         "ALETWO": "Are you sure you would like to cancel your account? Any test data will be lost.",
         "TEXT":"Yes, cancel my account",
         "MESSAGE":"Your account has been deleted.  Please visit again for future testing needs.",
         "TEXTTWO":"No, keep my account active"
+    },
+    "LOGOUT":{
+        "TITLE":"Confirm Logout",
+        "MESSAGE": "Are you sure you would like to logout? Any unsaved progress may be lost.",
+        "TEXT":"Yes, log me out",
+        "TEXTTWO":"No, Keep me Logged In"
     },
     
     "LANDING":{

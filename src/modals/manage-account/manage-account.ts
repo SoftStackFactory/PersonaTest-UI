@@ -81,8 +81,6 @@ export class ManageAccountModal {
   
   setLanguage(lng){
     this.translate.use(lng);
-    window.localStorage.setItem('lang',lng);
-    console.log(lng)
   }
 
 
