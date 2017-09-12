@@ -19,13 +19,19 @@ export class ResultsProvider {
   }
   
   initializeTest(testTaken) {
-    return this.http.post(this.baseUrl + this.path, testTaken).map(res => res.json());
+    return this.http.post(
+      this.baseUrl + this.path, 
+      testTaken
+      ).map(res => res.json());
   }
   
   updateTest(updatedTest) {
     
-    console.log("provider", updatedTest)
-    return this.http.put(this.baseUrl + this.path, updatedTest).map(res => res.json());
+    // console.log("provider", updatedTest)
+    return this.http.put(
+      this.baseUrl + this.path,
+      updatedTest
+      ).map(res => res.json());
   }
 
   // //Retrieve test results with access token
