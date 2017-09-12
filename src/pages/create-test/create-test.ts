@@ -17,7 +17,7 @@ import { QuestionsProvider } from '../../providers/questions/questions';
 export class CreateTestPage {
   
   items: any = [];
-  itemExpandHeight: number = 100;
+  categoryExpandHeight: number = 100;
   categories: any = [];
 
   constructor(
@@ -25,17 +25,18 @@ export class CreateTestPage {
     public navParams: NavParams,
     private questionsProvider: QuestionsProvider,
     ) {
-      this.items = [
+      // this.items = [
+      this.categories = [
+        {expanded: false, name: "test"},
+        {expanded: false, name: "test2"},
+        {expanded: false},
+        {expanded: false},
+        {expanded: false},
+        {expanded: false},
+        {expanded: false},
+        {expanded: false},
+        {expanded: false},
         {expanded: false}
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false},
-        // {expanded: false}
       ];
       
   }
@@ -43,23 +44,23 @@ export class CreateTestPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateTestPage');
     
-    this.questionsProvider.uniqueCategories().subscribe(
-      categories => {
-        this.categories = categories;
-        console.log("Unique Categories", this.categories);
-      }, error => {
-        console.log("categories not found");
-      })
+    // this.questionsProvider.uniqueCategories().subscribe(
+    //   categories => {
+    //     this.categories = categories;
+    //     console.log("Unique Categories", this.categories);
+    //   }, error => {
+    //     console.log("Categories not found");
+    //   })
   }
   
-  expandItem(item){
-    this.items.map((listItem) => {
-      if(item == listItem){
-        listItem.expanded = !listItem.expanded;
+  expandCategory(category){
+    this.categories.map((listCategory) => {
+      if(category == listCategory){
+        listCategory.expanded = !listCategory.expanded;
       } else {
-        listItem.expanded = false;
+        listCategory.expanded = false;
       }
-      return listItem;
+      return listCategory;
     });
 
   }

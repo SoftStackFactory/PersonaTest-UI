@@ -15,13 +15,13 @@
 
 <ion-content padding>
   
-  <ion-list *ngFor="let category of categories">
-    <div *ngFor="let item of items">
+  <ion-list>
+    <div *ngFor="let category of categories">
       <ion-checkbox></ion-checkbox>
-    <button detail-none (click)="expandItem(item)" ion-item>
+    <button detail-none (click)="expandCategory(category)" ion-item>
       <!--<h2>TITLE</h2>-->
-      <h2>{{category}}</h2>
-      <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+      <h2>{{category.name}}</h2>
+      <expandable [expandHeight]="categoryExpandHeight" [expanded]="category.expanded">
         DESCRIPTION
       </expandable>
       <button ion-button clear item-end>View</button>
