@@ -35,7 +35,7 @@ export class TestSearchComponent {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.testLists = this.testLists.filter((testList) => {
-        return (testList.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (testList.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }

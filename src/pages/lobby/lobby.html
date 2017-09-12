@@ -1,18 +1,10 @@
-<!--
-  Generated template for the LobbyPage page.
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar color="primary">
-
     <ion-buttons start>
       <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    
     <ion-title text-center>PersonaTest</ion-title>
     <div padding>
       <ion-segment [(ngModel)]="testType">
@@ -28,21 +20,18 @@
 </ion-header>
 
 <ion-content padding>
- 
-
-  
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
           <ion-item>
             <test-search></test-search>
           </ion-item>
-           <div class="testbuttons">
-             <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
-             <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
+          <!-- <div class="testbuttons">-->
+          <!--   <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>-->
+          <!--   <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
              <!-- we'll need to get this next button going for the TRANSLATE feature -->
-             <button *ngIf="hasIncompleteTest" ion-button block (click)="resumeTest()" class="button">Resume Test</button>
-          </div>
+          <!--   <button *ngIf="hasIncompleteTest" ion-button block (click)="resumeTest()" class="button">Resume Test</button>-->
+          <!--</div>-->
     </div>
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
@@ -74,60 +63,5 @@
             <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
           </div>
     </div>
-          
   </div>
-
-
 </ion-content>
-
-<!--<ion-header>-->
-
-<!--  <ion-navbar>-->
-    <!-- 
-<!--    <ion-title>{{ HOME.TITLE | translate }}<ion-title>-->
-<!--    -->-->
-<!--    <ion-title>PersonaTest</ion-title>-->
-<!--  </ion-navbar>-->
-
-<!--</ion-header>-->
-
-<!--<ion-content padding>-->
- 
-<!--  <div padding>-->
-<!--    <ion-segment [(ngModel)]="testType">-->
-<!--      <ion-segment-button value="personal">-->
-<!--        Personal-->
-<!--      </ion-segment-button>-->
-<!--      <ion-segment-button value="organization">-->
-<!--        Organization-->
-<!--      </ion-segment-button>-->
-<!--    </ion-segment>-->
-<!--  </div>-->
-  
-<!--  <div id="main-container" [ngSwitch]="testType">-->
-<!--    <div *ngSwitchCase="'personal'" id="personalsegment">-->
-<!--          <h3>Hello {{ this.userName }}</h3>-->
-<!--           <h2>Take a Test</h2>-->
-<!--           <div class="persbuttons">-->
-<!--             <button ion-button block (click)="forWork()" class="button">For Work</button>-->
-<!--             <button ion-button block (click)="forPlay()" class="button">For Play</button>-->
-<!--           </div>-->
-<!--           <div class="showmy">-->
-<!--             <h2>Show My</h2>-->
-<!--             <button ion-button block outline (click)="showResults()" class="button2">Results</button>-->
-<!--          </div>-->
-<!--    </div>-->
-        
-<!--    <div *ngSwitchCase="'organization'" id="organizationsegment">-->
-<!--          <h2>{{this.userName }} @ {{ this.organizationName }}</h2>-->
-<!--          <div class="orgbuttons">-->
-<!--            <button ion-button block outline (click)="viewResults()" class="button">View Results</button>-->
-<!--            <button ion-button block outline (click)="manageAcc()" class="button">Manage Account</button>-->
-<!--            <button ion-button block outline (click)="becomeOrg()" class="button">Become an<br /> Organization</button>-->
-<!--          </div>-->
-<!--    </div>-->
-    
-<!--  </div>-->
-
-
-<!--</ion-content>-->

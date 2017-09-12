@@ -1,6 +1,6 @@
 test-search {
     ion-scroll{
-        height: 150px;
+        height: 350px;
     }
 
     
@@ -8,23 +8,23 @@ test-search {
     display: none !important;
     }
       
-    div::-webkit-scrollbar {
-      border:none;
-      width:0;
-      background: rgba(0,0,0,0);
-    }
+    // div::-webkit-scrollbar {
+    //   border:none;
+    //   width:0;
+    //   background: rgba(0,0,0,0);
+    // }
      
-    div::-webkit-scrollbar-track {
-      border:none;
-      width:0;
-      background: rgba(0,0,0,0);
-    }
+    // div::-webkit-scrollbar-track {
+    //   border:none;
+    //   width:0;
+    //   background: rgba(0,0,0,0);
+    // }
      
-    div::-webkit-scrollbar-thumb {
-      border:none;
-      width:0;
-      background: rgba(0,0,0,0);
-    }
+    // div::-webkit-scrollbar-thumb {
+    //   border:none;
+    //   width:0;
+    //   background: rgba(0,0,0,0);
+    // }
 
     #toolbar{
         height: 100%;
@@ -56,7 +56,7 @@ test-search {
     // );
     
     .card-background-page {
-    background: grey;
+    // background: grey;
     
     ion-card {
         position: relative;
