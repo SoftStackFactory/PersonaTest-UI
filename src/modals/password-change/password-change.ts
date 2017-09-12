@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AppUserProvider } from '../../providers/app-user/app-user';
+import { PasswordValidator } from '../../validators/password';
 
 @Component({
   selector: 'password-change-modal',
