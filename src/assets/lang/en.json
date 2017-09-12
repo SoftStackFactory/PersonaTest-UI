@@ -3,6 +3,13 @@
       "TITLE": "PersonaTest"
       
     },
+    "APPALERT":{
+        "ALERTONE":"Confirm account cancellation",
+        "ALETWO": "Are you sure you would like to cancel your account? Any test data will be lost.",
+        "TEXT":"Yes, cancel my account",
+        "MESSAGE":"Your account has been deleted.  Please visit again for future testing needs.",
+        "TEXTTWO":"No, keep my account active"
+    },
     
     "LANDING":{
         "SLIDEONE": "Welcome to PersonaTest, Classify the Workforce Into Subgroups to Maximize Effeciency.",

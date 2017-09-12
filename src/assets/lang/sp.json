@@ -4,6 +4,13 @@
       "TITLE": "PersonaTest"
       
     },
+     "APPALERT":{
+        "ALERTONE":"hollla",
+        "ALETWO": "Are you sure you would like to cancel your account? Any test data will be lost.",
+        "TEXT":"Yes, cancel my account",
+        "MESSAGE":"Your account has been deleted.  Please visit again for future testing needs.",
+        "TEXTTWO":"No, keep my account active"
+    },
     "LANDING":{
         "SLIDEONE": "Bienvenido a PersonaTest, Clasifique Su Fuerza De Trabajo Usando Categorias Para Maximizar la Efectividad De Sus Empleados.",
         "SLIDETWO": "¡Encuentra Esa Pieza Perfecta Del Rompecabezas! Busque el Ajuste Perfecto Para Llenar Todas sus Posiciones Vacantes.",
@@ -211,8 +218,8 @@
     },
     "MENU":{
         "HOME":"Casa",
-        "MANAGE":"Manage Account Profile",
-        "CHANGE":"Administrar Perfil De Cuenta",
+        "MANAGE":"Administrar Perfil De Cuenta",
+        "CHANGE":"Cambia La Contraseña",
         "BECOME":"Conviértase En Una Organización",
         "CANCEL":"Cancelar Cuenta",
         "LOGOUT":"Cerrar Sesión"

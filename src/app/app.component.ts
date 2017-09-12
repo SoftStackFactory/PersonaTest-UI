@@ -35,6 +35,7 @@ import {TranslateService} from '@ngx-translate/core'
 export class MyApp {
   currentPage: string;
   rootPage: any;
+  translatedAlert:any;
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
@@ -48,7 +49,8 @@ export class MyApp {
     private translate: TranslateService
   ) {
     platform.ready().then(() => {
-      let storage = window.localStorage.getItem('remembered'); 
+      let storage = window.localStorage.getItem('remembered');
+      let lng = window.localStorage.getItem('lng');
       if(storage === null){ 
          this.rootPage = LandingPage; 
       }else{ 
@@ -58,6 +60,7 @@ export class MyApp {
         statusBar.styleDefault();
         splashScreen.hide();
         this.translate.setDefaultLang('en');
+        this.translate.use(lng);
     });
 
   };
@@ -98,10 +101,8 @@ export class MyApp {
   };
   
   deleteAcc(){
-    
-    //prompt user to confirm request to delete account
-    let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Cancel',
+    let confirmDelete = this.alertCtrl.create = {
+      title: 'Confirm account cancellation',
       message: 'Are you sure you would like to cancel your account? Any test data will be lost.',
       buttons: [
         {
@@ -134,13 +135,20 @@ export class MyApp {
           }
         }
         ]
-    });
+    };
+        translate.get('APPALERT.ALERTONE').subscribe((res: string) => {
+          this.translatedAlert.title = res;
+          console.log("app alert one",res)
+        });
+    
+    //prompt user to confirm request to delete account
+    let confirmDelete = this.alertCtrl.create(this.translatedAlert);
     confirmDelete.present();
   };
 
   logout(){
     let confirmLogout = this.alertCtrl.create({
-      title: 'translate.instant("BEORG.NAME");',
+      title: 'Confirm Logout',
       message: 'Are you sure you would like to logout? Any unsaved progress may be lost.',
       buttons: [
         {
@@ -165,3 +173,4 @@ export class MyApp {
   };
 
 }
+
