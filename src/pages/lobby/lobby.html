@@ -6,7 +6,7 @@
       </button>
     </ion-buttons>
     <ion-title text-center>PersonaTest</ion-title>
-    <div padding>
+    <div padding class="segment">
       <ion-segment [(ngModel)]="testType">
         <ion-segment-button value="personal">
           {{'LOBBY.PERSONAL' | translate}}
@@ -52,13 +52,13 @@
               <ion-input [(ngModel)]="testSelected" clearInput></ion-input>
             </ion-item>
           </ion-card>
-          <div class="orgbuttons">
+          <!--<div class="orgbuttons">-->
             <!-- kluge switching forWork() to forPlay() for testTaken backend creation 
-            <button [disabled]="!testSelected" ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>
-            -->
-            <button [disabled]="!testSelected" ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
-            <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
-          </div>
+          <!--  <button [disabled]="!testSelected" ion-button block (click)="forWork()" class="button">{{'LOBBY.TAKE' | translate}}</button>-->
+          <!--  -->
+          <!--  <button [disabled]="!testSelected" ion-button block (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>-->
+          <!--  <button [disabled]="!hasHistory" ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
+          <!--</div>-->
     </div>
   </div>
 </ion-content>

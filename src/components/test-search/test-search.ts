@@ -94,8 +94,8 @@ export class TestSearchComponent {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.testLists = this.testLists.filter((testList) => {
-        return (testList.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.testArrays = this.testArrays.filter((testArray) => {
+        return (testArray.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
@@ -117,9 +117,7 @@ export class TestSearchComponent {
   
   selectedTest(test) {
    this.testSelectedChange.emit(test);
-      
-      // this.items = this.nameArray;
-      // console.log("items", this.items);
+   
   }
 
 

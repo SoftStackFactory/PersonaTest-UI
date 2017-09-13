@@ -5,6 +5,9 @@ page-lobby {
          box-sizing: border-box;
     }
     
+    .segment{
+        position: relative;
+    }
     #main-container{
         width: 90vw;
         margin: 0 auto;
@@ -37,81 +40,81 @@ page-lobby {
     }
     
     
-    .orgbuttons{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width:  100%;
-        bottom: 0;
-    }
+    // .orgbuttons{
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     width:  100%;
+    //     bottom: 0;
+    // }
     
-    .fixed-card{
-        height: auto;
-        max-height: 400px;
-    }
+    // .fixed-card{
+    //     height: auto;
+    //     max-height: 400px;
+    // }
     
-    $primary: color($colors,primary);
+    // $primary: color($colors,primary);
     
-    .button{
-        flex: 0 1 auto;
-        min-width: 125px;
-        min-height: 50px;
-        max-width: 300px;
-        max-height: 120px;
-        padding: 10px;
-        margin: 10px;
-        text-align: center;
-        white-space: normal;
-        background-color: color($colors,primary);
-        color: white;
-        border-radius: 5px;
-    }
-    .button:hover {
-        //background-color: lighten($primary, 15%) !important;
-        //box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
-        //transform: translateY(-0.25em);
-        background-color: transparent !important;
-        color: color($colors,primary) !important;
-        border: medium solid color($colors,primary)!important;
-    }
-    .button:after {
-        // background-coslor: lighten($primary, 15%) !important;
-        // box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
-        //transform: translateY(-0.25em);
-        background-color: transparent !important;
-        color: color($colors,primary) !important;
-        border: medium solid color($colors,primary)!important;
-    }
-    .button2{
-        flex: 0 1 auto;
-        min-width: 125px;
-        min-height: 50px;
-        max-width: 300px;
-        max-height: 120px;
-        padding: 10px;
-        margin: 10px;
-        text-align: center;
-        white-space: normal;
-        background-color: transparent;
-        color: color($colors,primary);
-        border: medium solid color($colors,primary)!important;
-        border-radius: 5px;
-    }
-    .button2:hover{
+    // .button{
+    //     flex: 0 1 auto;
+    //     min-width: 125px;
+    //     min-height: 50px;
+    //     max-width: 300px;
+    //     max-height: 120px;
+    //     padding: 10px;
+    //     margin: 10px;
+    //     text-align: center;
+    //     white-space: normal;
+    //     background-color: color($colors,primary);
+    //     color: white;
+    //     border-radius: 5px;
+    // }
+    // .button:hover {
+    //     //background-color: lighten($primary, 15%) !important;
+    //     //box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+    //     //transform: translateY(-0.25em);
+    //     background-color: transparent !important;
+    //     color: color($colors,primary) !important;
+    //     border: medium solid color($colors,primary)!important;
+    // }
+    // .button:after {
+    //     // background-coslor: lighten($primary, 15%) !important;
+    //     // box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+    //     //transform: translateY(-0.25em);
+    //     background-color: transparent !important;
+    //     color: color($colors,primary) !important;
+    //     border: medium solid color($colors,primary)!important;
+    // }
+    // .button2{
+    //     flex: 0 1 auto;
+    //     min-width: 125px;
+    //     min-height: 50px;
+    //     max-width: 300px;
+    //     max-height: 120px;
+    //     padding: 10px;
+    //     margin: 10px;
+    //     text-align: center;
+    //     white-space: normal;
+    //     background-color: transparent;
+    //     color: color($colors,primary);
+    //     border: medium solid color($colors,primary)!important;
+    //     border-radius: 5px;
+    // }
+    // .button2:hover{
 
-        // color: lighten($primary, 15%) !important;
-        // border-color: lighten($primary, 15%) !important;
-        // background-color: transparent !important;
-        // box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
-        background-color: color($colors,primary) !important;
-        color: white !important;
-    }
-    .button2:after {
-        // background-color: lighten($primary, 15%) !important;
-        // box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
-        background-color: color($colors,primary) !important;
-        color: white !important;
-    }
+    //     // color: lighten($primary, 15%) !important;
+    //     // border-color: lighten($primary, 15%) !important;
+    //     // background-color: transparent !important;
+    //     // box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+    //     background-color: color($colors,primary) !important;
+    //     color: white !important;
+    // }
+    // .button2:after {
+    //     // background-color: lighten($primary, 15%) !important;
+    //     // box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+    //     background-color: color($colors,primary) !important;
+    //     color: white !important;
+    // }
     h2{
         font-size: 17pt;
         padding: 10px;
