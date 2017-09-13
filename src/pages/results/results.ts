@@ -93,8 +93,8 @@ export class ResultsPage {
         results.id = test.id
         results.name = test.name;
         console.log('reduc', results);
-       return results;
-  }
+        return results;
+    }
 
 
 }

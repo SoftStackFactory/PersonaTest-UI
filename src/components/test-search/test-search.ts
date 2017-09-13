@@ -1,5 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
+
+// Providers
+import { TestsProvider } from '../../providers/tests/tests';
+
 /**
  * Generated class for the OrgSearchComponent component.
  *
@@ -16,14 +20,36 @@ export class TestSearchComponent {
   
   searchQuery: string = '';
   items: string[];
+  nameArray: any = [];
+  idArray: any = [];
+  
   
   initializeItems() {
-    //this should actually get a list of organizations from the back end
-    this.items = [
-      "Goldberg's Big 5 Factors",
-      "test",
-      "test",
-      "test"];
+    
+    this.testsProvider.getTests()
+      .subscribe(
+        test => {
+          this.nameArray = [];
+          test.forEach((t)=> this.nameArray.push(t.name))
+          console.log("Test Names", this.nameArray);
+          
+          this.idArray = [];
+          test.forEach((t)=> this.idArray.push(t.id))
+          console.log("Test Ids", this.idArray)
+      
+        }, error => {
+          console.log(error)
+        }
+      )
+      
+      this.items = this.nameArray;
+      console.log("items", this.items);
+    // //this should actually get a list of organizations from the back end
+    // this.items = [
+    //   "Goldberg's Big 5 Factors",
+    //   "test",
+    //   "test",
+    //   "test"];
   }
 
   getItems(ev: any) {
@@ -40,7 +66,12 @@ export class TestSearchComponent {
       })
     }
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public viewCtrl: ViewController,
+    public testsProvider: TestsProvider,
+    ) {
     this.initializeItems();
   }
 
@@ -50,6 +81,7 @@ export class TestSearchComponent {
   
   selectedTest(test) {
     this.testSelectedChange.emit(test);
+    console.log("CLICK ME!!!!")
   }
   
   dismiss() {

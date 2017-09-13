@@ -1,5 +1,10 @@
 {
- "name": "PersonaTest-UI",
- "app_id": "37a8246e",
- "type": "ionic-angular"
+
+  "name": "Persona App",
+  "app_id": "e2b81998",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+
 }

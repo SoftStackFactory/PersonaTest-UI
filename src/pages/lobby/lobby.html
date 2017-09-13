@@ -19,7 +19,7 @@
 </ion-header>
 
 <ion-content padding>
- 
+  
   <div padding>
     <ion-segment [(ngModel)]="testType">
       <ion-segment-button value="personal">
@@ -34,6 +34,18 @@
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
           <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
+          <ion-card class="fixed-card" *ngIf="!testSelected">
+            <ion-card-header>Find a test</ion-card-header>
+            <ion-card-content>
+              <test-search id="searchbar" [(testSelected)]="testSelected"></test-search>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="fixed-card" *ngIf="testSelected">
+            <ion-item>
+              <ion-input [(ngModel)]="testSelected" clearInput></ion-input>
+            </ion-item>
+          </ion-card>
+        
            <div class="testbuttons">
              <button ion-button block [disabled]="hasIncompleteTest" (click)="forPlay()" class="button">{{'LOBBY.TAKE' | translate}}</button>
              <button ion-button block outline (click)="showResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
