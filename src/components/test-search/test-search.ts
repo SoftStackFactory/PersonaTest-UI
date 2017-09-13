@@ -85,6 +85,21 @@ export class TestSearchComponent {
   // }
   
   
+  // getItems(ev: any) {
+  //   // Reset items back to all of the items
+  //   this.initializeItems();
+
+  //   // set val to the value of the searchbar
+  //   let val = ev.target.value;
+
+  //   // if the value is an empty string don't filter the items
+  //   if (val && val.trim() != '') {
+  //     this.testArrays = this.testArrays.filter((testArray) => {
+  //       return (testArray.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+  //     })
+  //   }
+  // }
+  
   getItems(ev: any) {
     // Reset items back to all of the items
     this.initializeItems();
