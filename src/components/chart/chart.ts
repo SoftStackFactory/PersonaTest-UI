@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@angular/core';
 import  { Chart }  from 'chart.js';
+import {TranslateService} from '@ngx-translate/core'
 
 
 @Component({
@@ -10,6 +11,13 @@ export class ChartComponent implements AfterContentInit {
   @ViewChild('polarCanvas') polarCanvas: ElementRef
   @Input("gradedTest") gradedTest: any;
   polarChart: any;
+  agreeableness: any;
+  conscientousness: any;
+  emotionalStability: any;
+  extraversion: any;
+  intellect: any;
+  constructor(
+  private translate: TranslateService){}
 
   ngAfterContentInit() {
     // console.log("chart", this.gradedTest);
@@ -62,16 +70,32 @@ export class ChartComponent implements AfterContentInit {
     // });
     
     // Radar Chart can be used to compare multiple tests/users
+    this.translate.get('LABEL.AGREEABLENESS').subscribe((res:any)=> {
+      this.agreeableness= res;
+        });
+        this.translate.get('LABEL.CONSCIENTOUSNESS').subscribe((res:any)=> {
+      this.conscientousness= res;
+        });
+        this.translate.get('LABEL.EMOTIONALSTABILITY').subscribe((res:any)=> {
+      this.emotionalStability= res;
+        });
+        this.translate.get('LABEL.EXTRAVERSION').subscribe((res:any)=> {
+      this.extraversion= res;
+        });
+        this.translate.get('LABEL.INTELLECT').subscribe((res:any)=> {
+      this.intellect= res;
+        });
+
     
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'radar',
     data: {
       labels: [
-          "Agreeableness",
-          "Conscientiousness",
-          "Emotional Stability",
-          "Extraversion",
-          "Intellect"
+          this.agreeableness,
+          this.conscientousness,
+          this.emotionalStability,
+          this.extraversion,
+          this.intellect
           ],
       datasets: [
         {

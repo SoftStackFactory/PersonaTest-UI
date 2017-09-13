@@ -7,7 +7,7 @@
 
   <ion-navbar>
 
-    <ion-buttons start>
+    <ion-buttons end>
       <button ion-button icon-only menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -56,7 +56,7 @@
         
     <div *ngSwitchCase="'organization'" id="organizationsegment">
           <ion-card class="fixed-card" *ngIf="!orgSelected">
-            <ion-card-header>Find an Organization</ion-card-header>
+            <ion-card-header translate>LOBBY.FINDORG</ion-card-header>
             <ion-card-content>
               <org-search id="searchbar" [(orgSelected)]="orgSelected"></org-search>
             </ion-card-content>
@@ -67,7 +67,7 @@
             </ion-item>
           </ion-card>
           <ion-card *ngIf="orgSelected && !testSelected" class="fixed-card">
-            <ion-card-header>Find a Test</ion-card-header>
+            <ion-card-header translate>LOBBY.FINDTEST</ion-card-header>
             <test-search id="searchbar" [(testSelected)]="testSelected"></test-search>
           </ion-card>
           <ion-card class="fixed-card" *ngIf="testSelected">

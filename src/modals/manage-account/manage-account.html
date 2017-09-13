@@ -13,36 +13,36 @@
 
 
 <ion-content padding>
-  <p class="menu-instruction">Enter changes to your profile and click submit when complete</p>
+  <p class="menu-instruction">{{'MANAGEACC.INSTRUCTION' | translate}}</p>
   <form [formGroup]="accountChangeForm" (ngSubmit)="accountChange(accountChangeForm)">
       <ion-item>
-        <ion-label floating><small class="asterik">*</small>First Name: </ion-label>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.FIRST' | translate}} </ion-label>
         <ion-input type="text" formControlName="firstName"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating><small class="asterik">*</small>Last Name: </ion-label>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.LAST' | translate}}</ion-label>
         <ion-input type="text" formControlName="lastName"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating>Age: </ion-label>
+        <ion-label floating>{{'MANAGEACC.AGE' | translate}} </ion-label>
         <ion-input type="text" formControlName="age"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label floating><small class="asterik">*</small>Gender: </ion-label>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.GENDER' | translate}} </ion-label>
           <ion-select type="text" formControlName="gender">
-            <ion-option>Decline</ion-option>
-            <ion-option>Female</ion-option>
-            <ion-option>Male</ion-option>
-            <ion-option>Other</ion-option>
+            <ion-option translate>MANAGEACC.FEMALE</ion-option>
+              <ion-option translate>MANAGEACC.MALE</ion-option>
+              <ion-option translate>MANAGEACC.OTHER</ion-option>
+              <ion-option translate>MANAGEACC.DECLINE</ion-option>
           </ion-select>
       </ion-item>
-      <button class="menu-button" ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
+      <button class="menu-button" ion-button type="submit" [disabled]="!accountChangeForm.valid">{{'MANAGEACC.SUBMIT' | translate}}</button>
     </form>
     <footer>
-    <small class="asterik">*</small>required fields
+    <small class="asterik">*</small>{{'MANAGEACC.REQ' | translate}}
     </footer>
 
-    <h4 class ="f">Set Language Preference</h4>
+    <h4 class ="f">{{'MANAGEACC.SET' | translate}}</h4>
      <div class="bottom">
       <button ion-button type (click)="setLanguage('en')">English</button>
       <button ion-button type (click)="setLanguage('sp')">Spanish</button>
