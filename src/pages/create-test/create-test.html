@@ -15,18 +15,30 @@
 
 <ion-content padding>
   
+  <div class="container">
+    
+    <div class="title-input">
+    <ion-item>
+      <ion-label stacked>Please enter the name of this test</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    </div>
+    
   <ion-list>
-    <div *ngFor="let category of categories">
+    <div class="category-list" *ngFor="let category of categories">
+      <div *ngFor="let description of descriptions">
       <ion-checkbox></ion-checkbox>
     <button detail-none (click)="expandCategory(category)" ion-item>
-      <!--<h2>TITLE</h2>-->
       <h2>{{category.name}}</h2>
       <expandable [expandHeight]="categoryExpandHeight" [expanded]="category.expanded">
-        DESCRIPTION
+        {{description}}
       </expandable>
       <button ion-button clear item-end>View</button>
     </button>
     </div>
+    </div>
   </ion-list>
+  </div>
   
 </ion-content>
+

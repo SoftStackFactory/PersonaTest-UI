@@ -21,4 +21,8 @@ export class QuestionsProvider {
     return this.http.get(this.baseUrl + this.path + "/uniqueCategories?access_token=" + this.token).map(res => res.json());
   }
   
+  uniqueDescriptions() {
+    return this.http.get(this.baseUrl + this.path + "/uniqueDescriptions?access_token=" + this.token).map(res => res.json());
+  }
+  
 }

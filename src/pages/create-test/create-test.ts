@@ -16,44 +16,43 @@ import { QuestionsProvider } from '../../providers/questions/questions';
 })
 export class CreateTestPage {
   
-  // items: any = [];
   categoryExpandHeight: number = 100;
   categories: any = [];
+  descriptions: any = [];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private questionsProvider: QuestionsProvider,
     ) {
-      // this.items = [
-      // this.categories = [
-      //   {expanded: false, name: "test"},
-      //   {expanded: false, name: "test2"},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false},
-      //   {expanded: false}
-      // ];
       
-  }
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateTestPage');
     
     this.questionsProvider.uniqueCategories().subscribe(
       categories => {
-        this.categories = categories.map(category => {
+        this.categories = categories.sort().map(category => {
           return {expanded: false, name: category}
         });
         console.log("Unique Categories", this.categories);
       }, error => {
         console.log("Categories not found");
       })
+      
+    this.questionsProvider.uniqueDescriptions().subscribe(
+      descriptions => {
+        this.descriptions = descriptions.sort();
+        console.log("Unique Descriptions", this.descriptions);
+      }, error => {
+        console.log("Descriptions not found");
+      })
   }
+  
+  
+    
+  
   
   expandCategory(category){
     this.categories.map((listCategory) => {

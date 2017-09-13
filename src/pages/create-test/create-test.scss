@@ -1,3 +1,26 @@
 page-create-test {
-    
+    .container {
+        display: flex;    
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .title-input {
+        width: 60%;
+    }
+    h2 {
+        font-size: 24px !important;
+    }
+    .category-list {
+        // margin: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    ion-list {
+        width: 60%;
+    }
+    expandable {
+        width: 60%;
+    }
 }
