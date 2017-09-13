@@ -3,6 +3,7 @@ import { NavController, NavParams, ViewController, AlertController } from 'ionic
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {TranslateService} from '@ngx-translate/core';
 import { AppUserProvider } from '../../providers/app-user/app-user';
+import { AgeValidator } from '../../validators/age';
 
 @Component({
   selector: 'manage-account-modal',
@@ -10,9 +11,9 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class ManageAccountModal {
   private accountChangeForm : FormGroup;
-
-  alertTitle: string
-  alertSubtitle: string
+  submitAttempt: boolean = false;
+  alertTitle: string;
+  alertSubtitle: string;
   
   constructor(
       public navCtrl: NavController, 
@@ -24,10 +25,10 @@ export class ManageAccountModal {
       private appUser: AppUserProvider
      ) {
         this.accountChangeForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            age: [''],
-            gender: ['', Validators.required]
+          firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+          lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+          age: ['', AgeValidator.isValid],
+          gender: ['', Validators.required]
         });
   }
 
@@ -49,6 +50,7 @@ export class ManageAccountModal {
   }
   
   accountChange(form) {
+    this.submitAttempt = true;
     console.log("New Account Data", this.accountChangeForm.value)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
@@ -78,11 +80,5 @@ export class ManageAccountModal {
         }    
       });
     }
-  
-  setLanguage(lng){
-    this.translate.use(lng);
-  }
-
-
 
 }

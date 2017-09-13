@@ -1,15 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-only (click)="saveAnswers()">
-        <ion-icon name="archive"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-title text-center>PersonaTest</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="toLobbyPage()">
-        <ion-icon name="home"></ion-icon>
+      <button ion-button icon-only (click)="saveAnswers()">
+        <ion-icon name="archive"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -44,8 +39,9 @@
         <div [class.inactive]="degreeNum != 75">{{'QUE.AGREE' | translate}}</div>
         <div [class.inactive]="degreeNum != 100">{{'QUE.SA' | translate}}</div>
       </div>
+
       <div text-center>
-        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
+        <button ion-button (click)="toNextQuestion()" [class.button-disabled]="slider.untouched" >
           {{'QUE.NEXT' | translate}}
         </button>
       </div>

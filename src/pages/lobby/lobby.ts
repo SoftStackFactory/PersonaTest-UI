@@ -151,7 +151,7 @@ export class LobbyPage {
         }, error => {
           console.log(error);
         },
-       () =>  this.navCtrl.push(QuestionPage, {testTaken: this.TEST} )
+       () =>  this.navCtrl.setRoot(QuestionPage, {testTaken: this.TEST} )
         
       )
    
