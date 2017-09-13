@@ -10,6 +10,13 @@
         "MESSAGE":"Your account has been deleted.  Please visit again for future testing needs.",
         "TEXTTWO":"No, keep my account active"
     },
+     "LABEL":{
+        "AGREEABLENESS":"Agreeableness",
+        "CONSCIENTOUSNESS": "Conscientousness",
+        "EMOTIONALSTABILITY":"Emotional Stability",
+        "EXTRAVERSION":"Extraversion",
+        "INTELLECT":"Intellect"
+    },
     "LOGOUT":{
         "TITLE":"Confirm Logout",
         "MESSAGE": "Are you sure you would like to logout? Any unsaved progress may be lost.",
@@ -26,11 +33,6 @@
         "SIGNUP": "SignUp"
     },
         
-    "LOBBY": {
-        "TITLE": "PersonaTest",
-        "PERSONAL": "Personal",
-        "ORGANIZATION": "Organization"
-    },
     "QUE":{
         "INSTRUCTION":"Indicate How Much The Statement Applies To You Using The Sliding Scale Below.",
         "SA":"Strongly Agree",
@@ -78,7 +80,12 @@
         "PROFESSIONAL": "PROFESSIONAL",
         "NAME": "Hello",
         "TAKE": "Take a Test",
-        "RESULTS": "View Results"
+        "RESULTS": "View Results",
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organization",
+        "FINDORG":"Find An Organization",
+        "FINDTEST":"Find a Test"
     },
     
     "ORGANIZATION": {

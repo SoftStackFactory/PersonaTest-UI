@@ -12,6 +12,13 @@
         "MESSAGE":"Tu Cuenta ha Sido Eliminada. Por favor, Vuelva a Visitarlo Para Futuras Pruebas.",
         "TEXTTWO":"No, Mantener mi Cuenta Activa"
     },
+     "LABEL":{
+        "AGREEABLENESS":"Agradecimiento",
+        "CONSCIENTOUSNESS": "Consciencia",
+        "EMOTIONALSTABILITY":"Estabilidad Emocional",
+        "EXTRAVERSION":"Extraversión",
+        "INTELLECT":"Intelecto"
+    },
     
      "LOGOUT":{
         "TITLE":"Confirmar Cerrar Sesión",
@@ -28,11 +35,6 @@
         "SIGNUP": "Regístrate"
     },
         
-    "LOBBY": {
-        "TITLE": "PersonaTest",
-        "PERSONAL": "Personal",
-        "ORGANIZATION": "Organización"
-    },
      "QUE":{
         "INSTRUCTION":"Indique Cuánto Se Aplica La Declaración A Usted Usando La Escala Siguiente.",
         "SA":"Totalmente De Acuerdo",
@@ -78,7 +80,12 @@
         "PROFESSIONAL": "PROFESIONAL",
         "NAME": "Hola",
         "TAKE": "Toma Examen",
-        "RESULTS": "Ve Resultados"
+        "RESULTS": "Ve Resultados",
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organización",
+        "FINDORG":"Encuentre Una Organización",
+        "FINDTEST":"Encuentre Una Prueba"
     },
     
     "ORGANIZATION": {
