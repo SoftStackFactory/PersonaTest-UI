@@ -6,6 +6,7 @@ import { QuestionsProvider } from '../../providers/questions/questions';
 import { AnswersProvider } from '../../providers/answers/answers';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 import { ResultsPage } from '../results/results';
+import { LobbyPage } from '../lobby/lobby';
 
 @Component({
   selector: 'page-question',
@@ -101,6 +102,11 @@ export class QuestionPage {
   toPreviousPage() {
     this.navCtrl.pop();
   }
+  toLobbyPage() {		 
+     console.log('to lobby page');		
+     this.navCtrl.setRoot(LobbyPage);		
+  }
+  
   saveAnswers() {
     let alert = this.alertCtrl.create({
       title: 'Save Answers',
