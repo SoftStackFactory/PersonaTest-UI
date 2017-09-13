@@ -7,7 +7,7 @@ page-landing {
                 padding: 50px;
                 padding-bottom: 0; 
                 padding-top: 100px;
-                font-size: 40px;
+                font-size: 30px;
 
         }
         .title{
@@ -22,6 +22,7 @@ page-landing {
                 top:0;
                 left: 90px;
                 margin: auto;
+                justify-content: center;
         }
         .wizard{
                 height: 255px;
@@ -33,8 +34,9 @@ page-landing {
       
         }
         .h2{
-                font-size: 150px;
+                font-size: 10px;
                 padding: 5px;
+                margin-top: 0px
                 
         }
         .bottom{
@@ -63,12 +65,33 @@ page-landing {
                 font-size: 15px;
                 outline: none;
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                justify-content: center;
                 
         }
         .font{
-                font-size: 20px;
+                font-size: 15px;
                 color: color($colors, primary);
                 margin-bottom: 40px;
+        }
+   
+        .spanish:hover {
+                 text-decoration: underline;
+                 cursor: pointer;
+                 display: inline-block;
+        }
+        .english:hover {
+                 text-decoration: underline;
+                 cursor: pointer;
+                 display: inline-block;
+        }
+         .lang{
+                 display: inline-block;
+                 font-size: 10px;
+                 color: color($colors, primary);
+                font-family: Ubuntu;
+        }
+        .spanish{
+        padding-left: 5px;
         }
         
         @media screen and (min-width: 768px){
@@ -85,7 +108,7 @@ page-landing {
                 .bottom{
                         width: 250px;
                         font-size: 35px;
-                        display: flex;
+                        // display: flex;
                         width: 300px;
                 }
                        
@@ -107,7 +130,6 @@ page-landing {
                 }
                 .login{
                         padding-top: 16px;
-                        padding-left: 30px;
                 }
         } 
         
@@ -127,14 +149,13 @@ page-landing {
                 .bottom{
                         width: 350px;
                         font-size: 40px;
-                        display: flex;
                         width: 400px;
                        
                }
                 .button-block{
                         padding: 20px;
                         font-size: 45px;
-                        height: 70px;
+                        height: 90px;
                 }
                 .photo{
                         height: 220px;
@@ -144,12 +165,11 @@ page-landing {
                         padding: 20px;
                 }
                 .font{
-                        font-size: 45px;
+                        font-size: 30px;
                         color: color($colors, primary);
                 }
                 .login{
-                        padding-top: 5px;
-                        padding-left: 30px;
+                        padding-top: 10px;
                         font-size: 50px;
                 }
         }        
@@ -159,9 +179,13 @@ page-landing {
                         padding-top: 0px;
                         
                 }
+                .button-block{
+                        height: 75px;
+                        font-size: 40px;
+                }
                 .wizard{
-                        height: 580px;
-                        width: 580px;
+                        height: 530px;
+                        width: 530px;
                         padding-left: 10px;
                         padding-right: 10px;
                 }

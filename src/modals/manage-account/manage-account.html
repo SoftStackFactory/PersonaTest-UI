@@ -13,52 +13,40 @@
 
 
 <ion-content padding>
-  <p class="menu-instruction">Enter changes to your profile and click submit when complete</p>
+  <p class="menu-instruction">{{'MANAGEACC.INSTRUCTION' | translate}}</p>
   <form [formGroup]="accountChangeForm" (ngSubmit)="accountChange(accountChangeForm)">
-      
-        <!--FIRST NAME INPUT-->
-        <ion-item>
-          <ion-label floating><small class="asterik">*</small>{{'REGISTER.FIRST' | translate}}</ion-label>
-            <ion-input formControlName="firstName" type="string"></ion-input>
-        </ion-item>
-        <div class="errors" *ngIf="!accountChangeForm.controls.firstName.valid && (accountChangeForm.controls.firstName.dirty || submitAttempt)">
-          <p>{{'REGISTER.ERRORFIRST' | translate}}</p>
-        </div>
-        
-        <!--LAST NAME INPUT-->
-        <ion-item>
-          <ion-label floating><small class="asterik">*</small>{{'REGISTER.LAST' | translate}}</ion-label>
-            <ion-input formControlName="lastName" type="string"></ion-input>
-        </ion-item>
-        <div class="errors" *ngIf="!accountChangeForm.controls.lastName.valid && (accountChangeForm.controls.lastName.dirty || submitAttempt)">
-          <p>{{'REGISTER.ERRORLAST' | translate}}</p>
-        </div>
-        
-        <!--AGE INPUT-->
-        <ion-item>
-          <ion-label floating>{{'REGISTER.AGE' | translate}}</ion-label>
-            <ion-input formControlName="age" type="number"></ion-input>
-        </ion-item>
-        <div class="errors" *ngIf="!accountChangeForm.controls.age.valid && (accountChangeForm.controls.age.dirty || submitAttempt)">
-          <p>{{'REGISTER.ERRORAGE' | translate}}</p>
-        </div>
-        
-      <!--GENDER INPUT-->
-        <ion-item>
-          <ion-label floating><small class="asterik">*</small>{{'REGISTER.GENDER' | translate}}</ion-label>
-            <ion-select formControlName="gender">
-              <ion-option translate>REGISTER.DECLINE</ion-option>
-              <ion-option translate>REGISTER.FEMALE</ion-option>
-              <ion-option translate>REGISTER.MALE</ion-option>
-              <ion-option translate>REGISTER.OTHER</ion-option>
-            </ion-select>
-        </ion-item>
-        
-      <button class="menu-button" ion-button type="submit" [disabled]="!accountChangeForm.valid">Submit</button>
+      <ion-item>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.FIRST' | translate}} </ion-label>
+        <ion-input type="text" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.LAST' | translate}}</ion-label>
+        <ion-input type="text" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>{{'MANAGEACC.AGE' | translate}} </ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating><small class="asterik">*</small>{{'MANAGEACC.GENDER' | translate}} </ion-label>
+          <ion-select type="text" formControlName="gender">
+            <ion-option translate>MANAGEACC.FEMALE</ion-option>
+              <ion-option translate>MANAGEACC.MALE</ion-option>
+              <ion-option translate>MANAGEACC.OTHER</ion-option>
+              <ion-option translate>MANAGEACC.DECLINE</ion-option>
+          </ion-select>
+      </ion-item>
+      <button class="menu-button" ion-button type="submit" [disabled]="!accountChangeForm.valid">{{'MANAGEACC.SUBMIT' | translate}}</button>
     </form>
     <footer>
-    <small class="asterik">*</small>required fields
+    <small class="asterik">*</small>{{'MANAGEACC.REQ' | translate}}
     </footer>
+
+    <h4 class ="f">{{'MANAGEACC.SET' | translate}}</h4>
+     <div class="bottom">
+      <button ion-button type (click)="setLanguage('en')">English</button>
+      <button ion-button type (click)="setLanguage('sp')">Spanish</button>
+      </div>
 
 </ion-content>
 
