@@ -90,10 +90,7 @@ export class QuestionPage {
       this.degreeNum = 49;
     }
   }
-  toLobbyPage() {
-    console.log('to lobby page');
-    this.navCtrl.setRoot(LobbyPage);
-  }
+  
   showAlert(errorMessage: string) {
     let alert = this.alertCtrl.create({
       subTitle: errorMessage,
@@ -105,6 +102,11 @@ export class QuestionPage {
   toPreviousPage() {
     this.navCtrl.pop();
   }
+  toLobbyPage() {		 
+     console.log('to lobby page');		
+     this.navCtrl.setRoot(LobbyPage);		
+  }
+  
   saveAnswers() {
     let alert = this.alertCtrl.create({
       title: 'Save Answers',
