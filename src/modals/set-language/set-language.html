@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="dismiss()">
+      <ion-icon name="close-circle"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>PersonaTest</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p>Set Language Preference</p>
+    <div class="langButton">
+      <button ion-button type (click)="setLanguage('en')">English</button>
+      <button ion-button type (click)="setLanguage('sp')">Spanish</button>
+    </div>
+</ion-content>

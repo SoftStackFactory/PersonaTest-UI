@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { RegisterPage }   from '../register/register';
 import { LoginPage }      from '../login/login';
+import {TranslateService} from '@ngx-translate/core'
 
 /**
  * Generated class for the LandingPage page.
@@ -17,7 +18,7 @@ import { LoginPage }      from '../login/login';
 export class LandingPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private menu: MenuController) {
+    private menu: MenuController, private translate: TranslateService) {
   }
 
   ionViewDidLoad() {
@@ -34,4 +35,7 @@ Register(){
  Login(){
     this.navCtrl.push(LoginPage);
 }
+setLanguage(lng){
+    this.translate.use(lng);
+  }
 }

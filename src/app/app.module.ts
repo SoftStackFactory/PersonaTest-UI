@@ -56,7 +56,7 @@ import { TestSearchComponent } from '../components/test-search/test-search';
 //Modals
 import { ForWorkModal } from '../modals/for-work-modal/for-work-modal';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
-
+import { SetLanguageModal } from '../modals/set-language/set-language';
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
@@ -101,6 +101,7 @@ let injections: any[] = [
     ManageAccountModal,
     PasswordResetModal,
     PasswordChangeModal,
+    SetLanguageModal,
     HomeComponent,
     OrgSearchComponent,
     RememberMeComponent,

@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent">
+<ion-menu persistent="true" side="right" [content]="mycontent">
 
     <ion-header>
         <ion-navbar>
@@ -13,12 +13,12 @@
     <ion-content>
         <ion-list>
             <button ion-item (click)="goHome()"><ion-icon name="home"></ion-icon>
-                Home</button>
-            <button ion-item (click)="manageAcc()">Manage Account Profile</button>
-            <button ion-item (click)="changePassword()">Change Password</button>
-            <button ion-item (click)="becomeOrg()">Become an Organization</button>
-            <button ion-item (click)="deleteAcc()">Cancel Account</button>
-            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>Logout</button>
+                {{'MENU.HOME' | translate}}</button>
+            <button ion-item (click)="manageAcc()">{{'MENU.MANAGE' | translate}}</button>
+            <button ion-item (click)="changePassword()">{{'MENU.CHANGE' | translate}}</button>
+            <button ion-item (click)="becomeOrg()">{{'MENU.BECOME' | translate}}</button>
+            <button ion-item (click)="deleteAcc()">{{'MENU.CANCEL' | translate}}</button>
+            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>{{'MENU.LOGOUT' | translate}}</button>
             
         </ion-list>
     </ion-content>
