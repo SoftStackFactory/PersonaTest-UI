@@ -1,6 +1,134 @@
 test-search {
-    ion-scroll{
-        height: 150px;
+    
+    div::-webkit-scrollbar {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
     }
+     
+    div::-webkit-scrollbar-track {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
+    }
+     
+    div::-webkit-scrollbar-thumb {
+      border:none;
+      width:0;
+      background: rgba(0,0,0,0);
+    }   
+   
+    ion-scroll{
+        height: 100vh;
+    }
+    
+    // .searchbar .button{
+    //     background-color: grey !important;
+    //     min-width: 25px !important;
+    //     min-height: 25px !important;
+    //     max-width: 25px !important;
+    //     max-height: 25px !important;
+    // }
 
+    #toolbar{
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        outline: 0;
+        padding: 0;
+    }
+    
+    .scroll-content {
+        padding: 0 !important;
+        height: 100vh;
+    }
+    
+    .testList{
+      height: 100vh;
+      margin: auto;
+    }
+    
+    .card-background-page {
+    // background: grey;
+    
+    ion-card {
+        position: relative;
+        text-align: center;
+        // height: 20vh;
+        // width: 40vw;
+        // margin: 0 auto;
+      }
+    
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+      }
+      
+    .button1{
+        position: absolute;
+        top: 70%;
+        left: 0;
+        min-width: 40% !important;
+        min-height: 20% !important;
+        max-width: 20% !important;
+        max-height: 40% !important;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        white-space: normal;
+        background-color: transparent;
+        color: #fff;
+        border: medium solid #fff !important;
+        border-radius: 5px;
+    }
+    
+    .button2{
+        position: absolute;
+        top: 70%;
+        right: 0;
+        min-width: 40% !important;
+        min-height: 20% !important;
+        max-width: 20% !important;
+        max-height: 40% !important;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        white-space: normal;
+        background-color: transparent;
+        color: #fff;
+        border: medium solid #fff !important;
+        border-radius: 5px;
+    }
+        
+    }
+    
+    @media screen and (min-width: 768px) {
+        #toolbar{
+            width: 40%;
+            margin: 0 auto;
+        }
+        // .card-background-page{
+        //     max-width: 60%;
+        //     margin: 0 auto;
+        // }
+        
+    }
+    
+/*    @media screen and (orientation : landscape) {
+        .card-background-page ion-card{
+            height: 100%;
+        }
+    }*/
 }
