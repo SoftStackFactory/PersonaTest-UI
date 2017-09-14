@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,  } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 //Pages
@@ -30,6 +30,7 @@ export class TestSearchComponent {
   idArray: any = [];
   testArrays: any = [];
   testName: any;
+  filterTests: any = [];
   
   
   initializeItems() {
@@ -54,8 +55,8 @@ export class TestSearchComponent {
         }
       )
       
-      this.items = this.nameArray;
-      console.log("items", this.items);
+//this.items = this.nameArray;
+//      console.log("items", this.items);
     // //this should actually get a list of organizations from the back end
     // this.items = [
     //   "Goldberg's Big 5 Factors",
@@ -101,18 +102,28 @@ export class TestSearchComponent {
   // }
   
   getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.testArrays = this.testArrays.filter((testArray) => {
-        return (testArray.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
+    // // Reset items back to all of the items
+    // this.initializeItems();
+    
+    
+    // //this.filterTests = this.testArrays;
+    
+    
+    // // set val to the value of the searchbar
+    // let val = ev.target.value;
+    
+    // console.log("input value", val)
+    // // if the value is an empty string don't filter the items
+    // if (val && val.trim() != '') {
+    //   this.filterTests= this.filterTests.filter((testArray) => {
+    //     return (testArray.name.toString().toLowerCase().indexOf(val.toLowerCase()) > -1);
+    //   })
+      
+    // }
+    //   else {
+    //       this.filterTests = this.testArrays
+    //   }
+    //   console.log("filter tests", this.filterTests)
   }
   
   constructor(
