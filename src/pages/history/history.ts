@@ -26,7 +26,7 @@ export class HistoryPage {
   emptyHistory: boolean = true;
   
   //Variable to store our array of test as an array of objects; Currently using mock data
-  ourList: { name: string, date: Date }[] = {};
+  ourList: { name: string, date: Date }[] ;
   
   //Variable to store copy of our original array, because we will need to filter
   filteredList: any = this.ourList;
