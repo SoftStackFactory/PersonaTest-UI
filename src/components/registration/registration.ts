@@ -46,7 +46,9 @@ export class RegistrationComponent {
         confirmPassword: ['', Validators.compose([PasswordValidator.isValid, Validators.required])],
         gender: ['', Validators.required],
         isEula: [false]
+        
       });
+      console.log("flag", Validators);
   }
   
   showAlert() {
@@ -66,9 +68,19 @@ export class RegistrationComponent {
   
   submit(){
     this.submitAttempt = true;
-    
+    //If user does not input an age, set to zero since formControls makes it required.
+    if(!this.registerForm.value.age) {
+      this.registerForm.value.age = 0;
+    }
     //INCOMPLETE FORM!!
     if(!this.registerForm.valid){
+    // if(!this.registerForm.value.firstName.valid &&
+    //   !this.registerForm.value.lastName.valid &&
+    //   !this.registerForm.value.email.valid &&
+    //   !this.registerForm.value.password.valid &&
+    //   !this.registerForm.value.confirmPassword.valid &&
+    //   !this.registerForm.value.gender.valid
+    // ){
       console.log("incomplete form")
       this.alertTitle = "Incomplete Form";
       this.alertSubtitle = "Please fill in all required fields properly.";

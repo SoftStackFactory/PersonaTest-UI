@@ -43,6 +43,9 @@ page-question {
   .label p {
     margin: 0;
   }
+  .button-disabled {
+    opacity: 0.4;
+  }
   @media only screen and (min-width: 375px) and (max-width: 567px) {
     .label p {
       margin: 14px;

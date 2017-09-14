@@ -1,15 +1,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-only (click)="saveAnswers()">
-        <ion-icon name="archive"></ion-icon>
-      </button>
-    </ion-buttons>
     <ion-title text-center>PersonaTest</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="toLobbyPage()">
-        <ion-icon name="home"></ion-icon>
+      <button ion-button icon-only (click)="saveAnswers()">
+        <ion-icon name="archive"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -21,7 +16,7 @@
     <div class="left-container">
       <h4 text-center><span class="name">{{ (user | async)?.firstName }}</span></h4>
       <h2 text-center class="test-name">{{ testName }}</h2>
-      <p class="instruction">Indicate how much the statement applies to you using the sliding scale below.</p>
+      <p class="instruction">{{'QUE.INSTRUCTION' | translate}}</p>
       <ion-card>
         <div class="card-container">
           <ion-card-content text-center>
@@ -32,21 +27,22 @@
     </div>
     <div class="right-container">
       <div class="label">
-        <p>Strongly Disagree</p>
-        <p>Strongly Agree</p>
+        <p>{{'QUE.SD' | translate}}</p>
+        <p>{{'QUE.SA' | translate}}</p>
       </div>
       <ion-range step="25" snaps="true" [(ngModel)]="degreeNum" #slider="ngModel">
       </ion-range>
       <div class="labels">
-        <div [class.inactive]="degreeNum != 0">Strongly Disagree</div>
-        <div [class.inactive]="degreeNum != 25">Disagree</div>
-        <div [class.inactive]="degreeNum != 50">Neutral</div>
-        <div [class.inactive]="degreeNum != 75">Agree</div>
-        <div [class.inactive]="degreeNum != 100">Strongly Agree</div>
+        <div [class.inactive]="degreeNum != 0">{{'QUE.SD' | translate}}</div>
+        <div [class.inactive]="degreeNum != 25">{{'QUE.DIS' | translate}}</div>
+        <div [class.inactive]="degreeNum != 50">{{'QUE.NEU' | translate}}</div>
+        <div [class.inactive]="degreeNum != 75">{{'QUE.AGREE' | translate}}</div>
+        <div [class.inactive]="degreeNum != 100">{{'QUE.SA' | translate}}</div>
       </div>
+
       <div text-center>
-        <button ion-button (click)="toNextQuestion()" [disabled]="slider.untouched">
-          Next Question
+        <button ion-button (click)="toNextQuestion()" [class.button-disabled]="slider.untouched" >
+          {{'QUE.NEXT' | translate}}
         </button>
       </div>
       <div class="progress-bar">
