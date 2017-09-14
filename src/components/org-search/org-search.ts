@@ -15,37 +15,43 @@ export class OrgSearchComponent {
   @Output() orgSelectedChange = new EventEmitter();
   
   searchQuery: string = '';
-  items: string[];
+  orgLists: string[];
 
-  initializeItems() {
-    //this should actually get a list of organizations from the back end
-    this.items = [
-      "SoftStack Factory",
-      "SalCo",
-      "MindSpring",
-      "Learn Academy"];
-  }
-
-  getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-
-    // set val to the value of the searchbar
-    let val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-    this.initializeItems();
-  }
+      this.initializeItems();
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrgSearchComponent');
+  }
+  
+  initializeItems() {
+    //this should actually get a list of organizations from the back end
+    this.orgLists = [
+      "SoftStack Factory",
+      "SalCo",
+      "MindSpring",
+      "Learn Academy"
+      ];
+  }
+  
+  getItems(orgName: any){
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    console.log("hi hello" + orgName);
+    
+    let val=orgName.target.value;
+    
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.orgLists= this.orgLists.filter((orgList) => {
+        return (orgList.toString().toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+    
+    //this.searchTerm = val;
+    // console.log("hi hello" + this.searchTerm);
   }
   
   selectOrg(organization){

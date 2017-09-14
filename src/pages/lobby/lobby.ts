@@ -35,6 +35,7 @@ export class LobbyPage {
   hasIncompleteTest: boolean;
   recentTestId: any;
   count: any;
+
   
   constructor(
     public navCtrl: NavController, 
@@ -54,6 +55,7 @@ export class LobbyPage {
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
       this.hasIncompleteTest = this.userHasIncompleteTest();
+      console.log( "this.hasIncompleteTest ", this.hasIncompleteTest);
     }
 
   ionViewDidLoad() {
@@ -68,6 +70,8 @@ export class LobbyPage {
   
   userHasIncompleteTest() {
     console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
+    let rValue = null;
+    this.testHistoryProvider.getMostRecentTestTakenIdByUserId(this.ID)
     let countOfTestsTaken;
     this.testHistoryProvider.hasTestHistory(this.ID)
     .subscribe(
@@ -85,8 +89,9 @@ export class LobbyPage {
         testId => {
           if (testId != []){
             console.log("testId ", testId);
+            console.log("testId[0].id ", testId[0].id);
             console.log("this.recentTestId ", this.recentTestId);
-            this.recentTestId = testId[0].userId;
+            this.recentTestId = testId[0].id;
             console.log("most recent test", this.recentTestId);
           } else {
             this.recentTestId = [{}];
@@ -100,11 +105,15 @@ export class LobbyPage {
           .subscribe(
               res => {
                 this.count = res.count;
+                console.log("first subscribe count= ", this.count);
               }, error => {
                 console.log(error);
               },
               () => {
+                
                 console.log("done with second callback", this.count);
+                console.log("calculating whether or not they have another test ", this.count);
+                rValue = (this.count < 50) ? true : false;
               }
             )
             console.log("last after");
@@ -113,71 +122,23 @@ export class LobbyPage {
         console.log("done with hasTestHistory callback");
       }})
       
-    return (this.count < 50) ? true : false;
-  }
-
-  forWork() {
-    //this should take into accout which organization, and test has been selected
-    // this.navCtrl.push(QuestionPage, testSettings=>{orgSelected: SoftStackFactory, testSelected: Goldberg})
-    this.navCtrl.push(QuestionPage);
-    console.log("Switch to Work View");
-    // let forWorkModal = this.modalCtrl.create(ForWorkModal);
-    // forWorkModal.present();
+    // return (this.count < 50) ? true : false;
+    console.log("rValue ", rValue);
+    return rValue;
   }
   
   resumeTest() {
     alert("This should put you back where you were in the test");
   }
   
-  forPlay() {
-    let testTaken = {
-      // Hard coded ID, generated from the App user model in the backend
-      // userId: "59a32e40a35bbc79d8931602",
-      userId: this.ID,
-      // Hard coded ID, generated from the test model in the backend
-      // Eventually will reference each test's unique id
-      testId: "59a323f32eb4c1781fd6c1e3",
-      date: new Date(),
-      Extraversion: 0,
-      Agreeableness: 0,
-      Conscientiousness: 0,
-      'Emotional Stability': 0,
-      Intellect: 0,
-      name: "Goldberg"
-    };
-    this.resultsProvider.initializeTest(testTaken)
-      .subscribe(
-        test => {
-          this.TEST = test
-          console.log("Initalized Test", this.TEST);
-          
-        }, error => {
-          console.log(error);
-        },
-       () =>  this.navCtrl.setRoot(QuestionPage, {testTaken: this.TEST} )
-        
-      )
-   
-   
-  }
+
   showResults() {
     this.navCtrl.push(HistoryPage);
     console.log("go to results page for personal tests taken");
   }
+  
   viewResults() {
      this.navCtrl.push(HistoryPage);
     console.log("go to results page for organization tests available to view");
   }
-  manageAcc() {
-    console.log("go to account management page");
-    let manageAccModal = this.modalCtrl.create(ManageAccountModal);
-    manageAccModal.present();
-  }
-  becomeOrg() {
-    console.log("go to Organization request page");
-    let becomeOrgModal = this.modalCtrl.create(BeAnOrganizationModal);
-    becomeOrgModal.present();
-  }
-
-  
 }

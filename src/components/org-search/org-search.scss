@@ -1,11 +1,34 @@
 org-search {
-    
-    
-    ion-scroll{
-        height: 150px;
-    }
-    // #search{
-    //     height: 20vh;
-    //     width: 50 vh;
+ 
+    // .button{
+    //     background-color: grey !important;
+    //     min-width: 25px !important;
+    //     min-height: 25px !important;
+    //     max-width: 25px !important;
+    //     max-height: 25px !important;
     // }
+    
+    #toolbar{
+        height: 100%;
+        width: 100%;
+        margin: auto;
+    }
+    
+    #search{
+        height: 50vh;
+        width: 50 vw;
+    }    
+    
+    .scroll-content{
+        height: 40vh;
+    }
+    @media screen and (min-width: 768px) {
+        #toolbar{
+            width: 60%;
+            margin: 0 auto;
+         }
+        ion-scroll{
+            height: 150px;
+        }
+    }
 }
