@@ -233,6 +233,7 @@
         "HOME":"Home",
         "MANAGE":"Manage Account Profile",
         "CHANGE":"Change Password",
+        "LANGUAGE":"Set Language",
         "BECOME":"Become an Organization",
         "CANCEL":"Cancel Account",
         "LOGOUT":"Logout"
