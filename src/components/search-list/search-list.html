@@ -49,7 +49,7 @@
   <!---- Fixed Bottom Footer (filters tests by time)  ---->
   <ion-item no-lines color="light" class="container-width" style="display: block; position: fixed; bottom: 0px; margin: 0 auto; height: 50px;">
     <ion-label>{{'SEARCHLIST.FROM' | translate}}</ion-label>
-    <ion-select [(ngModel)]="searchTime">
+    <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="searchTime">
       <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
     </ion-select>
   </ion-item>
