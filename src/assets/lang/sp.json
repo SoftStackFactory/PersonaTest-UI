@@ -238,5 +238,15 @@
         "BECOME":"Conviértase En Una Organización",
         "CANCEL":"Cancelar Cuenta",
         "LOGOUT":"Cerrar Sesión"
+    },
+    "SEARCH":{
+        "SIXMONTHS":"Últimos 6 meses",
+        "YEAR":"Año Pasado",
+        "TWOYEARS":"Últimos Dos Años",
+        "ALLTIME":"Todo el tiempo",
+        "SEARCH":"Buscar",
+        "CANCEL":"Cancelar",
+        "OK":"De Acuerdo"
     }
+
 }

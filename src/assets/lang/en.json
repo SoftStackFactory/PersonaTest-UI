@@ -236,5 +236,15 @@
         "BECOME":"Become an Organization",
         "CANCEL":"Cancel Account",
         "LOGOUT":"Logout"
+    },
+    "SEARCH":{
+        "SIXMONTHS":"Past 6 Months",
+        "YEAR":"Past Year",
+        "TWOYEARS":"Past Two Years",
+        "ALLTIME":"All Time",
+        "SEARCH":"Search",
+        "CANCEL":"Cancel",
+        "OK":"OK"
     }
+
 }

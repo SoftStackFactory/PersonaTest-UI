@@ -12,7 +12,7 @@
   <!---- Search Results ORG VIEW ONLY  (exists only when search bar is clicked)  ---->
   <div *ngIf="orgView && displayDropdown" style="position:fixed; z-index: 105;" class="container-width">
     <ion-card style="margin-top: 0px;">
-      <ion-label padding-left="16px">{{'SEARCHLIST.REULTS' | translate}}</ion-label>
+      <ion-label padding-left="16px">{{'SEARCHLIST.RESULTS' | translate}}</ion-label>
       <ion-list>
       <ion-item class="item" *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
         <h2> {{ obj.name }} </h2>
@@ -49,7 +49,7 @@
   <!---- Fixed Bottom Footer (filters tests by time)  ---->
   <ion-item no-lines color="light" class="container-width" style="display: block; position: fixed; bottom: 0px; margin: 0 auto; height: 50px;">
     <ion-label>{{'SEARCHLIST.FROM' | translate}}</ion-label>
-    <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="searchTime">
+   <ion-select okText="{{'SEARCH.OK' | translate}}" cancelText="{{'SEARCH.CANCEL' | translate}}" [(ngModel)]="searchTime">
       <ion-option *ngFor="let searchTime of searchTimes()">{{searchTime}}</ion-option>
     </ion-select>
   </ion-item>
