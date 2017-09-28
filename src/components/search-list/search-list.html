@@ -12,7 +12,7 @@
   <!---- Search Results ORG VIEW ONLY  (exists only when search bar is clicked)  ---->
   <div *ngIf="orgView && displayDropdown" style="position:fixed; z-index: 105;" class="container-width">
     <ion-card style="margin-top: 0px;">
-      <ion-label padding-left="16px">{{'SEARCHLIST.REULTST' | translate}}</ion-label>
+      <ion-label padding-left="16px">{{'SEARCHLIST.RESULTS' | translate}}</ion-label>
       <ion-list>
       <ion-item class="item" *ngFor="let obj of filteredList" (click)="selectedItem($event, obj)">
         <h2> {{ obj.name }} </h2>
