@@ -62,6 +62,7 @@ import { PasswordResetModal } from '../modals/password-reset/password-reset';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { EulaModal } from '../modals/eula/eula';
 
+
 export function createTranslateLoader(http: Http){
   return new TranslateHttpLoader(http, './assets/lang/', '.json');
 }
@@ -103,7 +104,8 @@ let injections: any[] = [
     SetLanguageModal,
     HomeComponent,
     OrgSearchComponent,
-    RememberMeComponent
+    RememberMeComponent,
+    TestSearchComponent,
     ]
 
 @NgModule({
