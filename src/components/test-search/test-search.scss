@@ -57,6 +57,7 @@ test-search {
         // height: 20vh;
         // width: 40vw;
         // margin: 0 auto;
+
       }
     
     .card-title {
@@ -74,16 +75,20 @@ test-search {
         top: 52%;
         width: 100%;
         color: #fff;
+        height: 100%;
+        overflow-wrap: break-word;
+
       }
       
     .button1{
         position: absolute;
         top: 70%;
         left: 0;
-        min-width: 40% !important;
+        //min-width: 40% !important;
         min-height: 20% !important;
-        max-width: 20% !important;
+        //max-width: 20% !important;
         max-height: 40% !important;
+        width: 93%;
         padding: 10px;
         margin: 10px;
         text-align: center;

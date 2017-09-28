@@ -9,19 +9,19 @@
 
 <div id="search">
   <ion-toolbar id="toolbar">
-    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search Tests"></ion-searchbar>      
+    <ion-searchbar  [(ngModel)] = "searchInput" (ionInput)="getItems($event)" placeholder="Search Tests"></ion-searchbar>      
   </ion-toolbar>
   <ion-scroll scrollX="false" scrollY="true">
     <ion-list class="testList">
       <ion-grid>
         <ion-row justify-content-center>
-          <ion-col color="grey" class="card-background-page" *ngFor="let testArray of testArrays" (click)="selectedTest(testArray)" col-12 col-md-4>
+          <ion-col color="grey" class="card-background-page" *ngFor="let testArray of testArrays| searchTermPipe : searchInput" col-12 col-md-4>
             <ion-card>
               <img src="../../assets/blue-puzzle.jpg"/>
               <div class="card-title">{{ testArray.name }}</div>
               <div class="card-subtitle">{{ testArray.description }}</div>
               <button ion-button block (click)="testAlert(testArray)" class="button1">{{'LOBBY.TAKE' | translate}}</button>
-              <button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>
+              <!--<button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
             </ion-card>
           </ion-col>
         </ion-row>
@@ -29,3 +29,5 @@
     </ion-list>
   </ion-scroll>
 </div>
+
+<!--(click)="selectedTest(testArray)" -->
