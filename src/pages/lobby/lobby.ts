@@ -131,6 +131,7 @@ export class LobbyPage {
     alert("This should put you back where you were in the test");
   }
   
+
   showResults() {
     this.navCtrl.push(HistoryPage);
     console.log("go to results page for personal tests taken");

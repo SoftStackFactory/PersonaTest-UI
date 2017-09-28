@@ -1,7 +1,7 @@
 <!-- Generated template for the TestSelectionComponent component -->
 <div>
   <ion-item class="availableTests">
-    <ion-label floating>Select available tests</ion-label>
+    <ion-label floating>{{'TESTSELECT.SELECT' | translate}}</ion-label>
       <ion-list>
         <ion-item>
           <ion-label *ngFor="let test of availableTests">{{ test.name }}
@@ -15,7 +15,7 @@
   </ion-item>
           
   <ion-item>
-    <ion-label floating>Select available tests</ion-label>  
+    <ion-label floating>{{'TESTSELECT.SELECT' | translate}}</ion-label>  
       <ion-select multiple="true" name="orgTests" type="array" [(ngModel)]="organization.tests">
           <ion-option *ngFor="let test of availableTests">{{ test.name }}</ion-option>
       </ion-select>
@@ -23,7 +23,7 @@
     
   <ion-item>
     <button ion-button small round outline (click)="testDetails()">
-      Test Descriptions
+      {{'TESTSELECT.TEST' | translate}}
     </button>
   </ion-item>
 </div>

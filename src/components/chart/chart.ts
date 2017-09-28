@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@angular/core';
 import  { Chart }  from 'chart.js';
+import {TranslateService} from '@ngx-translate/core'
 
 
 @Component({
@@ -10,6 +11,13 @@ export class ChartComponent implements AfterContentInit {
   @ViewChild('polarCanvas') polarCanvas: ElementRef
   @Input("gradedTest") gradedTest: any;
   polarChart: any;
+  agreeableness: any;
+  conscientousness: any;
+  emotionalStability: any;
+  extraversion: any;
+  intellect: any;
+  constructor(
+  private translate: TranslateService){}
 
   ngAfterContentInit() {
     // console.log("chart", this.gradedTest);
@@ -62,16 +70,32 @@ export class ChartComponent implements AfterContentInit {
     // });
     
     // Radar Chart can be used to compare multiple tests/users
+    this.translate.get('LABEL.AGREEABLENESS').subscribe((res:any)=> {
+      this.agreeableness= res;
+        });
+        this.translate.get('LABEL.CONSCIENTOUSNESS').subscribe((res:any)=> {
+      this.conscientousness= res;
+        });
+        this.translate.get('LABEL.EMOTIONALSTABILITY').subscribe((res:any)=> {
+      this.emotionalStability= res;
+        });
+        this.translate.get('LABEL.EXTRAVERSION').subscribe((res:any)=> {
+      this.extraversion= res;
+        });
+        this.translate.get('LABEL.INTELLECT').subscribe((res:any)=> {
+      this.intellect= res;
+        });
+
     
     this.polarChart = new Chart(this.polarCanvas.nativeElement, {
       type: 'radar',
     data: {
       labels: [
-          "Agreeableness",
-          "Conscientiousness",
-          "Emotional Stability",
-          "Extraversion",
-          "Intellect"
+          this.agreeableness,
+          this.conscientousness,
+          this.emotionalStability,
+          this.extraversion,
+          this.intellect
           ],
       datasets: [
         {
@@ -88,24 +112,22 @@ export class ChartComponent implements AfterContentInit {
             this.gradedTest["Extraversion"], 
             this.gradedTest["Intellect"]
             ]
-        }, {
-          label: "Test #2",
-          fill: true,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          pointBorderColor: "#fff",
-          pointBackgroundColor: 'rgba(54, 162, 235, 0.2)',
-          data: [
-            this.gradedTest["Agreeableness"], 
-            this.gradedTest["Conscientiousness"], 
-            this.gradedTest["Emotional Stability"], 
-            this.gradedTest["Extraversion"], 
-            this.gradedTest["Intellect"]
-            ]
         }
       ]
     },
-      options: {
+        options: {
+          responsive: true,
+              maintainAspectRatio: true,
+              scale: {
+                  ticks: {
+                      beginAtZero: true,
+                      max: 65,
+                      stepSize: 5,
+                      callback: function() {
+								        return '';
+                      }
+                  }
+              },
         title: {
           display: true,
           text: 'IPIP Test Results'

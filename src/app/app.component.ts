@@ -22,9 +22,10 @@ import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organiz
 import { ManageAccountModal } from '../modals/manage-account/manage-account';
 import { PasswordChangeModal } from '../modals/password-change/password-change';
 import { PasswordResetModal } from '../modals/password-reset/password-reset';
+import { SetLanguageModal } from '../modals/set-language/set-language';
 import { BeAnOrganizationModal } from '../modals/be-an-organization/be-an-organization';
 import { AppUserProvider } from '../providers/app-user/app-user';
-import {TranslateService} from '@ngx-translate/core'
+import { TranslateService } from '@ngx-translate/core'
 
 
 
@@ -35,6 +36,16 @@ import {TranslateService} from '@ngx-translate/core'
 export class MyApp {
   currentPage: string;
   rootPage: any;
+  confirmDeleteTitle: any;
+  confirmTwo: any;
+  confirmDeleteText: any;
+  confirmMessage: any;
+  confirmDeleteTextTwo: any;
+  logoutTitle: any;
+  logoutMessage:any;
+  logoutText:any;
+  logoutTextTwo:any;
+  
   @ViewChild(Nav) nav: Nav;
   constructor(
     platform: Platform, 
@@ -48,7 +59,8 @@ export class MyApp {
     private translate: TranslateService
   ) {
     platform.ready().then(() => {
-      let storage = window.localStorage.getItem('remembered'); 
+      let storage = window.localStorage.getItem('remembered');
+      let lng = window.localStorage.getItem('lng');
       if(storage === null){ 
          this.rootPage = LandingPage; 
       }else{ 
@@ -90,6 +102,11 @@ export class MyApp {
     passwordChangeModal.present();
   };
   
+  setLanguage(){
+    console.log("set language requested");
+    let setLanguageModal = this.modalCtrl.create(SetLanguageModal);
+    setLanguageModal.present();
+  };
 
   becomeOrg(){
     console.log("go to Organization request page");
@@ -97,16 +114,31 @@ export class MyApp {
     becomeOrgModal.present();
   };
   
-  deleteAcc(){
+deleteAcc(){
     
     //prompt user to confirm request to delete account
+    this.translate.get('APPALERT.ALERTONE').subscribe((res:any)=> {
+      this.confirmDeleteTitle= res;
+        });
+    this.translate.get('APPALERT.ALETWO').subscribe((res:any)=> {
+      this.confirmTwo= res;
+        });
+    this.translate.get('APPALERT.TEXT').subscribe((res:any)=> {
+      this.confirmDeleteText= res;
+        });
+    this.translate.get('APPALERT.MESSAGE').subscribe((res:any)=> {
+      this.confirmMessage= res;
+        });
+    this.translate.get('APPALERT.TEXTTWO').subscribe((res:any)=> {
+      this.confirmDeleteTextTwo= res;
+        });
     let confirmDelete = this.alertCtrl.create({
-      title: 'Confirm Account Cancel',
-      message: 'Are you sure you would like to cancel your account? Any test data will be lost.',
+      title: this.confirmDeleteTitle,
+      message: this.confirmTwo,
       buttons: [
         {
           //when user does want to delete account
-          text: 'Yes, cancel my account',
+          text: this.confirmDeleteText,
           handler:() => {
             console.log("User has been deleted");
             this.menuCtrl.close();
@@ -115,7 +147,7 @@ export class MyApp {
             this.nav.setRoot(LandingPage);
             
             let toast = this.toastCtrl.create({
-              message: 'Your account has been deleted.  Please visit again for future testing needs.',
+              message: this.confirmMessage,
               duration: 3000,
               position: 'top'
             });
@@ -128,23 +160,36 @@ export class MyApp {
         {
           
           //when user does not want to delete account
-          text: 'No, keep my account active',
+          text: this.confirmDeleteTextTwo,
           handler: () => {
             console.log("User cancelled delete");
           }
         }
         ]
     });
+
     confirmDelete.present();
   };
 
   logout(){
+     this.translate.get('LOGOUT.TITLE').subscribe((res:any)=> {
+      this.logoutTitle= res;
+        });
+    this.translate.get('LOGOUT.MESSAGE').subscribe((res:any)=> {
+      this.logoutMessage= res;
+        });
+    this.translate.get('LOGOUT.TEXT').subscribe((res:any)=> {
+      this.logoutText= res;
+        });
+    this.translate.get('LOGOUT.TEXTTWO').subscribe((res:any)=> {
+      this.logoutTextTwo= res;
+        });
     let confirmLogout = this.alertCtrl.create({
-      title: 'Confirm Logout',
-      message: 'Are you sure you would like to logout? Any unsaved progress may be lost.',
+      title: this.logoutTitle,
+      message: this.logoutMessage,
       buttons: [
         {
-          text: 'Yes, log me out',
+          text: this.logoutText,
           handler:() => {
             console.log("User has logged out");
             this.menuCtrl.close();
@@ -154,7 +199,7 @@ export class MyApp {
           }
         },
         {
-          text: 'No, keep me logged in',
+          text: this.logoutTextTwo,
           handler: () => {
             console.log("User cancelled logout");
           }

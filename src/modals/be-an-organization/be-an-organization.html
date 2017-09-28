@@ -13,17 +13,17 @@
 
 
 <ion-content padding>
-  <p class="menu-instruction">Please Enter Organization Data</p>
+  <p class="menu-instruction">{{'BEORG.INSTRUCTION' | translate}}</p>
   <form [formGroup]="orgRequestForm" (ngSubmit)="logForm()">
       <ion-item>
-        <ion-label>Name: </ion-label>
+        <ion-label>{{'BEORG.NAME' | translate}}</ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Website: </ion-label>
+        <ion-label>{{'BEORG.WEB' | translate}} </ion-label>
         <ion-textarea formControlName="website"></ion-textarea>
       </ion-item>
-      <button class="menu-button" ion-button type="submit" [disabled]="!orgRequestForm.valid">Submit</button>
+      <button class="menu-button" ion-button type="submit" [disabled]="!orgRequestForm.valid">{{'BEORG.SUBMIT' | translate}}</button>
     </form>
-    <p>Please allow 48 hours for requests to be processed by the administrator</p>
+    <p>{{'BEORG.PLEASE' | translate}}</p>
 </ion-content>

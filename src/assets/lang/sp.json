@@ -1,59 +1,253 @@
-
 {
-    "HOME": {
+
+     "HOME": {
       "TITLE": "PersonaTest"
       
     },
+    
+     "APPALERT":{
+        "ALERTONE":"Confirmar cancelación de cuenta",
+        "ALETWO": "¿Seguro que desea cancelar su cuenta? Se perderán todos los datos de prueba.",
+        "TEXT":"Sí, Cancelar Mi Cuenta",
+        "MESSAGE":"Tu Cuenta ha Sido Eliminada. Por favor, Vuelva a Visitarlo Para Futuras Pruebas.",
+        "TEXTTWO":"No, Mantener mi Cuenta Activa"
+    },
+     "LABEL":{
+        "AGREEABLENESS":"Agradecimiento",
+        "CONSCIENTOUSNESS": "Consciencia",
+        "EMOTIONALSTABILITY":"Estabilidad Emocional",
+        "EXTRAVERSION":"Extraversión",
+        "INTELLECT":"Intelecto"
+    },
+    
+     "LOGOUT":{
+        "TITLE":"Confirmar Cerrar Sesión",
+        "MESSAGE": "¿Seguro Que Desea Cerrar La Sesión? Se Perderá Cualquier Progreso No Guardado.",
+        "TEXT":"Sí, Cierre La Sesión",
+        "TEXTTWO":"No, Mantente Conectado"
+    },
     "LANDING":{
-        "SLIDEONE": "Bienvenido a PersonaTest, clasifique la fuerza de trabajo en subgrupos para maximizar la efectividad.",
-        "SLIDETWO": "¡Encuentra esa paz perfecta del rompecabezas! Busque el ajuste perfecto para llenar todas sus posiciones de necesidad.",
-        "SLIDETHREE": "Para el alquiler o para uso personal, tomar una prueba para ganar una mejor comprensión de su tipo de personalidad.",
+        "SLIDEONE": "Bienvenido a PersonaTest, Clasifique Su Fuerza De Trabajo Usando Categorias Para Maximizar la Efectividad De Sus Empleados.",
+        "SLIDETWO": "¡Encuentra Esa Pieza Perfecta Del Rompecabezas! Busque el Ajuste Perfecto Para Llenar Todas sus Posiciones Vacantes.",
+        "SLIDETHREE": "Para Contratar Empleados o Para Uso Personal, Toma Examenes Para Enterder tu Tipo de Personalidad.",
         "JOIN": "¡Únete hoy!",
-        "LOGIN": "iniciar sesión",
+        "LOGIN": "Inicia sesión",
         "SIGNUP": "Regístrate"
     },
         
-    "LOBBY": {
-        "TITLE": "PersonaTest",
-        "PERSONAL": "Personal",
-        "ORGANIZATION": "Organization"
+     "QUE":{
+        "INSTRUCTION":"Indique Cuánto Se Aplica La Declaración A Usted Usando La Escala Siguiente.",
+        "SA":"Totalmente De Acuerdo",
+        "SD":"Muy En Desacuerdo",
+        "NEXT":"Próxima Pregunta",
+        "DIS":"Discrepar",
+        "NEU":"Neutral",
+        "AGREE":"De Acuerdo"
     },
     "REGISTER":{
-        "FIRST": "Nombre De Pila",
+        "FIRST": "Nombre",
         "LAST": "Apellido",
         "AGE": "Años",
         "EMAIL": "Correo Electrónico",
         "PASSWORD": "Contraseña",
-        "CONFIRM": "Confirmar Contraseña",
+        "CONFIRM": "Confirma Contraseña",
         "GENDER": "Género",
-        "ERRORFIRST": "Por favor, utilice letras para su primer nombre.",
-        "ERRORLAST": "Por favor, utilice letras para su apellido.",
+        "ERRORFIRST": "Por favor, solo utilice letras en su nombre.",
+        "ERRORLAST": "Por favor, solo utilice letras en su apellido.",
         "ERRORAGE":"Ingrese una edad válida.",
-        "ERROREMAIL":"Por favor, introduce una dirección de correo electrónico válida",
+        "ERROREMAIL":"Por favor, entre una dirección de correo electrónico válida",
         "ERRORPASSWORD":"Las contraseñas no coinciden",
-        "MALE":"Masculino",
+        "MALE":"Varón",
         "FEMALE":"Hembra",
         "OTHER":"Otro",
-        "DECLINE":"Disminución",
-        "EULA":"Acepto Los Términos Y Condiciones",
+        "DECLINE":"Denegar",
+        "EULA":"Acepto los términos y condiciones",
         "TERMS":"Ver nuestros términos y condiciones",
         "REQ":"Campos Requeridos",
         "ALREADY":"¿Ya tienes una cuenta?",
-        "HERE":"Entre aquí.",
-        "REGISTER":"Registro"
+        "HERE":"Entra aquí.",
+        "REGISTER":"Registrar"
     },
     "LOGIN": {
         "FOOTER": "¿Aún no tienes una cuenta?",
         "SH": "Registrate aquí.",
         "EMAIL": "Correo Electrónico",
         "PASSWORD": "Contraseña",
-        "LOGIN": "Iniciar Sesión"
+        "LOGIN": "Inicia Sesión"
     },
         "LOBBY": {
         "PERSONAL": "PERSONAL",
         "PROFESSIONAL": "PROFESIONAL",
         "NAME": "Hola",
-        "TAKE": "Tomar Una Prueba",
-        "RESULTS": "Ver Resultados"
+        "TAKE": "Toma Examen",
+        "RESULTS": "Ve Resultados",
+        "TITLE": "PersonaTest",
+        "PERSONAL": "Personal",
+        "ORGANIZATION": "Organización",
+        "FINDORG":"Encuentre Una Organización",
+        "FINDTEST":"Encuentre Una Prueba"
+    },
+    
+    "ORGANIZATION": {
+        "HELLO": "Hola",
+        "BUTTONONE":"Ver Resultados",
+        "BUTTONTWO":"Administrar cuenta",
+        "BUTTONTHREE":"Tomar Una Prueba",
+        "BECOME":"Conviértase En Una Organización",
+        "ENTER":"Ingrese Información Sobre Su Organización.",
+        "NAME":"Nombre de la Organización",
+        "PAGE":"Página de la organización",
+        "TERMS":"Términos y Condiciones",
+        "BUTTON":"Enviar",
+        "Text":"Por favor, permita 48 horas para que las solicitudes sean procesadas por el administrador"
+    },
+    
+    "ORGANIZATIONM": {
+         "HEAD":"Introduzca los cambios en el perfil de su organización y haga clic en enviar cuando se complete",
+         "PAGE":"Página de la Organización",
+         "LOGO":"Logotipo de la organización",
+         "EMAIL":"Correo electrónico del propietario de la organización",
+         "BUTTON":"Enviar",
+         "END":"Por favor, permita 48 horas para que las solicitudes sean procesadas por el administrador"
+     },
+     
+     "QUESTION": {
+         "INSTRUCTION":"Indique cuánto se aplica la declaración a usted usando la escala siguiente.",
+         "STRONGLYD":"Muy En Desacuerdo",
+         "STRONGLYA":"Totalmente De Acuerdo",
+         "DISAGREE":"Discrepar",
+         "NEUTRAL":"Neutral",
+         "AGREE":"De Acuerdo",
+         "NEXTQ":"Próxima Pregunta"
+     },
+     
+    "TESTLIST": {
+        "HTWO":"Opciones De Prueba No Patrocinadas",
+        "HTHREE":"¡Conócete a ti mismo!",
+        "HONE":"Ofrecemos una variedad de pruebas de personalidad y inventarios procedentes del International Personality Item Pool (http://ipip.ori.org)"
+        },
+        
+
+    "CHART": {
+        "USER":"Resultados del Usuario"
+    },
+    
+    "TESTLIST": {
+        "TITLE":"Prueba Disponible",
+        "HTWO":"¿Quieres Acceso Completo?",
+        "HTHREE":"Registrate Aquí",
+        "P":"Ofrecemos una variedad de pruebas de personalidad para satisfacer las necesidades de sus empresas."
+
+    },
+    
+    "PROGRESSBAR": {
+        "TEST":"Progreso de la prueba"
+    },
+    
+    "REMEMBERME": {
+        "ME":"Recuérdame"
+    },
+    
+    "PASSWORDRESET": {
+        "INSTRUCTION":"Por favor, ingrese su nueva contraseña.",
+        "PASSWORD":"Contraseña:",
+        "CONFIRM":"Confirmar contraseña:",
+        "SUBMIT":"Enviar"
+    },
+    
+    "SEARCHLIST": {
+        "RESULTS":"Resultados de la Búsqueda",
+        "TAKEN":"Pruebas que he realizado",
+        "NOTEST":"No se han realizado pruebas",
+        "CLICK":"Hacer clic",
+        "HERE":"Aquí",
+        "TAKE":"Hacer Un Examen",
+        "VIEW":"Ver Datos Simulados ",
+        "ON":"Taken Tomado En:",
+        "FROM":"Ver Prueba De"
+    },
+    
+    "TESTSELECT": {
+        "SELECT":"Seleccione Las Pruebas Disponibles",
+        "TEST":"Descripciones De Pruebas"
+    },
+    
+    "TESTLIST": {
+        "TITLE":"Nombre de la Prueba",
+        "DATE":"Fecha de presentación",
+        "DESCRIP":"Descripción:",
+        "AGREE":"Agradecimiento",
+        "AGREED":"Una persona con un alto nivel de amabilidad en una prueba de personalidad suele ser cálida, amistosa y discreta. Generalmente tienen una visión optimista de la naturaleza humana y se llevan bien con otros",        
+        "CONSCIENTIOUSNESS":"Escrupulosidad",
+        "CONSCIENTIOUSNESSD":"Un rasgo caracterizado por la organización, la acción intencionada, la autodisciplina, y un impulso para lograrlo.",
+        "EMOTIONAL":"Estabilidad emocional",
+        "EMOTIONALD":"Un rasgo caracterizado por la estabilidad del estado de ánimo, la capacidad de soportar contratiempos menores, fracasos, dificultades y otras tensiones sin sentirse molesto emocionalmente.",
+        "EXTRAVERSION":"Extraversión",
+        "EXTRAVERSIOND":"Definido como un comportamiento en el que una persona disfruta estar cerca de la gente más que estar sola.",
+        "INTELLECT":"Intelecto",
+        "INTELLECTD":"La facultad de razonar y comprender objetivamente, especialmente en lo que se refiere a cuestiones abstractas o académicas."
+    },
+
+    "BEORG": {
+        "INSTRUCTION":"Por favor, introduzca los datos de la organización",
+        "NAME":"Nombre",
+        "WEB":"Sitio web",
+        "SUBMIT":"ENVIAR",
+        "PLEASE":"Por favor, permita 48 horas para que las solicitudes sean procesadas por el administrador"
+    },
+    
+    "EULA": {
+        "END":"Acuerdo de licencia de usuario final",
+        "CLOSE":"Cerca"
+    },
+    
+    "MANAGEACC": {
+        "INSTRUCTION":"Introduzca los cambios en su perfil y haga clic en Enviar cuando esté completo",
+        "FIRST":"Nombre de pila:",
+        "LAST":"Apellido:",
+        "AGE":"Años:",
+        "GENDER":"Género:",
+        "MALE":"Masculino",
+        "FEMALE":"Hembra",
+        "OTHER":"Otro",
+        "DECLINE":"Disminución",
+        "SUBMIT":"Enviar",
+        "REQ":"Campos requeridos",
+        "SET":"Establecer preferencias de idioma"
+    },
+    
+    "PASSWORDCHANGE": {
+        "INSTRUCT":"Confirme su contraseña actual, luego ingrese su nueva contraseña y confirme. Haga clic en enviar para completar.",
+        "OLD":"Contraseña anterior:",
+        "NEW":"Nueva Contraseña:",
+        "CONFIRM":"Confirmar nueva contraseña:",
+        "SUBMIT":"Enviar",
+        "REQ":"Campos Requeridos"
+    },
+    
+    "PASSWORDRESET": {
+        "INSTRUCT":"Ingrese Su Correo Electrónico Y Haga Clic En Enviar.",
+        "EMAIL":"Correo Electrónico",
+        "SUBMIT":"Enviar",
+        "REQ":"Campos Requeridos"
+    },
+    "MENU":{
+        "HOME":"Casa",
+        "MANAGE":"Administrar Perfil De Cuenta",
+        "CHANGE":"Cambia La Contraseña",
+        "LANGUAGE":"Definir idioma",
+        "BECOME":"Conviértase En Una Organización",
+        "CANCEL":"Cancelar Cuenta",
+        "LOGOUT":"Cerrar Sesión"
+    },
+    "SEARCH":{
+        "SIXMONTHS":"Últimos 6 meses",
+        "YEAR":"Año Pasado",
+        "TWOYEARS":"Últimos Dos Años",
+        "ALLTIME":"Todo el tiempo",
+        "SEARCH":"Buscar",
+        "CANCEL":"Cancelar",
+        "OK":"De Acuerdo"
     }
+
 }
