@@ -17,6 +17,10 @@ import { ManageAccountModal } from '../../modals/manage-account/manage-account';
 import { ResultsProvider } from '../../providers/results/results';
 import { AnswersProvider } from '../../providers/answers/answers';
 import { TestHistoryProvider } from '../../providers/test-history/test-history';
+import { AppUserProvider } from '../../providers/app-user/app-user';
+
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'page-lobby',
@@ -30,12 +34,12 @@ export class LobbyPage {
   orgSelected: string;
   ID: any;
   userName: string;
-  user: string;
+  // user: string;
   hasHistory: boolean;
   hasIncompleteTest: boolean;
   recentTestId: any;
   count: any;
-
+  user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
   
   constructor(
     public navCtrl: NavController, 
@@ -45,7 +49,8 @@ export class LobbyPage {
     public resultsProvider: ResultsProvider,
     public answersProvider: AnswersProvider,
     public viewCtrl: ViewController,
-    public testHistoryProvider: TestHistoryProvider
+    public testHistoryProvider: TestHistoryProvider,
+    public appUserProvider: AppUserProvider
   ) {
       this.testType = "personal";
       this.organizationName = "SoftStack Factory";

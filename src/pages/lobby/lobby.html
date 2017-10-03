@@ -22,7 +22,7 @@
 <ion-content padding>
   <div id="main-container" [ngSwitch]="testType">
     <div *ngSwitchCase="'personal'" id="personalsegment">
-          <h3>{{'LOBBY.NAME' | translate}} {{ this.userName }}</h3>
+          <h3>{{'LOBBY.NAME' | translate}} {{ (user | async)?.firstName }}</h3>
           <ion-item>
             <test-search></test-search>
           </ion-item>
