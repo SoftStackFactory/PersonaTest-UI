@@ -24,12 +24,7 @@ export class AgeValidator {
                 "too old": true
             };   
         }
-        if(control.value == 0){
-            
-            return {
-                "not zero years old": true
-            };
-        }
+        
         return null;
     }
 }

@@ -1,12 +1,12 @@
 <!-- Generated template for the OrgSearchComponent component -->
 <div id="search">
   <ion-toolbar>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>      
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Select an organization"></ion-searchbar>      
   </ion-toolbar>
   <ion-scroll scrollX="false" scrollY="true">
     <ion-list>
-      <ion-item *ngFor="let item of items" (click)="selectOrg(item)">
-        {{ item }}
+      <ion-item *ngFor="let orgList of orgLists" (click)="selectOrg(orgList)">
+        {{ orgList }}
       </ion-item>
     </ion-list>
   </ion-scroll>

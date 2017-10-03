@@ -18,7 +18,6 @@ export class HistoryPage {
   
   //Variables to store user's search input and the date they select
   searchInput: string = "";
-
   
   //Boolean that for organization view (default to false - aka user view)
   orgView: boolean = false; 
@@ -27,12 +26,7 @@ export class HistoryPage {
   emptyHistory: boolean = true;
   
   //Variable to store our array of test as an array of objects; Currently using mock data
-  ourList: { name: string, date: Date }[] = 
-  [{name: "Goldberg's Big Five", date: new Date('August 22, 2017')}, 
-  {name: "Goldberg's Big Five", date: new Date('August 20, 2016')}, 
-  {name:"Markey and Markey's", date: new Date('Oct 4, 2016') },
-  {name: "Costa and McCrae's NEO Facets", date: new Date('Jan 22, 2016')},
-  {name:"Johnson's 120 Item NEO", date: new Date('April 4, 2010')}];
+  ourList: { name: string, date: Date }[] ;
   
   //Variable to store copy of our original array, because we will need to filter
   filteredList: any = this.ourList;
@@ -40,20 +34,26 @@ export class HistoryPage {
   //User id
   myUserId: string = "";
   
+  //access token 
+  accessToken: string = ""
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private testTakensProv: TestHistoryProvider) {
+                
+    //Get userId and access token from local storage            
     this.myUserId = window.localStorage.getItem('userId');
-    console.log("Our user id is " + this.myUserId);
+    this.accessToken = window.localStorage.getItem('token');
+    console.log("Our user id is " + this.myUserId + ", and access token is " + this.accessToken);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
-    this.testTakensProv.getAllTestsTaken().subscribe(
+    this.testTakensProv.getUserTestTaken(this.myUserId, this.accessToken).subscribe(
       res => {
         console.log(res);
         //Do not update page if there are no tests in test history
-        if(!res){
+        if(!res || res.length == 0){
           return;
         }else{
           //Boolean empty history should be false so we can pass it to our search-list component 
