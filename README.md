@@ -1,7 +1,9 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/SoftStackFactory/PersonaTest-UI.svg?columns=all)](http://waffle.io/SoftStackFactory/PersonaTest-UI)
+
 This is the first iteration of [PersonaTest](https://ipip.ori.org) for SoftStackFactory's Summer 2017 
 Cohort. [SoftStackFactory](https://www.softstackfactory.com)
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/SoftStackFactory/PersonaTest-UI.svg?columns=all)](http://waffle.io/SoftStackFactory/PersonaTest-UI)
+
 
 ## Skeleton UI
 
