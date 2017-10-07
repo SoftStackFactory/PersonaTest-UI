@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
@@ -10,15 +10,14 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class SetLanguageModal {
   
-  alertTitle: string;
-  alertSubtitle: string;
+  toastMessage: string;
   
   constructor(
       public navCtrl: NavController, 
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private translate: TranslateService,
-      private alertCtrl: AlertController,
+      private toastCtrl: ToastController,
       private appUser: AppUserProvider
     ) {
         
@@ -32,17 +31,26 @@ export class SetLanguageModal {
     this.viewCtrl.dismiss();
   }
   
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: this.alertTitle,
-      subTitle: this.alertSubtitle,
-      buttons: ["Dismiss"]
-    });
-    alert.present();
-  }
+  presentToast() {
+    const toast = this.toastCtrl.create({
+      message: 'Language selection changed to English',
+      duration: 3000,
+      position: 'top'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
+  
+  
   
   setLanguage(lng){
     this.translate.use(lng);
+    this.dismiss();
+    return this.presentToast();
   }
   
 }
