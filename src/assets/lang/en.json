@@ -229,6 +229,11 @@
         "REQ":"required fields"
     },
     
+    "LANGUAGE":{
+        "TITLE": "Set Language Preference",
+        "CONFIRM": "Language selection changed to English."  
+    },
+    
     "MENU":{
         "HOME":"Home",
         "MANAGE":"Manage Account Profile",

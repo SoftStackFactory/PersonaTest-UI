@@ -231,6 +231,12 @@
         "SUBMIT":"Enviar",
         "REQ":"Campos Requeridos"
     },
+    
+    "LANGUAGE":{
+        "TITLE": "Establecer preferencias de idioma",
+        "CONFIRM": "La selección de idioma cambió a español."  
+    },
+    
     "MENU":{
         "HOME":"Casa",
         "MANAGE":"Administrar Perfil De Cuenta",

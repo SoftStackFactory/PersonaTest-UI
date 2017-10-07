@@ -30,27 +30,44 @@ export class SetLanguageModal {
   dismiss() {
     this.viewCtrl.dismiss();
   }
-  
+
+/*  
   presentToast() {
+    this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
+      this.toastMessage = res;
+        });
     const toast = this.toastCtrl.create({
-      message: 'Language selection changed to English',
+      message: this.toastMessage,
       duration: 3000,
       position: 'top'
-  });
+    });
 
-  toast.onDidDismiss(() => {
-    console.log('Dismissed toast');
-  });
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
 
-  toast.present();
-}
-  
+    toast.present();
+  }
+ */ 
   
   
   setLanguage(lng){
     this.translate.use(lng);
+    this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
+      this.toastMessage = res;
+        });
+    let toast = this.toastCtrl.create({
+      message: this.toastMessage,
+      duration: 3000,
+      position: 'top'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
     this.dismiss();
-    return this.presentToast();
   }
   
 }
