@@ -24,6 +24,7 @@ export class QuestionPage {
   answers = [];
   private questions: any;
   testTaken: any;
+  testId: string;
   user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
 
   constructor(public navCtrl: NavController,
@@ -38,7 +39,8 @@ export class QuestionPage {
   ionViewDidLoad() {
     this.testTaken = this.navParams.get("testTaken");
     this.testName = this.testTaken["name"];
-    this.questionsProvider.getQuestions().subscribe(
+    this.testId = this.testTaken["testId"];
+    this.questionsProvider.getQuestions(this.testId).subscribe(
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
