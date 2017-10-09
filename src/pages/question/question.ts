@@ -44,6 +44,7 @@ export class QuestionPage {
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
+        this.shuffleArray(questions);
         this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
@@ -170,6 +171,14 @@ export class QuestionPage {
         this.showAlert("There was a problem saving your answers. Please try again later.");
       }
     )
+  }
+  
+  shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
 }
