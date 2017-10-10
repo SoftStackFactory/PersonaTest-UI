@@ -10,8 +10,11 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class SetLanguageModal {
   
-  alertTitle: string;
-  alertSubtitle: string;
+  langTitle: string;
+  langMessage: string;
+  langText: string;
+  langTextTwo: string;
+  language: string;
   
   constructor(
       public navCtrl: NavController, 
@@ -21,6 +24,7 @@ export class SetLanguageModal {
       private alertCtrl: AlertController,
       private appUser: AppUserProvider
     ) {
+      
         
   }
 
@@ -32,17 +36,50 @@ export class SetLanguageModal {
     this.viewCtrl.dismiss();
   }
   
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: this.alertTitle,
-      subTitle: this.alertSubtitle,
-      buttons: ["Dismiss"]
-    });
-    alert.present();
-  }
-  
   setLanguage(lng){
-    this.translate.use(lng);
-  }
+    if (lng == 'sp'){
+      this.language = "Spanish."
+    };
+    if (lng == 'en'){
+      this.language = "Inglés."
+    }
+    //this.translate.use(lng);
+    this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
+      this.langTitle = res;
+        });
+    this.translate.get('LANGUAGE.MESSAGE').subscribe((res:any)=> {
+      this.langMessage = res;
+        });
+    this.translate.get('LANGUAGE.TEXT').subscribe((res:any)=> {
+      this.langText = res;
+        });
+    this.translate.get('LANGUAGE.TEXTTWO').subscribe((res:any)=> {
+      this.langTextTwo = res;
+        });
+    console.log("language confirmation requested");
+    
+    let confirmLanguage = this.alertCtrl.create({
+      title: this.langTitle,
+      message: this.langMessage,
+      buttons: [
+        {
+          text: this.langText + this.language,
+          handler:() => {
+            this.translate.use(lng);
+            console.log("language change confirmed " + this.language + lng );
+            this.dismiss();
+          }
+        },
+        {
+          text: this.langTextTwo,
+          handler: () => {
+            console.log("language not changed");
+          }
+        }
+        ]
+    });
+    confirmLanguage.present();
+  };
+    
   
 }
