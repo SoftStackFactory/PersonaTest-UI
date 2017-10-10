@@ -233,8 +233,11 @@
     },
     
     "LANGUAGE":{
-        "TITLE": "Establecer preferencias de idioma",
-        "CONFIRM": "La selección de idioma cambió a español."  
+        "INSTRUCT": "Establecer preferencias de idioma",
+        "CONFIRM": "Confirmar cambio de idioma",
+        "MESSAGE": "¿Estás seguro de que quieres cambiar el idioma?",
+        "TEXT": "Sí, cambie el idioma al ",
+        "TEXTTWO": "No."
     },
     
     "MENU":{

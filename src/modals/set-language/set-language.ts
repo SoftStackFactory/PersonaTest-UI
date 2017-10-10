@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { AppUserProvider } from '../../providers/app-user/app-user';
 
@@ -10,16 +10,21 @@ import { AppUserProvider } from '../../providers/app-user/app-user';
 })
 export class SetLanguageModal {
   
-  toastMessage: string;
+  langTitle: string;
+  langMessage: string;
+  langText: string;
+  langTextTwo: string;
+  language: string;
   
   constructor(
       public navCtrl: NavController, 
       public navParams: NavParams, 
       public viewCtrl: ViewController,
       private translate: TranslateService,
-      private toastCtrl: ToastController,
+      private alertCtrl: AlertController,
       private appUser: AppUserProvider
     ) {
+      
         
   }
 
@@ -30,44 +35,51 @@ export class SetLanguageModal {
   dismiss() {
     this.viewCtrl.dismiss();
   }
-
-/*  
-  presentToast() {
-    this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
-      this.toastMessage = res;
-        });
-    const toast = this.toastCtrl.create({
-      message: this.toastMessage,
-      duration: 3000,
-      position: 'top'
-    });
-
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-
-    toast.present();
-  }
- */ 
-  
   
   setLanguage(lng){
-    this.translate.use(lng);
+    if (lng == 'sp'){
+      this.language = "Spanish."
+    };
+    if (lng == 'en'){
+      this.language = "Inglés."
+    }
+    //this.translate.use(lng);
     this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
-      this.toastMessage = res;
+      this.langTitle = res;
         });
-    let toast = this.toastCtrl.create({
-      message: this.toastMessage,
-      duration: 3000,
-      position: 'top'
+    this.translate.get('LANGUAGE.MESSAGE').subscribe((res:any)=> {
+      this.langMessage = res;
+        });
+    this.translate.get('LANGUAGE.TEXT').subscribe((res:any)=> {
+      this.langText = res;
+        });
+    this.translate.get('LANGUAGE.TEXTTWO').subscribe((res:any)=> {
+      this.langTextTwo = res;
+        });
+    console.log("language confirmation requested");
+    
+    let confirmLanguage = this.alertCtrl.create({
+      title: this.langTitle,
+      message: this.langMessage,
+      buttons: [
+        {
+          text: this.langText + this.language,
+          handler:() => {
+            this.translate.use(lng);
+            console.log("language change confirmed " + this.language + lng );
+            this.dismiss();
+          }
+        },
+        {
+          text: this.langTextTwo,
+          handler: () => {
+            console.log("language not changed");
+          }
+        }
+        ]
     });
-
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
-    });
-
-    toast.present();
-    this.dismiss();
-  }
+    confirmLanguage.present();
+  };
+    
   
 }

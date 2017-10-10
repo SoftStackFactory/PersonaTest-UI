@@ -230,8 +230,11 @@
     },
     
     "LANGUAGE":{
-        "TITLE": "Set Language Preference",
-        "CONFIRM": "Language selection changed to English."  
+        "INSTRUCT": "Set Language Preference",
+        "CONFIRM": "Confirm Language Change",
+        "MESSAGE": "Are you sure you would like to change the langauge?",
+        "TEXT": "Yes, change the language to ",
+        "TEXTTWO": "No."
     },
     
     "MENU":{
