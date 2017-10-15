@@ -44,7 +44,7 @@ export class QuestionPage {
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
-        this.shuffleArray(questions);
+        this.shuffleArray(questions)
         this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
