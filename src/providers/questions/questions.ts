@@ -12,8 +12,8 @@ export class QuestionsProvider {
   constructor(public http: Http) {
     console.log('Hello QuestionsProvider Provider');
   }
-  getQuestions() {
-    return this.http.get(this.baseUrl + this.path).map(res => res.json());
+  getQuestions(testId) {
+    return this.http.get(this.baseUrl + this.path + `?filter[where][testId]=${ testId }`).map(res => res.json());
   }
   
   

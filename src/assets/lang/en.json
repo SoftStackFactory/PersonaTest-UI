@@ -229,6 +229,14 @@
         "REQ":"required fields"
     },
     
+    "LANGUAGE":{
+        "INSTRUCT": "Set Language Preference",
+        "CONFIRM": "Confirm Language Change",
+        "MESSAGE": "Are you sure you would like to change the langauge?",
+        "TEXT": "Yes, change the language to ",
+        "TEXTTWO": "No."
+    },
+    
     "MENU":{
         "HOME":"Home",
         "MANAGE":"Manage Account Profile",

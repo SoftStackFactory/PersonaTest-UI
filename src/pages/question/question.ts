@@ -24,6 +24,7 @@ export class QuestionPage {
   answers = [];
   private questions: any;
   testTaken: any;
+  testId: string;
   user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
 
   constructor(public navCtrl: NavController,
@@ -38,10 +39,12 @@ export class QuestionPage {
   ionViewDidLoad() {
     this.testTaken = this.navParams.get("testTaken");
     this.testName = this.testTaken["name"];
-    this.questionsProvider.getQuestions().subscribe(
+    this.testId = this.testTaken["testId"];
+    this.questionsProvider.getQuestions(this.testId).subscribe(
       questions => {
         this.questions = questions;
         this.totalQuestionNum = questions.length
+        this.shuffleArray(questions);
         this.assignQuestion();
         console.log("questions", this.questions);
       }, error => {
@@ -168,6 +171,14 @@ export class QuestionPage {
         this.showAlert("There was a problem saving your answers. Please try again later.");
       }
     )
+  }
+  
+  shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
 }

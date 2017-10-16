@@ -231,6 +231,15 @@
         "SUBMIT":"Enviar",
         "REQ":"Campos Requeridos"
     },
+    
+    "LANGUAGE":{
+        "INSTRUCT": "Establecer preferencias de idioma",
+        "CONFIRM": "Confirmar cambio de idioma",
+        "MESSAGE": "¿Estás seguro de que quieres cambiar el idioma?",
+        "TEXT": "Sí, cambie el idioma al ",
+        "TEXTTWO": "No."
+    },
+    
     "MENU":{
         "HOME":"Casa",
         "MANAGE":"Administrar Perfil De Cuenta",
