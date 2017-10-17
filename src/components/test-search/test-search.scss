@@ -77,44 +77,25 @@ test-search {
         color: #fff;
         height: 100%;
         overflow-wrap: break-word;
+        margin-top: 5%;
 
       }
       
-    .button1{
+    .button{
         position: absolute;
         top: 70%;
-        left: 0;
-        //min-width: 40% !important;
-        min-height: 20% !important;
-        //max-width: 20% !important;
-        max-height: 40% !important;
-        width: 93%;
-        padding: 10px;
-        margin: 10px;
-        text-align: center;
-        white-space: normal;
-        background-color: transparent;
-        color: #fff;
-        border: medium solid #fff !important;
-        border-radius: 5px;
-    }
-    
-    .button2{
-        position: absolute;
-        top: 70%;
-        right: 0;
         min-width: 40% !important;
         min-height: 20% !important;
-        max-width: 20% !important;
         max-height: 40% !important;
-        padding: 10px;
-        margin: 10px;
+        width: 80%;
         text-align: center;
         white-space: normal;
         background-color: transparent;
         color: #fff;
         border: medium solid #fff !important;
         border-radius: 5px;
+        margin-left: 10%;
+        margin-right: 10%;
     }
         
     }
