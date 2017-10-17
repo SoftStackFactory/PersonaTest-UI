@@ -121,8 +121,7 @@ export class ChartComponent implements AfterContentInit {
               scale: {
                   ticks: {
                       beginAtZero: true,
-                      max: 65,
-                      stepSize: 5,
+                      stepSize: 2,
                       callback: function() {
 								        return '';
                       }
