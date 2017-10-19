@@ -217,8 +217,7 @@
     },
     
     "PASSWORDCHANGE": {
-        "INSTRUCT":"Confirme su contraseña actual, luego ingrese su nueva contraseña y confirme. Haga clic en enviar para completar.",
-        "OLD":"Contraseña anterior:",
+        "INSTRUCT":"Ingrese su nueva contraseña y confirme. Haga clic en enviar para completar.",
         "NEW":"Nueva Contraseña:",
         "CONFIRM":"Confirmar nueva contraseña:",
         "SUBMIT":"Enviar",

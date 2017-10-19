@@ -214,8 +214,7 @@
     },
     
     "PASSWORDCHANGE": {
-        "INSTRUCT":"Confirm your current password, then enter your new password and confirm. Click submit to complete.",
-        "OLD":"Old Password:",
+        "INSTRUCT":"Enter your new password and confirm. Click submit to complete.",
         "NEW":"New Password:",
         "CONFIRM":"Confirm New Password:",
         "SUBMIT":"Submit",

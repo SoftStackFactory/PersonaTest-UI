@@ -55,7 +55,6 @@ export class PasswordChangeModal {
 
     //Passwords did not match, delete user passwords
     } else if(this.changeRequestForm.value.newPassword !== this.changeRequestForm.value.confirmNewPassword) {
-      this.changeRequestForm.value.oldPassword = null;
       this.changeRequestForm.value.password = null;
       this.changeRequestForm.value.confirmPassword = null;
       this.alertTitle = "Passwords do not match";
@@ -63,39 +62,8 @@ export class PasswordChangeModal {
       return this.showAlert();
     }
     
-    //successfull password form
-    /*
-    //verify old password with api call
-    this.passwordToCheck = { "password": this.changeRequestForm.value.oldPassword };
-    console.log("Old Password to Verify", this.passwordToCheck);
-    this.appUser.checkPassword(window.localStorage.getItem('id'),
-      window.localStorage.getItem('token'))
-      .map(res => res.json())
-      .subscribe(res => {
-        console.log("user data", res);
-        //password entered matches old password on backend
-        
-        
-        //passwords do not match
-        
-        
-      }, error => {
-        //Server side errors
-        if (error.status === 404) {
-          this.alertTitle = "404";
-          this.alertSubtitle = "Not Found.";
-          return this.showAlert();
-          
-        } else if (error.status === 500) {
-          this.alertTitle = "500";
-          this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
-          return this.showAlert();
-        }    
-      });
-    */
     
     //submit new password
-    delete this.changeRequestForm.value.oldPassword;
     delete this.changeRequestForm.value.confirmPassword;
     console.log("New Password to Send", this.changeRequestForm.value);
     //this.password = { "password" : this.user.password };    

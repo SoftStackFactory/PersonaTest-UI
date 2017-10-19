@@ -51,7 +51,7 @@ export class AppUserProvider {
   resetPassword(email) {
     return this.http.post(
       this.baseUrl + this.path,
-      email
+      { email }
     );
   }
 
