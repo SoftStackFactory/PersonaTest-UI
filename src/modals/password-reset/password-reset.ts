@@ -46,14 +46,14 @@ export class PasswordResetModal {
   }
   
   passwordReset(form) {
-    console.log(this.resetRequestForm.value)
+    console.log(this.resetRequestForm.value.email)
     if(form.invalid) {
       this.alertTitle = "Invalid Form";
       this.alertSubtitle = "Please fill in all required fields.";
       return this.showAlert();
     }
     
-    //successfull password change
+    //confirm request of password reset
     let confirmReset = this.alertCtrl.create({
       title: 'Confirm Password Reset',
       message: 'Are you sure you would like to reset your password?',
@@ -62,7 +62,8 @@ export class PasswordResetModal {
           //when user does want to reset their password
           text: 'Yes, reset my password',
           handler:() => {
-            this.appUser.resetPassword(this.resetRequestForm.value)
+            this.appUser.resetPassword(this.resetRequestForm.value.email, 
+              window.localStorage.getItem('token'))
             .map(res => res.json())
             .subscribe(res => {
               this.alertTitle = "Password reset requested",
@@ -80,6 +81,11 @@ export class PasswordResetModal {
               } else if (error.status === 500) {
                 this.alertTitle = "500";
                 this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+                return this.showAlert();
+              
+              } else if (error.status === 422) {
+                this.alertTitle = "422";
+                this.alertSubtitle = "Request could not processed, please try again in a few minutes.";
                 return this.showAlert();
               }
             })

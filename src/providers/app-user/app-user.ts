@@ -48,9 +48,11 @@ export class AppUserProvider {
     );
   }
 
-  resetPassword(email) {
+  resetPassword(email, token) {
+    console.log(this.baseUrl + this.path +'/resetPassword?access_token=' + token,
+      { email })
     return this.http.post(
-      this.baseUrl + this.path,
+      this.baseUrl + this.path +'/resetPassword?access_token=' + token,
       { email }
     );
   }
