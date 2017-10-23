@@ -13,6 +13,7 @@ export class PasswordResetModal {
   user: any = {}
   alertTitle: string
   alertSubtitle: string
+  tempToken: string
   
   constructor(
       public navCtrl: NavController, 
@@ -62,32 +63,59 @@ export class PasswordResetModal {
           //when user does want to reset their password
           text: 'Yes, reset my password',
           handler:() => {
-            this.appUser.resetPassword(this.resetRequestForm.value.email, 
+            
+            //request temporary access token through strongloop
+            this.appUser.resetRequest(this.resetRequestForm.value.email, 
               window.localStorage.getItem('token'))
-            .map(res => res.json())
-            .subscribe(res => {
-              this.alertTitle = "Password reset requested",
-              this.alertSubtitle = "Check your email for further instructions",
-              this.showAlert();
-              return this.viewCtrl.dismiss();
-        
-            }, error => {
-              //Server side errors
-              if (error.status === 404) {
-                this.alertTitle = "404";
-                this.alertSubtitle = "Not Found.";
-                return this.showAlert();
+              .map(res => res.json())
+              .subscribe(res => {
+                console.log(res);
+                this.tempToken = res;
+              }, error => {
+                  //Server side errors
+                  if (error.status === 404) {
+                    this.alertTitle = "404";
+                    this.alertSubtitle = "Not Found.";
+                    return this.showAlert();
           
               } else if (error.status === 500) {
-                this.alertTitle = "500";
-                this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
-                return this.showAlert();
+                  this.alertTitle = "500";
+                  this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+                  return this.showAlert();
               
               } else if (error.status === 422) {
-                this.alertTitle = "422";
-                this.alertSubtitle = "Request could not processed, please try again in a few minutes.";
-                return this.showAlert();
+                 this.alertTitle = "422";
+                 this.alertSubtitle = "Request could not processed, please try again in a few minutes.";
+                 return this.showAlert();
               }
+            })
+              
+              //send email to user with instructions for temporary access token
+              this.appUser.resetPassword(this.resetRequestForm.value.email, this.tempToken,
+                window.localStorage.getItem('token'))
+                .map(res => res.json())
+                .subscribe(res => {
+                  this.alertTitle = "Password reset requested",
+                  this.alertSubtitle = "Check your email for further instructions",
+                  this.showAlert();
+                  return this.viewCtrl.dismiss();
+                }, error => {
+                  //Server side errors
+                  if (error.status === 404) {
+                    this.alertTitle = "404";
+                    this.alertSubtitle = "Not Found.";
+                    return this.showAlert();
+          
+                  } else if (error.status === 500) {
+                    this.alertTitle = "500";
+                    this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
+                    return this.showAlert();
+              
+                 } else if (error.status === 422) {
+                   this.alertTitle = "422";
+                   this.alertSubtitle = "Request could not processed, please try again in a few minutes.";
+                   return this.showAlert();
+                 }
             })
           }
         },
