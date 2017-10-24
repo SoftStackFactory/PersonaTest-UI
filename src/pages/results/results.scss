@@ -9,6 +9,11 @@ page-results {
         max-height: 521px;
     }
     
+      canvas {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+      }
+    
     @media screen and (min-width: 728px) {
       .container {
           flex-direction: row;
