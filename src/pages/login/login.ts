@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ModalController, MenuController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
 
 import { AppUserProvider } from '../../providers/app-user/app-user';
+import { PasswordResetModal } from '../../modals/password-reset/password-reset';
 
 /**
  * Generated class for the LoginPage page.
@@ -29,6 +30,7 @@ export class LoginPage {
     public navParams: NavParams,
     private alertCtrl: AlertController,
     private menu: MenuController,
+    public modalCtrl: ModalController,
     private appUser: AppUserProvider,
     private formBuilder: FormBuilder
 
@@ -104,5 +106,12 @@ export class LoginPage {
   goToRegister() {
     this.navCtrl.push(RegisterPage);
   }
+  
+  //user has forgotten password, initiate reset
+  resetPassword(){
+    console.log("password reset requested");
+    let passwordResetModal = this.modalCtrl.create(PasswordResetModal);
+    passwordResetModal.present();
+  };
   
 }

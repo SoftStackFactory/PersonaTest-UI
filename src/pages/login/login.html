@@ -23,6 +23,7 @@
                   <ion-label floating>{{'LOGIN.PASSWORD' | translate}}</ion-label>
                     <ion-input name="password" type="password" formControlName="password"></ion-input>
                 </ion-item>
+                <a class="forgot-pass" (click)="resetPassword()">{{'LOGIN.FORGOT' | translate}}</a>
             </div>
             <div class="login-button">
                 <button ion-button (click)="submit()" class="outline">{{'LOGIN.LOGIN' | translate}}</button>
