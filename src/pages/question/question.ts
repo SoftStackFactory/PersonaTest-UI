@@ -24,10 +24,7 @@ export class QuestionPage {
   answers = [];
   private questions: any;
   testTaken: any;
-<<<<<<< HEAD
   testId: string;
-=======
->>>>>>> had to reset git
   user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
 
   constructor(public navCtrl: NavController,
@@ -42,26 +39,26 @@ export class QuestionPage {
   ionViewDidLoad() {
     this.testTaken = this.navParams.get("testTaken");
     this.testName = this.testTaken["name"];
-<<<<<<< HEAD
     this.testId = this.testTaken["testId"];
     this.questionsProvider.getQuestions(this.testId).subscribe(
       questions => {
+        if(this.questions){
         this.questions = questions;
         this.totalQuestionNum = questions.length
         this.shuffleArray(questions)
-=======
-    this.questionsProvider.getQuestions().subscribe(
-      questions => {
-        this.questions = questions;
-        this.totalQuestionNum = questions.length
->>>>>>> had to reset git
         this.assignQuestion();
+        }
         console.log("questions", this.questions);
       }, error => {
         this.showAlert("There was a problem retrieving " + this.testName + ". Please try again later.");
         console.log(error);
       }
     )
+    console.log("fromionviewDidLoad question.ts page - this.testTaken ");
+    console.log(this.testTaken);
+    console.log(this.testName);
+    console.log(this.testId);
+    console.log(this.questions);
   }
 
   toNextQuestion() {
@@ -182,7 +179,6 @@ export class QuestionPage {
       }
     )
   }
-<<<<<<< HEAD
   
   shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -191,7 +187,5 @@ export class QuestionPage {
     }
     return array;
   }
-=======
->>>>>>> had to reset git
 
 }
