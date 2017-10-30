@@ -5,8 +5,13 @@ page-lobby {
          box-sizing: border-box;
     }
     
+    .toolbar-ios ion-title{
+        position: relative;
+    }
+    
     .segment{
         position: relative;
+        padding: 5px !important;
     }
     #main-container{
         width: 90vw;
@@ -31,13 +36,13 @@ page-lobby {
         width: 100%;
     }
     
-    .testbuttons{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width:  100%;
-    }
+    // .testbuttons{
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: center;
+    //     width:  100%;
+    // }
     
     
     // .orgbuttons{
