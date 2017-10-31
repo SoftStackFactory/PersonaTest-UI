@@ -5,8 +5,12 @@ page-lobby {
          box-sizing: border-box;
     }
     
+   .toolbar-ios ion-title {
+        position: relative;   
+   }
     .segment{
         position: relative;
+        padding: 5px !important;
     }
     #main-container{
         width: 90vw;
