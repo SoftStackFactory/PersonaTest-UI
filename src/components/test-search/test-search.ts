@@ -7,6 +7,7 @@ import { QuestionPage } from '../../pages/question/question';
 //Providers
 import { ResultsProvider } from '../../providers/results/results';
 import { TestsProvider } from '../../providers/tests/tests';
+import { TestHistoryProvider } from '../../providers/test-history/test-history';
 
 
 /**
@@ -31,7 +32,7 @@ export class TestSearchComponent {
   testArrays: any = [];
   testName: any;
   filterTests: any = [];
-  
+  hasIncompleteTest: boolean;
   
   initializeItems() {
     
@@ -133,12 +134,14 @@ export class TestSearchComponent {
     public alertCtrl: AlertController,
     public resultsProvider: ResultsProvider,
     public testsProvider: TestsProvider,
+    public testHistoryProvider: TestHistoryProvider
     ) {
     this.initializeItems();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrgSearchComponent');
+    this.hasIncompleteTest = this.testHistoryProvider.hasIncompleteTest;
   }
   
   selectedTest(test) {

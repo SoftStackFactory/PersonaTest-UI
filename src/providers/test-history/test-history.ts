@@ -17,9 +17,16 @@ export class TestHistoryProvider {
   
   //path is following the API url path from Pt-Backend; update accordingly if spelling changes
   path: string = "/TestTakens";
-
+  
+  hasIncompleteTest: boolean;
+  count: any;
+  recentTestId: any;
+  ID: any;
   constructor(public http: Http) {
     console.log('Hello TestHistoryProvider Provider');
+    this.ID = window.localStorage.getItem("userId");
+    this.userHasIncompleteTest();
+    console.log(this.hasIncompleteTest);
   }
   
   addNewTest( newTestData ) {
@@ -66,6 +73,66 @@ export class TestHistoryProvider {
       this.baseUrl + `/AppUsers/` +
       userId + `/testTakens/count`
       ).map(res => res.json());
+  }
+
+  userHasIncompleteTest() {
+    console.log('this should return true if they have a recent TestTaken with less than 50(total test questions) answers');
+    let rValue = null;
+    this.getMostRecentTestTakenIdByUserId(this.ID)
+    let countOfTestsTaken;
+    this.hasTestHistory(this.ID)
+    .subscribe(
+      res => {
+        console.log("hasTestHistory response ", res);
+        countOfTestsTaken = res.count;
+      }, 
+      error => {
+        console.log("error ", error);
+      },
+      () => {
+        if (countOfTestsTaken > 0){
+        this.getMostRecentTestTakenIdByUserId(this.ID)
+        .subscribe(
+        testId => {
+          if (testId != []){
+            console.log("testId ", testId);
+            console.log("testId[0].id ", testId[0].id);
+            console.log("this.recentTestId ", this.recentTestId);
+            this.recentTestId = testId[0].id;
+            console.log("most recent test", this.recentTestId);
+          } else {
+            this.recentTestId = [{}];
+          }
+        }, error => {
+          console.log(error);
+        },
+        () =>  {
+          console.log("TH done with first callback", this.recentTestId);
+          this.getAnswerCountByTestTakenId(this.recentTestId)
+          .subscribe(
+              res => {
+                this.count = res.count;
+                console.log("TH first subscribe count= ", this.count);
+              }, error => {
+                console.log(error);
+              },
+              () => {
+                
+                console.log("TH done with second callback", this.count);
+                console.log("TH calculating whether or not they have another test ", this.count);
+                rValue = (this.count < 50) ? true : false;
+                this.hasIncompleteTest = rValue;
+              }
+            )
+            console.log("TH last after");
+      }
+    )
+        console.log("TH done with hasTestHistory callback");
+      }})
+      
+    // return (this.count < 50) ? true : false;
+    console.log("TH rValue ", rValue);
+    return this.hasIncompleteTest;
   }
 
 }
