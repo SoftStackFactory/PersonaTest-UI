@@ -247,7 +247,8 @@
         "LANGUAGE":"Definir idioma",
         "BECOME":"Conviértase En Una Organización",
         "CANCEL":"Cancelar Cuenta",
-        "LOGOUT":"Cerrar Sesión"
+        "LOGOUT":"Cerrar Sesión",
+        "HISTORY":"Historial de Prueba"
     },
     "SEARCH":{
         "SIXMONTHS":"Últimos 6 meses",
