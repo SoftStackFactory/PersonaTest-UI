@@ -97,6 +97,13 @@ test-search {
         margin-left: 10%;
         margin-right: 10%;
     }
+    
+    .button:hover {
+        background-color: #fff !important;
+        color: rgba(0, 0, 0,.8) !important;
+        font-weight: bold;
+        border: medium solid transparent !important;
+    }
         
     }
     
