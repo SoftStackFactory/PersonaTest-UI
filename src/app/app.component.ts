@@ -208,6 +208,11 @@ deleteAcc(){
     });
     confirmLogout.present();
   };
+  
+  history(){
+    this.menuCtrl.close();
+    this.nav.push(HistoryPage);
+  };
 
 }
 
