@@ -15,7 +15,7 @@
     <ion-list class="testList">
       <ion-grid>
         <ion-row justify-content-center>
-          <ion-col color="grey" class="card-background-page" *ngFor="let testArray of testArrays| searchTermPipe : searchInput" col-12 col-md-4>
+          <ion-col color="grey" class="card-background-page" *ngFor="let testArray of testArrays| searchTermPipe : searchInput" col-12 col-md-5>
             <ion-card>
               <img src="../../assets/blue-puzzle.jpg"/>
               <div class="card-title">{{ testArray.name }}</div>
