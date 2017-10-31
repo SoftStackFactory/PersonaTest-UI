@@ -33,6 +33,7 @@ export class TestSearchComponent {
   testName: any;
   filterTests: any = [];
   hasIncompleteTest: boolean;
+  recentTestId: any;
   
   initializeItems() {
     
@@ -142,6 +143,8 @@ export class TestSearchComponent {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrgSearchComponent');
     this.hasIncompleteTest = this.testHistoryProvider.hasIncompleteTest;
+    this.recentTestId = this.testHistoryProvider.recentTestId;
+    console.log()
   }
   
   selectedTest(test) {
