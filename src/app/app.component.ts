@@ -213,6 +213,14 @@ deleteAcc(){
     this.menuCtrl.close();
     this.nav.push(HistoryPage);
   };
+  
+  orgView(){
+    this.menuCtrl.close();
+  };
+  
+  admin(){
+    this.menuCtrl.close();
+  };
 
 }
 
