@@ -14,14 +14,22 @@
         <ion-list>
             <button ion-item (click)="goHome()"><ion-icon name="home"></ion-icon>
                 {{'MENU.HOME' | translate}}</button>
-            <button ion-item (click)="history()"><ion-icon name="filing"></ion-icon>{{'MENU.HISTORY' | translate}}</button>
-            <button ion-item (click)="manageAcc()">{{'MENU.MANAGE' | translate}}</button>
-            <button ion-item (click)="changePassword()">{{'MENU.CHANGE' | translate}}</button>
-            <button ion-item (click)="setLanguage()">{{'MENU.LANGUAGE' | translate}}</button>
-            <button ion-item (click)="becomeOrg()">{{'MENU.BECOME' | translate}}</button>
-            <button ion-item (click)="deleteAcc()">{{'MENU.CANCEL' | translate}}</button>
-            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>{{'MENU.LOGOUT' | translate}}</button>
-            
+            <button ion-item (click)="history()"><ion-icon name="filing"></ion-icon>
+                {{'MENU.HISTORY' | translate}}</button>
+            <button ion-item (click)="manageAcc()"><ion-icon name="fingerprint"></ion-icon>
+                {{'MENU.MANAGE' | translate}}</button>
+            <button ion-item (click)="changePassword()"><ion-icon name="lock"></ion-icon>
+                {{'MENU.CHANGE' | translate}}</button>
+            <button ion-item (click)="setLanguage()"><ion-icon name="megaphone"></ion-icon>
+                {{'MENU.LANGUAGE' | translate}}</button>
+            <button ion-item (click)="becomeOrg()"><ion-icon name="people"></ion-icon>
+                {{'MENU.BECOME' | translate}}</button>
+            <button ion-item (click)="deleteAcc()"><ion-icon name="warning"></ion-icon>
+                {{'MENU.CANCEL' | translate}}</button>
+            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>
+                {{'MENU.LOGOUT' | translate}}</button>
+            <button ion-item (click)="orgView()"><ion-icon name="briefcase"></ion-icon>
+                {{'MENU.ORG' | translate}}</button>
         </ion-list>
     </ion-content>
 </ion-menu>

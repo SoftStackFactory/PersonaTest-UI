@@ -248,7 +248,8 @@
         "BECOME":"Conviértase En Una Organización",
         "CANCEL":"Cancelar Cuenta",
         "LOGOUT":"Cerrar Sesión",
-        "HISTORY":"Historial de Prueba"
+        "HISTORY":"Historial de Prueba",
+        "ORG": "Vista Organizacional"
     },
     "SEARCH":{
         "SIXMONTHS":"Últimos 6 meses",

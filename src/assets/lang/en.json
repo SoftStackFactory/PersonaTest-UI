@@ -245,7 +245,8 @@
         "BECOME":"Become an Organization",
         "CANCEL":"Cancel Account",
         "LOGOUT":"Logout",
-        "HISTORY":"Test History"
+        "HISTORY":"Test History",
+        "ORG": "Organization View"
     },
     "SEARCH":{
         "SIXMONTHS":"Past 6 Months",
