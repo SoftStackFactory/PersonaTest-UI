@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ToastController, Platform, Nav, ModalController, MenuController, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NgIf } from '@angular/common';
 
 //Pages
 import { HomePage } from '../pages/home/home';
