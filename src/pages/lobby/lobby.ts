@@ -65,7 +65,6 @@ export class LobbyPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
-    
   }
 
   userHasHistory() {
