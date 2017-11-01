@@ -73,12 +73,13 @@ export class LoginPage {
         window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId)
         
-        //collect all user data and store object in local storage
+        //collect all user data and store needed elements in local storage
         this.appUser.getUser(res.userId, res.id)
           .map(res => res.json())
           .subscribe(res => {
             console.log("User Data", res);
-            window.localStorage.setItem('user', res)
+            window.localStorage.setItem('user', JSON.stringify(res))
+            window.localStorage.setItem('isOwner', res.isOwner)
             
             //take user to lobby page
             this.navCtrl.setRoot(LobbyPage);

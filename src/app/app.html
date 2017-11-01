@@ -28,7 +28,7 @@
                 {{'MENU.CANCEL' | translate}}</button>
             <button ion-item (click)="logout()"><ion-icon padding-right name="log-out"></ion-icon>
                 {{'MENU.LOGOUT' | translate}}</button>
-            <button ion-item (click)="orgView()"><ion-icon padding-right name="briefcase"></ion-icon>
+            <button ion-item *ngIf="isOwner" (click)="orgView()"><ion-icon padding-right name="briefcase"></ion-icon>
                 {{'MENU.ORG' | translate}}</button>
             <button ion-item (click)="adminView()"><ion-icon padding-right name="build"></ion-icon>
                 Administrator</button>
