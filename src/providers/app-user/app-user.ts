@@ -73,8 +73,8 @@ export class AppUserProvider {
   getUser(id, token) {
     return this.http.get(
       this.baseUrl + this.path + '/' + id +
-      '?access_token' + token
-    ).map(res => res.json());
+      '?access_token' + token,
+      id);
   }
 
 

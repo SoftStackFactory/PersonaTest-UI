@@ -72,8 +72,21 @@ export class LoginPage {
         console.log(res);
         window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId)
-        this.navCtrl.setRoot(LobbyPage);
         
+        //collect all user data and store object in local storage
+        this.appUser.getUser(res.userId, res.id)
+          .map(res => res.json())
+          .subscribe(res => {
+            console.log("User Data", res);
+            window.localStorage.setItem('user', res)
+            
+            //take user to lobby page
+            this.navCtrl.setRoot(LobbyPage);
+            
+          });
+        
+        
+          
       }, error => {
         //Server side errors
         if (error.status === 404) {
@@ -96,8 +109,8 @@ export class LoginPage {
           this.alertSubtitle = "Server is currently offline, please try again in a few minutes.";
           return this.showAlert();
         }    
+        
       });
-    
   }
   
   //user has not created an account yet, link to Registration

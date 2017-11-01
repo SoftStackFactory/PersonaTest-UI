@@ -115,7 +115,7 @@ export class MyApp {
     becomeOrgModal.present();
   };
   
-deleteAcc(){
+  deleteAcc(){
     
     //prompt user to confirm request to delete account
     this.translate.get('APPALERT.ALERTONE').subscribe((res:any)=> {
@@ -219,7 +219,7 @@ deleteAcc(){
     this.menuCtrl.close();
   };
   
-  admin(){
+  adminView(){
     this.menuCtrl.close();
   };
 
