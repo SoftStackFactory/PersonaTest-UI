@@ -73,7 +73,8 @@
         "SH": "Registrate aquí.",
         "EMAIL": "Correo Electrónico",
         "PASSWORD": "Contraseña",
-        "LOGIN": "Inicia Sesión"
+        "LOGIN": "Inicia Sesión",
+        "FORGOT": "¿Olvidó su contraseña?"
     },
         "LOBBY": {
         "PERSONAL": "PERSONAL",
@@ -217,8 +218,7 @@
     },
     
     "PASSWORDCHANGE": {
-        "INSTRUCT":"Confirme su contraseña actual, luego ingrese su nueva contraseña y confirme. Haga clic en enviar para completar.",
-        "OLD":"Contraseña anterior:",
+        "INSTRUCT":"¿Olvidaste tu contraseña? Ingrese su nueva contraseña y confirme. Haga clic en enviar para completar.",
         "NEW":"Nueva Contraseña:",
         "CONFIRM":"Confirmar nueva contraseña:",
         "SUBMIT":"Enviar",
@@ -236,7 +236,7 @@
         "INSTRUCT": "Establecer preferencias de idioma",
         "CONFIRM": "Confirmar cambio de idioma",
         "MESSAGE": "¿Estás seguro de que quieres cambiar el idioma?",
-        "TEXT": "Sí, cambie el idioma al ",
+        "TEXT": "Sí. ",
         "TEXTTWO": "No."
     },
     

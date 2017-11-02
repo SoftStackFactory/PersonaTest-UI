@@ -72,7 +72,8 @@
         "SH": "Sign up here.",
         "EMAIL": "Email",
         "PASSWORD": "Password",
-        "LOGIN": "Login"
+        "LOGIN": "Login",
+        "FORGOT": "Forgot Password?"
     },
     
     "LOBBY": {
@@ -214,8 +215,7 @@
     },
     
     "PASSWORDCHANGE": {
-        "INSTRUCT":"Confirm your current password, then enter your new password and confirm. Click submit to complete.",
-        "OLD":"Old Password:",
+        "INSTRUCT":"Enter your new password and confirm. Click submit to complete.",
         "NEW":"New Password:",
         "CONFIRM":"Confirm New Password:",
         "SUBMIT":"Submit",
@@ -223,7 +223,7 @@
     },
     
     "PASSWORDRESET": {
-        "INSTRUCT":"Enter your email and click submit.",
+        "INSTRUCT":"Forgot your password?  Enter your email and click submit to request a reset.",
         "EMAIL":"Email:",
         "SUBMIT":"Submit",
         "REQ":"required fields"
@@ -233,7 +233,7 @@
         "INSTRUCT": "Set Language Preference",
         "CONFIRM": "Confirm Language Change",
         "MESSAGE": "Are you sure you would like to change the langauge?",
-        "TEXT": "Yes, change the language to ",
+        "TEXT": "Yes. ",
         "TEXTTWO": "No."
     },
     

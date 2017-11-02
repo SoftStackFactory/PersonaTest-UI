@@ -12,6 +12,11 @@ page-login {
         width: 75vw;
         max-width: 500px;
     }
+    .forgot-pass {
+        margin: 16px;
+        display: flex;
+        justify-content: center;   
+    }
     .login-button {
         display: flex;
         flex: 1;

@@ -38,10 +38,11 @@ export class SetLanguageModal {
   
   setLanguage(lng){
     if (lng == 'sp'){
-      this.language = "Spanish."
+      this.language = "Cambie el idioma al español."
     };
     if (lng == 'en'){
-      this.language = "Inglés."
+      //this.language = "Inglés."
+      this.language = "Change language to English."
     }
     //this.translate.use(lng);
     this.translate.get('LANGUAGE.CONFIRM').subscribe((res:any)=> {
