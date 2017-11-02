@@ -72,7 +72,9 @@ export class LoginPage {
       .subscribe(res => {
         console.log(res);
         window.localStorage.setItem('token', res.id);
-        window.localStorage.setItem('userId', res.userId)
+        window.localStorage.setItem('userId', res.userId);
+        this.appUser.userData = res.userData;
+        console.log(res.userData);
         this.testHistoryProvider.userHasIncompleteTest();
         this.navCtrl.setRoot(LobbyPage);
         

@@ -20,8 +20,8 @@
               <img src="../../assets/blue-puzzle.jpg"/>
               <div class="card-title">{{ testArray.name }}</div>
               <div class="card-subtitle">{{ testArray.description }}</div>
-              <button *ngIf="!this.testHistoryProvider.hasIncompleteTest || this.recentTestId !== testArray.id" ion-button block (click)="testAlert(testArray)" class="button">{{'LOBBY.TAKE' | translate}}</button>
-              <button *ngIf="this.testHistoryProvider.hasIncompleteTest && this.recentTestId === testArray.id" ion-button block (click)="testAlert(testArray)" class="button">{{'LOBBY.RESUME' | translate}}</button>
+              <button *ngIf="this.recentTestId !== testArray.id" ion-button block (click)="testAlert(testArray)" class="button">{{'LOBBY.TAKE' | translate}}</button>
+              <button *ngIf="this.testHistoryProvider.hasIncompleteTest && this.recentTestId === this.testArray.id" ion-button block (click)="testAlert(testArray)" class="button">{{'LOBBY.RESUME' | translate}}</button>
               <!--<button ion-button block outline (click)="viewResults()" class="button2">{{'LOBBY.RESULTS' | translate}}</button>-->
             </ion-card>
           </ion-col>
