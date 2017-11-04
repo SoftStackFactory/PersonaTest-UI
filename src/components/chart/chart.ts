@@ -2,22 +2,26 @@ import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@ang
 import  { Chart }  from 'chart.js';
 import {TranslateService} from '@ngx-translate/core'
 
-
 @Component({
   selector: 'chart',
   templateUrl: 'chart.html'
 })
 export class ChartComponent implements AfterContentInit {
-  @ViewChild('polarCanvas') polarCanvas: ElementRef
+  @ViewChild('chartCanvas') chartCanvas: ElementRef
   @Input("gradedTest") gradedTest: any;
   polarChart: any;
+  radarChart: any;
   agreeableness: any;
   conscientousness: any;
   emotionalStability: any;
   extraversion: any;
   intellect: any;
   constructor(
-  private translate: TranslateService){}
+  private translate: TranslateService 
+  ) {
+    
+  const saveData[x] = this.gradedTest();
+  console.log("saveData" this.saveData);
 
   ngAfterContentInit() {
     // console.log("chart", this.gradedTest);
@@ -87,7 +91,7 @@ export class ChartComponent implements AfterContentInit {
         });
 
     
-    this.polarChart = new Chart(this.polarCanvas.nativeElement, {
+    this.radarChart = new Chart(this.chartCanvas.nativeElement, {
       type: 'radar',
     data: {
       labels: [
