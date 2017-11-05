@@ -24,5 +24,12 @@ export class OrganizationProvider {
       { userId, name, website }
     );
   }
+  
+  register(newOrgData) {
+    return this.http.post(
+      this.baseUrl + this.path,
+      newOrgData
+      );
+  }
 
 }
