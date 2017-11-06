@@ -31,5 +31,12 @@ export class OrganizationProvider {
       newOrgData
       );
   }
+  
+  // validateName(name) {
+  //   return this.http.get(
+  //     this.baseUrl + this.path + '/?filter[fields][name]=true'
+  //     )
+  // }
+  
 
 }
