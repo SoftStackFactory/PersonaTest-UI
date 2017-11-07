@@ -7,6 +7,7 @@ import { QuestionPage } from '../../pages/question/question';
 //Providers
 import { ResultsProvider } from '../../providers/results/results';
 import { TestsProvider } from '../../providers/tests/tests';
+import { TestHistoryProvider } from '../../providers/test-history/test-history';
 
 
 /**
@@ -31,7 +32,8 @@ export class TestSearchComponent {
   testArrays: any = [];
   testName: any;
   filterTests: any = [];
-  
+  hasIncompleteTest: boolean;
+  recentTestId: any;
   
   initializeItems() {
     
@@ -49,7 +51,8 @@ export class TestSearchComponent {
           this.testArrays = [];
           test.forEach((t)=> this.testArrays.push(t))
           console.log("Test Object", this.testArrays)
-      
+          this.countQuestions();
+          console.log("Question Counted Test Object", this.testArrays)
         }, error => {
           console.log(error)
         }
@@ -133,12 +136,16 @@ export class TestSearchComponent {
     public alertCtrl: AlertController,
     public resultsProvider: ResultsProvider,
     public testsProvider: TestsProvider,
+    public testHistoryProvider: TestHistoryProvider
     ) {
     this.initializeItems();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrgSearchComponent');
+    this.hasIncompleteTest = this.testHistoryProvider.hasIncompleteTest;
+    this.recentTestId = this.testHistoryProvider.recentTestId;
+    console.log()
   }
   
   selectedTest(test) {
@@ -146,34 +153,44 @@ export class TestSearchComponent {
    
   }
 
-
+  countQuestions(){
+    for (let i in this.testArrays) {
+      this.testsProvider.countQuestions(this.testArrays[i].id)
+      .subscribe(res => {
+        this.testArrays[i]["count"] = res.count
+      })
+    };
+  }
   
   dismiss() {
     this.viewCtrl.dismiss();
   }
   
   testAlert(test) {
-    let alert = this.alertCtrl.create({
-      title: 'Ready?',
-      subTitle: 'This test will take approximately 20 min.',
-      buttons: [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
+    // if(!this.testHistoryProvider.hasIncompleteTest){
+      let alert = this.alertCtrl.create({
+        title: 'Ready?',
+        subTitle: 'This test will take approximately 20 min.',
+        buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Ok clicked');
+            this.forPlay(test);
+          }
         }
-      },
-      {
-        text: 'Ok',
-        handler: () => {
-          console.log('Ok clicked');
-          this.forPlay(test);
-        }
-      }
-    ]
-    });
+      ]
+      });
+    
     alert.present();
+    
   }
 
   forPlay(test) {
@@ -184,13 +201,16 @@ export class TestSearchComponent {
       // Eventually will reference each test's unique id
       testId: test.id,
       date: new Date(),
-      Extraversion: 0,
-      Agreeableness: 0,
-      Conscientiousness: 0,
-      'Emotional Stability': 0,
-      Intellect: 0,
+      // Extraversion: 0,
+      // Agreeableness: 0,
+      // Conscientiousness: 0,
+      // 'Emotional Stability': 0,
+      // Intellect: 0,
       name: test.name
     };
+    for (let k in test.category["0"]){
+      testTaken[k] = test.category["0"][k]
+    }
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
         test => {

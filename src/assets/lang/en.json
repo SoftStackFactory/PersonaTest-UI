@@ -80,6 +80,7 @@
         "PROFESSIONAL": "PROFESSIONAL",
         "NAME": "Hello",
         "TAKE": "Take a Test",
+        "RESUME": "Resume Test",
         "RESULTS": "View Results",
         "TITLE": "PersonaTest",
         "PERSONAL": "Personal",
@@ -244,7 +245,8 @@
         "LANGUAGE":"Set Language",
         "BECOME":"Become an Organization",
         "CANCEL":"Cancel Account",
-        "LOGOUT":"Logout"
+        "LOGOUT":"Logout",
+        "HISTORY":"Test History"
     },
     "SEARCH":{
         "SIXMONTHS":"Past 6 Months",

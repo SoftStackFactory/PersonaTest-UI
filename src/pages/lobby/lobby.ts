@@ -59,13 +59,13 @@ export class LobbyPage {
       this.testSelected = null;
       this.orgSelected = null;
       this.hasHistory = this.userHasHistory();
-      this.hasIncompleteTest = this.userHasIncompleteTest();
-      console.log( "this.hasIncompleteTest ", this.hasIncompleteTest);
+      
     }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LobbyPage');
-    
+    this.hasIncompleteTest = this.testHistoryProvider.hasIncompleteTest;
+    console.log( "this.hasIncompleteTest ", this.hasIncompleteTest);
   }
 
   userHasHistory() {
@@ -95,7 +95,7 @@ export class LobbyPage {
           if (testId != []){
             console.log("testId ", testId);
             console.log("testId[0].id ", testId[0].id);
-            console.log("this.recentTestId ", this.recentTestId);
+            // console.log("this.recentTestId ", this.recentTestId);
             this.recentTestId = testId[0].id;
             console.log("most recent test", this.recentTestId);
           } else {
