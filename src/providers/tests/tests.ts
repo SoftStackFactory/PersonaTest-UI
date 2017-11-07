@@ -26,4 +26,12 @@ export class TestsProvider {
       this.baseUrl + this.path
       ).map(res => res.json());
   }
+  
+  countQuestions(testId) {
+    return this.http.get(
+      this.baseUrl + this.path + "/" + testId + "/Question/count"
+      ).map(res => res.json());
+  }
 }
+
+  
