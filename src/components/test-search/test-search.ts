@@ -206,11 +206,15 @@ export class TestSearchComponent {
       // Conscientiousness: 0,
       // 'Emotional Stability': 0,
       // Intellect: 0,
+      // see below for dynamic population
       name: test.name
     };
+    
+    //dynamically populate new testTaken with categories from the test
     for (let k in test.category["0"]){
       testTaken[k] = test.category["0"][k]
     }
+    
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
         test => {
