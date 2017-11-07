@@ -24,5 +24,19 @@ export class OrganizationProvider {
       { userId, name, website }
     );
   }
+  
+  register(newOrgData) {
+    return this.http.post(
+      this.baseUrl + this.path,
+      newOrgData
+      );
+  }
+  
+  // validateName(name) {
+  //   return this.http.get(
+  //     this.baseUrl + this.path + '/?filter[fields][name]=true'
+  //     )
+  // }
+  
 
 }
