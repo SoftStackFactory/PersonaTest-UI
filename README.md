@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/SoftStackFactory/PersonaTest-UI.svg?columns=all)](http://waffle.io/SoftStackFactory/PersonaTest-UI)
 
 This is the first iteration of [PersonaTest](https://ipip.ori.org) for SoftStackFactory's Summer 2017 
@@ -5,6 +6,11 @@ Cohort. [SoftStackFactory](https://www.softstackfactory.com)
 
 
 
+=======
+This is the first iteration of [PersonaTest](https://ipip.ori.org) for SoftStackFactory's Summer 2017 
+Cohort. [SoftStackFactory](https://www.softstackfactory.com)
+
+>>>>>>> had to reset git
 ## Skeleton UI
 
 *First we have to scaffold the entire app*. The shared files for this project are found in the [SoftStackFactory GitHub](https://github.com/softstackfactory/PersonaTest-UI).
