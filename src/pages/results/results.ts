@@ -92,7 +92,7 @@ export class ResultsPage {
         results.userId = test.userId
         results.id = test.id
         results.name = test.name;
-        console.log('reduc', results);
+        console.log('reduce', results);
         return results;
     }
 
