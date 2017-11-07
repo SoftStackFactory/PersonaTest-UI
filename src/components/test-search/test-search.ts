@@ -51,6 +51,8 @@ export class TestSearchComponent {
           this.testArrays = [];
           test.forEach((t)=> this.testArrays.push(t))
           console.log("Test Object", this.testArrays)
+          this.countQuestions();
+          console.log("Question Counted Test Object", this.testArrays)
       
         }, error => {
           console.log(error)
@@ -152,7 +154,14 @@ export class TestSearchComponent {
    
   }
 
-
+  countQuestions(){
+    for (let i in this.testArrays) {
+      this.testsProvider.countQuestions(this.testArrays[i].id)
+      .subscribe(res => {
+        this.testArrays[i]["count"] = res.count
+      })
+    };
+  }
   
   dismiss() {
     this.viewCtrl.dismiss();

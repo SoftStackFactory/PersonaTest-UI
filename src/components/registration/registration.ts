@@ -102,6 +102,12 @@ export class RegistrationComponent {
         console.log("result from appUser.register ", res);
         window.localStorage.setItem('token', res.token);
         window.localStorage.setItem('userId', res.id);
+        // make an empty testTakens array on registration
+        res.testTakens = [];
+        // get rid of the token
+        delete res.token;
+        //populate appuser.userData with new user info
+        this.appUser.userData = res;
         this.navCtrl.setRoot(LobbyPage);
     }, error => {
       //Server side errors
