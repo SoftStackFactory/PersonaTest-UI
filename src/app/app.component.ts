@@ -63,8 +63,8 @@ export class MyApp {
       let storage = window.localStorage.getItem('remembered');
       let lng = window.localStorage.getItem('lng');
       if(storage === null){ 
-        // this.rootPage = LandingPage; 
-        this.rootPage = OrganizationRegistrationPage; 
+        this.rootPage = LandingPage; 
+        // this.rootPage = OrganizationRegistrationPage; 
       }else{ 
         this.rootPage = LobbyPage; }
       // Okay, so the platform is ready and our plugins are available.

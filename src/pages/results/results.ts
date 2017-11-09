@@ -57,9 +57,10 @@ export class ResultsPage {
   
   
   testGrade(answer) {
-    let test = this.testTaken
+    let test = this.testTaken;
+    let results = {}
     // Pass each answer into a reduce method
-    let results = answer.reduce(function(total, value) {
+    let categories = answer.reduce(function(total, value) {
       let category = value.category;
       console.log("category", category)
       // invert the value of a selection if keyed negatively 
@@ -86,13 +87,14 @@ export class ResultsPage {
           } return total
         } 
        }, {})
-    
-        results.date = new Date()
-        results.testId = test.testId
-        results.userId = test.userId
-        results.id = test.id
-        results.name = test.name;
-        console.log('reduc', results);
+        
+        results["category"] = categories
+        results["date"] = new Date()
+        results["testId"] = test.testId
+        results["userId"] = test.userId
+        results["id"] = test.id
+        results["name"] = test.name;
+        console.log('reduce', results);
         return results;
     }
 

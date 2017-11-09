@@ -1,35 +1,35 @@
-import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { OrganizationProvider } from '../providers/organization/organization';
+// import { Injectable } from '@angular/core';
+// import { FormControl } from '@angular/forms';
+// import { OrganizationProvider } from '../providers/organization/organization';
  
-@Injectable()
-export class UsernameValidator {
+// @Injectable()
+// export class UsernameValidator {
  
-  debouncer: any;
+//   debouncer: any;
  
-  constructor(public organizationProvider: OrganizationProvider){
+//   constructor(public organizationProvider: OrganizationProvider){
  
-  }
+//   }
  
-  checkUsername(control: FormControl): any {
+//   checkUsername(control: FormControl): any {
  
-    clearTimeout(this.debouncer);
+//     clearTimeout(this.debouncer);
  
-    return new Promise(resolve => {
+//     return new Promise(resolve => {
  
-      this.debouncer = setTimeout(() => {
+//       this.debouncer = setTimeout(() => {
  
-        this.authProvider.validateUsername(control.value).subscribe((res) => {
-          if(res.ok){
-            resolve(null);
-          }
-        }, (err) => {
-          resolve({'usernameInUse': true});
-        });
+//         this.authProvider.validateUsername(control.value).subscribe((res) => {
+//           if(res.ok){
+//             resolve(null);
+//           }
+//         }, (err) => {
+//           resolve({'usernameInUse': true});
+//         });
  
-      }, 1000);     
+//       }, 1000);     
  
-    });
-  }
+//     });
+//   }
  
-}
+// }
