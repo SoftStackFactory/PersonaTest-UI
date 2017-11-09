@@ -201,12 +201,6 @@ export class TestSearchComponent {
       // Eventually will reference each test's unique id
       testId: test.id,
       date: new Date(),
-      // Extraversion: 0,
-      // Agreeableness: 0,
-      // Conscientiousness: 0,
-      // 'Emotional Stability': 0,
-      // Intellect: 0,
-      // see below for dynamic population
       name: test.name,
       category: {}
     };

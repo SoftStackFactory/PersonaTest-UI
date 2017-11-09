@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@angular/core';
 import  { Chart }  from 'chart.js';
 import {TranslateService} from '@ngx-translate/core'
-import _ from "lodash";
 
 @Component({
   selector: 'chart',
@@ -25,6 +24,7 @@ export class ChartComponent implements AfterContentInit {
   ngAfterContentInit() {
     
     //save results nav params to a static variable
+
     const testResults = this.gradedTest;
     
     //create a new object with only test Categories
