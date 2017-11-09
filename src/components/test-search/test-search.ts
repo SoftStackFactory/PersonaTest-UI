@@ -201,19 +201,13 @@ export class TestSearchComponent {
       // Eventually will reference each test's unique id
       testId: test.id,
       date: new Date(),
-      // Extraversion: 0,
-      // Agreeableness: 0,
-      // Conscientiousness: 0,
-      // 'Emotional Stability': 0,
-      // Intellect: 0,
-      // see below for dynamic population
       name: test.name,
-      category: [{}]
+      category: {}
     };
     
     //dynamically populate new testTaken with categories from the test
-    for (let k in test.category["0"]){
-      testTaken.category["0"][k] = test.category["0"][k]
+    for (let k in test.category){
+      testTaken.category[k] = test.category[k]
     }
     
     this.resultsProvider.initializeTest(testTaken)

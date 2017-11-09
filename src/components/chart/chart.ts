@@ -25,18 +25,19 @@ export class ChartComponent implements AfterContentInit {
   ngAfterContentInit() {
     
     //save results nav params to a static variable
-    const testResults = this.gradedTest;
+    const testResults = this.gradedTest.category;
+    console.log("testResults", testResults);
     
     //create a new object with only test Categories
-    const testCategories = _.omit(testResults, ['date', 'name', 'id', 'testId', 'userId']);
-    console.log("testCategories", testCategories);
+    // const testCategories = _.omit(testResults, ['date', 'name', 'id', 'testId', 'userId']);
+    // console.log("testCategories", testCategories);
     
     //returns only keys of the test categories obj
-    let labels = Object.keys(testCategories);
+    let labels = Object.keys(testResults);
     console.log("labels", labels);
     
     //returns only values of the test categories obj
-    let values = Object.values(testCategories);
+    let values = Object.values(testResults);
     console.log("values", values);
 
     
