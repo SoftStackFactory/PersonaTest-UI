@@ -8,7 +8,7 @@ import { QuestionPage } from '../../pages/question/question';
 import { ResultsProvider } from '../../providers/results/results';
 import { TestsProvider } from '../../providers/tests/tests';
 import { TestHistoryProvider } from '../../providers/test-history/test-history';
-
+import { AppUserProvider } from '../../providers/app-user/app-user';
 
 /**
  * Generated class for the OrgSearchComponent component.
@@ -53,6 +53,7 @@ export class TestSearchComponent {
           console.log("Test Object", this.testArrays)
           this.countQuestions();
           console.log("Question Counted Test Object", this.testArrays)
+          console.log("user Data", this.appUser.userData)
         }, error => {
           console.log(error)
         }
@@ -136,7 +137,8 @@ export class TestSearchComponent {
     public alertCtrl: AlertController,
     public resultsProvider: ResultsProvider,
     public testsProvider: TestsProvider,
-    public testHistoryProvider: TestHistoryProvider
+    public testHistoryProvider: TestHistoryProvider,
+    public appUser: AppUserProvider
     ) {
     this.initializeItems();
   }
@@ -145,7 +147,7 @@ export class TestSearchComponent {
     console.log('ionViewDidLoad OrgSearchComponent');
     this.hasIncompleteTest = this.testHistoryProvider.hasIncompleteTest;
     this.recentTestId = this.testHistoryProvider.recentTestId;
-    console.log()
+    console.log(this.appUser.userData);
   }
   
   selectedTest(test) {
@@ -194,6 +196,8 @@ export class TestSearchComponent {
   }
 
   forPlay(test) {
+    // if the test.id has an incomplete testTaken with a matching id, then we send them back into the incomplete test instead of initializing a new testTaken if (this.appUser.userData.testTakens)
+    
     let testTaken = {
       // Hard coded ID, generated from the App user model in the backend
       userId: localStorage.getItem('userId'),
@@ -208,13 +212,13 @@ export class TestSearchComponent {
       // Intellect: 0,
       // see below for dynamic population
       name: test.name,
-      category: {}
+      category: test.category
     };
     
-    //dynamically populate new testTaken with categories from the test
-    for (let k in test.category){
-      testTaken.category[k] = test.category[k]
-    }
+    // //dynamically populate new testTaken with categories from the test
+    // for (let k in test.category){
+    //   testTaken.category[k] = test.category[k]
+    // }
     
     this.resultsProvider.initializeTest(testTaken)
       .subscribe(
