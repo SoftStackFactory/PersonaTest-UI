@@ -28,7 +28,7 @@ export class ChartComponent implements AfterContentInit {
     const testResults = this.gradedTest;
     
     //create a new object with only test Categories
-    const testCategories = _.omit(testResults, ['date', 'name', 'id', 'testId', 'userId']);
+    const testCategories = testResults.category;
     console.log("testCategories", testCategories);
     
     //returns only keys of the test categories obj

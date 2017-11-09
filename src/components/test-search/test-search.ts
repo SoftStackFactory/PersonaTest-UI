@@ -208,12 +208,12 @@ export class TestSearchComponent {
       // Intellect: 0,
       // see below for dynamic population
       name: test.name,
-      category: [{}]
+      category: {}
     };
     
     //dynamically populate new testTaken with categories from the test
-    for (let k in test.category["0"]){
-      testTaken.category["0"][k] = test.category["0"][k]
+    for (let k in test.category){
+      testTaken.category[k] = test.category[k]
     }
     
     this.resultsProvider.initializeTest(testTaken)
