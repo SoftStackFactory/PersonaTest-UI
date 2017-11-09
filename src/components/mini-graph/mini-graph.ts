@@ -1,6 +1,6 @@
 import { Component, ViewChild, Input } from '@angular/core';
 import { Chart } from 'chart.js';
-
+import { TranslateService } from '@ngx-translate/core'
 
 /**
  * Generated class for the MiniGraphComponent component.
@@ -20,59 +20,79 @@ export class MiniGraphComponent {
   test: any = {}; 
   miniChart: any;
 
-  constructor() {
+  constructor(
+    private translate: TranslateService ) {
     console.log('Hello MiniGraphComponent Component');
   }
 
   //Since a component doesn't have a view, we use angular's ngOnInit method 
-  ngOnInit(){
+  ngAfterContentInit() {
+    
+    //save results nav params to a static variable
+    // const testResults = this.gradedTest;
+    const testResults = this.testResults;
+    //create a new object with only test Categories
+    const testCategories = testResults.category;
+    console.log("testCategories", testCategories);
+    
+    //returns only keys of the test categories obj
+    let labels = Object.keys(testCategories);
+    console.log("labels", labels);
+    
+    //returns only values of the test categories obj
+    let values = Object.values(testCategories);
+    console.log("values", values);
+
+    
+    // // Radar Chart can be used to compare multiple tests/users
+    // this.translate.get('LABEL.AGREEABLENESS').subscribe((res:any)=> {
+    //   this.agreeableness= res;
+    //     });
+    //     this.translate.get('LABEL.CONSCIENTOUSNESS').subscribe((res:any)=> {
+    //   this.conscientousness= res;
+    //     });
+    //     this.translate.get('LABEL.EMOTIONALSTABILITY').subscribe((res:any)=> {
+    //   this.emotionalStability= res;
+    //     });
+    //     this.translate.get('LABEL.EXTRAVERSION').subscribe((res:any)=> {
+    //   this.extraversion= res;
+    //     });
+    //     this.translate.get('LABEL.INTELLECT').subscribe((res:any)=> {
+    //   this.intellect= res;
+    //     });
     this.test = this.testResults;
     this.miniChart = new Chart(this.graphCanvas.nativeElement, {
       type: 'radar',
-      data: {
-          //required property of radar chart, but we will input empty strings since we do not wnat to display labels
-          labels: [
-              "",
-              "",
-              "",
-              "",
-              ""
-              ],
-          datasets: [
-            {
-              backgroundColor: 'rgba(0, 153, 153, 0.2)',
-              borderColor: 'rgba(0,132,132,0.8)',
-              pointBorderColor: "#fff",
-              pointBackgroundColor: 'rgba(0, 99, 132, 0.2)',
-              data: [
-                this.test["Agreeableness"], 
-                this.test["Conscientiousness"], 
-                this.test["Emotional Stability"], 
-                this.test["Extraversion"], 
-                this.test["Intellect"]
-                ]
-            }
-          ]
-        },
-      options: {
-              responsive: true,
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "Test #1",
+          fill: true,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255,99,132,1)',
+          pointBorderColor: "#fff",
+          pointBackgroundColor: 'rgba(255, 99, 132, 0.2)',
+          data: values
+        }
+      ]
+    },
+        options: {
+          responsive: true,
               maintainAspectRatio: true,
               scale: {
                   ticks: {
                       beginAtZero: true,
-                      max: 50,
-                      stepSize: 10,
+                      stepSize: 2,
                       callback: function() {
 								        return '';
                       }
                   }
               },
-              title: {
-                display: false
-              },
-            legend: {
-              display: false
-            }
+        title: {
+          display: true,
+          text: 'IPIP Test Results'
+        }
       }
     });//closing of new Chart expression
     

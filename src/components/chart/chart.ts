@@ -1,7 +1,6 @@
 import { Component, ViewChild, ElementRef, Input, AfterContentInit  } from '@angular/core';
 import  { Chart }  from 'chart.js';
 import {TranslateService} from '@ngx-translate/core'
-import _ from "lodash";
 
 @Component({
   selector: 'chart',
@@ -25,19 +24,19 @@ export class ChartComponent implements AfterContentInit {
   ngAfterContentInit() {
     
     //save results nav params to a static variable
-    const testResults = this.gradedTest.category;
-    console.log("testResults", testResults);
+
+    const testResults = this.gradedTest;
     
     //create a new object with only test Categories
-    // const testCategories = _.omit(testResults, ['date', 'name', 'id', 'testId', 'userId']);
-    // console.log("testCategories", testCategories);
+    const testCategories = testResults.category;
+    console.log("testCategories", testCategories);
     
     //returns only keys of the test categories obj
-    let labels = Object.keys(testResults);
+    let labels = Object.keys(testCategories);
     console.log("labels", labels);
     
     //returns only values of the test categories obj
-    let values = Object.values(testResults);
+    let values = Object.values(testCategories);
     console.log("values", values);
 
     

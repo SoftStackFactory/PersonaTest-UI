@@ -57,7 +57,7 @@ export class ResultsPage {
   
   
   testGrade(answer) {
-    let test = this.testTaken;
+    let test = this.testTaken
     let results = {}
     // Pass each answer into a reduce method
     let categories = answer.reduce(function(total, value) {
@@ -87,7 +87,7 @@ export class ResultsPage {
           } return total
         } 
        }, {})
-        
+
         results["category"] = categories
         results["date"] = new Date()
         results["testId"] = test.testId
