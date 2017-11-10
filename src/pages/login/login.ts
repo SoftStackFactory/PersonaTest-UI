@@ -74,6 +74,7 @@ export class LoginPage {
         window.localStorage.setItem('token', res.id);
         window.localStorage.setItem('userId', res.userId);
         this.appUser.userData = res.userData;
+        console.log("this user data is defined in the back end app-user.js");
         console.log(res.userData);
         this.testHistoryProvider.userHasIncompleteTest();
         this.navCtrl.setRoot(LobbyPage);

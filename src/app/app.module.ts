@@ -23,6 +23,7 @@ import { QuicklinksPage } from '../pages/quicklinks/quicklinks';
 import { OrganizationManagePage } from '../pages/organization-manage/organization-manage';
 import { OrganizationBecomePage } from '../pages/organization-become/organization-become';
 import { LobbyOrganizationPage } from '../pages/lobby-organization/lobby-organization';
+import { OrganizationRegistrationPage } from '../pages/organization-registration/organization-registration';
 
 //Providers
 import { QuestionsProvider } from '../providers/questions/questions';
@@ -106,6 +107,7 @@ let injections: any[] = [
     OrgSearchComponent,
     RememberMeComponent,
     TestSearchComponent,
+    OrganizationRegistrationPage
     ]
 
 @NgModule({
