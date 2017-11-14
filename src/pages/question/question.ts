@@ -22,7 +22,7 @@ export class QuestionPage {
   // putting slider knob in the middle
   degreeNum: number = 49;
   answers = [];
-  private questions: any;
+  questions: any;
   testTaken: any;
   testId: string;
   user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
