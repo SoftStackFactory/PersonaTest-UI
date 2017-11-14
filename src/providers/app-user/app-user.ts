@@ -12,7 +12,8 @@ import { URL } from '../../assets/provider-config';
 @Injectable()
 export class AppUserProvider {
   baseUrl: string = URL;
-  path: string = "/AppUsers"
+  path: string = "/AppUsers";
+  userData: any;
   constructor(public http: Http) {
     console.log('Hello AppUser Provider');
   }

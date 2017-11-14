@@ -22,7 +22,7 @@ export class QuestionPage {
   // putting slider knob in the middle
   degreeNum: number = 49;
   answers = [];
-  private questions: any;
+  questions: any;
   testTaken: any;
   testId: string;
   user: Observable<any> = this.appUserProvider.getUser(window.localStorage.getItem("userId"), window.localStorage.getItem("token"));
@@ -42,16 +42,28 @@ export class QuestionPage {
     this.testId = this.testTaken["testId"];
     this.questionsProvider.getQuestions(this.testId).subscribe(
       questions => {
+        if(questions){
         this.questions = questions;
         this.totalQuestionNum = questions.length
         this.shuffleArray(questions)
         this.assignQuestion();
-        console.log("questions", this.questions);
+        console.log("questions inside IonViewDidLoad getQuestions subscription", this.questions);
+        }
+        
       }, error => {
         this.showAlert("There was a problem retrieving " + this.testName + ". Please try again later.");
         console.log(error);
       }
     )
+    console.log("fromionviewDidLoad question.ts page - this.testTaken ");
+    console.log("this.testTaken: ");
+    console.log(this.testTaken);
+    console.log("this.testName: ");
+    console.log(this.testName);
+    console.log("this.testId: ");
+    console.log(this.testId);
+    console.log("this.questions: ");
+    console.log(this.questions);
   }
 
   toNextQuestion() {

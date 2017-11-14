@@ -5,7 +5,7 @@ import { LobbyPage } from '../lobby/lobby';
 import { RegisterPage } from '../register/register';
 
 import { AppUserProvider } from '../../providers/app-user/app-user';
-
+import { TestHistoryProvider } from '../../providers/test-history/test-history';
 /**
  * Generated class for the LoginPage page.
  *
@@ -30,7 +30,8 @@ export class LoginPage {
     private alertCtrl: AlertController,
     private menu: MenuController,
     private appUser: AppUserProvider,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private testHistoryProvider: TestHistoryProvider
 
     ) {
       this.loginForm = formBuilder.group({
@@ -71,7 +72,12 @@ export class LoginPage {
       .subscribe(res => {
         console.log(res);
         window.localStorage.setItem('token', res.id);
-        window.localStorage.setItem('userId', res.userId)
+        window.localStorage.setItem('userId', res.userId);
+        this.appUser.userData = res.userData;
+        console.log("this user data is defined in the back end app-user.js");
+        console.log(res.userData);
+        this.testHistoryProvider.userHasIncompleteTest();
+        this.navCtrl.setRoot(LobbyPage);
         
         //collect all user data and store needed elements in local storage
         this.appUser.getUser(res.userId, res.id)
