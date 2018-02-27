@@ -31,6 +31,10 @@ export class ChartComponent implements AfterContentInit {
     const testCategories = testResults.category;
     console.log("testCategories", testCategories);
     
+    //access test date
+    const testDate = testResults.date;
+    console.log("testDate, testDate");
+    
     //returns only keys of the test categories obj
     let labels = Object.keys(testCategories);
     console.log("labels", labels);
@@ -40,7 +44,7 @@ export class ChartComponent implements AfterContentInit {
     console.log("values", values);
 
     
-    // Radar Chart can be used to compare multiple tests/users
+    
     this.translate.get('LABEL.AGREEABLENESS').subscribe((res:any)=> {
       this.agreeableness= res;
         });
@@ -56,7 +60,8 @@ export class ChartComponent implements AfterContentInit {
         this.translate.get('LABEL.INTELLECT').subscribe((res:any)=> {
       this.intellect= res;
         });
-
+// Radar Chart can be used to compare multiple tests/users
+// passing in categories' labels and values
     
     this.radarChart = new Chart(this.chartCanvas.nativeElement, {
       type: 'radar',
@@ -80,7 +85,7 @@ export class ChartComponent implements AfterContentInit {
               scale: {
                   ticks: {
                       beginAtZero: true,
-                      stepSize: 2,
+                      stepSize: 3,
                       callback: function() {
 								        return '';
                       }
@@ -88,7 +93,7 @@ export class ChartComponent implements AfterContentInit {
               },
         title: {
           display: true,
-          text: 'IPIP Test Results'
+          text: testDate
         }
       }
     });

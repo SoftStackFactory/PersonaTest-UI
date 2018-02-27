@@ -90,8 +90,10 @@ export class MiniGraphComponent {
                   }
               },
         title: {
-          display: true,
-          text: 'IPIP Test Results'
+          display: false,
+        },
+        legend: {
+          display: false,
         }
       }
     });//closing of new Chart expression
