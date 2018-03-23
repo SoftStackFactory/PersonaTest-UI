@@ -1,10 +1,8 @@
 {
-
   "name": "Persona App",
-  "app_id": "e2b81998",
+  "app_id": "54e20641",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   }
-
 }
