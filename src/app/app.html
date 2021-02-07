@@ -12,15 +12,26 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <button ion-item (click)="goHome()"><ion-icon name="home"></ion-icon>
+            <button ion-item (click)="goHome()"><ion-icon padding-right name="home"></ion-icon>
                 {{'MENU.HOME' | translate}}</button>
-            <button ion-item (click)="manageAcc()">{{'MENU.MANAGE' | translate}}</button>
-            <button ion-item (click)="changePassword()">{{'MENU.CHANGE' | translate}}</button>
-            <button ion-item (click)="setLanguage()">{{'MENU.LANGUAGE' | translate}}</button>
-            <button ion-item (click)="becomeOrg()">{{'MENU.BECOME' | translate}}</button>
-            <button ion-item (click)="deleteAcc()">{{'MENU.CANCEL' | translate}}</button>
-            <button ion-item (click)="logout()"><ion-icon name="log-out"></ion-icon>{{'MENU.LOGOUT' | translate}}</button>
-            <button ion-item (click)="history()">{{'MENU.HISTORY' | translate}}</button>
+            <button ion-item (click)="history()"><ion-icon padding-right name="filing"></ion-icon>
+                {{'MENU.HISTORY' | translate}}</button>
+            <button ion-item (click)="manageAcc()"><ion-icon padding-right name="finger-print"></ion-icon>
+                {{'MENU.MANAGE' | translate}}</button>
+            <button ion-item (click)="changePassword()"><ion-icon padding-right name="lock"></ion-icon>
+                {{'MENU.CHANGE' | translate}}</button>
+            <button ion-item (click)="setLanguage()"><ion-icon padding-right name="chatbubbles"></ion-icon>
+                {{'MENU.LANGUAGE' | translate}}</button>
+            <button ion-item (click)="becomeOrg()"><ion-icon padding-right name="people"></ion-icon>
+                {{'MENU.BECOME' | translate}}</button>
+            <button ion-item (click)="deleteAcc()"><ion-icon padding-right name="remove-circle"></ion-icon>
+                {{'MENU.CANCEL' | translate}}</button>
+            <button ion-item (click)="logout()"><ion-icon padding-right name="log-out"></ion-icon>
+                {{'MENU.LOGOUT' | translate}}</button>
+            <button ion-item *ngIf="isOwner" (click)="orgView()"><ion-icon padding-right name="briefcase"></ion-icon>
+                {{'MENU.ORG' | translate}}</button>
+            <button ion-item (click)="adminView()"><ion-icon padding-right name="build"></ion-icon>
+                Administrator</button>
         </ion-list>
     </ion-content>
 </ion-menu>
